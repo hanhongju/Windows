@@ -10,14 +10,14 @@ ln -s /usr/local/mysql/bin/mysqladmin /usr/bin
 mysqladmin -u root -pfengkuang create wordpress
 #修改网站地址
 site=domain    
-#下载wordpress至网站根目录
+#下载wordpress安装包至网站根目录
 cd /home/wwwroot/$site   
 wget https://cn.wordpress.org/latest-zh_CN.tar.gz 
 #解压缩wordpress安装包
 tar zxf latest-zh_CN.tar.gz 
 #拷贝wordpress程序至网站根目录
 mv wordpress/*  . 
-#删除wp压缩包
+#删除wordpress安装包
 rm -rf wordpress latest-zh_CN.tar.gz
 #设置权限
 chown www:www -R /home/wwwroot/$site
