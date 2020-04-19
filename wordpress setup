@@ -1,4 +1,4 @@
-#wordpress一键安装脚本
+#wordpress安装脚本
 #安装LNMP环境一键脚本，大约需要40分钟，php必须版本7以上
 wget http://soft.vpser.net/lnmp/lnmp1.6beta.tar.gz -cO lnmp1.6beta.tar.gz && tar zxf lnmp1.6beta.tar.gz && cd lnmp1.6 && ./install.sh lnmp
 #创建网站一键脚本
