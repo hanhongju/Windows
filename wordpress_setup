@@ -9,7 +9,7 @@ ln -s /usr/local/mysql/bin/mysqladmin /usr/bin
 #创建新数据库
 mysqladmin -u root -pfengkuang create wordpress
 #修改网站地址
-site=domain    
+site=www.hanhongju.com    
 #下载wordpress安装包至网站根目录
 cd /home/wwwroot/$site   
 wget https://cn.wordpress.org/latest-zh_CN.tar.gz 
