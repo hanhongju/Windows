@@ -4,7 +4,7 @@ sudo su
 apt-get install -y unzip zip libcurl4-openssl-dev
 #新建文件夹，赋予写权限
 mkdir /home/mcserver/
-chmod 777 /home/mcserver/
+chmod 777 /home/
 cd /home/mcserver/
 #下载基岩版客户端
 wget https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.60.5.zip    -O /home/mcserver/server.zip
@@ -13,7 +13,7 @@ wget https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.60.5.zip    -
 unzip server.zip
 #启动服务器
 (LD_LIBRARY_PATH=. ./bedrock_server&)
-#关闭shell，连接服务器，开完
+#关闭shell，连接服务器，开玩
 
 
 
