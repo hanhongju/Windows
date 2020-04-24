@@ -1,13 +1,26 @@
 #MineCraft 基岩版服务器搭建脚本@Ubuntu18
 sudo su
 #安装常用软件包
-apt-get install -y unzip libcurl4-openssl-dev
+apt-get install -y unzip zip libcurl4-openssl-dev
 #新建文件夹，赋予写权限
 mkdir /home/mcserver/
 chmod 777 /home/mcserver/
 cd /home/mcserver/
 #下载基岩版客户端
 wget https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.60.5.zip    -O /home/mcserver/server.zip
-mv bedrock-server-1.14.60.5.zip server.zip
+#若不能直接下载，手动上传并改名
+#mv bedrock-server-1.14.60.5.zip server.zip
 unzip server.zip
+#启动服务器
 (LD_LIBRARY_PATH=. ./bedrock_server&)
+#关闭shell，连接服务器，开完
+
+
+
+#备份服务器，将mc/worlds目录压缩为worlds.zip文件，并下载到本地
+cd /home/mcserver/worlds/
+zip -r ./worlds.zip  ./* -r
+#到新服务器，删除mc/worlds文件夹下文件，上传备份文件，解压
+cd /home/mcserver/worlds/
+unzip worlds.zip
+#启动服务器，开玩
