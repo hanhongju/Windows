@@ -17,10 +17,10 @@ unzip server.zip
 
 
 
-#备份服务器，将mc/worlds目录压缩为worlds.zip文件，并下载到本地
+#备份服务器，将mc/worlds/目录压缩为worlds.zip文件，并下载到本地
 cd /home/mcserver/worlds/
 zip -r ./worlds.zip  ./* -r
-#到新服务器，删除mc/worlds文件夹下文件，上传备份文件，解压
+#到新服务器，删除mc/worlds/文件夹下文件，上传备份文件至/home/mcserver/worlds/worlds.zip，解压
 cd /home/mcserver/worlds/
 unzip worlds.zip
 #启动服务器，开玩
