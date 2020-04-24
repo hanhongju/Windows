@@ -20,6 +20,6 @@ zip -r ./mcserver.zip  ./* -r
 #到新服务器，创建mc文件夹
 mkdir /home/mcserver/
 cd /home/mcserver/
-#上传备份文件，解压
+#上传备份文件至/home/mcserver/mcserver.zip，解压
 unzip mcserver.zip
 #打开服务器终端，开玩
