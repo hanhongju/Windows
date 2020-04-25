@@ -30,3 +30,10 @@ chmod 777 -R /home/
 cd /home/mcserver/worlds/
 unzip worlds.zip
 #启动服务器，开玩
+
+
+
+#关闭服务器
+#列出进程列表
+ps -aux
+#找到进程ID，并KILL之
