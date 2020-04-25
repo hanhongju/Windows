@@ -30,7 +30,8 @@ chmod 777 -R /home/
 cd /home/mcserver/worlds/
 unzip worlds.zip
 #启动服务器，开玩
-#win10版MC本地数据库文件在C:\Users\hongju\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\minecraftWorlds
+#win10版MC本地数据库文件在：
+#C:\Users\hongju\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\minecraftWorlds
 
 
 #关闭服务器
