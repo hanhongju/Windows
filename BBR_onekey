@@ -1,0 +1,13 @@
+#BBR加速控制拥堵
+#OpenVZ架构安装BBR加速@CentOS7系统：
+wget https://github.com/tcp-nanqinlang/lkl-rinetd/releases/download/1.1.0/tcp_nanqinlang-rinetd-centos-multiNIC.sh && bash tcp_nanqinlang-rinetd-centos-multiNIC.sh
+#KVM架构安装BBR加速@CentOS7系统：
+wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+#升级内核后重启
+
+
+
+#启动V2Ray和Nginx：
+service v2ray start
+service nginx start
+#至此V2Ray可正常工作
