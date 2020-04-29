@@ -14,6 +14,12 @@ java -Xms100m -Xmx1024m -jar /home/mcserver/server.jar nogui
 
 
 
+
+#关闭虚拟终端mc和服务器
+screen -ls
+screen -X -S mc quit
+screen -ls
+
 #备份服务器，将mc目录压缩为mcserver.zip文件
 cd /home/mcserver/
 zip -r ./mcserver.zip  ./* -r
