@@ -15,11 +15,10 @@ cd /home/mcserver/
 (LD_LIBRARY_PATH=. ./bedrock_server&)
 #关闭shell，连接服务器，开玩
 
-#到新服务器，删除mc/worlds/文件夹下文件
+#到新服务器，上传备份文件至/home/，替换原mc/worlds/文件夹下文件
 chmod 777 -R   /home/
 rm -rf /home/mcserver/worlds/
 mkdir /home/mcserver/worlds/
-#上传备份文件至/home/，解压
 unzip   -o  /home/worlds.zip    -d   /home/mcserver/worlds/
 #启动服务器，开玩
 #win10版MC本地数据库文件在：
