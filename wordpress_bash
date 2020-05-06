@@ -15,7 +15,8 @@ mysqladmin -u root -pfengkuang create wordpress
 #1、初始化LNMP环境，php版本7.4
 #2、添加站点，根目录改为/home/wwwroot/
 #3、申请SSL证书，伪静态改为wordpress
-#4、使用数据库phpMyAdmin管理工具添加数据库wordpress，导入本地存档数据库
+#4、修改数据库root密码，使用数据库phpMyAdmin管理工具添加数据库wordpress，导入本地存档数据库
+#5、登陆网站前端设置
 #修改网站地址
 site=www.hanhongju.com     
 #下载wordpress至网站根目录
