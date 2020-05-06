@@ -1,5 +1,5 @@
 #MineCraft JAVA版服务器搭建脚本@CentOS7
-yum install -y java-1.8.0-openjdk  screen zip
+yum install -y wget java-1.8.0-openjdk  screen zip
 #创建文件夹，搭建1.15.2版本服务器
 mkdir /home/mcserver/
 cd /home/mcserver/
