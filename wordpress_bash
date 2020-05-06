@@ -8,8 +8,16 @@ ln -s /usr/local/mysql/bin/mysql /usr/bin
 ln -s /usr/local/mysql/bin/mysqladmin /usr/bin
 #创建新数据库
 mysqladmin -u root -pfengkuang create wordpress
+#以上都可在宝塔面板中完成
+#宝塔面板安装命令@CentOS7
+#yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_6.0.sh && sh install.sh
+#宝塔面板需要做如下几件事：
+#1、初始化LNMP环境，php版本7.4
+#2、添加站点，根目录改为/home/wwwroot/
+#3、申请SSL证书，伪静态改为wordpress
+#4、使用数据库phpMyAdmin管理工具添加数据库wordpress，导入本地存档数据库
 #修改网站地址
-site=domain    
+site=www.hanhongju.com     
 #下载wordpress至网站根目录
 wget    https://cn.wordpress.org/latest-zh_CN.tar.gz         -P   /home/wwwroot/$site/ 
 #解压缩wordpress安装包
