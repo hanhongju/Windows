@@ -4,7 +4,8 @@ apt-get update
 apt-get install -y curl
 #退出shell，用普通用户安装v2rayL，使用root用户会失败
 bash <(curl -s -L http://dl.thinker.ink/install.sh)
-#加入订阅ss://YWVzLTI1Ni1jZmI6V1FWc1VjYXdTOUBjMTVzNS5qYW1qYW1zLm5ldDoyMjYyOA==#JMS-183930%40c15s5.jamjams.net%3A22628
+#加入订阅vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInl1biIsDQogICJhZGQiOiAieXVuLmhvbmdqdS5zaXRlIiwNCiAgInBvcnQiOiAiNDQzIiwNCiAgImlkIjogIjE1NDQ4ZmNlLTdjNzEtMTFlYS1iYzU1LTAyNDJhYzEzMDAwMyIsDQogICJhaWQiOiAiMCIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiIiwNCiAgInBhdGgiOiAiL2Y2M2xLQXgiLA0KICAidGxzIjogInRscyINCn0=
+
 
 
 
