@@ -17,9 +17,9 @@ mysqladmin -u root -pfengkuang create wordpress
 #3、申请SSL证书，伪静态改为wordpress
 #4、修改数据库root密码，使用数据库phpMyAdmin管理工具添加数据库wordpress，导入本地存档数据库
 #定义网站URL
-site=www.hanhongju.com     
+site=www.hanhongju.com
 #下载wordpress至网站根目录
-wget    https://cn.wordpress.org/latest-zh_CN.tar.gz         -P   /home/wwwroot/$site/ 
+wget    https://cn.wordpress.org/latest-zh_CN.tar.gz         -P   /home/wwwroot/$site/
 #解压缩wordpress安装包
 cd /home/wwwroot/$site   
 tar zxf     latest-zh_CN.tar.gz
