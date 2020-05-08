@@ -1,0 +1,15 @@
+#Ubuntu新系统环境设置
+#安装curl
+apt install -y curl
+#退出shell，用普通用户安装v2rayL，使用root用户会失败
+bash <(curl -s -L http://dl.thinker.ink/install.sh)
+#加入订阅https://jiang.netlify.com
+
+
+#Ubuntu新系统更新软件和语言包
+apt-get -y update
+apt-get -y upgrade
+apt-get install  -y language-pack-zh-hans gcc make perl
+#下载安装dropbox
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+~/.dropbox-dist/dropboxd
