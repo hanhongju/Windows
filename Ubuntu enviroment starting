@@ -1,6 +1,7 @@
 #Ubuntu新系统环境设置
+#更新网卡设置
 echo  "options iwlwifi 11n_disable=1"  >> /etc/modprobe.d/iwlwifi.conf
-#安装curl
+#重启后，安装curl
 apt-get update
 apt-get install -y curl
 #退出shell，用普通用户安装v2rayL，使用root用户会失败
