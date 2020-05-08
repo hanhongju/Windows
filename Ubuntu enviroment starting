@@ -1,7 +1,7 @@
 #Ubuntu新系统环境设置
 #安装curl
-apt-get -y update
-apt install -y curl
+apt-get update
+apt-get install -y curl
 #退出shell，用普通用户安装v2rayL，使用root用户会失败
 bash <(curl -s -L http://dl.thinker.ink/install.sh)
 #加入订阅https://jiang.netlify.com
