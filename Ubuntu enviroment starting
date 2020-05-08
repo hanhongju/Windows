@@ -1,4 +1,5 @@
 #Ubuntu新系统环境设置
+echo  "options iwlwifi 11n_disable=1"  >> /etc/modprobe.d/iwlwifi.conf
 #安装curl
 apt-get update
 apt-get install -y curl
