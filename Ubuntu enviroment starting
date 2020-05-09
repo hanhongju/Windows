@@ -1,6 +1,7 @@
 #Ubuntu新系统环境设置
 #更新网卡设置
 echo  "options iwlwifi 11n_disable=1"  >> /etc/modprobe.d/iwlwifi.conf
+#打开/etc/apt/sources.list，更换为阿里源
 #重启后，安装curl
 apt-get update
 apt-get install -y curl
