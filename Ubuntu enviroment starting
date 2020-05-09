@@ -2,17 +2,14 @@
 #更新网卡设置
 echo  "options iwlwifi 11n_disable=1"  >> /etc/modprobe.d/iwlwifi.conf
 #打开/etc/apt/sources.list，更换为阿里源
-#重启后，安装curl
+#Ubuntu新系统更新软件和语言包
 apt-get update
-apt-get install -y curl
+apt-get -y upgrade
+apt-get install  -y language-pack-zh-hans gcc make perl curl
+
 #退出shell，用普通用户安装v2rayL，使用root用户会失败
 bash <(curl -s -L http://dl.thinker.ink/install.sh)
 #加入订阅https://jiang.netlify.app
 #下载安装dropbox
 cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 ~/.dropbox-dist/dropboxd
-
-
-#Ubuntu新系统更新软件和语言包
-apt-get -y upgrade
-apt-get install  -y language-pack-zh-hans gcc make perl
