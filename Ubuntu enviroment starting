@@ -10,7 +10,7 @@ apt-get install  -y language-pack-zh-hans gcc make perl curl
 #退出shell，用普通用户安装v2rayL，使用root用户会失败
 bash <(curl -s -L http://dl.thinker.ink/install.sh)
 #加入订阅
-vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInl1biIsDQogICJhZGQiOiAieXVuLmhvbmdqdS5zaXRlIiwNCiAgInBvcnQiOiAiNDQzIiwNCiAgImlkIjogIjE1NDQ4ZmNlLTdjNzEtMTFlYS1iYzU1LTAyNDJhYzEzMDAwMyIsDQogICJhaWQiOiAiMCIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiIiwNCiAgInBhdGgiOiAiL2Y2M2xLQXgiLA0KICAidGxzIjogInRscyINCn0=
+
 
 #下载安装dropbox
 cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
