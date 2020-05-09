@@ -1,7 +1,7 @@
 #Ubuntu新系统环境设置
+#打开/etc/apt/sources.list，更换为阿里源
 #更新网卡设置
 echo  "options iwlwifi 11n_disable=1"  >> /etc/modprobe.d/iwlwifi.conf
-#打开/etc/apt/sources.list，更换为阿里源
 #Ubuntu新系统更新软件和语言包
 apt-get update
 apt-get -y upgrade
