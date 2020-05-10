@@ -5,7 +5,7 @@ echo  "options iwlwifi 11n_disable=1"  >> /etc/modprobe.d/iwlwifi.conf
 #Ubuntu新系统更新软件和语言包
 apt-get update
 apt-get -y upgrade
-apt-get install  -y language-pack-zh-hans gcc make perl curl unzip
+apt-get install  -y language-pack-zh-hans gcc make perl curl unzip vim
 
 
 #到网盘下载v2rayL：https://www.lanzous.com/iaynbud
