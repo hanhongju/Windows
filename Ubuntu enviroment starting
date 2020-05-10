@@ -13,9 +13,3 @@ apt-get install  -y language-pack-zh-hans gcc make perl curl
 #解压运行
 unzip -o /home/hj/下载/v2rayLui-v2.1.3.zip    -d /home/
 /home/v2rayLui-v2.1.3/install.sh
-
-
-#下载安装dropbox
-
-cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-~/.dropbox-dist/dropboxd
