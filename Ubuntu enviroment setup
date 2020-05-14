@@ -12,3 +12,21 @@ wget https://github.com/Qv2ray/Qv2ray/releases/download/v2.5.0/qv2ray_2.5.0-1_am
 dpkg -i /home/hj/download/qv2ray.deb
 wget https://github.com/v2ray/v2ray-core/releases/download/v4.23.1/v2ray-linux-64.zip -O /home/hj/download/v2ray.zip
 unzip /home/hj/download/v2ray.zip
+
+
+#修改swap分区大小
+free -h
+#创建一个新的swap文件
+cd /
+dd if=/dev/zero of=/swapfile1 bs=1G count=12
+#创建swap文件系统
+mkswap -f swapfile1
+chmod 0600 swapfile1
+#开启新的swap
+swapoff /swapfile
+swapon /swapfile1
+#设置开机启动
+sed -i     ''s/swapfile/swapfile1/g''       /etc/fstab
+#删掉旧的swap文件
+rm -f /swapfile
+free -h
