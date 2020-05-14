@@ -12,5 +12,5 @@ apt --fix-broken install
 mkdir /home/hj/download
 wget https://github.com/Qv2ray/Qv2ray/releases/download/v2.5.0/qv2ray_2.5.0-1_amd64.deb -O /home/hj/download/qv2ray.deb
 dpkg -i /home/hj/download/qv2ray.deb
-axel -n 20 https://github.com/v2ray/v2ray-core/releases/download/v4.23.1/v2ray-linux-64.zip -o /home/hj/download/v2ray.zip
+wget https://github.com/v2ray/v2ray-core/releases/download/v4.23.1/v2ray-linux-64.zip -O /home/hj/download/v2ray.zip
 unzip /home/hj/download/v2ray.zip
