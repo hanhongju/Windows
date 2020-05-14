@@ -8,7 +8,7 @@ apt-get -y upgrade
 apt-get install  -y language-pack-zh-hans gcc make perl curl unzip vim axel
 apt --fix-broken install
 
-
+下载qv2ray
 mkdir /home/hj/download
 wget https://github.com/Qv2ray/Qv2ray/releases/download/v2.5.0/qv2ray_2.5.0-1_amd64.deb -O /home/hj/download/qv2ray.deb
 dpkg -i /home/hj/download/qv2ray.deb
