@@ -30,3 +30,5 @@ sed -i     ''s/swapfile/swapfile1/g''       /etc/fstab
 #删掉旧的swap文件
 rm -f /swapfile
 free -h
+#重启
+shutdown -r now
