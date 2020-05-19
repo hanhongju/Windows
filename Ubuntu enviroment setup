@@ -6,8 +6,8 @@ apt-get -y upgrade
 apt-get install  -y language-pack-zh-hans gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra
 apt --fix-broken install
 #设定网络容忍度
-#空格的正则表达式为“\ "
-sed    -i  ''s/lcp-echo-failure\ 4/lcp-echo-failure\ 15/g''       /etc/ppp/options
+#空格的正则表达式为"\ "
+sed    -i    "s/lcp-echo-failure\ 4/lcp-echo-failure\ 15/g"       /etc/ppp/options
 
 
 #修改swap分区大小 
@@ -22,7 +22,7 @@ chmod 0600 myexchange
 swapoff /swapfile
 swapon /myexchange
 #设置开机启动
-sed -i     ''s/swapfile/myexchange/g''       /etc/fstab
+sed -i     "s/swapfile/myexchange/g"       /etc/fstab
 #删掉旧的swap文件
 rm -f /swapfile
 free -h
