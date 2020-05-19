@@ -6,7 +6,6 @@ apt-get -y upgrade
 apt-get install  -y language-pack-zh-hans gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra
 apt --fix-broken install
 #设定网络容忍度
-lcp-echo-failure 4
 sed -i     ''s/lcp-echo-failure 4/lcp-echo-failure 15/g''       /etc/ppp/options
 
 #修改swap分区大小 
