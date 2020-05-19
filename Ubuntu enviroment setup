@@ -3,6 +3,7 @@
 #Ubuntu新系统更新软件和语言包
 apt-get update
 apt-get -y dist-upgrade
+apt autoremove
 apt-get install  -y language-pack-zh-hans gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra
 apt --fix-broken install
 
