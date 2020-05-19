@@ -4,7 +4,8 @@
 apt-get update
 apt-get dist-upgrade -y
 apt autoremove -y
-apt-get install  -y language-pack-zh-hans gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra
+apt-get install  -y language-pack-zh-hans gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra hardinfo
+apt-get install  -y mate-sensors-applet preload
 apt --fix-broken install
 
 #空格的正则表达式为"\ "
