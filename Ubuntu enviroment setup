@@ -6,7 +6,7 @@ apt-get -y upgrade
 apt-get install  -y language-pack-zh-hans gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra
 apt --fix-broken install
 
-下载qv2ray
+#下载qv2ray
 mkdir /home/hj/download
 wget https://github.com/Qv2ray/Qv2ray/releases/download/v2.5.0/Qv2ray.v2.5.0.linux-x64.AppImage -P /home/hj/download/
 
