@@ -4,9 +4,10 @@
 apt-get update
 apt-get dist-upgrade -y
 apt autoremove -y
-apt-get install  -y language-pack-zh-hans gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra hardinfo
-apt-get install  -y indicator-multiload
+apt-get install  -y language-pack-zh-hans gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra hardinfo indicator-multiload cmatirx
 apt --fix-broken install
+
+
 
 #空格的正则表达式为"\ "
 #设定网络容忍度
