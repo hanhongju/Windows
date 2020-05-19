@@ -11,6 +11,14 @@ sed    -i    "s/lcp-echo-failure\ 4/lcp-echo-failure\ 15/g"       /etc/ppp/optio
 #禁用wifi电源节省管理
 sed    -i    "s/wifi.powersave\ =\ 3/wifi.powersave\ =\ 2/g"       /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
 
+#禁用ipv6
+echo   "net.ipv6.conf.all.disable_ipv6 = 1"            >>   /etc/sysctl.conf
+echo   "net.ipv6.conf.default.disable_ipv6 = 1"        >>   /etc/sysctl.conf
+echo   "net.ipv6.conf.lo.disable_ipv6 = 1"             >>   /etc/sysctl.conf
+sysctl -p
+
+
+
 
 #修改swap分区大小 
 free -h
