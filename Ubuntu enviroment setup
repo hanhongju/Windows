@@ -10,16 +10,13 @@ apt --fix-broken install
 sed    -i    "s/lcp-echo-failure\ 4/lcp-echo-failure\ 15/g"       /etc/ppp/options
 #禁用wifi电源节省管理
 sed    -i    "s/wifi.powersave\ =\ 3/wifi.powersave\ =\ 2/g"       /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
-
+#删除dhcp服务器ipv6功能
+sed    -i    "s/dhcp6.name-servers,\ dhcp6.domain-search,\ dhcp6.fqdn,\ dhcp6.sntp-servers,//g"      /etc/dhcp/dhclient.conf
 #禁用ipv6
 echo   "net.ipv6.conf.all.disable_ipv6 = 1"            >>   /etc/sysctl.conf
 echo   "net.ipv6.conf.default.disable_ipv6 = 1"        >>   /etc/sysctl.conf
 echo   "net.ipv6.conf.lo.disable_ipv6 = 1"             >>   /etc/sysctl.conf
 sysctl -p
-#删除dhcp ipv6服务器
-
-sed    -i    "s/dhcp6.name-servers,\ dhcp6.domain-search,\ dhcp6.fqdn,\ dhcp6.sntp-servers,//g"      /etc/dhcp/dhclient.conf
-
 
 
 
