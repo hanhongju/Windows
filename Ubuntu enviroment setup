@@ -38,4 +38,4 @@ sed -i     "s/swapfile/myexchange/g"       /etc/fstab
 rm -f /swapfile
 free -h
 #重启
-shutdown -r now
+
