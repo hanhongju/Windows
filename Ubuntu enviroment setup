@@ -3,7 +3,7 @@
 #Ubuntu新系统更新软件和语言包
 apt-get update
 apt-get -y upgrade
-apt-get install  -y language-pack-zh-hans gcc make perl curl unzip vim axel
+apt-get install  -y language-pack-zh-hans gcc make perl curl unzip vim axel ffmpeg
 apt --fix-broken install
 
 下载qv2ray
