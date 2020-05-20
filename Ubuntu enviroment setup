@@ -4,7 +4,7 @@
 apt update
 apt full-upgrade -y
 apt autoremove -y
-apt install  -y --fix-broken language-pack-zh-hans gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra hardinfo indicator-multiload
+apt install  -y --fix-broken gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra hardinfo
 
 
 
