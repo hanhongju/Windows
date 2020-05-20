@@ -1,7 +1,25 @@
-#MineCraft 基岩版服务器搭建脚本@Ubuntu18
-sudo su
+#Minecraft基岩版服务器架设@Debian 9
+#更换源为阿里
+mv      /etc/apt/sources.list      /etc/apt/sources.list.bak
+echo  "
+
+deb http://mirrors.aliyun.com/debian/ buster main non-free contrib
+deb-src http://mirrors.aliyun.com/debian/ buster main non-free contrib
+deb http://mirrors.aliyun.com/debian-security buster/updates main
+deb-src http://mirrors.aliyun.com/debian-security buster/updates main
+deb http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib
+deb-src http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib
+deb http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib
+deb-src http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib
+
+"   >    /etc/apt/sources.list
+
+
 #安装常用软件包
-apt-get install -y wget unzip zip libcurl4-openssl-dev
+apt update
+apt full-upgrade     -y
+apt autoremove     -y
+apt install    -y    wget unzip zip libcurl4-openssl-dev openssl gcc g++
 #新建文件夹
 mkdir /home/mcserver/
 chmod 777 -R   /home/
@@ -15,6 +33,10 @@ cd /home/mcserver/
 (LD_LIBRARY_PATH=. ./bedrock_server&)
 #关闭shell，连接服务器，开玩
 
+
+
+
+
 #到新服务器，上传备份文件至/home/，替换原mc/worlds/文件夹下文件
 chmod 777 -R   /home/
 rm -rf /home/mcserver/worlds/
@@ -23,6 +45,8 @@ unzip   -o  /home/worlds.zip    -d   /home/mcserver/worlds/
 #启动服务器，开玩
 #win10版MC本地数据库文件在：
 #C:\Users\hongju\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\minecraftWorlds
+
+
 
 
 #关闭服务器
