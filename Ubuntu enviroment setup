@@ -1,11 +1,11 @@
 #Ubuntu新系统环境设置
 #打开/etc/apt/sources.list，更换为阿里源
 #Ubuntu新系统更新软件和语言包
-apt-get update
-apt-get dist-upgrade -y
+apt update
+apt full-upgrade -y
 apt autoremove -y
-apt-get install  -y language-pack-zh-hans gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra hardinfo indicator-multiload cmatirx
-apt --fix-broken install
+apt install  -y --fix-broken language-pack-zh-hans gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra hardinfo indicator-multiload
+
 
 
 
