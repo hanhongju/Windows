@@ -6,7 +6,8 @@ apt update
 apt full-upgrade -y
 apt autoremove -y
 apt install  -y --fix-broken gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra hardinfo
-
+#卸载tint
+pkill tint2 && apt purge tint2
 
 
 
