@@ -4,3 +4,13 @@ apt install -y r-base libjpeg62
 wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5042-amd64.deb
 dpkg -i rstudio*.deb
 rm *.deb
+
+
+
+#安装Finalshell
+rm -f finalshell_install_linux.sh
+wget www.hostbuf.com/downloads/finalshell_install_linux.sh
+chmod +x finalshell_install_linux.sh
+./finalshell_install_linux.sh
+
+
