@@ -1,4 +1,4 @@
-#Deepin新系统环境设置
+#新系统环境设置
 #打开/etc/apt/sources.list，更换为清华大学软件源
 #deb [by-hash=force] https://mirrors.tuna.tsinghua.edu.cn/deepin/ unstable main contrib non-free
 #新系统更新软件
