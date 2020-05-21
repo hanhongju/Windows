@@ -9,7 +9,9 @@ apt install      -y  --fix-broken   gcc make perl curl unzip vim axel ffmpeg net
 fc-cache -f -v
 #卸载tint
 pkill tint2 && apt purge tint2
-
+#安装谷歌输入法
+apt remove -y ibus
+apt install -y  fcitx-bin fcitx-table  fcitx-googlepinyin
 
 
 #空格的正则表达式为"\ "
