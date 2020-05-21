@@ -4,7 +4,8 @@
 #新系统更新软件
 apt update
 apt full-upgrade -y
-apt install -y --fix-broken   gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra hardinfo  ttf-mscorefonts-installer                           
+apt install -y  --fix-broken
+apt install -y  gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra hardinfo  ttf-mscorefonts-installer                           
 fc-cache -f -v
 #卸载tint
 pkill tint2 && apt purge tint2
