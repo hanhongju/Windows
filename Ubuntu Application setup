@@ -1,0 +1,5 @@
+#安装R studio
+apt install -y r-base libjpeg62
+wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5042-amd64.deb
+dpkg -i rstudio*.deb
+rm *.deb
