@@ -12,7 +12,7 @@ echo '
 {
     "server":["[::0]", "0.0.0.0"],
     "mode":"tcp_and_udp",
-    "server_port":8000,
+    "server_port":5000,
     "local_port":1080,
     "password":"fengkuang",
     "timeout":60,
