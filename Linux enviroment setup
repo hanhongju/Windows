@@ -3,9 +3,10 @@
 #deb [by-hash=force] https://mirrors.tuna.tsinghua.edu.cn/deepin/ unstable main contrib non-free
 #新系统更新软件
 apt update
-apt full-upgrade -y
-apt autoremove -y
-apt install  -y --fix-broken gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra hardinfo
+apt full-upgrade -y   --force-yes   --no-install-recommends
+apt autoremove   -y   --force-yes   --no-install-recommends
+apt install      -y   --force-yes   --no-install-recommends  --fix-broken   gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra hardinfo  ttf-mscorefonts-installer                           
+fc-cache -f -v
 #卸载tint
 pkill tint2 && apt purge tint2
 
