@@ -1,5 +1,6 @@
-#wordpress安装脚本@CentOS7
+#wordpress安装脚本@Debian 10
 #安装LNMP环境一键脚本，大约需要40分钟，php必须版本7以上
+apt install -y wget
 wget http://soft.vpser.net/lnmp/lnmp1.6beta.tar.gz -cO lnmp1.6beta.tar.gz && tar zxf lnmp1.6beta.tar.gz && cd lnmp1.6 && ./install.sh lnmp
 #创建网站一键脚本，这一步不要创建数据库，后面手动创建
 lnmp vhost add
