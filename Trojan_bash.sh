@@ -89,12 +89,13 @@ server {
 }
 '                  >            /etc/nginx/conf.d/default.conf
 
-#启用BBR
-bash -c 'echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf'
-bash -c 'echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf'
-#检查目前BBR启动状态
+#修改系统控制文件启用BBR
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
 sysctl -p
-#启动trojan和Nginx
+#检查目前BBR启动状态
+sysctl net.ipv4.tcp_congestion_control
+#启动Trojan和Nginx
 systemctl enable trojan
 systemctl enable nginx
 service   trojan   restart
