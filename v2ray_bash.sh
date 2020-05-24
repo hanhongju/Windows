@@ -96,6 +96,12 @@ proxy_buffer_size 8k;
 '     >      /etc/nginx/conf.d/default.conf
 #修改nginx配置文件
 sed -i     ''s/www.example.com/$site/g''       /etc/nginx/conf.d/default.conf
+#修改系统控制文件启用BBR
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+sysctl -p
+#检查目前BBR启动状态
+sysctl net.ipv4.tcp_congestion_control
 #启动V2Ray和Nginx：
 systemctl enable v2ray.service
 systemctl enable nginx.service
@@ -108,12 +114,3 @@ nginx -t
 netstat -tulpna | grep 'nginx\|ss-server'
 #至此V2Ray可正常工作
 
-
-
-
-#BBR加速控制拥堵
-#OpenVZ架构安装BBR加速@CentOS7系统：
-wget https://github.com/tcp-nanqinlang/lkl-rinetd/releases/download/1.1.0/tcp_nanqinlang-rinetd-centos-multiNIC.sh && bash tcp_nanqinlang-rinetd-centos-multiNIC.sh
-#KVM架构安装BBR加速：
-wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
-#升级内核后重启
