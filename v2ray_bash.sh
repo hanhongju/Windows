@@ -101,7 +101,7 @@ systemctl enable v2ray.service
 systemctl enable nginx.service
 service v2ray restart
 service nginx restart
-service  shadowsocks-libev restart
+service shadowsocks-libev restart
 #验证配置文件，显示监听端口
 /usr/bin/v2ray/v2ray -test -config=/etc/v2ray/config.json
 nginx -t
