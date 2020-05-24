@@ -95,7 +95,7 @@ echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
 sysctl -p
 #检查目前BBR启动状态
 sysctl net.ipv4.tcp_congestion_control
-#启动Trojan和Nginx
+#启动trojan和Nginx
 systemctl enable trojan
 systemctl enable nginx
 service   trojan   restart
