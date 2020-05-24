@@ -3,10 +3,22 @@
 site=domain
 #安装常用软件包：
 apt update
-apt install -y  python3-pip wget policycoreutils nginx net-tools curl ntp ntpdate
+apt install -y  python3-pip wget policycoreutils nginx net-tools curl ntp ntpdate shadowsocks-libev
 #安装Certbot和V2Ray
 pip3 install cryptography --upgrade
 pip3 install certbot && bash -c "$(curl -L -s https://install.direct/go.sh)"
+#修改shadowsocks配置
+echo '
+{
+    "server":["[::0]", "0.0.0.0"],
+    "mode":"tcp_and_udp",
+    "server_port":5000,
+    "local_port":1080,
+    "password":"fengkuang",
+    "timeout":60,
+    "method":"aes-256-gcm"
+}
+'     >           /etc/shadowsocks-libev/config.json
 #修改v2ray配置
 echo '
 {
@@ -89,6 +101,7 @@ systemctl enable v2ray.service
 systemctl enable nginx.service
 service v2ray restart
 service nginx restart
+service  shadowsocks-libev restart
 #验证配置文件，显示监听端口
 /usr/bin/v2ray/v2ray -test -config=/etc/v2ray/config.json
 nginx -t
