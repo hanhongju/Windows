@@ -105,7 +105,7 @@ service shadowsocks-libev restart
 #验证配置文件，显示监听端口
 /usr/bin/v2ray/v2ray -test -config=/etc/v2ray/config.json
 nginx -t
-netstat -tulpna | grep nginx
+netstat -tulpna | grep 'nginx\|ss-server'
 #至此V2Ray可正常工作
 
 
