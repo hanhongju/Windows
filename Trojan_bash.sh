@@ -103,3 +103,5 @@ service   nginx    restart
 #显示监听端口
 netstat -tulpna | grep 'nginx\|trojan'
 #至此Trojan可正常工作
+
+
