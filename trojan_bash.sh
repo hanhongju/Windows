@@ -10,9 +10,9 @@ pip3 install certbot
 #申请SSL证书
 service nginx stop
 certbot certonly   --standalone   --agree-tos   -n    -d    $site    -m   86606682@qq.com 
-#安装Trojan
+#安装trojan
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
-#修改Trojan配置文件
+#修改trojan配置文件
 echo '
 {
     "run_type": "server",
@@ -64,9 +64,9 @@ echo '
     }
 }
 '                 >                /usr/local/etc/trojan/config.json
-#替换Trojan配置文件网站地址
+#替换trojan配置文件网站地址
 sed -i     ''s/www.example.com/$site/g''       /usr/local/etc/trojan/config.json
-#赋予Trojan监听443端口能力
+#赋予trojan监听443端口能力
 setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/trojan
 #配置证书自动更新
 echo "0 0 1 */2 * service trojan stop; certbot renew; service trojan start;" | crontab
@@ -102,6 +102,6 @@ service   trojan   restart
 service   nginx    restart
 #显示监听端口
 netstat -tulpna | grep 'nginx\|trojan'
-#至此Trojan可正常工作
+#至此trojan可正常工作
 
 
