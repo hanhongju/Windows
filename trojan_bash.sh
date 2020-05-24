@@ -1,4 +1,4 @@
-#Trojan安装脚本@Debian 10
+#trojan安装脚本@Debian 10
 #定义网站地址
 site=domain 
 #关闭防火墙，安装常用软件
