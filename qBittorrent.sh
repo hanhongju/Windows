@@ -3,7 +3,7 @@ apt   install  -y   qbittorrent-nox
 #为qbittorrent-nox创建一个systemd服务文件
 adduser --system --group  bt
 echo   ' 
- [Unit]
+[Unit]
 Description=qBittorrent Command Line Client
 After=network.target
 [Service]
