@@ -96,6 +96,7 @@ proxy_buffer_size 8k;
 '     >      /etc/nginx/conf.d/default.conf
 #修改nginx配置文件
 sed -i     ''s/www.example.com/$site/g''       /etc/nginx/conf.d/default.conf
+service nginx restart
 #启动V2Ray和Nginx：
 systemctl enable v2ray.service
 systemctl enable nginx.service
