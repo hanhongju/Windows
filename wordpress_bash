@@ -27,7 +27,7 @@ mv     wordpress/*  .
 #删除wp压缩包
 rm    -rf    wordpress latest-zh_CN.tar.gz
 #下载探针
-wget     https://raw.githubusercontent.com/hanhongju/my_script/master/p.php              -P     /home/wordpress/
+wget     https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php              -O     /home/wordpress/p.php
 #创建nginx配置文件
 echo '
 server {
