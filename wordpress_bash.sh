@@ -67,12 +67,14 @@ systemctl enable nginx
 systemctl enable mariadb
 service nginx    restart
 service mariadb  restart
-
+#浏览器进入网站开始配置
+#设置-固定链接，改为朴素
 
 
 #转移网站->备份数据库，存放于wordpress.sql
 mysqldump  -u root -pfengkuang  wordpress > /home/wordpress.sql
 #将备份文件导入数据库
 mysql -u root -pfengkuang wordpress < /home/wordpress.sql
-#浏览器进入网站开始配置
-#设置-固定链接，改为朴素
+
+
+
