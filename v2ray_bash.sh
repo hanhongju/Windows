@@ -3,7 +3,7 @@
 site=domain
 #安装常用软件包：
 apt update
-apt install -y  python3-pip wget policycoreutils nginx net-tools curl ntp ntpdate shadowsocks-libev
+apt install -y  python3-pip wget policycoreutils nginx net-tools curl ntp ntpdate shadowsocks-libev php-fpm php-mysql 
 #安装Certbot和V2Ray
 pip3 install cryptography --upgrade
 pip3 install certbot && bash -c "$(curl -L -s https://install.direct/go.sh)"
@@ -44,7 +44,10 @@ certbot certonly --standalone --agree-tos -n  -d    $site    -m 86606682@qq.com
 echo "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;" | crontab
 #关闭SELinux
 setsebool -P httpd_can_network_connect 1 && setenforce 0
-#修改Nginx配置文件
+#下载探针
+mkdir    /home/website/
+wget     https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php    -O     /home/website/p.php
+#创建nginx配置文件
 echo '
 server{
 server_name www.example.com;
@@ -55,19 +58,13 @@ listen 443 ssl;
 listen [::]:443 ssl;
 ssl_certificate /etc/letsencrypt/live/www.example.com/fullchain.pem;  
 ssl_certificate_key /etc/letsencrypt/live/www.example.com/privkey.pem;   
-ssl_session_cache shared:SSL:10m;
-ssl_session_timeout  10m;
-add_header Strict-Transport-Security "max-age=31536000";
 resolver 8.8.8.8 8.8.4.4 valid=300s;
-resolver_timeout 10s;
-charset utf-8;
 if ( $scheme = http ){
 return 301 https://$server_name$request_uri;
 }
-if ($http_user_agent ~* (baiduspider|360spider|haosouspider|googlebot|soso|bing|sogou|yahoo|sohu-search|yodao|YoudaoBot|robozilla|msnbot|MJ12bot|NHN|Twiceler)) {
-return  403;
-}
-location /{
+root      /home/website/;
+index     index.php index.html index.htm;
+location /   {
 sub_filter   $proxy_name   $server_name;
 sub_filter_once off;
 proxy_set_header X-Real-IP $remote_addr;
@@ -84,13 +81,13 @@ proxy_http_version 1.1;
 proxy_set_header Upgrade $http_upgrade;
 proxy_set_header Connection "upgrade";
 proxy_set_header Host $host;
-sendfile on;
-tcp_nopush on;
-tcp_nodelay on;
-keepalive_requests 25600;
-keepalive_timeout 300 300;
-proxy_buffering off;
-proxy_buffer_size 8k;
+}
+location ~ \.php$ {
+fastcgi_pass  unix:/run/php/php7.3-fpm.sock;
+#php -v    遇到502 Bad Gateway时查看php版本，确认php-fpm.sock版本
+fastcgi_index  index.php;
+fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+include        fastcgi_params;
 }
 }
 '     >      /etc/nginx/conf.d/default.conf
