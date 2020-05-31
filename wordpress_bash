@@ -1,16 +1,18 @@
+#wordpress安装脚本@Debian 9
 #定义网站URL
-site=hanhongju.com 
+site=hanhongju.com
 #安装常用软件包、LNMP环境：
 apt   update
 apt   full-upgrade   -y
-apt   autoremove     -y
-apt   install        -y      python3-pip     net-tools        policycoreutils         mariadb-server    nginx      php-fpm    php-mysql 
+apt   autoremove   -y
+apt -y install lsb-release apt-transport-https ca-certificates
+apt   install      -y      python3-pip     net-tools        policycoreutils         mariadb-server    nginx      php-fpm    php-mysql 
 #安装Certbot
 pip3 install cryptography --upgrade
 pip3 install certbot
 #申请SSL证书
-service  nginx stop
-certbot  certonly    --standalone    --agree-tos    -n    -d     $site    -m    86606682@qq.com 
+service nginx stop
+certbot certonly    --standalone    --agree-tos    -n    -d     $site    -m    86606682@qq.com 
 #配置证书自动更新
 echo "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;" | crontab
 #关闭SELinux
@@ -57,13 +59,13 @@ service   nginx   restart
 #配置数据库
 mysql_secure_installation
 #修改数据库登录方式
-mysql  -uroot -pfengkuang   -e   "update mysql.user set plugin='mysql_native_password' where User='root'"
+mysql  -uroot -pfengkuang   -e "update mysql.user set plugin='mysql_native_password' where User='root'"
 #创建新数据库
 mysqladmin -u root -pfengkuang create wordpress
 #重启服务
 systemctl enable nginx 
 systemctl enable mariadb
-service nginx    restart
+service nginx       restart
 service mariadb  restart
 
 
