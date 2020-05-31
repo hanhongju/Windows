@@ -45,7 +45,6 @@ echo "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;" | cro
 #关闭SELinux
 setsebool -P httpd_can_network_connect 1 && setenforce 0
 #下载探针
-mkdir    /home/website/
 wget     https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php    -O     /home/website/p.php
 #创建nginx配置文件
 echo '
