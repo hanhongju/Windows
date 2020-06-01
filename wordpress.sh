@@ -1,4 +1,4 @@
-#wordpress安装脚本@Debian 9
+#wordpress安装脚本@Debian 10
 #定义网站URL
 site=hanhongju.com
 #安装常用软件包、LNMP环境：
@@ -47,10 +47,16 @@ return 301 https://$server_name$request_uri;
 root   /home/website/;
 index   index.php index.html index.htm;
 location ~ \.php$ {
-fastcgi_pass  unix:/run/php/php7.0-fpm.sock;     #php -v 遇到502 Bad Gateway时查看php版本，确认php-fpm.sock版本
+fastcgi_pass  unix:/run/php/php7.3-fpm.sock;     #php -v 遇到502 Bad Gateway时查看php版本，确认php-fpm.sock版本
 fastcgi_index  index.php;
 fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 include        fastcgi_params;
+}
+location /qbt/ {                       #反代qBittorrent网页客户端
+proxy_pass              http://127.0.0.1:8080/;
+proxy_http_version      1.1;
+proxy_set_header        X-Forwarded-Host        $http_host;
+http2_push_preload on;     #NGINX从1.13.9版本开始支持HTTP/2服务端推送
 }
 }
 '    >        /etc/nginx/sites-enabled/default
