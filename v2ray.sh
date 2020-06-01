@@ -97,7 +97,7 @@ location /qbt/ {                       #反代qBittorrent网页客户端
 proxy_pass              http://127.0.0.1:8080/;
 proxy_http_version      1.1;
 proxy_set_header        X-Forwarded-Host        $http_host;
-http2_push_preload on; # Enable http2 push
+http2_push_preload on;     #NGINX从1.13.9版本开始支持HTTP/2服务端推送
 }
 }
 '     >      /etc/nginx/conf.d/default.conf
