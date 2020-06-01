@@ -4,7 +4,6 @@ cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sed -i 's/stretch/buster/g' /etc/apt/sources.list 
 cat /etc/apt/sources.list
 apt update -y && apt upgrade -y && apt dist-upgrade -y
-reboot
 #查看当前系统版本
 lsb_release -a
 #查看当前nginx版本
