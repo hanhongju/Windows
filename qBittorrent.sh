@@ -2,6 +2,7 @@
 apt   install  -y   qbittorrent-nox
 #为qbittorrent-nox创建一个systemd服务文件
 adduser --system --group  bt
+#echo可以创建文件，但不能创建路径
 echo   ' 
 [Unit]
 Description=qBittorrent Command Line Client
