@@ -5,7 +5,7 @@ site=hanhongju.com
 apt   update
 apt   full-upgrade   -y
 apt   autoremove     -y
-apt   install        -y      python3-pip    net-tools    policycoreutils     mariadb-server      nginx      php-fpm      php-mysql 
+apt   install        -y      python3-pip  wget curl  net-tools    policycoreutils     mariadb-server      nginx      php-fpm      php-mysql 
 #安装Certbot
 pip3 install cryptography --upgrade
 pip3 install certbot
