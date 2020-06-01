@@ -1,4 +1,4 @@
-#wordpress安装脚本@Debian  9
+#wordpress安装脚本@Debian 9
 #定义网站URL
 site=hanhongju.com
 #安装常用软件包、LNMP环境：
