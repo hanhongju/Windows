@@ -52,7 +52,7 @@ fastcgi_index  index.php;
 fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 include        fastcgi_params;
 }
-location /qbt/ {                       #反代qBittorrent网页客户端
+location /bt/ {                       #反代qBittorrent网页客户端
 proxy_pass              http://127.0.0.1:8080/;
 proxy_http_version      1.1;
 proxy_set_header        X-Forwarded-Host        $http_host;
