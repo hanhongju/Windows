@@ -2,7 +2,7 @@
 apt update
 apt full-upgrade   -y
 apt autoremove     -y
-apt install -y wget  screen zip  default-jdk
+apt install -y wget unzip zip   screen   default-jdk
 #创建文件夹，搭建1.15.2版本服务器
 mkdir   /home/mcserver/
 cd      /home/mcserver/
