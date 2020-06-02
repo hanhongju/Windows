@@ -1,4 +1,4 @@
-#MineCraft JAVA版服务器搭建脚本@Debian 9
+#MineCraft JAVA版服务器搭建脚本@Debian 10
 apt update
 apt full-upgrade   -y
 apt autoremove     -y
