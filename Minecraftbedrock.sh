@@ -22,10 +22,10 @@ cd /home/mcserver/
 
 
 #到新服务器，上传备份文件至/home/，替换原mc/worlds/文件夹下文件
-chmod 777 -R   /home/
-rm -rf /home/mcserver/worlds/
-mkdir /home/mcserver/worlds/
-unzip   -o  /home/worlds.zip    -d   /home/mcserver/worlds/
+chmod  777  -R   /home/
+rm -rf   /home/mcserver/worlds/
+mkdir    /home/mcserver/worlds/
+unzip   -o   /home/worlds.zip     -d    /home/mcserver/worlds/
 #启动服务器，开玩
 #win10版MC本地数据库文件在：
 #C:\Users\hongju\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\minecraftWorlds
@@ -34,6 +34,5 @@ unzip   -o  /home/worlds.zip    -d   /home/mcserver/worlds/
 
 
 #关闭服务器
-#列出进程列表
-ps -aux
-#找到进程ID，并KILL之
+kill -s 9 `pgrep bedrock_server`
+
