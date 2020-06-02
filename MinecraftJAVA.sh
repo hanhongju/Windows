@@ -1,15 +1,17 @@
 #MineCraft JAVA版服务器搭建脚本@Debian 9
 apt update
+apt full-upgrade   -y
+apt autoremove     -y
 apt install -y wget  screen zip  default-jdk
 #创建文件夹，搭建1.15.2版本服务器
-mkdir /home/mcserver/
-cd    /home/mcserver/
-wget https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar    -O /home/mcserver/server.jar
+mkdir   /home/mcserver/
+cd      /home/mcserver/
+wget      https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar     -O   /home/mcserver/server.jar
 #启动服务器，更新最终许可文件
 java -Xms256m -Xmx2048m -jar /home/mcserver/server.jar nogui
 sed -i 's/eula=false/eula=true/g' eula.txt
 #打开虚拟终端mc，后台托管mc
-screen -S mc
+screen -S  mc
 java -Xms256m -Xmx2048m -jar /home/mcserver/server.jar nogui
 #关闭shell，连接服务器，开玩
 
