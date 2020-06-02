@@ -21,5 +21,22 @@ WantedBy=multi-user.target
 '        >          /etc/systemd/system/qbittorrent-nox.service
 systemctl daemon-reload
 systemctl enable qbittorrent-nox
+#配置nginx反代qbittorrent
+#删除nginx配置文件空白行
+sed -i    '/^[[:blank:]]*$/d'     /etc/nginx/sites-enabled/default.conf
+#删除nginx配置文件最后一行
+sed -i        '$d'                      /etc/nginx/sites-enabled/default.conf
+#追加配置
+echo  '
+location /bt/ {                       #反代qBittorrent网页客户端
+proxy_pass              http://127.0.0.1:8080/;
+proxy_http_version      1.1;
+proxy_set_header        X-Forwarded-Host        $http_host;
+http2_push_preload on;     #NGINX从1.13.9版本开始支持HTTP/2服务端推送
+}
+}
+'            >>               /etc/nginx/sites-enabled/default.conf
+#重启服务
+service  nginx              restart
 service  qbittorrent-nox    restart
-#前端登录地址domain:8080。用户名admin，密码adminadmin，默认下载目录/home/bt/Downloads/
+#用户名admin，密码adminadmin，默认下载目录/home/bt/Downloads/
