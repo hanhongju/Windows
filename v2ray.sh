@@ -75,7 +75,7 @@ fastcgi_index  index.php;
 fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 include        fastcgi_params;
 }
-location /   {
+location /   {          #设置反代网站
 sub_filter   $proxy_name   $server_name;
 sub_filter_once off;
 proxy_set_header X-Real-IP $remote_addr;
@@ -85,7 +85,7 @@ proxy_set_header Host $proxy_name;
 proxy_pass https://$proxy_name;
 proxy_set_header Accept-Encoding "";
 }
-location /f63lKAx{      
+location /f63lKAx   {      #设置v2ray转发
 proxy_pass http://127.0.0.1:8964;
 proxy_redirect off;
 proxy_http_version 1.1;
