@@ -1,25 +1,9 @@
-#Minecraft基岩版服务器架设@Debian 9
-#更换源为阿里
-mv      /etc/apt/sources.list      /etc/apt/sources.list.bak
-echo  "
-
-deb http://mirrors.aliyun.com/debian/ buster main non-free contrib
-deb-src http://mirrors.aliyun.com/debian/ buster main non-free contrib
-deb http://mirrors.aliyun.com/debian-security buster/updates main
-deb-src http://mirrors.aliyun.com/debian-security buster/updates main
-deb http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib
-deb-src http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib
-deb http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib
-deb-src http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib
-
-"   >    /etc/apt/sources.list
-
-
+#Minecraft基岩版服务器架设@Debian 10
 #安装常用软件包
 apt update
 apt full-upgrade   -y
 apt autoremove     -y
-apt install        -y   wget unzip zip libcurl4-openssl-dev openssl gcc g++
+apt install        -y   wget unzip zip libcurl4-openssl-dev
 #新建文件夹
 mkdir /home/mcserver/
 chmod 777 -R   /home/
