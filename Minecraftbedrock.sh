@@ -18,7 +18,8 @@ cd /home/mcserver/
 #关闭shell，连接服务器，开玩
 
 
-
+#关闭服务器
+kill -s 9 `pgrep bedrock_server`
 
 
 #到新服务器，上传备份文件至/home/，替换原mc/worlds/文件夹下文件
@@ -33,6 +34,5 @@ unzip   -o   /home/worlds.zip     -d    /home/mcserver/worlds/
 
 
 
-#关闭服务器
-kill -s 9 `pgrep bedrock_server`
+
 
