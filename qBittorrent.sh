@@ -25,7 +25,7 @@ systemctl enable qbittorrent-nox
 #删除nginx配置文件空白行
 sed -i    '/^[[:blank:]]*$/d'     /etc/nginx/sites-enabled/default.conf
 #删除nginx配置文件最后一行
-sed -i        '$d'                      /etc/nginx/sites-enabled/default.conf
+sed -i        '$d'                /etc/nginx/sites-enabled/default.conf
 #追加配置
 echo  '
 location /bt/ {                       #反代qBittorrent网页客户端
