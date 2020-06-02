@@ -100,9 +100,9 @@ proxy_set_header        X-Forwarded-Host        $http_host;
 http2_push_preload on;     #NGINX从1.13.9版本开始支持HTTP/2服务端推送
 }
 }
-'     >      /etc/nginx/conf.d/default.conf
+'     >      /etc/nginx/sites-enabled/default.conf
 #修改nginx配置文件
-sed -i     ''s/www.example.com/$site/g''       /etc/nginx/conf.d/default.conf
+sed -i     ''s/www.example.com/$site/g''       /etc/nginx/sites-enabled/default.conf
 service nginx restart
 #启动V2Ray和Nginx：
 systemctl enable v2ray.service
