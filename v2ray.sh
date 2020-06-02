@@ -68,6 +68,12 @@ return 301 https://$server_name$request_uri;
 }
 root      /home/website/;
 index     index.php index.html index.htm;
+location ~ \.php$ {
+fastcgi_pass  unix:/run/php/php7.3-fpm.sock;          #php -v 遇到502 Bad Gateway时查看php版本，确认php-fpm.sock版本
+fastcgi_index  index.php;
+fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+include        fastcgi_params;
+}
 location /   {
 sub_filter   $proxy_name   $server_name;
 sub_filter_once off;
@@ -85,12 +91,6 @@ proxy_http_version 1.1;
 proxy_set_header Upgrade $http_upgrade;
 proxy_set_header Connection "upgrade";
 proxy_set_header Host $host;
-}
-location ~ \.php$ {
-fastcgi_pass  unix:/run/php/php7.3-fpm.sock;          #php -v 遇到502 Bad Gateway时查看php版本，确认php-fpm.sock版本
-fastcgi_index  index.php;
-fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-include        fastcgi_params;
 }
 }
 '     >      /etc/nginx/sites-enabled/default.conf
