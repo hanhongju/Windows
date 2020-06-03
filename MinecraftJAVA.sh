@@ -7,6 +7,7 @@ apt install        -y     wget   unzip   zip    screen   default-jdk
 mkdir     /home/mcserver/
 wget      https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar     -O   /home/mcserver/server.jar
 #启动服务器，更新最终许可文件
+cd     /home/mcserver/
 java   -jar    /home/mcserver/server.jar    nogui
 sed    -i     's/eula=false/eula=true/g'   /home/mcserver/eula.txt
 #打开虚拟终端mc，后台托管mc
