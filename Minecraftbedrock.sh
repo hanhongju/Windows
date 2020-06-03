@@ -22,11 +22,13 @@ cd /home/mcserver/
 kill -s 9 `pgrep bedrock_server`
 
 
-#到新服务器，上传备份文件至/home/，替换原mc/worlds/文件夹下文件
-chmod  777  -R   /home/
-rm -rf   /home/mcserver/worlds/
-mkdir    /home/mcserver/worlds/
-unzip   -o   /home/worlds.zip     -d    /home/mcserver/worlds/
+#备份服务器，将worlds目录压缩为worlds.zip文件
+cd         /home/mcserver/worlds
+zip   -r   /home/worlds.zip      ./*   
+#到新服务器，上传备份文件至/home/，创建mc文件夹,解压
+rm -rf     /home/mcserver/worlds
+mkdir      /home/mcserver/worlds
+unzip   -o   /home/worlds.zip     -d     /home/mcserver/worlds
 #启动服务器，开玩
 #win10版MC本地数据库文件在：
 #C:\Users\hongju\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\minecraftWorlds
