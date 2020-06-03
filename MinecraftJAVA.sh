@@ -12,6 +12,7 @@ java   -jar    /home/mcserver/server.jar    nogui
 sed    -i     's/eula=false/eula=true/g'   /home/mcserver/eula.txt
 #打开虚拟终端mc，后台托管mc
 screen   -S    mc
+cd     /home/mcserver/
 java   -jar    /home/mcserver/server.jar    nogui
 #关闭shell，连接服务器，开玩
 
@@ -22,11 +23,11 @@ screen -X -S mc quit
 screen -ls
 
 
-#备份服务器，将world目录压缩为world.zip文件
-cd         /home/mcserver/world   
-zip   -r   /home/world.zip      ./*   
+#备份服务器，将mcserver目录压缩为mcserver.zip文件
+cd         /home/mcserver  
+zip   -r   /home/mcserver.zip      ./*   
 #到新服务器，上传备份文件至/home/，创建mc文件夹,解压
-rm -rf     /home/mcserver/world/
-mkdir      /home/mcserver/world/
-unzip   -o   /home/world.zip     -d     /home/mcserver/world
+rm -rf     /home/mcserver/
+mkdir      /home/mcserver/
+unzip   -o   /home/mcserver.zip     -d     /home/mcserver/
 #打开服务器终端，开玩
