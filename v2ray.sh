@@ -5,22 +5,10 @@ site=domain
 apt update
 apt full-upgrade  -y
 apt autoremove    -y
-apt install       -y  python3-pip wget curl net-tools policycoreutils nginx  ntp ntpdate shadowsocks-libev php-fpm php-mysql 
+apt install       -y  python3-pip wget curl net-tools policycoreutils nginx  ntp ntpdate  php-fpm php-mysql 
 #安装Certbot和V2Ray
 pip3 install cryptography --upgrade
 pip3 install certbot && bash -c "$(curl -L -s https://install.direct/go.sh)"
-#修改shadowsocks配置
-echo '
-{
-    "server":["[::0]", "0.0.0.0"],
-    "mode":"tcp_and_udp",
-    "server_port":3389,
-    "local_port":1080,
-    "password":"fengkuang",
-    "timeout":60,
-    "method":"aes-256-gcm"
-}
-'     >           /etc/shadowsocks-libev/config.json
 #修改v2ray配置
 echo '
 {
@@ -103,7 +91,6 @@ systemctl enable v2ray.service
 systemctl enable nginx.service
 service v2ray restart
 service nginx restart
-service shadowsocks-libev restart
 #修改系统控制文件启用BBR
 echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
@@ -113,7 +100,7 @@ sysctl net.ipv4.tcp_congestion_control
 #验证配置文件，显示监听端口
 /usr/bin/v2ray/v2ray -test -config=/etc/v2ray/config.json
 nginx -t
-netstat -tulpna | grep 'nginx\|ss-server'
+netstat -tulpna | grep 'nginx'
 #至此V2Ray可正常工作
 
 
