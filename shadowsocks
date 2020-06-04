@@ -1,8 +1,7 @@
 #shadowsocks安装脚本@Debian 10
 #安装shadowsocks
-apt update
-apt install  -y   shadowsocks-libev
-
+apt  update
+apt  install  -y    shadowsocks-libev
 #创建shadowsocks配置文件
 echo '
 {
