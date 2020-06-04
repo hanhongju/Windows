@@ -11,15 +11,15 @@ cd     /home/mcserver/
 java   -jar    /home/mcserver/server.jar    nogui
 sed    -i     's/eula=false/eula=true/g'   /home/mcserver/eula.txt
 #打开虚拟终端mc，后台托管mc
-screen   -S    mc
+screen   -R    mc
 cd     /home/mcserver/
 java   -jar    /home/mcserver/server.jar    nogui
 #关闭shell，连接服务器，开玩
 
 
-#关闭虚拟终端mc和服务器
+#关闭所有screen终端和服务器
 screen -ls
-screen -X -S mc quit
+pkill screen
 screen -ls
 
 
