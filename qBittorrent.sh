@@ -22,6 +22,7 @@ WantedBy=multi-user.target
 systemctl daemon-reload
 systemctl enable qbittorrent-nox
 #配置nginx反代qbittorrent
+<<BLOCK
 #删除nginx配置文件空白行
 sed -i    '/^[[:blank:]]*$/d'     /etc/nginx/sites-enabled/default.conf
 #删除nginx配置文件最后一行
@@ -36,6 +37,7 @@ http2_push_preload on;     #NGINX从1.13.9版本开始支持HTTP/2服务端推�
 }
 }
 '            >>               /etc/nginx/sites-enabled/default.conf
+BLOCK
 #重启服务
 service  nginx              restart
 service  qbittorrent-nox    restart
