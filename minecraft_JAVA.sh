@@ -5,7 +5,7 @@ apt autoremove     -y
 apt install        -y     wget   unzip   zip    screen   default-jdk
 #创建文件夹，搭建1.15.2版本服务器
 mkdir     /home/mcserver/
-wget      https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar     -O   /home/mcserver/server.jar
+wget   -c   https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar     -O   /home/mcserver/server.jar
 #启动服务器，更新最终许可文件
 cd     /home/mcserver/
 java   -jar    /home/mcserver/server.jar    nogui
