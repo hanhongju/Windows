@@ -12,7 +12,7 @@ mv      -f       /home/v2ray/geoip.dat                  /usr/bin/v2ray/geoip.dat
 mv      -f       /home/v2ray/geosite.dat                /usr/bin/v2ray/geosite.dat
 mv      -f       /home/v2ray/config.json                /etc/v2ray/config.json
 mv      -f       /home/v2ray/systemd/v2ray.service      /etc/systemd/system/v2ray.service
-mv      -f       /home/config.json                      /etc/v2ray/config.json
+cp      -f       /home/config.json                      /etc/v2ray/config.json
 rm      -rf      /home/v2ray
 systemctl daemon-reload
 systemctl enable v2ray
