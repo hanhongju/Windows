@@ -58,7 +58,7 @@ free -h
 #安装R studio
 apt install -y r-base libjpeg62
 #到此网址查询Rstudio最新版本 https://rstudio.com/products/rstudio/download/
-wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5042-amd64.deb
+wget   -c   https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5042-amd64.deb
 dpkg -i rstudio*.deb
 rm *.deb
 
@@ -66,7 +66,7 @@ rm *.deb
 
 #安装Finalshell
 rm -f finalshell_install_linux.sh
-wget www.hostbuf.com/downloads/finalshell_install_linux.sh
+wget   -c   www.hostbuf.com/downloads/finalshell_install_linux.sh
 chmod +x finalshell_install_linux.sh
 ./finalshell_install_linux.sh
 
