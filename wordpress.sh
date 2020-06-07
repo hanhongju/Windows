@@ -20,7 +20,7 @@ echo "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;" | cro
 setsebool -P httpd_can_network_connect 1 && setenforce 0
 #下载wordpress至网站根目录
 # wget命令参数   -O不会创建目录    -P可以创建深层次目录
-wget    https://cn.wordpress.org/latest-zh_CN.tar.gz      -P     /home/website/
+wget  -c   https://cn.wordpress.org/latest-zh_CN.tar.gz      -P     /home/website/
 chmod   777   -R   /home/website/
 #解压缩wordpress安装包`
 cd   /home/website   
@@ -30,7 +30,7 @@ mv     wordpress/*  .
 #删除wp压缩包
 rm    -rf     wordpress     latest-zh_CN.tar.gz
 #下载探针
-wget     https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php     -O     /home/website/p.php
+wget   -c   https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php     -O     /home/website/p.php
 #创建nginx配置文件
 echo '
 server {
