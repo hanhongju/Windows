@@ -8,7 +8,7 @@ apt install        -y   wget unzip zip libcurl4-openssl-dev
 mkdir /home/mcserver/
 chmod 777 -R   /home/
 #下载基岩版客户端
-wget https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.60.5.zip    -O  /home/mcserver.zip
+wget   -c   https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.60.5.zip    -O  /home/mcserver.zip
 #若不能直接下载，手动上传安装文件至/home/
 mv -f  /home/bedrock-server-1.14.60.5.zip     /home/mcserver.zip
 unzip   -o   /home/mcserver.zip    -d   /home/mcserver/
