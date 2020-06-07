@@ -1,9 +1,9 @@
 #v2rayclient安装脚本@Debian 10
 #下载v2ray，如不能联网，手动下载v2ray至/home目录
-wget    -c     https://github.com/v2ray/v2ray-core/releases/download/v4.23.4/v2ray-linux-64.zip     -O     /home/v2ray-linux-64
+wget    -c     https://github.com/v2ray/v2ray-core/releases/download/v4.23.4/v2ray-linux-64.zip     -O     /home/v2ray-linux-64.zip
 #解压移动v2ray文件至正确位置
 mkdir    /home/v2ray
-unzip   -o       /home/v2ray-linux-64       -d          /home/v2ray
+unzip   -o       /home/v2ray-linux-64.zip       -d          /home/v2ray
 mkdir    /usr/bin/v2ray/
 mkdir    /etc/v2ray/
 mv      -f       /home/v2ray/v2ray                      /usr/bin/v2ray/v2ray
