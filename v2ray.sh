@@ -39,7 +39,7 @@ setsebool -P httpd_can_network_connect 1 && setenforce 0
 #下载探针
 # wget命令参数   -O不会创建目录    -P可以创建深层次目录
 mkdir    /home/website
-wget     https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php      -O     /home/website/p.php
+wget  -c   https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php      -O     /home/website/p.php
 #创建nginx配置文件
 echo '
 server{
