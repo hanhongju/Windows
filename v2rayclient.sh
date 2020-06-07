@@ -19,8 +19,14 @@ systemctl enable v2ray
 service   v2ray   restart
 netstat -tulpna | grep 'v2ray'
 
+
+
+
 #设置终端代理
 export    ALL_PROXY=socks5://127.0.0.1:8000
+#测试外网连接
+curl    www.google.com
+
 
 
 
