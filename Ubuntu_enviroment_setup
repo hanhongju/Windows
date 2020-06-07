@@ -2,17 +2,17 @@
 #打开/etc/apt/sources.list，更换为清华大学软件源
 #deb [by-hash=force] https://mirrors.tuna.tsinghua.edu.cn/deepin/ unstable main contrib non-free
 #新系统更新软件
-apt update
-apt install -y  --fix-broken
-apt full-upgrade -y
-apt install -y  gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra hardinfo  ttf-mscorefonts-installer  ubuntu-restricted-extras                              
-fc-cache -f -v
+apt   update
+apt   install    -y   --fix-broken
+apt   full-upgrade   -y
+apt   install    -y   gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra hardinfo  ttf-mscorefonts-installer  ubuntu-restricted-extras
+apt   autoremove -y
 #卸载tint
-pkill tint2 && apt purge tint2
+pkill    tint2   &&   apt   purge   tint2
 #安装谷歌输入法
-apt remove -y  ibus
-apt install -y  fcitx-bin fcitx-table  fcitx-googlepinyin
-apt autoremove -y
+apt   remove     -y  ibus
+apt   install    -y  fcitx-bin fcitx-table  fcitx-googlepinyin
+
 
 
 
