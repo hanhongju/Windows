@@ -13,12 +13,14 @@ mv      -f       /home/v2ray/v2ctl                      /usr/bin/v2ray/v2ctl
 mv      -f       /home/v2ray/geoip.dat                  /usr/bin/v2ray/geoip.dat
 mv      -f       /home/v2ray/geosite.dat                /usr/bin/v2ray/geosite.dat
 mv      -f       /home/v2ray/config.json                /etc/v2ray/config.json
+#配置v2ray服务
 mv      -f       /home/v2ray/systemd/v2ray.service      /etc/systemd/system/v2ray.service
+systemctl   daemon-reload
+systemctl   enable v2ray
+#导入服务器信息，重启
 cp      -f       /home/hj/config.json                   /home/config.json
 cp      -f       /home/config.json                      /etc/v2ray/config.json
 rm      -rf      /home/v2ray
-systemctl daemon-reload
-systemctl enable v2ray
 service   v2ray   restart
 netstat -tulpna | grep 'v2ray'
 
