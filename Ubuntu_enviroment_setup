@@ -7,16 +7,6 @@ apt   install    -y   --fix-broken
 apt   full-upgrade   -y
 apt   install    -y   gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra hardinfo  ttf-mscorefonts-installer  ubuntu-restricted-extras
 apt   autoremove -y
-#卸载tint
-pkill    tint2   &&   apt   purge   tint2
-#安装谷歌输入法
-apt   remove     -y  ibus
-apt   install    -y  fcitx-bin fcitx-table  fcitx-googlepinyin
-#重新启动以应用设置
-
-
-
-
 #空格的正则表达式为"\ "
 #设定网络容忍度
 sed    -i    "s/lcp-echo-failure\ 4/lcp-echo-failure\ 15/g"       /etc/ppp/options
@@ -29,9 +19,6 @@ echo   "net.ipv6.conf.all.disable_ipv6 = 1"            >>   /etc/sysctl.conf
 echo   "net.ipv6.conf.default.disable_ipv6 = 1"        >>   /etc/sysctl.conf
 echo   "net.ipv6.conf.lo.disable_ipv6 = 1"             >>   /etc/sysctl.conf
 sysctl -p
-
-
-
 #修改swap分区大小 
 free -h
 #创建一个新的12G的swap文件
@@ -48,7 +35,13 @@ sed -i     "s/swapfile/myexchange/g"       /etc/fstab
 #删掉旧的swap文件
 rm -f /swapfile
 free -h
-#重启
+
+#卸载tint和自带输入法
+pkill    tint2   &&   apt   purge   tint2
+apt   remove     -y  ibus
+#安装谷歌输入法
+apt   install    -y  fcitx-bin fcitx-table  fcitx-googlepinyin
+#重新启动以应用设置
 
 
 
