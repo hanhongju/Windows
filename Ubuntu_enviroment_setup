@@ -5,7 +5,7 @@
 apt   update
 apt   install    -y   --fix-broken
 apt   full-upgrade   -y
-apt   install    -y   gcc make perl curl unzip vim axel ffmpeg net-tools libavcodec-extra hardinfo  ttf-mscorefonts-installer  ubuntu-restricted-extras
+apt   install    -y   gcc make perl curl unzip vim axel ffmpeg net-tools  qbittorrent libavcodec-extra hardinfo  ttf-mscorefonts-installer  ubuntu-restricted-extras
 apt   autoremove -y
 
 #空格的正则表达式为"\ "
