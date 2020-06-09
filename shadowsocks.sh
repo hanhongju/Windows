@@ -12,7 +12,7 @@ echo '
     "password":"fengkuang",
     "timeout":60,
     "method":"aes-256-gcm"
-    "ipv6_first": true
+
 }
 '     >           /etc/shadowsocks-libev/config.json
 #重启服务
