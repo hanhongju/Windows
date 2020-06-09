@@ -1,15 +1,15 @@
 #Debian 9 升级为 Debian 10
-apt update
-apt full-upgrade  -y
-cp /etc/apt/sources.list /etc/apt/sources.list.bak
-sed -i 's/stretch/buster/g' /etc/apt/sources.list 
-apt update
-apt full-upgrade  -y
-apt autoremove    -y
+apt   update
+apt   full-upgrade    -y
+cp            /etc/apt/sources.list    /etc/apt/sources.list.bak
+sed   -i    's/stretch/buster/g'      /etc/apt/sources.list 
+apt   update
+apt   full-upgrade    -y
+apt   autoremove      -y
 #查看当前系统版本
-lsb_release -a
+lsb_release   -a
 #查看当前nginx版本
-curl -I 127.0.0.1
+curl   -I    127.0.0.1
 #查看当前php版本
-php -v
+php    -v
 #无需重启，软件也跟随升级到最新版本
