@@ -12,4 +12,4 @@ lsb_release   -a
 curl   -I    127.0.0.1
 #查看当前php版本
 php    -v
-#无需重启，软件也跟随升级到最新版本
+#reboot重启各软件，运行新版本
