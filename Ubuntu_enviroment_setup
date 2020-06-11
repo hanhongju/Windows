@@ -57,15 +57,15 @@ curl    google.com
 #安装R studio
 apt install -y r-base libjpeg62
 #到此网址查询Rstudio最新版本 https://rstudio.com/products/rstudio/download/
-wget   -c   https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5042-amd64.deb
-dpkg -i rstudio*.deb
-rm *.deb
+wget     -c      https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5042-amd64.deb    -P      /home/downloads/
+dpkg     -i      /home/downloads/rstudio*.deb
+
 
 
 
 #安装Finalshell
 rm -f finalshell_install_linux.sh
-wget   -c   www.hostbuf.com/downloads/finalshell_install_linux.sh
+wget   -c   www.hostbuf.com/downloads/finalshell_install_linux.sh            
 chmod +x finalshell_install_linux.sh
 ./finalshell_install_linux.sh
 
