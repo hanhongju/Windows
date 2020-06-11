@@ -1,6 +1,21 @@
 #新系统环境设置
-#打开/etc/apt/sources.list，更换为清华大学软件源
-#deb [by-hash=force] https://mirrors.tuna.tsinghua.edu.cn/deepin/ unstable main contrib non-free
+#/etc/apt/sources.list，更换软件源
+<<BLOCK
+cp    -f     /etc/apt/sources.list         /etc/apt/sources.list_backup
+echo '
+#  阿里源
+deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+'         >             /etc/apt/sources.list
+BLOCK
 #新系统更新软件
 apt   update
 apt   install    -y   --fix-broken
