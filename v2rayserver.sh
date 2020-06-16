@@ -50,8 +50,8 @@ listen [::]:80;
 listen 443 ssl;
 listen [::]:443 ssl;
 resolver 8.8.8.8 8.8.4.4 valid=300s;
-ssl_certificate       /etc/letsencrypt/live/fullchain.pem;  
-ssl_certificate_key   /etc/letsencrypt/live/privkey.pem;   
+ssl_certificate       /etc/letsencrypt/live/www.example.com/fullchain.pem;  
+ssl_certificate_key   /etc/letsencrypt/live/www.example.com/privkey.pem;   
 if ( $scheme = http ){
 return 301 https://$server_name$request_uri;
 }
