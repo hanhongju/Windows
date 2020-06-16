@@ -60,11 +60,6 @@ apt   remove     -y  ibus
 apt   install    -y  fcitx-bin fcitx-table  fcitx-googlepinyin
 #重新启动以应用设置
 
-#设置终端代理
-export    ALL_PROXY=socks5://127.0.0.1:8000
-#测试外网连接
-curl    google.com
-
 
 
 
