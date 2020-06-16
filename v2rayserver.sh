@@ -28,8 +28,8 @@ echo '
 }
 '     >          /etc/v2ray/config.json
 #申请SSL证书
-service nginx stop
-certbot certonly --standalone --agree-tos -n  -d    $site    -m 86606682@qq.com 
+service     nginx    stop
+certbot     certonly    --standalone    --agree-tos   -n     -d    $site     -m    86606682@qq.com 
 rm   -f     /etc/letsencrypt/live/fullchain.pem              /etc/letsencrypt/live/privkey.pem
 ln   -s     /etc/letsencrypt/live/$site/fullchain.pem        /etc/letsencrypt/live/fullchain.pem
 ln   -s     /etc/letsencrypt/live/$site/privkey.pem          /etc/letsencrypt/live/privkey.pem
