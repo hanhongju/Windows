@@ -1,4 +1,4 @@
-#BestTrace4Linux 查看VPS的回程@Debian 10
+#BestTrace4Linux 查看VPS回程节点@Debian 10
 apt     install    -y     unzip zip wget
 wget    -c   https://github.com/hanhongju/my_script/raw/master/besttrace4linux.zip
 unzip   besttrace4linux.zip
