@@ -23,7 +23,7 @@ cp      -f       /home/config.json                      /etc/v2ray/config.json
 service    v2ray     restart     
 sleep 1s
 netstat -tulpna | grep 'v2ray'
-
+#回显v2ray监听端口
 
 
 #curl代理下载
