@@ -20,7 +20,8 @@ systemctl   enable      v2ray
 cp      -f       /home/hj/config.json                   /etc/v2ray/config.json
 cp      -f       /home/config.json                      /etc/v2ray/config.json
 #读取节点信息，重启
-systemctl   restart     v2ray
+service    v2ray     restart     
+sleep 1s
 netstat -tulpna | grep 'v2ray'
 
 
