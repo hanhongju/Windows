@@ -17,7 +17,7 @@ mv      -f       /home/v2ray/systemd/v2ray.service      /etc/systemd/system/v2ra
 systemctl   daemon-reload
 systemctl   enable      v2ray
 #导入节点信息文件
-cp      -f       /home/hj/config.json                   /etc/v2ray/config.json
+cp      -f       /home/hj/config.json                   /home/config.json
 cp      -f       /home/config.json                      /etc/v2ray/config.json
 #读取节点信息，重启
 service    v2ray     restart     
