@@ -10,10 +10,11 @@ apt   install        -y      python3-pip  wget curl  net-tools    policycoreutil
 pip3 install cryptography --upgrade
 pip3 install certbot
 #申请SSL证书
-service nginx stop
-certbot certonly    --standalone    --agree-tos    -n    -d     $site    -m    86606682@qq.com
-ln -s  /etc/letsencrypt/live/$site/fullchain.pem        /etc/letsencrypt/live/fullchain.pem
-ln -s  /etc/letsencrypt/live/$site/privkey.pem          /etc/letsencrypt/live/privkey.pem
+service     nginx    stop
+certbot     certonly    --standalone    --agree-tos   -n     -d    $site     -m    86606682@qq.com 
+rm   -f     /etc/letsencrypt/live/fullchain.pem              /etc/letsencrypt/live/privkey.pem
+ln   -s     /etc/letsencrypt/live/$site/fullchain.pem        /etc/letsencrypt/live/fullchain.pem
+ln   -s     /etc/letsencrypt/live/$site/privkey.pem          /etc/letsencrypt/live/privkey.pem
 #配置证书自动更新
 echo "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;" | crontab
 #关闭SELinux
