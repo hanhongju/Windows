@@ -2,7 +2,7 @@
 apt   update
 apt   full-upgrade   -y
 apt   autoremove     -y
-apt   install        -y    tar   screen
+apt   install        -y    tar wget unzip zip screen
 #wget   -c      https://github.com/syncthing/syncthing/releases/download/v1.6.1/syncthing-linux-amd64-v1.6.1.tar.gz       -O       /home/syncthing.tar.gz
 #安装文件
 mkdir     /home/sync/
