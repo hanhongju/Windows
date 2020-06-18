@@ -73,6 +73,29 @@ service mariadb  restart
 #设置-固定链接，改为朴素
 
 
+
+
+
+
+#开放数据库给外网连接
+#开放3306端口给外网
+sed      -i       ''s/127.0.0.1/\*/g''         /etc/mysql/mariadb.conf.d/50-server.cnf
+netstat    -an | grep 3306
+#登录数据库
+mysql -uroot -pfengkuang
+#添加外网连接数据库权限
+use mysql;
+grant all privileges on *.* to 'root'@'%' identified by 'fengkuang' with grant option;
+flush privileges;
+select user,host from user;
+exit;
+
+
+
+
+
+
+
 #转移网站->备份数据库，存放于wordpress.sql
 mysqldump  -u root -pfengkuang  wordpress > /home/wordpress.sql
 #将备份文件导入数据库
