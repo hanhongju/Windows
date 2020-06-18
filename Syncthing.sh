@@ -24,9 +24,10 @@ screen    -R     sync
 
 
 #关闭所有screen终端和服务器
+netstat -tulpna | grep 'syncthing'
 screen -ls
 pkill screen
-screen -ls
+
 
 
 
