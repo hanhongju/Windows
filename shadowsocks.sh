@@ -16,6 +16,7 @@ echo '
 '     >           /etc/shadowsocks-libev/config.json
 #重启服务
 service shadowsocks-libev restart
+sleep 1s
 netstat -tulpna | grep 'ss-server'
 #至此shadowsocks可正常工作
 
