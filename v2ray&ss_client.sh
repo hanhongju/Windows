@@ -28,6 +28,28 @@ netstat -tulpna | grep 'v2ray'
 #回显v2ray监听端口
 
 
+
+
+
+#shadowsocks安装脚本@Debian 10
+#安装shadowsocks
+apt      update
+apt      install     -y    shadowsocks-libev
+#screen中启动ss客户端
+screen     -R   ss
+ss-local   -p   3389   -l  8000   -k   fengkuang  -t   60   -m   aes-256-gcm   -s  <serverdomain>
+#关闭shell，启动软件，设置代理，连接
+
+#关闭shadowsocks
+netstat -tulpna | grep 'ss-local'
+screen         -ls
+pkill    screen    
+
+
+
+
+
+
 #curl代理下载
 curl    -x   socks5://127.0.0.1:8000    -O    -C -    <URL>
 
