@@ -21,7 +21,6 @@ netstat -tulpna | grep 'ss-server'
 #至此shadowsocks可正常工作
 
 
-
 #shadowsocks客户端使用脚本@Debian 10
 #安装shadowsocks
 apt      update
@@ -32,15 +31,9 @@ ss-local   -p   3389   -l  8000   -k   fengkuang  -t   60   -m   aes-256-gcm   -
 #关闭shell，启动软件，设置代理
 
 
-
 #关闭shadowsocks客户端
 netstat -tulpna | grep 'ss-local'
 screen         -ls
 pkill    screen    
-
-
-
-#curl代理下载
-curl    -x   socks5://127.0.0.1:8000    -O    -C -    <URL>
 
 
