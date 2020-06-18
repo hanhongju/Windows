@@ -1,4 +1,4 @@
-#v2rayserver安装脚本@Debian 10
+#v2ray安装脚本@Debian 10
 #定义网站地址
 site=domain
 #安装常用软件包：
