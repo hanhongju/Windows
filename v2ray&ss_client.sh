@@ -31,7 +31,7 @@ netstat -tulpna | grep 'v2ray'
 
 
 
-#shadowsocks安装脚本@Debian 10
+#shadowsocks-local使用脚本@Debian 10
 #安装shadowsocks
 apt      update
 apt      install     -y    shadowsocks-libev screen net-tools
