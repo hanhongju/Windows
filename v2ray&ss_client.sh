@@ -40,6 +40,9 @@ screen     -R   ss
 ss-local   -p   3389   -l  8000   -k   fengkuang  -t   60   -m   aes-256-gcm   -s  <serverdomain>
 #关闭shell，启动软件，设置代理，连接
 
+
+
+
 #关闭shadowsocks
 netstat -tulpna | grep 'ss-local'
 screen         -ls
