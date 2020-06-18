@@ -2,7 +2,7 @@
 #安装shadowsocks
 apt  update
 apt  install  -y    shadowsocks-libev
-#创建shadowsocks配置文件
+#创建shadowsocks-server配置文件
 echo '
 {
     "server":["[::0]", "0.0.0.0"],
