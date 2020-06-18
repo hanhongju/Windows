@@ -27,7 +27,7 @@ apt      update
 apt      install     -y    shadowsocks-libev screen net-tools
 #screen中启动ss客户端
 screen     -R   ss
-ss-local   -p   3389   -l  1080   -k   fengkuang  -t   60   -m   aes-256-gcm   -s  <serverdomain>
+ss-local   -p   3389   -l  8000   -k   fengkuang  -t   60   -m   aes-256-gcm   -s  <serverdomain>
 #关闭shell，启动软件，设置代理
 
 
