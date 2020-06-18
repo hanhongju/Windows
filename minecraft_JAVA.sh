@@ -18,9 +18,10 @@ java   -jar    /home/mcserver/server.jar    nogui
 
 
 #关闭所有screen终端和服务器
+netstat -tulpna | grep 'java'
 screen -ls
 pkill screen
-screen -ls
+
 
 
 #备份服务器，将mcserver目录压缩为mcserver.zip文件
