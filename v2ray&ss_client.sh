@@ -34,7 +34,7 @@ netstat -tulpna | grep 'v2ray'
 #shadowsocks安装脚本@Debian 10
 #安装shadowsocks
 apt      update
-apt      install     -y    shadowsocks-libev
+apt      install     -y    shadowsocks-libev screen net-tools
 #screen中启动ss客户端
 screen     -R   ss
 ss-local   -p   3389   -l  8000   -k   fengkuang  -t   60   -m   aes-256-gcm   -s  <serverdomain>
