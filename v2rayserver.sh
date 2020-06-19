@@ -26,7 +26,7 @@ echo '
         },
         "outbound": {"protocol": "freedom"}
 }
-'     >          /etc/v2ray/config.json
+'         >          /etc/v2ray/config.json
 #申请SSL证书
 service     nginx       stop
 certbot     certonly    --standalone    --agree-tos   -n     -d    $site     -m    86606682@qq.com 
