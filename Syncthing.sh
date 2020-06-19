@@ -13,11 +13,13 @@ cp        syncthing      /usr/bin/syncthing
 chmod     +x             /usr/bin/syncthing
 rm        -rf            /home/sync/
 #运行程序，生成配置文件
+screen    -R     sync
 /usr/bin/syncthing
-#Ctl+C退出服务程序
+#关闭shell，重新连接
 #修改配置文件
 sed       -i        's/127.0.0.1/0.0.0.0/g'       /root/.config/syncthing/config.xml
 #后台运行sync
+pkill     screen
 screen    -R     sync
 /usr/bin/syncthing
 #关闭shell，连接IP:8384，webui配置同步文件夹
