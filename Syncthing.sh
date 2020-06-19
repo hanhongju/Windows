@@ -14,6 +14,7 @@ chmod     +x             /usr/bin/syncthing
 rm        -rf            /home/sync/
 #运行程序，生成配置文件
 /usr/bin/syncthing
+#Ctl+C退出服务程序
 #修改配置文件
 sed       -i        's/127.0.0.1/0.0.0.0/g'       /root/.config/syncthing/config.xml
 #后台运行sync
