@@ -19,7 +19,7 @@ screen    -R     sync
 #修改配置文件
 sed       -i        's/127.0.0.1/0.0.0.0/g'       /root/.config/syncthing/config.xml
 #后台运行sync
-pkill     screen
+pkill      syncthing
 screen    -R     sync
 /usr/bin/syncthing
 #关闭shell，连接IP:8384，webui配置同步文件夹
