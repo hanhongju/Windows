@@ -5,7 +5,7 @@ site=domain
 apt update
 apt full-upgrade  -y
 apt autoremove    -y
-apt install       -y  python3-pip wget curl net-tools policycoreutils nginx  ntp ntpdate
+apt install       -y         python3-pip wget curl net-tools policycoreutils nginx ntp ntpdate
 #安装Certbot和V2Ray
 pip3 install cryptography --upgrade
 pip3 install certbot && bash -c "$(curl -L -s https://install.direct/go.sh)"
