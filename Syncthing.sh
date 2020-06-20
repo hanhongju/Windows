@@ -21,6 +21,7 @@ systemctl    stop      syncthing@root.service
 #修改配置文件，启动服务
 sed       -i        's/127.0.0.1/0.0.0.0/g'       /root/.config/syncthing/config.xml
 systemctl    restart   syncthing@root.service
+sleep 1s
 netstat -tulpna | grep 'syncthing'
 #回显syncthing监听端口
 
