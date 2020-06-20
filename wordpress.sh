@@ -66,10 +66,10 @@ mysql      -uroot    -pfengkuang     -e      "update mysql.user set plugin='mysq
 mysql      -uroot    -pfengkuang     -e      "DROP DATABASE wordpress"
 mysql      -uroot    -pfengkuang     -e      "CREATE DATABASE wordpress"
 #重启服务
-systemctl enable nginx 
-systemctl enable mariadb
-service nginx    restart
-service mariadb  restart
+systemctl   enable   nginx 
+systemctl   enable   mariadb
+service     nginx    restart
+service     mariadb  restart
 #浏览器进入网站开始配置
 #设置-固定链接，改为朴素
 
@@ -88,6 +88,7 @@ mysql      -uroot    -pfengkuang     wordpress   <    /home/db_dump.sql
 #开放数据库给外网连接
 #开放3306端口给外网
 sed      -i       ''s/127.0.0.1/\*/g''         /etc/mysql/mariadb.conf.d/50-server.cnf
+service     mariadb  restart
 netstat    -an | grep 3306
 #登录数据库
 mysql      -uroot    -pfengkuang
