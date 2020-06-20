@@ -61,10 +61,10 @@ service   nginx   restart
 #配置数据库
 mysql_secure_installation
 #修改数据库登录方式
-mysql   -uroot    -pfengkuang     -e      "update mysql.user set plugin='mysql_native_password' where User='root'"
+mysql      -uroot    -pfengkuang     -e      "update mysql.user set plugin='mysql_native_password' where User='root'"
 #创建新数据库
-mysql   -uroot    -pfengkuang     -e      "DROP DATABASE wordpress"
-mysql   -uroot    -pfengkuang     -e      "CREATE DATABASE wordpress"
+mysql      -uroot    -pfengkuang     -e      "DROP DATABASE wordpress"
+mysql      -uroot    -pfengkuang     -e      "CREATE DATABASE wordpress"
 #重启服务
 systemctl enable nginx 
 systemctl enable mariadb
@@ -77,9 +77,9 @@ service mariadb  restart
 
 
 #转移网站->备份数据库，存放于wordpress.sql
-mysqldump    -uroot    -pfengkuang     wordpress > /home/db_dump.sql
+mysqldump  -uroot    -pfengkuang     wordpress   >    /home/db_dump.sql
 #将备份文件导入数据库
-mysql   -uroot    -pfengkuang     wordpress < /home/db_dump.sql
+mysql      -uroot    -pfengkuang     wordpress   <    /home/db_dump.sql
 
 
 
@@ -90,7 +90,7 @@ mysql   -uroot    -pfengkuang     wordpress < /home/db_dump.sql
 sed      -i       ''s/127.0.0.1/\*/g''         /etc/mysql/mariadb.conf.d/50-server.cnf
 netstat    -an | grep 3306
 #登录数据库
-mysql -uroot -pfengkuang
+mysql      -uroot    -pfengkuang
 #添加外网连接数据库权限
 use mysql;
 grant all privileges on *.* to 'root'@'%' identified by 'fengkuang' with grant option;
