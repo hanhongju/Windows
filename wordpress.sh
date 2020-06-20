@@ -94,3 +94,7 @@ netstat    -an | grep 3306
 mysql      -uroot    -pfengkuang     -e      "use mysql; grant all privileges on *.* to 'root'@'%' identified by 'fengkuang' with grant option; flush privileges; select user,host from user;"
 #至此mysql服务开放给公网
 
+
+
+
+
