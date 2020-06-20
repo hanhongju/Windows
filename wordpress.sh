@@ -77,9 +77,9 @@ service mariadb  restart
 
 
 #转移网站->备份数据库，存放于wordpress.sql
-mysqldump    -uroot    -pfengkuang     wordpress > /home/wordpress.sql
+mysqldump    -uroot    -pfengkuang     wordpress > /home/db_dump.sql
 #将备份文件导入数据库
-mysql   -uroot    -pfengkuang     wordpress < /home/wordpress.sql
+mysql   -uroot    -pfengkuang     wordpress < /home/db_dump.sql
 
 
 
