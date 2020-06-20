@@ -16,7 +16,7 @@ rm        -rf            /home/sync/
 #生成配置文件，配置系统服务
 systemctl    daemon-reload
 systemctl    enable    syncthing@root.service
-systemctl    restart     syncthing@root.service
+systemctl    restart   syncthing@root.service
 sleep 5s
 systemctl    stop      syncthing@root.service
 #修改配置文件，启动服务
