@@ -39,6 +39,7 @@ echo   '
 #启动服务
 systemctl   enable      shadowsocks-libev-local@root
 systemctl   restart     shadowsocks-libev-local@root
+
 netstat    -tulpna | grep 'ss-local'
 #回显ss监听端口
 
