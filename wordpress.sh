@@ -76,6 +76,13 @@ service mariadb  restart
 
 
 
+#转移网站->备份数据库，存放于wordpress.sql
+mysqldump    -uroot    -pfengkuang     wordpress > /home/wordpress.sql
+#将备份文件导入数据库
+mysql   -uroot    -pfengkuang     wordpress < /home/wordpress.sql
+
+
+
 
 
 #开放数据库给外网连接
@@ -90,17 +97,6 @@ grant all privileges on *.* to 'root'@'%' identified by 'fengkuang' with grant o
 flush privileges;
 select user,host from user;
 exit;
-
-
-
-
-
-
-
-#转移网站->备份数据库，存放于wordpress.sql
-mysqldump  -u root -pfengkuang  wordpress > /home/wordpress.sql
-#将备份文件导入数据库
-mysql -u root -pfengkuang wordpress < /home/wordpress.sql
 
 
 
