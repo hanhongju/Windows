@@ -17,12 +17,12 @@ rm        -rf            /home/sync/
 systemctl    daemon-reload
 systemctl    enable    syncthing@root.service
 systemctl    restart     syncthing@root.service
-sleep 1s
+sleep 5s
 systemctl    stop      syncthing@root.service
 #修改配置文件，启动服务
 sed       -i        's/127.0.0.1/0.0.0.0/g'       /root/.config/syncthing/config.xml
 systemctl    restart   syncthing@root.service
-sleep 1s
+sleep 5s
 netstat -tulpna | grep 'syncthing'
 #回显syncthing监听端口
 
