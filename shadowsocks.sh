@@ -21,6 +21,9 @@ netstat -tulpna | grep 'ss-server'
 #至此shadowsocks可正常工作
 
 
+
+
+
 #shadowsocks客户端使用脚本@Debian 10
 #安装shadowsocks
 apt      update
