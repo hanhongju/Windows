@@ -90,14 +90,7 @@ mysql      -uroot    -pfengkuang     wordpress   <    /home/db_dump.sql
 sed      -i       ''s/127.0.0.1/\*/g''         /etc/mysql/mariadb.conf.d/50-server.cnf
 service     mariadb  restart
 netstat    -an | grep 3306
-#登录数据库
-mysql      -uroot    -pfengkuang
 #添加外网连接数据库权限
-use mysql;
-grant all privileges on *.* to 'root'@'%' identified by 'fengkuang' with grant option;
-flush privileges;
-select user,host from user;
-exit;
-
-
+mysql      -uroot    -pfengkuang     -e      "use mysql; grant all privileges on *.* to 'root'@'%' identified by 'fengkuang' with grant option; flush privileges; select user,host from user;"
+#至此mysql服务开放给公网
 
