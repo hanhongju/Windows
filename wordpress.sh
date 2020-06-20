@@ -61,10 +61,10 @@ service   nginx   restart
 #配置数据库
 mysql_secure_installation
 #修改数据库登录方式
-mysql  -uroot -pfengkuang   -e "update mysql.user set plugin='mysql_native_password' where User='root'"
+mysql   -uroot    -pfengkuang     -e      "update mysql.user set plugin='mysql_native_password' where User='root'"
 #创建新数据库
-mysql   -u root   -pfengkuang     -e      "DROP DATABASE wordpress"
-mysql   -u root   -pfengkuang     -e      "CREATE DATABASE wordpress"
+mysql   -uroot    -pfengkuang     -e      "DROP DATABASE wordpress"
+mysql   -uroot    -pfengkuang     -e      "CREATE DATABASE wordpress"
 #重启服务
 systemctl enable nginx 
 systemctl enable mariadb
