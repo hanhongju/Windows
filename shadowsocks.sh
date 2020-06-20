@@ -14,12 +14,6 @@ echo '
     "method":"aes-256-gcm"
 }
 '     >           /etc/shadowsocks-libev/config.json
-#修改系统控制文件启用BBR
-echo     "net.core.default_qdisc=fq"              >>     /etc/sysctl.conf
-echo     "net.ipv4.tcp_congestion_control=bbr"    >>     /etc/sysctl.conf
-sysctl   -p
-#检查目前BBR启动状态
-sysctl    net.ipv4.tcp_congestion_control
 #重启服务
 service shadowsocks-libev restart
 sleep 1s
