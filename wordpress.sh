@@ -97,9 +97,9 @@ exit;
 
 
 #转移网站->备份数据库，存放于wordpress.sql
-mysqldump  -u root -pfengkuang  wordpress > /home/wordpress.sql
+mysqldump  -u root -pfengkuang  wordpress > /home/db_dump.sql
 #将备份文件导入数据库
-mysql -u root -pfengkuang wordpress < /home/wordpress.sql
+mysql -u root -pfengkuang wordpress < /home/db_dump.sql
 
 
 
