@@ -1,7 +1,7 @@
 #shadowsocks服务器安装脚本@Debian 10
 #安装shadowsocks
-apt  update
-apt  install  -y    shadowsocks-libev
+apt      update
+apt      install     -y    shadowsocks-libev  net-tools
 #创建shadowsocks-server配置文件
 echo '
 {
