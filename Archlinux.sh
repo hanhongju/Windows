@@ -108,6 +108,7 @@ systemctl   restart   nginx.service
 #修改系统控制文件启用BBR，并重启
 echo "tcp_bbr" > /etc/modules-load.d/80-bbr.conf
 echo "net.ipv4.tcp_congestion_control=bbr" > /etc/sysctl.d/80-bbr.conf
+sysctl   net.ipv4.tcp_congestion_control
 #验证配置文件，显示监听端口
 /usr/bin/v2ray     -test       -config=/etc/v2ray/config.json
 nginx    -t
