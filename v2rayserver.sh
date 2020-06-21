@@ -9,6 +9,13 @@ apt install       -y         python3-pip wget curl net-tools policycoreutils ngi
 #安装Certbot和V2Ray
 pip3 install cryptography --upgrade
 pip3 install certbot && bash -c "$(curl -L -s https://install.direct/go.sh)"
+#申请SSL证书
+service     nginx       stop
+certbot     certonly    --standalone    --agree-tos   -n     -d    $site     -m    86606682@qq.com 
+#配置证书自动更新
+echo "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;" | crontab
+#关闭SELinux
+setsebool -P httpd_can_network_connect 1 && setenforce 0
 #修改v2ray配置
 echo '
 {
@@ -27,13 +34,6 @@ echo '
         "outbound": {"protocol": "freedom"}
 }
 '         >          /etc/v2ray/config.json
-#申请SSL证书
-service     nginx       stop
-certbot     certonly    --standalone    --agree-tos   -n     -d    $site     -m    86606682@qq.com 
-#配置证书自动更新
-echo "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;" | crontab
-#关闭SELinux
-setsebool -P httpd_can_network_connect 1 && setenforce 0
 #创建nginx配置文件
 echo '
 events {
