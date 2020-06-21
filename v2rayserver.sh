@@ -2,21 +2,22 @@
 #定义网站地址
 site=<domain>
 #安装常用软件包：
-apt update
-apt full-upgrade  -y
-apt autoremove    -y
-apt install       -y         python3-pip wget curl net-tools policycoreutils nginx ntp ntpdate
+apt    update
+apt    full-upgrade    -y
+apt    autoremove      -y
+apt    install         -y         python3-pip wget curl net-tools policycoreutils nginx ntp ntpdate
 #安装Certbot和V2Ray
-pip3 install cryptography --upgrade
-pip3 install certbot && bash -c "$(curl -L -s https://install.direct/go.sh)"
+pip3   install     cryptography --upgrade
+pip3   install     certbot
+bash    -c     "$(curl -L -s https://install.direct/go.sh)"
 #申请SSL证书
 service     nginx       stop
 certbot     certonly    --standalone    --agree-tos   -n     -d    $site     -m    86606682@qq.com 
 #配置证书自动更新
-echo "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;" | crontab
-crontab -l
+echo      "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;"   |   crontab
+crontab   -l
 #关闭SELinux
-setsebool -P httpd_can_network_connect 1 && setenforce 0
+setsebool   -P   httpd_can_network_connect   1   &&   setenforce   0
 #修改系统控制文件启用BBR
 echo     "net.core.default_qdisc=fq"              >>     /etc/sysctl.conf
 echo     "net.ipv4.tcp_congestion_control=bbr"    >>     /etc/sysctl.conf
