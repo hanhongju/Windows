@@ -1,0 +1,12 @@
+yes | pacman -Sy   archlinux-keyring
+yes | pacman -Syu
+yes | pacman -S    shadowsocks-libev
+
+
+
+error: failed to commit transaction (conflicting files) stfl: /usr/lib/libstfl.so.0 exists in filesystem
+pacman -Syu --overwrite /usr/lib/libstfl.so.0
+
+
+
+
