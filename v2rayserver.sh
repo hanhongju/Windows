@@ -36,6 +36,12 @@ echo "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;" | cro
 setsebool -P httpd_can_network_connect 1 && setenforce 0
 #创建nginx配置文件
 echo '
+events {
+worker_connections  1024;
+}
+http {
+sendfile on;
+keepalive_timeout  65;
 server{
 server_name www.example.com;
 set $proxy_name pubmed.ncbi.nlm.nih.gov;
@@ -68,10 +74,10 @@ proxy_set_header Connection "upgrade";
 proxy_set_header Host $host;
 }
 }
-'     >      /etc/nginx/sites-enabled/default.conf
+}
+'         >       /etc/nginx/nginx.conf
 #修改nginx配置文件
-sed -i     ''s/www.example.com/$site/g''       /etc/nginx/sites-enabled/default.conf
-service     nginx      restart
+sed      -i     ''s/www.example.com/$site/g''       /etc/nginx/nginx.conf
 #启动V2Ray和Nginx：
 systemctl   enable     v2ray.service
 systemctl   enable     nginx.service
