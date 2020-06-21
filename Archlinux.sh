@@ -2,9 +2,8 @@
 yes   |   pacman   -Sy     archlinux-keyring
 yes   |   pacman   -Syu
 yes   |   pacman   -S      shadowsocks-libev
-mkdir   /etc/shadowsocks/
-touch   /etc/shadowsocks/root.json
 #创建shadowsocks-server配置文件
+mkdir   /etc/shadowsocks/
 echo '
 {
     "server":["[::0]", "0.0.0.0"],
