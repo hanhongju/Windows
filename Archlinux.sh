@@ -18,8 +18,9 @@ echo '
 #启动服务
 systemctl   enable    shadowsocks-libev-server@root.service
 systemctl   restart   shadowsocks-libev-server@root.service
-systemctl   status    shadowsocks-libev-server@root.service
-
+sleep 1s
+netstat -tulpna | grep 'ss-server'
+#回显ss-server监听端口
 
 
 
