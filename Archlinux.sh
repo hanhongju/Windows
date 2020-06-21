@@ -16,9 +16,9 @@ echo '
 }
 '     >           /etc/shadowsocks/root.json
 #启动服务
-systemctl   enable    shadowsocks-libev@root.service
-systemctl   restart   shadowsocks-libev@root.service
-systemctl   status    shadowsocks-libev@root.service
+systemctl   enable    shadowsocks-libev-server@root.service
+systemctl   restart   shadowsocks-libev-server@root.service
+systemctl   status    shadowsocks-libev-server@root.service
 
 
 
