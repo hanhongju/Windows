@@ -41,6 +41,10 @@ certbot     certonly    --standalone    --agree-tos   -n     -d    $site     -m 
 #配置证书自动更新
 echo "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;" | crontab -
 crontab -l
+#修改系统控制文件启用BBR
+echo "tcp_bbr" > /etc/modules-load.d/80-bbr.conf
+echo "net.ipv4.tcp_congestion_control=bbr" > /etc/sysctl.d/80-bbr.conf
+sysctl   -p
 #修改v2ray配置
 echo '
 {
@@ -101,18 +105,12 @@ proxy_set_header Host $host;
 }
 }
 '         >       /etc/nginx/nginx.conf
-#修改nginx配置文件
 sed      -i     ''s/www.example.com/$site/g''       /etc/nginx/nginx.conf
-systemctl   restart   nginx.service
 #启动V2Ray和Nginx：
 systemctl   enable    v2ray.service
 systemctl   enable    nginx.service
 systemctl   restart   v2ray.service
 systemctl   restart   nginx.service
-#修改系统控制文件启用BBR
-echo "tcp_bbr" > /etc/modules-load.d/80-bbr.conf
-echo "net.ipv4.tcp_congestion_control=bbr" > /etc/sysctl.d/80-bbr.conf
-sysctl   -p
 #验证配置文件，显示监听端口
 /usr/bin/v2ray     -test       -config=/etc/v2ray/config.json
 nginx    -t
