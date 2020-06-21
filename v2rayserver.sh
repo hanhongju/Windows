@@ -79,11 +79,12 @@ proxy_set_header Host $host;
 '         >       /etc/nginx/nginx.conf
 #修改nginx配置文件
 sed      -i     ''s/www.example.com/$site/g''       /etc/nginx/nginx.conf
+systemctl   restart   nginx.service
 #启动V2Ray和Nginx：
-systemctl   enable     v2ray.service
-systemctl   enable     nginx.service
-service     v2ray      restart
-service     nginx      restart
+systemctl   enable    v2ray.service
+systemctl   enable    nginx.service
+systemctl   restart   v2ray.service
+systemctl   restart   nginx.service
 #修改系统控制文件启用BBR
 echo     "net.core.default_qdisc=fq"              >>     /etc/sysctl.conf
 echo     "net.ipv4.tcp_congestion_control=bbr"    >>     /etc/sysctl.conf
