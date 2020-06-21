@@ -24,10 +24,6 @@ netstat -tulpna | grep 'ss-server'
 
 
 
-error: failed to commit transaction (conflicting files) stfl: /usr/lib/libstfl.so.0 exists in filesystem
-pacman -Syu --overwrite /usr/lib/libstfl.so.0
-
-
 
 #v2rayserver安装脚本@Archlinux
 #定义网站地址
