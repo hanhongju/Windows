@@ -31,7 +31,7 @@ pacman -Syu --overwrite /usr/lib/libstfl.so.0
 
 #v2rayserver安装脚本@Archlinux
 #定义网站地址
-site=domain
+site=<domain>
 #安装常用软件包：
 yes   |   pacman   -Sy     archlinux-keyring
 yes   |   pacman   -Syu
