@@ -44,7 +44,7 @@ crontab -l
 #修改系统控制文件启用BBR
 echo "tcp_bbr" > /etc/modules-load.d/80-bbr.conf
 echo "net.ipv4.tcp_congestion_control=bbr" > /etc/sysctl.d/80-bbr.conf
-sysctl   -p
+sysctl    net.ipv4.tcp_congestion_control
 #修改v2ray配置
 echo '
 {
