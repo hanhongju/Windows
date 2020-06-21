@@ -18,7 +18,7 @@ echo '
 service shadowsocks-libev restart
 sleep 1s
 netstat -tulpna | grep 'ss-server'
-#至此shadowsocks可正常工作
+#回显ss-server监听端口
 
 
 
@@ -45,7 +45,7 @@ systemctl   restart     shadowsocks-libev-local@root
 sleep 5s
 systemctl   status      shadowsocks-libev-local@root
 netstat    -tulpna | grep 'ss-local'
-#回显ss监听端口
+#回显ss-local监听端口
 
 
 
