@@ -38,6 +38,8 @@ yes   |   pacman   -Syu
 yes   |   pacman   -S      v2ray certbot nginx ntp wget curl net-tools linux-lts
 #申请SSL证书
 certbot     certonly    --standalone    --agree-tos   -n     -d    $site     -m    86606682@qq.com 
+#配置证书自动更新
+echo "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;" | crontab
 #修改v2ray配置
 echo '
 {
@@ -105,7 +107,7 @@ systemctl   enable    v2ray.service
 systemctl   restart   v2ray.service
 systemctl   enable    nginx.service
 systemctl   restart   nginx.service
-#修改系统控制文件启用BBR，并重启
+#修改系统控制文件启用BBR
 echo "tcp_bbr" > /etc/modules-load.d/80-bbr.conf
 echo "net.ipv4.tcp_congestion_control=bbr" > /etc/sysctl.d/80-bbr.conf
 sysctl   -p
