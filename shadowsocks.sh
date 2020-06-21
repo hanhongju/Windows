@@ -33,7 +33,7 @@ echo   '
 {
   "server": "<serverdomain>",
   "server_port": "3389",
-  "local_port": 8000,
+  "local_port": 9000,
   "password": "fengkuang",
   "timeout": 60,
   "method": "aes-256-gcm"
@@ -52,12 +52,11 @@ netstat    -tulpna | grep 'ss-local'
 
 
 #设置tsocks透明代理
-apt  update
 apt  install    -y   tsocks
 echo '
 server = 127.0.0.1
 server_type = 5
-server_port = 8000
+server_port = 9000
 '          >              /etc/tsocks.conf
 #在wget之前加上tsocks以使其通过代理
 
