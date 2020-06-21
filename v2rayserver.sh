@@ -87,8 +87,6 @@ service     nginx      restart
 echo     "net.core.default_qdisc=fq"              >>     /etc/sysctl.conf
 echo     "net.ipv4.tcp_congestion_control=bbr"    >>     /etc/sysctl.conf
 sysctl   -p
-#检查目前BBR启动状态
-sysctl    net.ipv4.tcp_congestion_control
 #验证配置文件，显示监听端口
 /usr/bin/v2ray/v2ray     -test       -config=/etc/v2ray/config.json
 nginx    -t
