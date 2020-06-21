@@ -39,7 +39,8 @@ yes   |   pacman   -S      v2ray certbot nginx ntp wget curl net-tools linux-lts
 #申请SSL证书
 certbot     certonly    --standalone    --agree-tos   -n     -d    $site     -m    86606682@qq.com 
 #配置证书自动更新
-echo "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;" | crontab
+echo "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;" | crontab -
+crontab -l
 #修改v2ray配置
 echo '
 {
