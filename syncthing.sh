@@ -1,4 +1,4 @@
-#Syncthing安装脚本@Debian 10
+#syncthing安装脚本@Debian 10
 apt   update
 apt   full-upgrade   -y
 apt   autoremove     -y
