@@ -1,7 +1,7 @@
 #shadowsocks服务器安装脚本@Archlinux
 yes   |   pacman   -Sy     archlinux-keyring
 yes   |   pacman   -Syu
-yes   |   pacman   -S      shadowsocks-libev
+yes   |   pacman   -S      shadowsocks-libev net-tools
 #创建shadowsocks-server配置文件
 mkdir   /etc/shadowsocks/
 echo '
