@@ -1,7 +1,7 @@
 #v2rayclient安装脚本@Debian 10
 
 #下载v2ray，如不能联网，手动下载v2ray.zip至/home目录或/home/hj目录，上传配置文件config.json至/home目录或/home/hj目录
-wget    -c     https://github.com/v2ray/v2ray-core/releases/download/v4.23.4/v2ray-linux-64.zip     -O     /home/v2ray-linux-64.zip
+wget        https://github.com/v2ray/v2ray-core/releases/download/v4.23.4/v2ray-linux-64.zip     -O     /home/v2ray-linux-64.zip
 #安装v2ray文件
 apt   update
 apt   install    -y      unzip  zip  curl   wget
