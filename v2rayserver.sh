@@ -94,7 +94,7 @@ systemctl   restart   nginx.service
 #验证配置文件，显示监听端口
 /usr/bin/v2ray/v2ray     -test       -config=/etc/v2ray/config.json
 nginx    -t
-netstat  -tulpna | grep 'nginx'
+netstat  -plunt | grep 'nginx'
 #至此V2Ray可正常工作
 
 
