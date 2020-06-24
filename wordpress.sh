@@ -89,7 +89,7 @@ mysql      -uroot     -pfengkuang     wordpress   <    /home/db_dump.sql
 #开放3306端口给外网
 sed      -i       ''s/127.0.0.1/\*/g''         /etc/mysql/mariadb.conf.d/50-server.cnf
 systemctl     restart      mariadb
-netstat       -an | grep 3306
+netstat    -plunt   |   grep   3306
 #添加外网连接数据库权限
 mysql      -uroot     -pfengkuang     -e      "use mysql; grant all privileges on *.* to 'root'@'%' identified by 'fengkuang' with grant option; flush privileges; select user,host from user;"
 #至此mysql服务开放给公网
