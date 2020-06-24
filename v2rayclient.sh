@@ -24,7 +24,7 @@ cp      -f       /home/config.json                      /etc/v2ray/config.json
 #读取节点信息，重启
 service    v2ray     restart     
 sleep 1s
-netstat -tulpna | grep 'v2ray'
+netstat  -plunt | grep 'v2ray'
 #回显v2ray监听端口
 
 
