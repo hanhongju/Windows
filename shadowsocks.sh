@@ -17,7 +17,7 @@ echo '
 #重启服务
 service shadowsocks-libev restart
 sleep 1s
-netstat -tulpna | grep 'ss-server'
+netstat  -plunt | grep 'ss-server'
 #回显ss-server监听端口
 
 
@@ -44,7 +44,7 @@ systemctl   enable      shadowsocks-libev-local@root
 systemctl   restart     shadowsocks-libev-local@root
 sleep 5s
 systemctl   status      shadowsocks-libev-local@root
-netstat    -tulpna | grep 'ss-local'
+netstat  -plunt | grep 'ss-local'
 #回显ss-local监听端口
 
 
