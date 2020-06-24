@@ -23,7 +23,7 @@ systemctl    stop      syncthing@root.service
 sed       -i        's/127.0.0.1/0.0.0.0/g'       /root/.config/syncthing/config.xml
 systemctl    restart   syncthing@root.service
 sleep 5s
-netstat -tulpna | grep 'syncthing'
+netstat  -plunt | grep 'syncthing'
 #回显syncthing监听端口
 
 
