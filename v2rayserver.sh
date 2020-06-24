@@ -49,8 +49,12 @@ events {
 worker_connections  1024;
 }
 http {
-sendfile on;
+sendfile    on;
 keepalive_timeout  65;
+include           /etc/nginx/sites-enabled/*;
+}
+'         >       /etc/nginx/nginx.conf
+echo '
 server{
 server_name www.example.com;
 set $proxy_name pubmed.ncbi.nlm.nih.gov;
@@ -83,9 +87,8 @@ proxy_set_header Connection "upgrade";
 proxy_set_header Host $host;
 }
 }
-}
-'         >       /etc/nginx/nginx.conf
-sed      -i     ''s/www.example.com/$site/g''       /etc/nginx/nginx.conf
+'         >       /etc/nginx/sites-enabled/$site.conf
+sed      -i       ''s/www.example.com/$site/g''               /etc/nginx/sites-enabled/$site.conf
 #启动V2Ray和Nginx：
 systemctl   enable    v2ray.service
 systemctl   enable    nginx.service
