@@ -18,7 +18,7 @@ java   -jar    /home/mcserver/server.jar    nogui
 
 
 #关闭所有screen终端和服务器
-netstat -tulpna | grep 'java'
+netstat  -plunt | grep 'java'
 screen -ls
 pkill screen
 
