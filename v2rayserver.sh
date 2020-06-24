@@ -4,6 +4,7 @@ site=<domain>
 
 
 
+
 #安装常用软件包：
 apt    update
 apt    full-upgrade    -y
@@ -106,5 +107,7 @@ systemctl   restart   nginx.service
 nginx    -t
 netstat  -plunt | grep 'nginx'
 #至此V2Ray可正常工作
+
+
 
 
