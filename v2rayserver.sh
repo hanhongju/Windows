@@ -5,6 +5,7 @@ site=<domain>
 apt    update
 apt    full-upgrade    -y
 apt    autoremove      -y
+apt    purge           -y         apache2
 apt    install         -y         python3-pip wget curl net-tools policycoreutils nginx ntp ntpdate
 #安装Certbot和V2Ray
 pip3   install     cryptography --upgrade
