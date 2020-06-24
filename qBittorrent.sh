@@ -42,5 +42,5 @@ BLOCK
 service  nginx              restart
 service  qbittorrent-nox    restart
 sleep 1s
-netstat -tulpna | grep 'qbittorrent'
+netstat  -plunt | grep 'qbittorrent'
 #用户名admin，密码adminadmin，默认下载目录/home/bt/Downloads/
