@@ -44,6 +44,7 @@ echo '
         "outbound": {"protocol": "freedom"}
 }
 '         >          /etc/v2ray/config.json
+#接下来指定网站配置nginx
 
 
 
