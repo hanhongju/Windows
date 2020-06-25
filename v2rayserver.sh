@@ -44,6 +44,8 @@ echo '
         "outbound": {"protocol": "freedom"}
 }
 '         >          /etc/v2ray/config.json
+#重置nginx配置文件
+rm    -rf    /etc/nginx/sites-enabled/*
 #接下来指定网站配置nginx
 
 
