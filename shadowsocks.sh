@@ -7,8 +7,8 @@ echo '
 {
     "server":["[::0]", "0.0.0.0"],
     "mode":"tcp_and_udp",
-    "server_port":10086,
-    "local_port":1080,
+    "server_port": 10086,
+    "local_port": 1080,
     "password":"fengkuang",
     "timeout":60,
     "method":"aes-256-gcm"
@@ -32,7 +32,7 @@ apt      install     -y    shadowsocks-libev  net-tools
 echo   '
 {
   "server": "<serverdomain>",
-  "server_port": "10086",
+  "server_port": 10086,
   "local_port": 9000,
   "password": "fengkuang",
   "timeout": 60,
