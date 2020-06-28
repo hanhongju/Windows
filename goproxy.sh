@@ -1,6 +1,8 @@
 #goproxy使用方法@Debian 10
 #服务器架设
 #安装程序
+apt        update
+apt        install     -y        wget tar net-tools
 mkdir     /home/goproxy
 cd        /home/goproxy
 wget   -c   https://github.com/snail007/goproxy/releases/download/v9.8/proxy-linux-amd64.tar.gz
@@ -24,6 +26,8 @@ netstat  -plunt | grep 'proxy'
 site=<domain>
 #客户端假设
 #安装程序
+apt        update
+apt        install     -y        wget tar net-tools
 mkdir     /home/goproxy
 cd        /home/goproxy
 wget   -c   https://github.com/snail007/goproxy/releases/download/v9.8/proxy-linux-amd64.tar.gz
