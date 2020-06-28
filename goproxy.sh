@@ -13,7 +13,7 @@ cp     /home/goproxy/proxy.crt         /home/proxy.crt
 cp     /home/goproxy/proxy.key         /home/proxy.key
 #运行
 pkill     proxy
-/home/goproxy/proxy         socks   -t   tls   -p     ":38080"           -C proxy.crt -K proxy.key          --forever --log proxy.log --daemon
+/home/goproxy/proxy         socks  -t  tls  -p   ":38080"           -C proxy.crt -K proxy.key          --forever --log proxy.log --daemon
 sleep 1s
 netstat  -plunt | grep 'proxy'
 #回显goproxy监听端口
@@ -37,7 +37,7 @@ cp        /home/proxy.crt      /home/goproxy/proxy.crt
 cp        /home/proxy.key      /home/goproxy/proxy.key
 #运行
 pkill     proxy
-/home/goproxy/proxy         socks   -t   tcp   -p   ":6000"     -T   tls   -P   "$site:38080"           -C proxy.crt -K proxy.key          --forever --log proxy.log --daemon
+/home/goproxy/proxy          socks  -t  tls  -p   ":6000"            --always   -T   tls  -P   "$site:38080"           -C proxy.crt -K proxy.key          --forever --log proxy.log --daemon
 sleep 1s
 netstat  -plunt | grep 'proxy'
 #回显goproxy监听端口
