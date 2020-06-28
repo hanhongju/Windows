@@ -1,5 +1,6 @@
 #goproxy使用方法@Debian 10
 #服务器架设
+#安装程序
 mkdir     /home/goproxy
 cd        /home/goproxy
 wget   -c   https://github.com/snail007/goproxy/releases/download/v9.8/proxy-linux-amd64.tar.gz
@@ -20,8 +21,9 @@ netstat  -plunt | grep 'proxy'
 
 
 #定义服务器地址
-site=cloudd.hongju.site
-#客户端运行
+site=<domain>
+#客户端假设
+#安装程序
 mkdir     /home/goproxy
 cd        /home/goproxy
 wget   -c   https://github.com/snail007/goproxy/releases/download/v9.8/proxy-linux-amd64.tar.gz
@@ -50,26 +52,6 @@ default_user =  none
 default_pass =  none
 '          >              /etc/tsocks.conf
 #在wget之前加上tsocks以使其通过代理
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
