@@ -32,5 +32,6 @@ socks block {
 '      >         /etc/danted.conf
 #启动服务
 systemctl      restart       danted
+sleep 1s
 netstat  -plunt  | grep 'danted'
 #回显dante监听端口
