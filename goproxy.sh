@@ -37,10 +37,10 @@ cp        /home/proxy.key      /home/goproxy/proxy.key
 #创建配置文件
 echo     '
 socks 
--t          tcp
--p        ":6000" 
+-t         tcp
+-p         :6000
 -T         tls
--P         "www.example.com:38080"
+-P         www.example.com:38080
 -C         proxy.crt
 -K         proxy.key 
 --log      proxy.log
