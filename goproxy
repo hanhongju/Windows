@@ -1,0 +1,39 @@
+#goproxy使用方法@Debian 10
+#服务器架设
+mkdir     /home/goproxy
+cd        /home/goproxy
+wget   -c   https://github.com/snail007/goproxy/releases/download/v9.8/proxy-linux-amd64.tar.gz
+tar        -zxvf        proxy-linux-amd64.tar.gz
+#生成tls证书
+cd        /home/goproxy
+./proxy     keygen    -C     proxy
+cp     proxy.crt         /home/proxy.crt
+cp     proxy.key         /home/proxy.key
+#运行
+pkill proxy
+./proxy    socks   -t   tls   -p   ":38080"   -C   proxy.crt   -K   proxy.key     --forever     --log proxy.log     --daemon
+netstat  -plunt | grep 'proxy'
+
+
+
+#定义服务器地址
+site=cloudd.hongju.site
+#客户端运行
+mkdir     /home/goproxy
+cd        /home/goproxy
+wget   -c   https://github.com/snail007/goproxy/releases/download/v9.8/proxy-linux-amd64.tar.gz
+tar        -zxvf        proxy-linux-amd64.tar.gz
+#将服务器/home下证书复制到客户端/home目录下，安装证书
+cd        /home/goproxy
+cp        /home/proxy.crt      proxy.crt 
+cp        /home/proxy.key      proxy.key
+#运行
+pkill proxy
+./proxy socks -t tcp -p ":6000" -T tls -P "$site:38080" -C proxy.crt -K proxy.key   --forever --log proxy.log --daemon
+sleep 1s
+netstat  -plunt | grep 'proxy'
+
+
+
+
+
