@@ -24,7 +24,7 @@ netstat  -plunt | grep 'proxy'
 
 #定义服务器地址
 site=<domain>
-#客户端假设
+#客户端架设
 #安装程序
 apt        update
 apt        install     -y        wget tar net-tools
