@@ -2,7 +2,7 @@
 #安装
 apt      update
 apt      install    -y       dante-server
-danted -v
+danted   -v
 #编写配置文件
 mv        /etc/danted.conf       /etc/danted.conf.bak
 echo   '
