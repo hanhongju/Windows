@@ -34,8 +34,13 @@ apt  install    -y   tsocks
 echo '
 server = 127.0.0.1
 server_type = 5
-server_port = 8000
+server_port =    9000
+default_user = none
+default_pass = none
 '          >              /etc/tsocks.conf
 #在wget之前加上tsocks以使其通过代理
+
+
+
 
 
