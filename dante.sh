@@ -7,7 +7,7 @@ danted   -v
 mv        /etc/danted.conf       /etc/danted.conf.bak
 echo   '
 logoutput: /var/log/socks.log
-internal: eth0 port = 8000
+internal: eth0 port = 7000
 external: eth0
 clientmethod: none
 socksmethod: none
@@ -32,5 +32,5 @@ socks block {
 '      >         /etc/danted.conf
 #启动服务
 systemctl      restart       danted
-netstat  -plunta  | grep 'danted'
+netstat  -plunt  | grep 'danted'
 #回显dante监听端口
