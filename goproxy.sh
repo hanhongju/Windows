@@ -34,21 +34,6 @@ tar        -zxvf        proxy-linux-amd64.tar.gz
 #将服务器/home下证书复制到客户端/home目录下，安装证书
 cp        /home/proxy.crt      /home/goproxy/proxy.crt
 cp        /home/proxy.key      /home/goproxy/proxy.key
-#创建配置文件
-echo     '
-socks 
--t         tcp
--p         :6000
--T         tls
--P         www.example.com:38080
--C         proxy.crt
--K         proxy.key 
---log      proxy.log
---always
---forever
---daemon
-'          >          /home/goproxy/proxy.config
-sed       -i        ''s/www.example.com/$site/g''              /home/goproxy/proxy.config
 #运行
 pkill     proxy
 /home/goproxy/proxy          socks   -t   tcp   -p    :6000           --always   -T   tls   -P   $site:38080           -C proxy.crt -K proxy.key          --forever --log proxy.log --daemon
