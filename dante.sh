@@ -7,7 +7,7 @@ danted   -v
 mv        /etc/danted.conf       /etc/danted.conf.bak
 echo   '
 logoutput: /var/log/socks.log
-internal: eth0 port = 1080
+internal: eth0 port = 8000
 external: eth0
 clientmethod: none
 socksmethod: none
