@@ -111,6 +111,15 @@ proxy_set_header Host $host;
 }
 '         >       /etc/nginx/sites-enabled/$site.conf
 sed      -i       ''s/www.example.com/$site/g''               /etc/nginx/sites-enabled/$site.conf
+
+#启动V2Ray和Nginx：
+systemctl   enable    v2ray.service
+systemctl   enable    nginx.service
+systemctl   restart   v2ray.service
+systemctl   restart   nginx.service
+#验证配置文件，显示监听端口
+netstat  -plunt | grep 'nginx'
+/usr/bin/v2ray/v2ray     -test       -config=/etc/v2ray/config.json
 #如果nginx配置有错误，重置nginx配置文件
 OUTPUT=$(nginx -t 2>&1)
 echo   $OUTPUT
@@ -121,15 +130,6 @@ rm    -rf    /etc/nginx/sites-enabled/*
 echo    "确认明白肯按回车键。"
 read    nothing
 fi
-#启动V2Ray和Nginx：
-systemctl   enable    v2ray.service
-systemctl   enable    nginx.service
-systemctl   restart   v2ray.service
-systemctl   restart   nginx.service
-#验证配置文件，显示监听端口
-/usr/bin/v2ray/v2ray     -test       -config=/etc/v2ray/config.json
-nginx    -t
-netstat  -plunt | grep 'nginx'
 #至此V2Ray可正常工作
 
 
