@@ -136,7 +136,7 @@ else        echo   "您输入的域名地址可能没有正确解析或者短时
 fi
 finish_time=$(date +%s)
 time_consume=$((   finish_time   -   begin_time ))
-echo   "脚本运行时间$time_consume秒。"
+echo   "脚本运行时间$time_consume秒"
 #至此V2Ray可正常工作
 
 
