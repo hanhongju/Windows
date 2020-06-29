@@ -11,7 +11,7 @@ echo    "本脚本可以自动安装v2ray，自动申请并使用tls证书加密
 底层传输安全为     tls
 理解并记录下这些信息后请按回车键继续，并在下一栏输入您解析的有效域名。"
 read    nothing
-echo    "请输入此VPS解析到的域名地址："
+echo    "请输入此VPS的IP地址对应的域名地址："
 read    site
 echo    "好的，现在要开始安装了。"
 sleep   5s
