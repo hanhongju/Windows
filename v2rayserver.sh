@@ -112,6 +112,10 @@ proxy_set_header Host $host;
 '         >       /etc/nginx/sites-enabled/$site.conf
 sed      -i       ''s/www.example.com/$site/g''               /etc/nginx/sites-enabled/$site.conf
 
+
+
+
+
 #启动V2Ray和Nginx：
 systemctl   enable    v2ray.service
 systemctl   enable    nginx.service
@@ -125,8 +129,9 @@ OUTPUT=$(nginx -t 2>&1)
 echo   $OUTPUT
 if     [[  "$OUTPUT"   =~   "successful"   ]]   ;        
 then        echo   "nginx configuration is ok"
+            echo   "至此，v2ray可正常工作"
 else        echo   "您输入的域名地址可能有问题，所以nginx配置出现了问题，现在所有nginx配置都已被删除。在您确认了域名解析没有问题后再请重新运行本脚本。"
-rm    -rf    /etc/nginx/sites-enabled/*
+            rm    -rf    /etc/nginx/sites-enabled/*
 fi
 #至此V2Ray可正常工作
 
