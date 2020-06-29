@@ -62,7 +62,7 @@ OUTPUT=$(nginx -t 2>&1)
 echo $OUTPUT
 if     [[  "$OUTPUT"   =~   "successful"   ]]   ;        
 then        echo   "nginx configuration is ok"
-else        echo   "nginx configuration is not ok"
+else        echo   "nginx configuration has error, so we delete all nginx configurations."
 rm    -rf    /etc/nginx/sites-enabled/*
 fi
 #接下来指定网站配置nginx
