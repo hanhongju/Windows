@@ -57,15 +57,7 @@ echo '
         "outbound": {"protocol": "freedom"}
 }
 '         >          /etc/v2ray/config.json
-#如果nginx配置有错误，重置nginx配置文件
-OUTPUT=$(nginx -t 2>&1)
-echo   $OUTPUT
-if     [[  "$OUTPUT"   =~   "successful"   ]]   ;        
-then        echo   "nginx configuration is ok"
-else        echo   "nginx configuration has error, so we delete all nginx configurations."
-rm    -rf    /etc/nginx/sites-enabled/*
-fi
-#接下来指定网站配置nginx
+
 
 
 
@@ -119,6 +111,16 @@ proxy_set_header Host $host;
 }
 '         >       /etc/nginx/sites-enabled/$site.conf
 sed      -i       ''s/www.example.com/$site/g''               /etc/nginx/sites-enabled/$site.conf
+#如果nginx配置有错误，重置nginx配置文件
+OUTPUT=$(nginx -t 2>&1)
+echo   $OUTPUT
+if     [[  "$OUTPUT"   =~   "successful"   ]]   ;        
+then        echo   "nginx configuration is ok"
+else        echo   "您输入的域名地址可能有问题，所以nginx配置出现了问题，现在所有nginx配置都已被删除。在您确认了域名解析没有问题后再请重新运行本脚本。"
+rm    -rf    /etc/nginx/sites-enabled/*
+echo    "确认明白肯按回车键。"
+read    nothing
+fi
 #启动V2Ray和Nginx：
 systemctl   enable    v2ray.service
 systemctl   enable    nginx.service
