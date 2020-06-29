@@ -127,8 +127,6 @@ if     [[  "$OUTPUT"   =~   "successful"   ]]   ;
 then        echo   "nginx configuration is ok"
 else        echo   "您输入的域名地址可能有问题，所以nginx配置出现了问题，现在所有nginx配置都已被删除。在您确认了域名解析没有问题后再请重新运行本脚本。"
 rm    -rf    /etc/nginx/sites-enabled/*
-echo    "确认明白肯按回车键。"
-read    nothing
 fi
 #至此V2Ray可正常工作
 
