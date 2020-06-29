@@ -129,7 +129,7 @@ OUTPUT=$(nginx -t 2>&1)
 echo   $OUTPUT
 if     [[  "$OUTPUT"   =~   "successful"   ]]   ;        
 then        echo   "至此，v2ray可正常工作"
-else        echo   "您输入的域名地址可能有问题，所以nginx配置出现了问题，现在所有nginx配置都已被删除。在您确认了域名解析没有问题后再请重新运行本脚本。"
+else        echo   "您输入的域名地址可能没有正确解析或者短时间申请了太多的证书，不能正常申请证书，所以nginx不能正常工作。现在所有nginx配置都已被删除。在您确认了域名解析没有问题后再请重新运行本脚本。"
             rm    -rf    /etc/nginx/sites-enabled/*
 fi
 #至此V2Ray可正常工作
