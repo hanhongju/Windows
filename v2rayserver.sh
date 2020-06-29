@@ -59,7 +59,7 @@ echo '
 '         >          /etc/v2ray/config.json
 #如果nginx配置有错误，重置nginx配置文件
 OUTPUT=$(nginx -t 2>&1)
-echo $OUTPUT
+echo   $OUTPUT
 if     [[  "$OUTPUT"   =~   "successful"   ]]   ;        
 then        echo   "nginx configuration is ok"
 else        echo   "nginx configuration has error, so we delete all nginx configurations."
