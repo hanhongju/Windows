@@ -3,7 +3,7 @@
 
 apt     install    -y     wget
 
-wget    https://raw.githubusercontent.com/hanhongju/my_script/master/v2rayserver.sh
+wget    https://raw.githubusercontent.com/hanhongju/my_script/master/v2rayserver.sh  -O    v2rayserver.sh
 
 chmod   +x    v2rayserver.sh
 
