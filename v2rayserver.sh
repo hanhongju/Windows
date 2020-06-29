@@ -58,7 +58,12 @@ echo '
 }
 '         >          /etc/v2ray/config.json
 #重置nginx配置文件
+OUTPUT=$(nginx -t 2>&1)
+if     [[  "$OUTPUT"   =~   "successful"   ]]   ;        
+then        echo   "nginx configuration is ok"
+else        echo   "nginx configuration is not ok"
 rm    -rf    /etc/nginx/sites-enabled/*
+fi
 #接下来指定网站配置nginx
 
 
