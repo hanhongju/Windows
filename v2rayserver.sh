@@ -1,6 +1,8 @@
 #v2rayserver安装脚本@Debian 10
 #定义网站地址
-echo    "please define your website domain."
+echo    "本脚本可以自动安装v2ray，自动申请并使用tls证书加密保护v2ray的流量，反代美国卫生研究所网址进行网站伪装。需要您事先将此VPS的IP地址解析到一个有效域名上。安装完成后用户ID为15448fce-7c71-11ea-bc55-0242ac130003，传输协议为ws，端口为443，ws路径为/f63lKAx，底层传输安全为tls，额外ID为0。理解并记录下这些信息后请按回车键继续，并在下一栏输入您解析的有效域名。"
+read    nothing
+echo    "请输入此VPS解析到的域名地址："
 read    site
 
 
