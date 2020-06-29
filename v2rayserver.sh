@@ -66,6 +66,7 @@ echo '
 service     nginx       stop
 certbot     certonly    --standalone    --agree-tos     -n     -d      $site     -m    86606682@qq.com 
 #创建nginx配置文件
+mkdir      -p      /etc/nginx/sites-enabled/
 echo '
 events {
 worker_connections  1024;
