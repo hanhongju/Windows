@@ -1,4 +1,5 @@
 #BestTrace4Linux 查看VPS回程节点@Debian 10
+apt        update
 apt        install    -y     unzip zip wget
 mkdir      /home/besttrace
 cd         /home/besttrace
