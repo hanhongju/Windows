@@ -12,7 +12,8 @@ ws路径为/f63lKAx,
 read    nothing
 echo    "请输入此VPS解析到的域名地址："
 read    site
-
+echo    "好的，现在要开始安装了。"
+sleep   5s
 
 
 
