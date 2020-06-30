@@ -86,10 +86,7 @@ echo '
     "local_port": 443,
     "remote_addr": "127.0.0.1",
     "remote_port": 80,
-    "password": [
-        "fengkuang",
-        "password2"
-    ],
+    "password": ["fengkuang"],
     "log_level": 1,
     "ssl": {
         "cert": "/etc/letsencrypt/live/www.example.com/fullchain.pem",
@@ -110,23 +107,6 @@ echo '
         "plain_http_response": "",
         "curves": "",
         "dhparam": ""
-    },
-    "tcp": {
-        "prefer_ipv4": false,
-        "no_delay": true,
-        "keep_alive": true,
-        "reuse_port": false,
-        "fast_open": false,
-        "fast_open_qlen": 20
-    },
-    "mysql": {
-        "enabled": false,
-        "server_addr": "127.0.0.1",
-        "server_port": 3306,
-        "database": "trojan",
-        "username": "trojan",
-        "password": "",
-        "cafile": ""
     }
 }
 '                 >                /usr/local/etc/trojan/config.json
