@@ -28,7 +28,7 @@ Now type in your VPS's domain:
 "
 read    site
 echo    "
-好的,现在要开始安装了。
+好的，现在要开始安装了。
 OK， it is about to start.
 "
 sleep   5s
