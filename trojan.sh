@@ -1,6 +1,17 @@
 #trojan安装脚本@Debian 10
 #定义网站地址
-site=domain 
+echo    "本脚本可以自动安装trojan，自动申请并使用tls证书加密保护trojan的流量，反代美国国家生物技术信息中心网址进行网站伪装。需要您事先将此VPS的IP地址解析到一个有效域名上。
+如果此VPS使用KVM虚拟技术，此脚本自动开启BBR加速。
+理解这些信息后请按回车键继续，并在下一栏输入您解析的有效域名。如果域名输入有误请按Ctrl+C终止脚本运行，然后重新运行脚本。"
+read    nothing
+echo    "请输入此VPS的IP对应的域名地址："
+read    site
+echo    "好的，现在要开始安装了。"
+sleep   5s
+
+
+
+
 #关闭防火墙，安装常用软件
 apt update
 apt install -y   python3-pip wget policycoreutils nginx net-tools curl
