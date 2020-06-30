@@ -3,8 +3,8 @@
 echo    "
 本脚本可以自动安装v2ray，自动申请并使用tls证书加密保护v2ray的流量，反代美国国家生物技术信息中心网址进行网站伪装。需要您事先将此VPS的IP地址解析到一个有效域名上。
 如果您有多个域名解析到此VPS，请重复运行此脚本并输入不同的域名，那么多个域名地址都可以受到tls的加密保护。如果此VPS使用KVM虚拟技术，此脚本自动开启BBR加速。
-同此，此脚本还同时添加了ss服务，端口为10086，密码为fengkuang。
-安装完成后v2ray配置
+同此，此脚本还同时添加了ss服务，端口为10086，密码为fengkuang，加密方法为aes-256-gcm。
+安装完成后v2ray配置:
 端口为             443
 用户ID为           15448fce-7c71-11ea-bc55-0242ac130003
 额外ID为           0
@@ -14,8 +14,8 @@ echo    "
 理解并记录下这些信息后请按回车键继续，并在下一栏输入您解析的有效域名。如果域名输入有误请按Ctrl+C终止脚本运行，然后重新运行脚本。
 This script can automatically setup v2ray， register a tls certification and protect your v2ray stream. Nginx installed can reverse proxy united states national biotechnology information center website to mask your website. This script requires you have a domain which had been resolved to IP of this VPS.
 If you have several domains resolved to this VPS， you could repeat running this script and type in different domains which could all be protected by tls. If your VPS is based on a KVM virtualization technology， this script can automatically enable BBR acceleration.
-Meanwhile，this script also add a shadowsocks server whose port is 10086 and whose password is fengkuang.
-After your running this script， your:
+Meanwhile，this script also add a shadowsocks server whose port is 10086，password is fengkuang and encryption method is aes-256-gcm.
+After your running this script， your v2ray configuration:
 port is                              443
 user ID is                           15448fce-7c71-11ea-bc55-0242ac130003
 transport protocol is                ws
