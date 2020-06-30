@@ -12,6 +12,14 @@ apt update  &&  apt   install   -y   curl   &&   bash    -c     "$(curl -sL   ht
 
 
 
+
+
+
+
+
+
+
+
 #trojan一键脚本@Debian 10
 #trojan onekey setup script@Debian 10
 
