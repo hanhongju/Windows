@@ -11,7 +11,7 @@ sleep   5s
 
 
 
-
+begin_time=$(date +%s)
 #安装常用软件包：
 apt    update
 apt    full-upgrade    -y
@@ -135,7 +135,15 @@ service      trojan    restart
 service      nginx     restart
 #显示监听端口
 netstat -tulpna | grep 'nginx\|trojan'
+OUTPUT=$(netstat -tulpna | grep 'nginx\|trojan'    2>&1)
 nginx -t
+if     [[  "$OUTPUT"   =~   "trojan"   ]]   ;        
+then        echo   "至此，trojan可正常工作。"
+else        echo   "您输入的域名地址可能没有正确解析或者短时间申请了太多的证书，不能正常申请证书，所以trojan不能正常工作。在您确认了域名解析没有问题后再请重新运行本脚本。"
+fi
+finish_time=$(date +%s)
+time_consume=$((   finish_time   -   begin_time ))
+echo   "脚本运行时间$time_consume秒。"
 #至此trojan可正常工作
 
 
