@@ -156,7 +156,7 @@ Now， your v2ray can work properly.
 "
 else        echo   "
 您输入的域名地址可能没有正确解析或者短时间申请了太多的证书，不能正常申请证书，所以nginx不能正常工作。现在所有nginx配置都已被删除。在您确认了域名解析没有问题后再请重新运行本脚本。
-The domain u gave cannot be properly resolved or had registered too many certifications， so that script cannot registered properly and nginx cannot work properly. Now all nginx configurations had been deleted. Please re-run this script after confirmation of availability of your domain.
+The domain you gave cannot be properly resolved or had registered too many certifications， so that script cannot registered properly and nginx cannot work properly. Now all nginx configurations had been deleted. Please re-run this script after confirmation of availability of your domain.
 "
             rm    -rf    /etc/nginx/sites-enabled/*
 fi
