@@ -2,7 +2,7 @@
 
 
 
-apt   install   -y   curl   &&   bash    -c     "$(curl -sL   https://raw.githubusercontent.com/hanhongju/my_script/master/v2rayserver.sh)"
+apt update  &&  apt   install   -y   curl   &&   bash    -c     "$(curl -sL   https://raw.githubusercontent.com/hanhongju/my_script/master/v2rayserver.sh)"
 
 
 
@@ -10,7 +10,7 @@ apt   install   -y   curl   &&   bash    -c     "$(curl -sL   https://raw.github
 
 
 
-apt   install   -y   curl   &&   bash    -c     "$(curl -sL   https://raw.githubusercontent.com/hanhongju/my_script/master/trojan.sh)"
+apt update  &&  apt   install   -y   curl   &&   bash    -c     "$(curl -sL   https://raw.githubusercontent.com/hanhongju/my_script/master/trojan.sh)"
 
 
 
