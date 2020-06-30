@@ -162,7 +162,10 @@ The domain u gave cannot be properly resolved or had registered too many certifi
 fi
 finish_time=$(date +%s)
 time_consume=$((   finish_time   -   begin_time ))
-echo   "脚本运行时间$time_consume秒。"
+echo   "
+脚本运行时间$time_consume秒。
+Time consumed is $time_consume seconds.
+"
 #至此V2Ray可正常工作
 
 
