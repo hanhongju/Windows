@@ -28,7 +28,8 @@ certbot     certonly    --standalone    --agree-tos     -n     -d      $site    
 
 
 #安装trojan
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
+rm           -rf        /usr/local/etc/trojan/config.json               /etc/systemd/system/trojan.service
+bash         -c         "$(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
 #赋予trojan监听443端口能力
 setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/trojan
 #配置证书自动更新
