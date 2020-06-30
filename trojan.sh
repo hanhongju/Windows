@@ -88,7 +88,7 @@ echo '
     "local_port": 443,
     "remote_addr": "127.0.0.1",
     "remote_port": 80,
-    "password": ["password"],
+    "password": ["defaultpassword"],
     "ssl": {
         "cert": "/etc/letsencrypt/live/www.example.com/fullchain.pem",
         "key": "/etc/letsencrypt/live/www.example.com/privkey.pem"
@@ -96,7 +96,7 @@ echo '
 }
 '                 >                /usr/local/etc/trojan/config.json
 sed    -i     ''s/www.example.com/$site/g''       /usr/local/etc/trojan/config.json
-sed    -i     ''s/password/$password/g''          /usr/local/etc/trojan/config.json
+sed    -i     ''s/defaultpassword/$password/g''          /usr/local/etc/trojan/config.json
 #启动trojan和Nginx
 systemctl    enable    trojan
 systemctl    enable    nginx
