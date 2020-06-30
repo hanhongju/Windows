@@ -70,19 +70,18 @@ echo '
         "error": "/var/log/v2ray/error.log",
         "loglevel": "warning"
     },
-    "inbound": {
-        "port": 8964,
-        "protocol": "vmess",
-        "settings": {
-            "clients": [
-                {
-                    "id": "fd3d341d-8af4-8e3d-0726-f1a76f1d1f79",
-                    "level": 1,
-                    "alterId": 100
-                }
-            ]
-        }
-    },
+    "inbound":{ 
+                 "protocol": "vmess",
+                 "listen": "127.0.0.1",
+                 "port": 8964,
+                 "settings": {
+                                 "clients": [{"id": "15448fce-7c71-11ea-bc55-0242ac130003"}]
+                 },
+                 "streamSettings": {
+                                "network": "ws",
+                                "wsSettings": {"path": "/f63lKAx"}
+                 }
+        },
     "outbound": {
         "protocol": "freedom",
         "settings": {}
