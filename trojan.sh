@@ -12,7 +12,7 @@ sleep   5s
 
 
 
-#关闭防火墙，安装常用软件
+#安装常用软件包：
 apt    update
 apt    full-upgrade    -y
 apt    autoremove      -y
@@ -21,19 +21,9 @@ apt    install         -y         python3-pip wget curl net-tools policycoreutil
 #安装Certbot
 pip3   install     cryptography --upgrade
 pip3   install     certbot
-#申请SSL证书
-service     nginx       stop
-certbot     certonly    --standalone    --agree-tos     -n     -d      $site     -m    86606682@qq.com 
-
-
-
-#安装trojan
-rm           -rf        /usr/local/etc/trojan/config.json               /etc/systemd/system/trojan.service
-bash         -c         "$(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
-#赋予trojan监听443端口能力
-setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/trojan
 #配置证书自动更新
-echo "0 0 1 */2 * service trojan stop; certbot renew; service trojan start;" | crontab
+echo          "0 0 1 */2 * service trojan stop; certbot renew; service trojan start;"          |        crontab
+crontab   -l
 #关闭SELinux
 setsebool -P httpd_can_network_connect true
 #修改系统控制文件启用BBR
@@ -42,9 +32,49 @@ net.core.default_qdisc=fq
 net.ipv4.tcp_congestion_control=bbr
 '         >       /etc/sysctl.conf
 sysctl   -p
+#修改nginx配置文件
+echo '
+events {
+worker_connections  1024;
+}
+http {
+sendfile    on;
+keepalive_timeout  65;
+server {
+listen 127.0.0.1:80;
+location / {
+proxy_pass https://pubmed.ncbi.nlm.nih.gov;
+}
+}
+server {
+listen 0.0.0.0:80;
+listen [::]:80;
+location / {
+return 301 https://$host$request_uri;
+}
+}
+}
+'         >       /etc/nginx/nginx.conf
 
 
 
+
+
+
+
+
+
+
+
+
+#申请SSL证书
+service     nginx       stop
+certbot     certonly    --standalone    --agree-tos     -n     -d      $site     -m    86606682@qq.com 
+#安装trojan
+rm           -rf        /usr/local/etc/trojan/config.json               /etc/systemd/system/trojan.service
+bash         -c         "$(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
+#赋予trojan监听443端口能力
+setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/trojan
 #修改trojan配置文件
 echo '
 {
@@ -98,29 +128,6 @@ echo '
 }
 '                 >                /usr/local/etc/trojan/config.json
 sed -i     ''s/www.example.com/$site/g''       /usr/local/etc/trojan/config.json
-#修改nginx配置文件
-echo '
-events {
-worker_connections  1024;
-}
-http {
-sendfile    on;
-keepalive_timeout  65;
-server {
-listen 127.0.0.1:80;
-location / {
-proxy_pass https://pubmed.ncbi.nlm.nih.gov;
-}
-}
-server {
-listen 0.0.0.0:80;
-listen [::]:80;
-location / {
-return 301 https://$host$request_uri;
-}
-}
-}
-'         >       /etc/nginx/nginx.conf
 #启动trojan和Nginx
 systemctl    enable    trojan
 systemctl    enable    nginx
