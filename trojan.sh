@@ -11,6 +11,9 @@ sleep   5s
 
 
 
+
+
+#计时
 begin_time=$(date +%s)
 #安装常用软件包：
 apt    update
