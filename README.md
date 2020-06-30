@@ -6,6 +6,8 @@ apt update  &&  apt   install   -y   curl   &&   bash    -c     "$(curl -sL   ht
 
 
 
+apt update  &&  apt   install   -y   curl   &&   bash    -c     "$(curl -sL   https://raw.githubusercontent.com/hanhongju/my_script/master/v2rayserver_and_ss.sh)"
+
 
 
 
