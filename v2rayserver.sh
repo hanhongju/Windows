@@ -11,7 +11,7 @@ echo    "
 路径为             /f63lKAx
 底层传输安全为     tls
 理解并记录下这些信息后请按回车键继续，并在下一栏输入您解析的有效域名。如果域名输入有误请按Ctrl+C终止脚本运行，然后重新运行脚本。
-This script can automatically setup v2ray, register a tls certification and protect your v2ray stream. Nginx installed can reverse proxy united states national biotechnology information cent to mask your website. This script requires you have a domain which had been resolved to IP of this VPS.
+This script can automatically setup v2ray, register a tls certification and protect your v2ray stream. Nginx installed can reverse proxy united states national biotechnology information center website to mask your website. This script requires you have a domain which had been resolved to IP of this VPS.
 If you have several domains resolved to this VPS, you could repeat running this script and type in different domains which could all be protected by tls. If your VPS is based on a KVM virtualization technology, this script can automatically enable BBR acceleration.
 After your running this script, your:
 port is                              443
@@ -19,7 +19,7 @@ user ID is                           15448fce-7c71-11ea-bc55-0242ac130003
 transport protocol is                ws
 path is                              /f63lKAx
 milestone transport security is      tls.
-Understand and record this information, then press enter to proceed. Type in your available domain. If you type in a wrong code, you can press Ctrl + C to cancer transcript running, after which, you can run script again to restart setup.
+Understand and record this information, then press enter to proceed. Type in your available domain. If you type in a wrong code, you can press Ctrl + C to cancle script running, after which, you can run script again to restart setup.
 "
 read    nothing
 echo    "
