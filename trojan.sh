@@ -6,6 +6,8 @@ echo    "本脚本可以自动安装trojan，自动申请并使用tls证书加�
 read    nothing
 echo    "请输入此VPS的IP对应的域名地址："
 read    site
+echo    "请设定服务器密码："
+read    password
 echo    "好的，现在要开始安装了。"
 sleep   5s
 
@@ -86,14 +88,15 @@ echo '
     "local_port": 443,
     "remote_addr": "127.0.0.1",
     "remote_port": 80,
-    "password": ["fengkuang"],
+    "password": ["password"],
     "ssl": {
         "cert": "/etc/letsencrypt/live/www.example.com/fullchain.pem",
         "key": "/etc/letsencrypt/live/www.example.com/privkey.pem"
     }
 }
 '                 >                /usr/local/etc/trojan/config.json
-sed -i     ''s/www.example.com/$site/g''       /usr/local/etc/trojan/config.json
+sed    -i     ''s/www.example.com/$site/g''       /usr/local/etc/trojan/config.json
+sed    -i     ''s/password/$password/g''          /usr/local/etc/trojan/config.json
 #启动trojan和Nginx
 systemctl    enable    trojan
 systemctl    enable    nginx
@@ -104,7 +107,11 @@ netstat -tulpna | grep 'nginx\|trojan'
 OUTPUT=$(netstat -tulpna | grep 'nginx\|trojan'    2>&1)
 nginx -t
 if     [[  "$OUTPUT"   =~   "trojan"   ]]   ;        
-then        echo   "至此，trojan可正常工作。"
+then        
+echo   "至此，trojan可正常工作。
+您的服务器地址为$site。
+您的服务器密码为$password。
+您的服务器端口为443。"
 else        echo   "您输入的域名地址可能没有正确解析或者短时间申请了太多的证书，不能正常申请证书，所以trojan不能正常工作。在您确认了域名解析没有问题后再请重新运行本脚本。"
 fi
 finish_time=$(date +%s)
