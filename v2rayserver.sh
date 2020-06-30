@@ -18,8 +18,11 @@ sleep   5s
 
 
 
-#安装常用软件包：
+
+
+#计时
 begin_time=$(date +%s)
+#安装常用软件包：
 apt    update
 apt    full-upgrade    -y
 apt    autoremove      -y
