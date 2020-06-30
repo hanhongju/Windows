@@ -11,15 +11,15 @@ echo    "
 路径为             /f63lKAx
 底层传输安全为     tls
 理解并记录下这些信息后请按回车键继续，并在下一栏输入您解析的有效域名。如果域名输入有误请按Ctrl+C终止脚本运行，然后重新运行脚本。
-This script can automatically setup v2ray, register a tls certification and protect your v2ray stream. Nginx installed can reverse proxy united states national biotechnology information center website to mask your website. This script requires you have a domain which had been resolved to IP of this VPS.
-If you have several domains resolved to this VPS, you could repeat running this script and type in different domains which could all be protected by tls. If your VPS is based on a KVM virtualization technology, this script can automatically enable BBR acceleration.
+This script can automatically setup v2ray， register a tls certification and protect your v2ray stream. Nginx installed can reverse proxy united states national biotechnology information center website to mask your website. This script requires you have a domain which had been resolved to IP of this VPS.
+If you have several domains resolved to this VPS， you could repeat running this script and type in different domains which could all be protected by tls. If your VPS is based on a KVM virtualization technology， this script can automatically enable BBR acceleration.
 After your running this script, your:
 port is                              443
 user ID is                           15448fce-7c71-11ea-bc55-0242ac130003
 transport protocol is                ws
 path is                              /f63lKAx
 milestone transport security is      tls.
-Understand and record this information, then press enter to proceed. Type in your available domain. If you type in a wrong code, you can press Ctrl + C to cancle script running, after which, you can run script again to restart setup.
+Understand and record this information， then press enter to proceed. Type in your available domain. If you type in a wrong code， you can press Ctrl + C to cancle script running， after which， you can run script again to restart setup.
 "
 read    nothing
 echo    "
@@ -28,8 +28,8 @@ Now type in your VPS's domain:
 "
 read    site
 echo    "
-好的，现在要开始安装了。
-OK, it is about to start.
+好的,现在要开始安装了。
+OK， it is about to start.
 "
 sleep   5s
 
@@ -152,11 +152,11 @@ echo   $OUTPUT
 if     [[  "$OUTPUT"   =~   "successful"   ]]   ;        
 then        echo   "
 至此，v2ray可正常工作。
-Now, your v2ray can work properly.
+Now， your v2ray can work properly.
 "
 else        echo   "
 您输入的域名地址可能没有正确解析或者短时间申请了太多的证书，不能正常申请证书，所以nginx不能正常工作。现在所有nginx配置都已被删除。在您确认了域名解析没有问题后再请重新运行本脚本。
-The domain u gave cannot be properly resolved or had registered too many certifications, so that script cannot registered properly and nginx cannot work properly. Now all nginx configurations had been deleted. Please re-run this script after confirmation of availability of your domain.
+The domain u gave cannot be properly resolved or had registered too many certifications， so that script cannot registered properly and nginx cannot work properly. Now all nginx configurations had been deleted. Please re-run this script after confirmation of availability of your domain.
 "
             rm    -rf    /etc/nginx/sites-enabled/*
 fi
