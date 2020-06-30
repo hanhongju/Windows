@@ -23,6 +23,21 @@ service nginx stop
 certbot certonly   --standalone   --agree-tos   -n    -d    $site    -m   86606682@qq.com 
 #安装trojan
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
+#赋予trojan监听443端口能力
+setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/trojan
+#配置证书自动更新
+echo "0 0 1 */2 * service trojan stop; certbot renew; service trojan start;" | crontab
+#关闭SELinux
+setsebool -P httpd_can_network_connect true
+#修改系统控制文件启用BBR
+echo     '
+net.core.default_qdisc=fq
+net.ipv4.tcp_congestion_control=bbr
+'         >       /etc/sysctl.conf
+sysctl   -p
+
+
+
 #修改trojan配置文件
 echo '
 {
@@ -75,14 +90,7 @@ echo '
     }
 }
 '                 >                /usr/local/etc/trojan/config.json
-#替换trojan配置文件网站地址
 sed -i     ''s/www.example.com/$site/g''       /usr/local/etc/trojan/config.json
-#赋予trojan监听443端口能力
-setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/trojan
-#配置证书自动更新
-echo "0 0 1 */2 * service trojan stop; certbot renew; service trojan start;" | crontab
-#关闭SELinux
-setsebool -P httpd_can_network_connect true
 #修改nginx配置文件
 echo '
 events {
@@ -106,20 +114,14 @@ return 301 https://$host$request_uri;
 }
 }
 '         >       /etc/nginx/nginx.conf
-sed      -i       ''s/www.example.com/$site/g''               /etc/nginx/nginx.conf
-#修改系统控制文件启用BBR
-echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
-echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
-sysctl -p
-#检查目前BBR启动状态
-sysctl net.ipv4.tcp_congestion_control
 #启动trojan和Nginx
-systemctl enable trojan
-systemctl enable nginx
-service   trojan   restart
-service   nginx    restart
+systemctl    enable    trojan
+systemctl    enable    nginx
+service      trojan    restart
+service      nginx     restart
 #显示监听端口
 netstat -tulpna | grep 'nginx\|trojan'
+nginx -t
 #至此trojan可正常工作
 
 
