@@ -94,8 +94,8 @@ echo '
         "key": "/etc/letsencrypt/live/www.example.com/privkey.pem"
     }
 }
-'                 >                /usr/local/etc/trojan/config.json
-sed    -i     ''s/www.example.com/$site/g''       /usr/local/etc/trojan/config.json
+'           >          /usr/local/etc/trojan/config.json
+sed    -i     ''s/www.example.com/$site/g''              /usr/local/etc/trojan/config.json
 sed    -i     ''s/defaultpassword/$password/g''          /usr/local/etc/trojan/config.json
 #启动trojan和Nginx
 systemctl    enable    trojan
