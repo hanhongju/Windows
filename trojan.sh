@@ -85,20 +85,28 @@ echo "0 0 1 */2 * service trojan stop; certbot renew; service trojan start;" | c
 setsebool -P httpd_can_network_connect true
 #修改nginx配置文件
 echo '
+events {
+worker_connections  1024;
+}
+http {
+sendfile    on;
+keepalive_timeout  65;
 server {
-    listen 127.0.0.1:80;
-    location / {
-        proxy_pass https://pubmed.ncbi.nlm.nih.gov;
-    }
+listen 127.0.0.1:80;
+location / {
+proxy_pass https://pubmed.ncbi.nlm.nih.gov;
+}
 }
 server {
-    listen 0.0.0.0:80;
-    listen [::]:80;
-    location / {
-        return 301 https://$host$request_uri;
-    }
+listen 0.0.0.0:80;
+listen [::]:80;
+location / {
+return 301 https://$host$request_uri;
 }
-'                  >            /etc/nginx/conf.d/default.conf
+}
+}
+'         >       /etc/nginx/nginx.conf
+sed      -i       ''s/www.example.com/$site/g''               /etc/nginx/nginx.conf
 #修改系统控制文件启用BBR
 echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
