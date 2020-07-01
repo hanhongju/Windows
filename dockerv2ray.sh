@@ -9,7 +9,7 @@ read    site
 apt      purge      -y      apache2
 docker   rm         -f      v2ray
 docker   run        -d      --rm --name v2ray -p 443:443 -p 80:80 -v $HOME/.caddy:/root/.caddy  pengchujin/v2ray_ws:0.10   $site V2RAY_WS 15448fce-7c71-11ea-bc55-0242ac130003  
-docker   logs    v2ray
+docker   logs       v2ray
 #显示服务器配置
 
 
