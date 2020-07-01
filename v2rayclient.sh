@@ -4,7 +4,7 @@
 wget        https://github.com/v2ray/v2ray-core/releases/download/v4.23.4/v2ray-linux-64.zip     -O     /home/v2ray-linux-64.zip
 #安装v2ray文件
 apt   update
-apt   install    -y      unzip  zip  curl   wget
+apt   install    -y          unzip zip net-tools wget
 mkdir    /usr/bin/v2ray/
 mkdir    /etc/v2ray/
 cp        -f       /home/hj/v2ray-linux-64.zip                  /home/v2ray-linux-64.zip
@@ -27,7 +27,7 @@ netstat  -plunt | grep 'v2ray'
 
 
 #设置tsocks透明代理
-apt  install    -y   tsocks
+apt  install    -y         tsocks
 echo '
 server       =  127.0.0.1
 server_type  =  5
