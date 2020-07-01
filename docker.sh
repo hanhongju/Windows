@@ -1,5 +1,4 @@
 #Docker一键安装脚本@Debian 10
-
 apt update && apt install -y curl && bash -c "$(curl -sL https://get.docker.com)"
 
 
@@ -33,17 +32,10 @@ site=hostc.hongju.site
 apt       purge       -y       apache2
 docker    rm    -f     v2ray
 docker    run   -d   --rm --name v2ray -p 443:443 -p 80:80 -v $HOME/.caddy:/root/.caddy  pengchujin/v2ray_ws:0.10   $site V2RAY_WS 15448fce-7c71-11ea-bc55-0242ac130003  
-docker    container    ls
 sleep     3s
 docker    logs         v2ray
+docker    container    ls
 #显示服务器配置
-
-
-
-
-#Docker安装minecraft服务器
-
-docker run -d -p 25565:25565 --name mc itzg/minecraft-server
 
 
 
