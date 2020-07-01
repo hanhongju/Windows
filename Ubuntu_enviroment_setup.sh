@@ -18,10 +18,11 @@ deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted unive
 BLOCK
 #新系统更新软件
 apt   update
-apt   install    -y   --fix-broken
-apt   full-upgrade   -y
-apt   install    -y   gcc make perl curl unzip vim axel fcitx daemon python3-gpg  ffmpeg net-tools steam-installer  qbittorrent libavcodec-extra hardinfo  ttf-mscorefonts-installer  ubuntu-restricted-extras
-apt   autoremove -y
+apt   install           -y   --fix-broken
+apt   full-upgrade      -y
+apt   install           -y                 wget curl net-tools gcc make perl zip unzip vim axel fcitx daemon python3-gpg ffmpeg steam-installer
+apt   install           -y                 qbittorrent libavcodec-extra hardinfo  ttf-mscorefonts-installer  ubuntu-restricted-extras
+apt   autoremove        -y
 
 #空格的正则表达式为"\ "
 #设定网络容忍度
