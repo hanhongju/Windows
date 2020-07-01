@@ -8,7 +8,7 @@ apt   install    -y          unzip zip net-tools wget
 mkdir    /usr/bin/v2ray/
 mkdir    /etc/v2ray/
 cp        -f       /home/hj/v2ray-linux-64.zip                  /home/v2ray-linux-64.zip
-unzip              /home/v2ray-linux-64.zip          -od        /usr/bin/v2ray/
+unzip     -o       /home/v2ray-linux-64.zip           -d        /usr/bin/v2ray/
 #配置v2ray服务
 cp        -f       /usr/bin/v2ray/systemd/v2ray.service         /etc/systemd/system/v2ray.service
 systemctl     daemon-reload
