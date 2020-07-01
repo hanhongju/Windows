@@ -13,9 +13,9 @@ mkdir   /etc/v2ray
 cp        -f       /home/hj/config.json                         /home/config.json
 cp        -f       /home/config.json                            /etc/v2ray/config.json
 #读取节点信息，启动容器
-docker container stop v2ray
-docker container rm v2ray
-docker run   -d   --name   v2ray   -v    /etc/v2ray:/etc/v2ray    -p   8000:8000   v2ray/official   v2ray   -config=/etc/v2ray/config.json
+docker container stop    v2ray
+docker container rm      v2ray
+docker run   -d  --name  v2ray   -v   /etc/v2ray:/etc/v2ray   -p   8000:8000   v2ray/official   v2ray   -config=/etc/v2ray/config.json
 docker container restart v2ray
 docker container ls
 #回显容器信息
