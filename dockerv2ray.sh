@@ -8,7 +8,6 @@ echo    "
 Now type in your VPS's domain:
 "
 read    site
-echo    "
 #拉取v2ray脚本并安装
 docker rm -f v2ray
 docker run -d --rm --name v2ray -p 443:443 -p 80:80 -v $HOME/.caddy:/root/.caddy  pengchujin/v2ray_ws:0.10   $site V2RAY_WS 15448fce-7c71-11ea-bc55-0242ac130003
