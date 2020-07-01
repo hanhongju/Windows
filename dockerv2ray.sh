@@ -1,5 +1,5 @@
 #Docker安装v2ray脚本@Debian 10
-bash -c "$(curl -sL https://raw.githubusercontent.com/hanhongju/my_script/master/dockerv2ray.sh)"
+#bash -c "$(curl -sL https://raw.githubusercontent.com/hanhongju/my_script/master/dockerv2ray.sh)"
 #定义站点地址
 echo    "
 请输入此VPS的IP对应的域名地址：
