@@ -27,7 +27,7 @@ docker    container    ls
 #Docker安装v2ray+tls server@Debian 10
 apt update && apt install -y curl && bash -c "$(curl -sL https://get.docker.com)"
 #定义站点地址
-site=hostc.hongju.site
+site=<domain>
 #拉取v2ray脚本并安装
 apt    purge    -y       apache2
 docker    rm    -f     v2ray
