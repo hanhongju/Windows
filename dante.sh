@@ -40,7 +40,7 @@ apt  install    -y   tsocks
 echo '
 server       =  127.0.0.1
 server_type  =  5
-server_port  =  6000
+server_port  =  7000
 default_user =  none
 default_pass =  none
 '          >              /etc/tsocks.conf
