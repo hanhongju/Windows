@@ -4,7 +4,7 @@ apt update && apt install -y curl && bash -c "$(curl -sL https://get.docker.com)
 
 
 
-#Docker安装v2ray脚本@Debian 10
+#Docker安装v2ray@Debian 10
 
 bash -c "$(curl -sL https://raw.githubusercontent.com/hanhongju/my_script/master/dockerv2ray.sh)"
 
