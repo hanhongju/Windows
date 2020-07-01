@@ -1,28 +1,6 @@
 #v2rayclient安装脚本@Debian 10
 
 
-
-
-#Docker安装v2ray @Debian 10
-#一键安装docker
-apt update && apt install -y curl && bash -c "$(curl -sL https://get.docker.com)"
-#下载v2ray
-docker  pull  v2ray/official
-mkdir   /etc/v2ray
-#导入节点信息文件
-cp        -f       /home/hj/config.json                         /home/config.json
-cp        -f       /home/config.json                            /etc/v2ray/config.json
-#读取节点信息，启动容器
-docker container stop    v2ray
-docker container rm      v2ray
-docker run   -d  --name  v2ray   -v   /etc/v2ray:/etc/v2ray   -p   8000:8000   v2ray/official   v2ray   -config=/etc/v2ray/config.json
-docker container restart v2ray
-docker container ls
-#回显容器信息
-
-
-
-
 #手动安装v2ray @Debian 10
 #下载v2ray，如不能联网，手动下载v2ray.zip至/home目录或/home/hj目录，上传配置文件config.json至/home目录或/home/hj目录
 wget        https://github.com/v2ray/v2ray-core/releases/download/v4.23.4/v2ray-linux-64.zip     -O     /home/v2ray-linux-64.zip
