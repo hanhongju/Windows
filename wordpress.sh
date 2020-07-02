@@ -69,9 +69,9 @@ netstat      -plunt    |   grep   3306
 
 
 #转移网站->备份数据库，存放于db_dump.sql
-mysqldump  -uroot     -pfengkuang     wordpress   >    /home/db_dump.sql
+mysqldump     -uroot     -pfengkuang     wordpress   >    /home/db_dump.sql
 #将备份文件导入数据库
-mysql      -uroot     -pfengkuang     wordpress   <    /home/db_dump.sql
+mysql         -uroot     -pfengkuang     wordpress   <    /home/db_dump.sql
 
 
 
