@@ -8,9 +8,9 @@ apt   install        -y        wget curl net-tools policycoreutils nginx php-fpm
 setsebool -P httpd_can_network_connect 1 && setenforce 0
 #下载wordpress
 wget    https://cn.wordpress.org/latest-zh_CN.tar.gz      -P     /home/website/
-chmod   777   -R   /home/website/
 cd     /home/website   
-tar     zxf     latest-zh_CN.tar.gz
+tar     zxf           latest-zh_CN.tar.gz
+chmod   777    -R    /home/website/
 #下载探针
 wget    https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php     -O     /home/website/wordpress/p.php
 #创建nginx配置文件
