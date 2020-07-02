@@ -31,13 +31,11 @@ listen 80;
 listen [::]:80;
 listen 443 ssl;
 listen [::]:443 ssl;
-ssl_certificate       /etc/letsencrypt/live/www.example.com/fullchain.pem;  
-ssl_certificate_key   /etc/letsencrypt/live/www.example.com/privkey.pem;   
-if ( $scheme = http ){
-return 301 https://$server_name$request_uri;
-}
-root      /home/website/wordpress/;
-index      index.php index.html index.htm;
+ssl_certificate             /etc/letsencrypt/live/www.example.com/fullchain.pem;  
+ssl_certificate_key         /etc/letsencrypt/live/www.example.com/privkey.pem;   
+if ( $scheme = http ){return 301 https://$server_name$request_uri;}
+root          /home/website/wordpress/;
+index         index.php index.html index.htm;
 location ~ \.php$ {
 fastcgi_pass  unix:/run/php/php7.3-fpm.sock;     #php -v 遇到502 Bad Gateway时查看php版本，确认php-fpm.sock版本
 fastcgi_index  index.php;
@@ -45,8 +43,8 @@ fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 include        fastcgi_params;
 }
 }
-'        >         /etc/nginx/sites-enabled/default.conf
-sed      -i     ''s/www.example.com/$site/g''          /etc/nginx/sites-enabled/default.conf
+'         >         /etc/nginx/sites-enabled/default.conf
+sed      -i      ''s/www.example.com/$site/g''          /etc/nginx/sites-enabled/default.conf
 #重启服务
 systemctl     enable       nginx 
 systemctl     restart      nginx
