@@ -51,7 +51,6 @@ sed      -i     ''s/www.example.com/$site/g''          /etc/nginx/sites-enabled/
 systemctl     enable       nginx 
 systemctl     restart      nginx
 #浏览器进入网站开始配置
-#设置-固定链接，改为朴素
 
 
 
