@@ -77,10 +77,11 @@ mysql         -uroot     -pfengkuang     -e      "SHOW DATABASEs"
 sed      -i       ''s/127.0.0.1/\*/g''         /etc/mysql/mariadb.conf.d/50-server.cnf
 mysql         -uroot     -pfengkuang     -e      "use mysql; grant all privileges on *.* to 'root'@'%' identified by 'fengkuang' with grant option; flush privileges; select user,host from user;"
 BLOCK
+#启动数据库
 systemctl     enable       mariadb
 systemctl     restart      mariadb
-netstat      -plunt    |   grep   3306
-#至此mysql服务开放给公网
+netstat      -plunt    |   grep   'mysql\|nginx'
+#回显mysql和nginx监听端口
 
 
 
