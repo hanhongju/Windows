@@ -53,7 +53,6 @@ mysql      -uroot     -pfengkuang     -e      "CREATE DATABASE wordpress"
 sed      -i       ''s/127.0.0.1/\*/g''         /etc/mysql/mariadb.conf.d/50-server.cnf
 #添加外网连接数据库权限
 mysql        -uroot       -pfengkuang     -e      "use mysql; grant all privileges on *.* to 'root'@'%' identified by 'fengkuang' with grant option; flush privileges; select user,host from user;"
-systemctl     enable       mariadb
 systemctl     restart      mariadb
 netstat      -plunt    |   grep   3306
 #至此mysql服务开放给公网
