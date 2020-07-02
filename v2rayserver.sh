@@ -169,11 +169,11 @@ include           /etc/nginx/sites-enabled/*;
 '         >       /etc/nginx/nginx.conf
 echo '
 server{
+server_name www.example.com;
+set $proxy_name pubmed.ncbi.nlm.nih.gov;
 listen 80;
 listen [::]:80;
 resolver 8.8.8.8 8.8.4.4 valid=300s;
-server_name www.example.com;
-set $proxy_name pubmed.ncbi.nlm.nih.gov;
 listen 443 ssl;
 listen [::]:443 ssl;
 ssl_certificate          /etc/letsencrypt/live/www.example.com/fullchain.pem;  
