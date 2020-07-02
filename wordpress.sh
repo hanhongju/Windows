@@ -5,10 +5,10 @@ site=hanhongju.com
 apt   update
 apt   full-upgrade   -y
 apt   autoremove     -y
-apt   install        -y      python3-pip  wget curl  net-tools    policycoreutils     mariadb-server      nginx      php-fpm      php-mysql 
+apt   install        -y      python3-pip wget curl net-tools policycoreutils mariadb-server nginx php-fpm php-mysql 
 #安装Certbot
-pip3 install cryptography --upgrade
-pip3 install certbot
+pip3  install   cryptography --upgrade
+pip3  install   certbot
 #申请SSL证书
 service     nginx    stop
 certbot     certonly    --standalone    --agree-tos   -n     -d    $site     -m    86606682@qq.com 
