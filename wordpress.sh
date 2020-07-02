@@ -16,13 +16,13 @@ certbot     certonly    --standalone    --agree-tos   -n     -d    $site     -m 
 echo "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;" | crontab
 #关闭SELinux
 setsebool -P httpd_can_network_connect 1 && setenforce 0
-#下载探针
-wget       -c         https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php     -O     /home/website/wordpress/p.php
 #下载wordpress至网站根目录
 wget       -c         https://cn.wordpress.org/latest-zh_CN.tar.gz      -P     /home/website/
 cd         /home/website   
 tar         zxf       latest-zh_CN.tar.gz
 chmod       777      -R       /home/website/
+#下载探针
+wget       -c         https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php     -O     /home/website/wordpress/p.php
 #创建nginx配置文件
 echo '
 server {
@@ -45,10 +45,8 @@ fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 include        fastcgi_params;
 }
 }
-'    >        /etc/nginx/sites-enabled/default.conf
-#修改nginx配置文件
-sed   -i     ''s/www.example.com/$site/g''        /etc/nginx/sites-enabled/default.conf
-service   nginx   restart
+'        >         /etc/nginx/sites-enabled/default.conf
+sed      -i     ''s/www.example.com/$site/g''          /etc/nginx/sites-enabled/default.conf
 #重启服务
 systemctl     enable       nginx 
 systemctl     restart      nginx
