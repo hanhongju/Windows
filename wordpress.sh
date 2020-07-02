@@ -25,9 +25,9 @@ chmod       777      -R       /home/website/
 wget       -c         https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php     -O     /home/website/wordpress/p.php
 #创建nginx配置文件
 echo '
-user www-data;
-events {}
-http {include /etc/nginx/sites-enabled/*;}
+user     www-data;
+events   {}
+http     {include /etc/nginx/sites-enabled/*;}
 '         >       /etc/nginx/nginx.conf
 echo '
 server {
