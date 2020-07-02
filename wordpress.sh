@@ -17,7 +17,7 @@ echo "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;" | cro
 #关闭SELinux
 setsebool -P httpd_can_network_connect 1 && setenforce 0
 #下载探针
-wget   -c   https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php     -O     /home/website/p.php
+wget       -c         https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php     -O     /home/website/wordpress/p.php
 #下载wordpress至网站根目录
 wget       -c         https://cn.wordpress.org/latest-zh_CN.tar.gz      -P     /home/website/
 cd         /home/website   
