@@ -11,16 +11,14 @@ wget    https://cn.wordpress.org/latest-zh_CN.tar.gz      -P     /home/website/
 chmod   777   -R   /home/website/
 cd     /home/website   
 tar     zxf     latest-zh_CN.tar.gz
-mv     -f      wordpress/*    . 
-rm     -rf     wordpress      latest-zh_CN.tar.gz
 #下载探针
-wget    https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php     -O     /home/website/p.php
+wget    https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php     -O     /home/website/wordpress/p.php
 #创建nginx配置文件
 echo '
 server {
 listen 80;
 listen [::]:80;
-root   /home/website/;
+root   /home/website/wordpress/;
 index   index.php index.html index.htm;
 location ~ \.php$ {
 fastcgi_pass  unix:/run/php/php7.3-fpm.sock;     #php -v 遇到502 Bad Gateway时查看php版本，确认php-fpm.sock版本
