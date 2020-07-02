@@ -5,7 +5,7 @@ apt   full-upgrade   -y
 apt   autoremove     -y
 apt   install        -y        wget curl net-tools policycoreutils nginx php-fpm php-mysql 
 #下载wordpress
-wget    https://cn.wordpress.org/latest-zh_CN.tar.gz      -P     /home/website/
+wget   -c             https://cn.wordpress.org/latest-zh_CN.tar.gz      -P     /home/website/
 cd     /home/website   
 tar     zxf           latest-zh_CN.tar.gz
 chmod   777    -R    /home/website/
