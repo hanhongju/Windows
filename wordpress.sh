@@ -17,16 +17,6 @@ rm     -rf     wordpress      latest-zh_CN.tar.gz
 wget    https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php     -O     /home/website/p.php
 #创建nginx配置文件
 echo '
-events {
-worker_connections  1024;
-}
-http {
-sendfile    on;
-keepalive_timeout  65;
-include           /etc/nginx/sites-enabled/*;
-}
-'         >       /etc/nginx/nginx.conf
-echo '
 server {
 listen 80;
 listen [::]:80;
