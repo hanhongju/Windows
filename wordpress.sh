@@ -7,7 +7,7 @@ apt   install        -y      python3-pip wget curl net-tools policycoreutils ngi
 #关闭SELinux
 setsebool -P httpd_can_network_connect 1 && setenforce 0
 #下载wordpress
-wget           https://cn.wordpress.org/latest-zh_CN.tar.gz      -P     /home/website/
+wget    https://cn.wordpress.org/latest-zh_CN.tar.gz      -P     /home/website/
 chmod   777   -R   /home/website/
 cd     /home/website   
 tar     zxf     latest-zh_CN.tar.gz
