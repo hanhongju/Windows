@@ -13,6 +13,17 @@ chmod   777    -R    /home/website/
 wget    https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php     -O     /home/website/wordpress/p.php
 #创建nginx配置文件
 echo '
+events {
+worker_connections  1024;
+}
+http {
+sendfile    on;
+keepalive_timeout  65;
+include           /etc/nginx/sites-enabled/*;
+}
+'         >       /etc/nginx/nginx.conf
+rm   -rf    /etc/nginx/sites-enabled/*
+echo '
 server {
 listen 80;
 listen [::]:80;
