@@ -158,9 +158,9 @@ certbot     certonly    --standalone    --agree-tos     -n     -d      $site    
 #创建nginx配置文件
 mkdir      -p      /etc/nginx/sites-enabled/
 echo '
-events {}
-http   {include    /etc/nginx/sites-enabled/*;}
-'        >         /etc/nginx/nginx.conf
+events   {}
+http     {include /etc/nginx/sites-enabled/*;}
+'         >       /etc/nginx/nginx.conf
 echo '
 server{
 server_name www.example.com;
