@@ -3,7 +3,7 @@
 apt   update
 apt   full-upgrade   -y
 apt   autoremove     -y
-apt   install        -y      python3-pip wget curl net-tools policycoreutils nginx php-fpm php-mysql 
+apt   install        -y        wget curl net-tools policycoreutils nginx php-fpm php-mysql 
 #关闭SELinux
 setsebool -P httpd_can_network_connect 1 && setenforce 0
 #下载wordpress
