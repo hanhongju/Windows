@@ -17,6 +17,7 @@ echo "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;" | cro
 #关闭SELinux
 setsebool -P httpd_can_network_connect 1 && setenforce 0
 #下载wordpress至网站根目录
+rm         -rf        /home/website/wordpress/*
 wget       -c         https://cn.wordpress.org/latest-zh_CN.tar.gz      -P     /home/website/
 cd         /home/website   
 tar         zxf       latest-zh_CN.tar.gz
