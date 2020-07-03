@@ -45,9 +45,7 @@ php    -v
 
 
 
-#安装数据库
-apt       install     -y       mariadb-server  
-#配置数据库
+#初始化数据库
 mysql_secure_installation
 #修改数据库登录方式
 mysql         -uroot     -pfengkuang     -e      "update mysql.user set plugin='mysql_native_password' where User='root'"
