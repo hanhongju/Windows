@@ -9,8 +9,8 @@ rm         -rf       /home/wordpress/
 wget       -c         https://cn.wordpress.org/latest-zh_CN.tar.gz      -O     /home/latest-zh_CN.tar.gz
 cd         /home/
 tar         zxf       latest-zh_CN.tar.gz
-chmod      -R      777         /home/
-chown      -R      www-data    /home/
+chmod      -R         777           /home/
+chown      -R         www-data      /home/
 #创建nginx配置文件
 echo '
 server {
