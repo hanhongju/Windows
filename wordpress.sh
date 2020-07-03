@@ -5,7 +5,7 @@ site=hanhongju.com
 apt   update
 apt   full-upgrade   -y
 apt   autoremove     -y
-apt   install        -y      python3-pip wget curl net-tools policycoreutils nginx php-fpm php-mysql mariadb-server  
+apt   install        -y      python3-pip wget curl zip unzip net-tools policycoreutils nginx php-fpm php-mysql mariadb-server  
 #安装Certbot
 pip3  install   cryptography --upgrade
 pip3  install   certbot
@@ -85,11 +85,37 @@ netstat      -plunt    |   grep   'mysql\|nginx'
 
 
 
-
-#转移网站->备份数据库，存放于db_dump.sql
+#数据库备份
+#备份数据库，存放于db_dump.sql
 mysqldump     -uroot     -pfengkuang     wordpress   >    /home/db_dump.sql
-#将备份文件导入数据库
+#导入数据库
 mysql         -uroot     -pfengkuang     wordpress   <    /home/db_dump.sql
+
+
+
+#网站整体搬迁
+#导出wordpress网站备份到网站根目录和/home文件夹中
+mysqldump     -uroot     -pfengkuang     wordpress   >    /home/website/wordpress/db_dump.sql
+cd            /home/website/wordpress/
+zip           -q          wordpress.zip      -r       ./                     
+cp            /home/website/wordpress/wordpress.zip            /home/
+
+#远程下载网站备份文件
+wget         https://hanhongju.com/wordpress.zip    -O     /home/wordpress.zip
+mkdir       -p      /home/website/wordpress/
+unzip       -qo     /home/wordpress.zip             -d     /home/website/wordpress/
+#导入数据库
+mysql         -uroot     -pfengkuang     -e      "DROP DATABASE wordpress"
+mysql         -uroot     -pfengkuang     -e      "CREATE DATABASE wordpress"
+mysql         -uroot     -pfengkuang     -e      "SHOW DATABASEs"
+mysql         -uroot     -pfengkuang     wordpress   <    /home/website/wordpress/db_dump.sql
+
+
+
+
+
+
+
 
 
 
