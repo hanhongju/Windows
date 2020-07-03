@@ -5,18 +5,18 @@ apt   full-upgrade   -y
 apt   autoremove     -y
 apt   install        -y      wget curl zip unzip net-tools nginx php-fpm php-mysql mariadb-server  
 #安装wordpress网页文件
-rm         -rf       /home/website/wordpress
-wget       -c         https://cn.wordpress.org/latest-zh_CN.tar.gz      -P     /home/website/
-cd         /home/website   
+rm         -rf       /home/wordpress
+wget       -c         https://cn.wordpress.org/latest-zh_CN.tar.gz      -O     /home/latest-zh_CN.tar.gz
+cd         /home  
 tar         zxf       latest-zh_CN.tar.gz
-chmod       777      -R       /home/website/
+chmod       777      -R       /home/
 #创建nginx配置文件
 echo '
 server {
 server_name  hanhongju.com;
 listen 80;
 listen [::]:80;
-root          /home/website/wordpress/;
+root          /home/wordpress/;
 index         index.php index.html index.htm;
 location ~ \.php$ {
 fastcgi_pass   unix:/run/php/php7.3-fpm.sock;     #php -v 遇到502 Bad Gateway时查看php版本，确认php-fpm.sock版本
@@ -83,14 +83,14 @@ mysql         -uroot     -pfengkuang     wordpress   <    /home/db_dump.sql
 
 #网站文件备份
 #备份wordpress.zip到/home文件夹
-cd                  /home/website/wordpress/
+cd                  /home/wordpress/
 zip       -q        /home/wordpress.zip         -r      ./      
 #上传wordpress.zip到/home文件夹，还原wordpress文件
-rm        -rf       /home/website/wordpress/
-mkdir     -p        /home/website/wordpress/
-unzip     -qo       /home/wordpress.zip         -d       /home/website/wordpress/
+rm        -rf       /home/wordpress/
+mkdir     -p        /home/wordpress/
+unzip     -qo       /home/wordpress.zip         -d       /home/wordpress/
 #远程下载wordpress.zip
-cp         /home/wordpress.zip           /home/website/wordpress/wordpress.zip
+cp         /home/wordpress.zip           /home/wordpress/wordpress.zip
 wget       https://hanhongju.com/wordpress.zip      -O     /home/wordpress.zip
 
 
