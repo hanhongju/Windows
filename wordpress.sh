@@ -92,34 +92,14 @@ mysqldump     -uroot     -pfengkuang     wordpress   >    /home/db_dump.sql
 mysql         -uroot     -pfengkuang     wordpress   <    /home/db_dump.sql
 
 
-
-#网站整体搬迁
-#导出wordpress网站备份到网站根目录和/home文件夹中
-mysqldump     -uroot     -pfengkuang     wordpress   >    /home/website/wordpress/db_dump.sql
-cd            /home/website/wordpress/
-zip           -q          wordpress.zip      -r       ./                     
-cp            /home/website/wordpress/wordpress.zip            /home/
-
-#远程下载网站备份文件
-wget         https://hanhongju.com/wordpress.zip    -O     /home/wordpress.zip
-mkdir       -p      /home/website/wordpress/
-unzip       -qo     /home/wordpress.zip             -d     /home/website/wordpress/
-#导入数据库
-mysql         -uroot     -pfengkuang     -e      "DROP DATABASE wordpress"
-mysql         -uroot     -pfengkuang     -e      "CREATE DATABASE wordpress"
-mysql         -uroot     -pfengkuang     -e      "SHOW DATABASEs"
-mysql         -uroot     -pfengkuang     wordpress   <    /home/website/wordpress/db_dump.sql
-
-
-
-
-
-
-
-
-
-
-
+#网站文件备份
+#备份wordpress.zip到/home文件夹
+cd                 /home/website/wordpress/
+zip       -q       /home/wordpress.zip          -r      ./      
+#上传wordpress.zip到/home文件夹，还原wordpress文件
+rm        -rf       /home/website/wordpress/
+mkdir     -p        /home/website/wordpress/
+unzip     -qo       /home/wordpress.zip         -d       /home/website/wordpress/
 
 
 
