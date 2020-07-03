@@ -29,6 +29,10 @@ include        fastcgi_params;
 #重启服务
 systemctl     enable       nginx 
 systemctl     restart      nginx
+#查看当前nginx版本
+curl   -I    127.0.0.1
+#查看当前php版本
+php    -v
 #浏览器进入网站开始配置
 
 
