@@ -91,7 +91,7 @@ mkdir     -p        /home/wordpress/
 unzip     -qo       /home/wordpress.zip         -d       /home/wordpress/
 #远程下载wordpress.zip
 cp         /home/wordpress.zip           /home/wordpress/wordpress.zip
-wget       https://hanhongju.com/wordpress.zip      -O     /home/wordpress.zip
+wget       http://hanhongju.com/wordpress.zip      -O     /home/wordpress.zip
 
 
 
