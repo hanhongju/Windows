@@ -101,7 +101,7 @@ rm        -rf       /home/website/wordpress/
 mkdir     -p        /home/website/wordpress/
 unzip     -qo       /home/wordpress.zip         -d       /home/website/wordpress/
 #远程下载wordpress.zip
-cp         /home/         /home/website/wordpress/wordpress.zip
+cp         /home/wordpress.zip           /home/website/wordpress/wordpress.zip
 wget       https://hanhongju.com/wordpress.zip      -O     /home/wordpress.zip
 
 
