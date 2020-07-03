@@ -9,3 +9,8 @@ apt   autoremove      -y
 #查看当前系统版本
 lsb_release   -a
 #reboot重启各软件，运行新版本
+
+
+
+
+
