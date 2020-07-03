@@ -1,40 +1,21 @@
 #wordpress安装脚本@Debian 10
-#定义网站URL
-site=hanhongju.com
 #安装常用软件包、LNMP环境：
 apt   update
 apt   full-upgrade   -y
 apt   autoremove     -y
-apt   install        -y      python3-pip wget curl zip unzip net-tools policycoreutils nginx php-fpm php-mysql mariadb-server  
-#安装Certbot
-pip3  install   cryptography --upgrade
-pip3  install   certbot
-#申请SSL证书
-service     nginx    stop
-certbot     certonly    --standalone    --agree-tos   -n     -d    $site     -m    86606682@qq.com 
-#配置证书自动更新
-echo "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;" | crontab
-#关闭SELinux
-setsebool -P httpd_can_network_connect 1 && setenforce 0
+apt   install        -y      wget curl zip unzip net-tools nginx php-fpm php-mysql mariadb-server  
 #安装wordpress网页文件
 rm         -rf       /home/website/wordpress
 wget       -c         https://cn.wordpress.org/latest-zh_CN.tar.gz      -P     /home/website/
 cd         /home/website   
 tar         zxf       latest-zh_CN.tar.gz
 chmod       777      -R       /home/website/
-#下载探针
-wget       -c         https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php     -O     /home/website/wordpress/p.php
 #创建nginx配置文件
 echo '
 server {
-server_name www.example.com;
+server_name  hanhongju.com;
 listen 80;
 listen [::]:80;
-listen 443 ssl;
-listen [::]:443 ssl;
-ssl_certificate             /etc/letsencrypt/live/www.example.com/fullchain.pem;  
-ssl_certificate_key         /etc/letsencrypt/live/www.example.com/privkey.pem;   
-if ( $scheme = http ){return 301 https://$server_name$request_uri;}
 root          /home/website/wordpress/;
 index         index.php index.html index.htm;
 location ~ \.php$ {
@@ -45,7 +26,6 @@ include        fastcgi_params;
 }
 }
 '         >         /etc/nginx/sites-enabled/default.conf
-sed      -i      ''s/www.example.com/$site/g''          /etc/nginx/sites-enabled/default.conf
 #重启服务
 systemctl     enable       nginx 
 systemctl     restart      nginx
@@ -81,6 +61,15 @@ systemctl     enable       mariadb
 systemctl     restart      mariadb
 netstat      -plunt    |   grep   'mysql\|nginx'
 #回显mysql和nginx监听端口
+
+
+
+
+
+
+
+
+
 
 
 
