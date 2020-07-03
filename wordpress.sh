@@ -9,6 +9,7 @@ rm         -rf       /home/wordpress
 wget       -c         https://cn.wordpress.org/latest-zh_CN.tar.gz      -O     /home/latest-zh_CN.tar.gz
 cd         /home  
 tar         zxf       latest-zh_CN.tar.gz
+echo        "define('FS_METHOD','direct');"      >>      /home/wordpress/wp-config.php
 chmod       777      -R       /home/
 #创建nginx配置文件
 echo '
