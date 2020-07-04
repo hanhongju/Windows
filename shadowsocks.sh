@@ -62,7 +62,8 @@ default_user =  none
 default_pass =  none
 '          >              /etc/tsocks.conf
 #在wget之前加上tsocks以使其通过代理
-#测试
+
+#测试代理可用性
 tsocks      wget         https://cn.wordpress.org/latest-zh_CN.tar.gz      -O     /home/latest-zh_CN.tar.gz
 
 
