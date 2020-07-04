@@ -15,9 +15,9 @@ echo '
 }
 '     >           /etc/shadowsocks-libev/config.json
 #重启服务
-service shadowsocks-libev restart
+service   shadowsocks-libev   restart
 sleep 1s
-netstat  -plunt | grep 'ss-server'
+netstat  -plunt   |   grep 'ss-server'
 #回显ss-server监听端口
 
 
@@ -45,7 +45,7 @@ echo   '
 systemctl   enable      shadowsocks-libev-local@root
 systemctl   restart     shadowsocks-libev-local@root
 sleep 1s
-netstat  -plunt | grep 'ss-local'
+netstat    -plunt   |   grep 'ss-local'
 #回显ss-local监听端口
 
 
@@ -61,10 +61,8 @@ server_port  =  9000
 default_user =  none
 default_pass =  none
 '          >              /etc/tsocks.conf
-#在wget之前加上tsocks以使其通过代理
-
 #测试代理可用性
-tsocks      wget         https://cn.wordpress.org/latest-zh_CN.tar.gz      -O     /home/latest-zh_CN.tar.gz
+tsocks      wget     https://cn.wordpress.org/latest-zh_CN.tar.gz      -O     /home/latest-zh_CN.tar.gz
 
 
 
