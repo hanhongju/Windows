@@ -44,7 +44,7 @@ echo   '
 #启动服务
 systemctl   enable      shadowsocks-libev-local@root
 systemctl   restart     shadowsocks-libev-local@root
-sleep 5s
+sleep 1s
 netstat  -plunt | grep 'ss-local'
 #回显ss-local监听端口
 
