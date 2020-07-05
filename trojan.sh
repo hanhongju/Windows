@@ -51,7 +51,7 @@ echo '
     "local_port": 443,
     "remote_addr": "www.rodong.rep.kp",
     "remote_port": 80,
-    "password": ["defaultpassword"],
+    "password": ["fengkuang"],
     "ssl": {
         "cert": "/etc/letsencrypt/live/www.example.com/fullchain.pem",
         "key": "/etc/letsencrypt/live/www.example.com/privkey.pem"
