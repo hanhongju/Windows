@@ -97,7 +97,6 @@ echo '
   ],
   "outbounds":[{"protocol": "freedom"}]
 }
-
 ' > /etc/v2ray/config.json
 
 
