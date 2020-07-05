@@ -14,7 +14,6 @@ chown      -R         www-data      /home/
 #创建nginx配置文件
 echo '
 server {
-server_name  hanhongju.com;
 listen 80;
 listen [::]:80;
 root          /home/wordpress/;
