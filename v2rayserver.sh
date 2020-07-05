@@ -16,7 +16,7 @@ echo    "
 This script can automatically setup v2ray, register a tls certification and protect your v2ray stream. Nginx installed can reverse proxy united states national biotechnology information center website to mask your website. This script requires you have a domain which had been resolved to IP of this VPS.
 If you have several domains resolved to this VPS, you could repeat running this script and type in different domains which could all be protected by tls. If your VPS is based on a KVM virtualization technology, this script can automatically enable BBR acceleration.
 Meanwhile, this script also add a shadowsocks server whose port is 10086, password is fengkuang and encryption method is aes-256-gcm.
-at last, this script also provide a socks5 proxy server whose port is 8000 and with no authentication.
+At last, this script also provide a socks5 proxy server whose port is 8000 and with no authentication.
 After your running this script, your v2ray configuration:
 port is                              443
 user ID is                           15448fce-7c71-11ea-bc55-0242ac130003
