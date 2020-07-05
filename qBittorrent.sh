@@ -19,8 +19,9 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 '        >          /etc/systemd/system/qbittorrent-nox.service
-systemctl daemon-reload
-systemctl enable qbittorrent-nox
+systemctl   daemon-reload
+systemctl   enable    qbittorrent-nox
+systemctl   restart   qbittorrent-nox
 #配置nginx反代qbittorrent
 <<BLOCK
 #删除nginx配置文件空白行
@@ -37,10 +38,9 @@ http2_push_preload on;     #NGINX从1.13.9版本开始支持HTTP/2服务端推�
 }
 }
 '            >>               /etc/nginx/sites-enabled/default.conf
+service  nginx              restart
 BLOCK
 #重启服务
-service  nginx              restart
-service  qbittorrent-nox    restart
 sleep 1s
 netstat  -plunt | grep 'qbittorrent'
 #用户名admin，密码adminadmin，默认下载目录/home/bt/Downloads/
