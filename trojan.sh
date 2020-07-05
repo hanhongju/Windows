@@ -22,7 +22,7 @@ apt    update
 apt    full-upgrade    -y
 apt    autoremove      -y
 apt    purge           -y         apache2
-apt    install         -y         python3-pip wget curl net-tools policycoreutils ntp ntpdate
+apt    install         -y         python3-pip net-tools policycoreutils
 #安装Certbot
 pip3   install     cryptography --upgrade
 pip3   install     certbot
@@ -63,8 +63,8 @@ echo '
 sed    -i     ''s/www.example.com/$site/g''              /usr/local/etc/trojan/config.json
 sed    -i     ''s/defaultpassword/$password/g''          /usr/local/etc/trojan/config.json
 #启动trojan
-systemctl    enable    trojan
-service      trojan    restart
+systemctl    enable     trojan
+systemctl    restart    trojan
 #显示监听端口
 netstat -tulpna | grep 'trojan'
 OUTPUT=$(netstat -tulpna | grep 'trojan'    2>&1)
