@@ -62,7 +62,7 @@ echo '
 '           >          /usr/local/etc/trojan/config.json
 sed    -i     ''s/www.example.com/$site/g''              /usr/local/etc/trojan/config.json
 sed    -i     ''s/defaultpassword/$password/g''          /usr/local/etc/trojan/config.json
-#启动trojan和Nginx
+#启动trojan
 systemctl    enable    trojan
 service      trojan    restart
 #显示监听端口
