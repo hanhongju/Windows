@@ -19,13 +19,10 @@ begin_time=$(date +%s)
 apt    update
 apt    full-upgrade    -y
 apt    autoremove      -y
-apt    purge           -y         apache2
-apt    install         -y         python3-pip net-tools policycoreutils
+apt    install         -y         python3-pip net-tools 
 #安装Certbot
 pip3   install     cryptography --upgrade
 pip3   install     certbot
-#关闭SELinux
-setsebool -P httpd_can_network_connect true
 #修改系统控制文件启用BBR
 echo     '
 net.core.default_qdisc=fq
@@ -36,7 +33,8 @@ sysctl   -p
 echo       "0 0 1 */2 * service trojan stop; certbot renew; service trojan start;"  |  crontab
 crontab    -l
 #申请SSL证书
-service     nginx       stop
+service     nginx         stop
+service     apache2       stop
 certbot     certonly    --standalone    --agree-tos     -n     -d      $site     -m    86606682@qq.com 
 #安装trojan
 rm           -rf        /usr/local/etc/trojan/config.json               /etc/systemd/system/trojan.service
