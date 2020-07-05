@@ -26,9 +26,6 @@ apt    install         -y         python3-pip wget curl net-tools policycoreutil
 #安装Certbot
 pip3   install     cryptography --upgrade
 pip3   install     certbot
-#配置证书自动更新
-echo          "0 0 1 */2 * service trojan stop; certbot renew; service trojan start;"          |        crontab
-crontab   -l
 #关闭SELinux
 setsebool -P httpd_can_network_connect true
 #修改系统控制文件启用BBR
@@ -37,6 +34,9 @@ net.core.default_qdisc=fq
 net.ipv4.tcp_congestion_control=bbr
 '         >       /etc/sysctl.conf
 sysctl   -p
+#配置证书自动更新
+echo       "0 0 1 */2 * service trojan stop; certbot renew; service trojan start;"  |  crontab
+crontab    -l
 #申请SSL证书
 service     nginx       stop
 certbot     certonly    --standalone    --agree-tos     -n     -d      $site     -m    86606682@qq.com 
