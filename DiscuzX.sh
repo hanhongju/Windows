@@ -30,12 +30,12 @@ include        fastcgi_params;
 #重启服务
 systemctl     enable       nginx 
 systemctl     restart      nginx
-#查看当前nginx版本
+#监测配置
 curl   -I    127.0.0.1
 php    -v
 nginx  -t
-#浏览器进入网站开始配置
-
+netstat      -plunt    |   grep   'nginx'
+#回显nginx、php版本，nginx配置检查和监听端口
 
 
 
@@ -55,7 +55,7 @@ BLOCK
 #启动数据库
 systemctl     enable       mariadb
 systemctl     restart      mariadb
-netstat      -plunt    |   grep   'mysql\|nginx'
+netstat      -plunt    |   grep   'mysql'
 #回显mysql和nginx监听端口
 
 
