@@ -78,9 +78,9 @@ netstat      -plunt    |   grep   'mysql\|nginx'
 
 #数据库备份
 #备份数据库，存放于db_dump.sql
-mysqldump     -uroot     -pfengkuang     wordpress   >    /home/db_dump.sql
+mysqldump     -uroot     -pfengkuang     wordpress   >    /home/wordpress.sql
 #导入数据库
-mysql         -uroot     -pfengkuang     wordpress   <    /home/db_dump.sql
+mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress.sql
 
 
 #网站文件备份
