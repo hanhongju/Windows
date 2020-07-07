@@ -30,7 +30,6 @@ include        fastcgi_params;
 #重启服务
 systemctl     enable       nginx 
 systemctl     restart      nginx
-#监测配置
 php          -v
 nginx        -tv
 netstat      -plunt    |   grep   'nginx'
