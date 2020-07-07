@@ -39,6 +39,14 @@ netstat      -plunt    |   grep   'nginx'
 
 
 
+
+
+
+
+
+
+
+
 #初始化数据库
 mysql_secure_installation
 #修改数据库登录方式
@@ -56,7 +64,13 @@ BLOCK
 systemctl     enable       mariadb
 systemctl     restart      mariadb
 netstat      -plunt    |   grep   'mysql'
-#回显mysql和nginx监听端口
+#回显mysql监听端口
+
+
+
+
+
+
 
 
 
