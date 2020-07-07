@@ -61,8 +61,8 @@ BLOCK
 #启动数据库
 systemctl     enable       mariadb
 systemctl     restart      mariadb
-netstat      -plunt    |   grep   'mysql'
-#回显mysql监听端口
+netstat      -plunt    |   grep   'mysql\|nginx'
+#回显mysql和nginx监听端口
 
 
 
