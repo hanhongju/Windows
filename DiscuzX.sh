@@ -31,7 +31,7 @@ include        fastcgi_params;
 systemctl     enable       nginx 
 systemctl     restart      nginx
 php          -v
-nginx        -tv
+nginx        -vt
 netstat      -plunt    |   grep   'nginx'
 #回显nginx、php版本，nginx配置检查和监听端口
 
