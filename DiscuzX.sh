@@ -65,10 +65,25 @@ netstat      -plunt    |   grep   'mysql\|nginx'
 
 
 #数据库备份
-#备份数据库，存放于/home
+#备份数据库，存放于/home/
 mysqldump     -uroot     -pfengkuang     ultrax   >    /home/ultrax.sql
 #导入数据库
 mysql         -uroot     -pfengkuang     ultrax   <    /home/ultrax.sql
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
