@@ -3,10 +3,7 @@
 apt   update
 apt   full-upgrade   -y
 apt   autoremove     -y
-apt   install        -y      wget curl zip unzip git net-tools nginx php-fpm php-mysql php-xml mariadb-server 
-
-
-
+apt   install        -y      wget curl zip unzip git net-tools nginx php-fpm php-mysql php-xml mariadb-server
 #安装DiscuzX论坛文件
 rm       -rf      /home/DiscuzX
 cd       /home
