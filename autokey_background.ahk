@@ -1,3 +1,4 @@
+;AuotoHotkey循环发送按键到后台窗口@Windows
 Insert::                     ;按下Insert开启脚本
 WinGetActiveTitle, Title     ;读取当前窗口名字
 Loop
