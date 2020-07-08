@@ -14,6 +14,7 @@ chown      -R         www-data      /home/
 #创建nginx配置文件
 echo '
 server {
+server_name   hanhongju.com;
 listen 80;
 listen [::]:80;
 root          /home/wordpress/;
@@ -25,7 +26,7 @@ fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 include        fastcgi_params;
 }
 }
-'         >         /etc/nginx/sites-enabled/default
+'         >         /etc/nginx/sites-enabled/hanhongju.com
 #重启服务
 systemctl     enable       nginx 
 systemctl     restart      nginx
@@ -33,6 +34,7 @@ php          -v
 nginx        -vt
 netstat      -plunt    |   grep   'nginx'
 #回显nginx、php版本，nginx配置检查和监听端口
+
 
 
 
