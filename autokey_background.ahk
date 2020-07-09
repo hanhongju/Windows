@@ -17,7 +17,7 @@ Return
 
 
 
-HOME::reload                                         ;按下Delete键重新载入脚本
+HOME::reload                                           ;按下Delete键重新载入脚本
 
 
 
