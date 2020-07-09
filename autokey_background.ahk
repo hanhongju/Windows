@@ -6,7 +6,7 @@ HotKey  =   {END}
 ;读取当前窗口名字，并为所有同名窗口编号
 SetTitleMatchMode, 2
 WinGetActiveTitle, Title
-Winget, windowid, List, %Title%
+Winget, windowid , List , %Title%
 ;对所有当前窗口同名窗口发送热键，即使为后台也没关系
 Loop
 {
