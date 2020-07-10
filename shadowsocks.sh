@@ -6,7 +6,7 @@ apt      install     -y    shadowsocks-libev  net-tools
 echo '
 {
 "server":["[::0]", "0.0.0.0"],
-"server_port": 20000,
+"server_port": 2000,
 "password":"fengkuang",
 "timeout":60,
 "mode":"tcp_and_udp",
@@ -31,7 +31,7 @@ apt      install     -y    shadowsocks-libev  net-tools
 echo   '
 {
 "server": "<domain>",
-"server_port": 20000,
+"server_port": 2000,
 "local_address": "0.0.0.0",
 "local_port": 9000,
 "password": "fengkuang",
