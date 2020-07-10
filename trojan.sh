@@ -37,8 +37,8 @@ crontab    -l
 certbot     certonly    --standalone    --agree-tos     -n     -d      $site     -m    86606682@qq.com 
 rm -rf      /home/keys/
 mkdir       /home/keys/
-ln  -s   /etc/letsencrypt/live/$site/fullchain.pem       /home/keys/fullchain.pem
-ln  -s   /etc/letsencrypt/live/$site/privkey.pem         /home/keys/privkey.pem
+ln    -s    /etc/letsencrypt/live/$site/fullchain.pem       /home/keys/fullchain.pem
+ln    -s    /etc/letsencrypt/live/$site/privkey.pem         /home/keys/privkey.pem
 #安装trojan
 rm           -rf        /usr/local/etc/trojan/config.json               /etc/systemd/system/trojan.service
 bash         -c         "$(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
