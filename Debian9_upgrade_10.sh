@@ -9,7 +9,3 @@ apt   autoremove      -y
 lsb_release   -a
 #显示系统新版本信息
 
-
-
-
-
