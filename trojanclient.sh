@@ -1,3 +1,4 @@
+#trojan客户端使用脚本@Debian 10
 #安装trojan
 apt  update
 apt  install  -y   trojan
@@ -8,7 +9,7 @@ echo   '
     "run_type": "client",
     "local_addr": "::",
     "local_port": 5000  ,
-    "remote_addr": "www.example.com",
+    "remote_addr": "<domain>",
     "remote_port": 443,
     "password": [  "fengkuang"  ],
     "log_level": 1,
@@ -20,8 +21,6 @@ echo   '
 }
 '     >     /etc/trojan/config.json
 #定义服务器地址
-site=<domain>
-sed      -i       ''s/www.example.com/$site/g''               /etc/trojan/config.json
 service  trojan  restart
 sleep 1s
 netstat  -plunt  | grep 'trojan'
