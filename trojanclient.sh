@@ -1,7 +1,7 @@
 #trojan客户端使用脚本@Debian 10
 #安装trojan
 apt  update
-apt  install  -y   trojan
+apt  install  -y   trojan net-tools
 systemctl  enable  trojan 
 #写入配置文件
 echo   '
