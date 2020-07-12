@@ -11,7 +11,7 @@ echo   '
     "local_port": 5000  ,
     "remote_addr": "<domain>",
     "remote_port": 443,
-    "password": [  "fengkuang"  ],
+    "password": ["fengkuang"],
     "log_level": 1,
     "ssl": {
         "verify": true,
