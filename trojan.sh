@@ -1,3 +1,4 @@
+  
 #trojan安装脚本@Debian 10
 #定义网站地址
 echo    "本脚本可以自动安装trojan，自动申请并使用tls证书加密保护trojan的流量，反代朝鲜劳动新闻网址进行网站伪装。需要您事先将此VPS的IP地址解析到一个有效域名上。
@@ -20,7 +21,7 @@ apt    update
 apt    full-upgrade    -y
 apt    autoremove      -y
 apt    purge           -y         apache2 nginx
-apt    install         -y         python3-pip net-tools 
+apt    install         -y         python3-pip net-tools trojan
 #安装Certbot
 pip3   install     cryptography --upgrade
 pip3   install     certbot
@@ -39,11 +40,7 @@ rm -rf      /home/keys/
 mkdir       /home/keys/
 ln    -s    /etc/letsencrypt/live/$site/fullchain.pem       /home/keys/fullchain.pem
 ln    -s    /etc/letsencrypt/live/$site/privkey.pem         /home/keys/privkey.pem
-#安装trojan
-rm           -rf        /usr/local/etc/trojan/config.json               /etc/systemd/system/trojan.service
-bash         -c         "$(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
-#赋予trojan监听443端口能力
-setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/trojan
+chmod    755   -R   /etc/
 #修改trojan配置文件
 echo '
 {
@@ -55,15 +52,17 @@ echo '
     "password": ["fengkuang"],
     "ssl": {
         "cert": "/home/keys/fullchain.pem",
-        "key": "/home/keys/privkey.pem"
+        "key": "/home/keys/privkey.pem",
+        "alpn": ["h2","http/1.1"]
     }
 }
-'           >          /usr/local/etc/trojan/config.json
+'           >          /etc/trojan/config.json
 #启动trojan
 systemctl    enable     trojan
-systemctl    restart    trojan
+systemctl    restart     trojan
 #显示监听端口
 sleep 1s
+/usr/bin/trojan  -t  
 netstat -plunt | grep 'trojan'
 OUTPUT=$(netstat -plunt | grep 'trojan'    2>&1)
 if     [[  "$OUTPUT"   =~   "trojan"   ]]   ;        
