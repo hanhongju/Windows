@@ -1,11 +1,7 @@
-#定义服务器地址
-echo    "请输入此VPS的IP对应的域名地址："
-read    site
 #安装trojan
 apt  update
 apt  install  -y   trojan
-systemctl    enable    trojan 
-
+systemctl  enable  trojan 
 #写入配置文件
 echo   '
 {
@@ -23,10 +19,15 @@ echo   '
     }
 }
 '     >     /etc/trojan/config.json
+#定义服务器地址
+site=<domain>
 sed      -i       ''s/www.example.com/$site/g''               /etc/trojan/config.json
-service  trojan restart
+service  trojan  restart
 sleep 1s
 netstat  -plunt  | grep 'trojan'
+
+
+
 
 
 
