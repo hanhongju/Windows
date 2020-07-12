@@ -5,7 +5,11 @@ add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/debian
 apt update
 apt install -y docker-ce docker-ce-cli containerd.io
 docker run hello-world
-#Docker will say hello
+#Docker said hello
+
+
+
+
 
 
 
@@ -18,6 +22,9 @@ docker    rm    -f     v2ray
 docker    run   -d    --name    v2ray    -p   8000:8000   -v   /usr:/etc/v2ray    v2ray/official   v2ray   -config=/etc/v2ray/v2ray.json
 docker    container    ls
 #回显容器信息
+
+
+
 
 
 
