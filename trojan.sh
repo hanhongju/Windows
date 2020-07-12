@@ -40,7 +40,7 @@ rm -rf      /home/keys/
 mkdir       /home/keys/
 ln    -s    /etc/letsencrypt/live/$site/fullchain.pem       /home/keys/fullchain.pem
 ln    -s    /etc/letsencrypt/live/$site/privkey.pem         /home/keys/privkey.pem
-chmod    755   -R   /etc/
+chmod    755   -R   /etc  
 #修改trojan配置文件
 echo '
 {
@@ -53,7 +53,7 @@ echo '
     "ssl": {
         "cert": "/home/keys/fullchain.pem",
         "key": "/home/keys/privkey.pem",
-        "alpn": ["h2","http/1.1"]
+        "alpn": ["http/1.1"]
     }
 }
 '           >          /etc/trojan/config.json
@@ -73,3 +73,6 @@ finish_time=$(date +%s)
 time_consume=$((   finish_time   -   begin_time ))
 echo   "脚本运行时间$time_consume秒。"
 #至此trojan可正常工作
+
+
+
