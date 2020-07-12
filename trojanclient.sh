@@ -23,6 +23,7 @@ echo   '
 #定义服务器地址
 service  trojan  restart
 sleep 1s
+/usr/bin/trojan  -t  
 netstat  -plunt  | grep 'trojan'
 #回显trojan监听地址
 
