@@ -6,8 +6,8 @@ apt update && apt install -y curl && bash -c "$(curl -sL https://get.docker.com)
 
 #Docker安装v2rayclient @Debian 10
 #导入节点信息文件
-cp        -f       /home/hj/config.json                         /home/config.json
-cp        -f       /home/config.json                            /etc/v2rayconfig.json
+cp     /home/hj/config.json                         /home/config.json
+cp     /home/config.json                            /etc/v2rayconfig.json
 #读取节点信息，启动容器
 docker    rm    -f     v2ray
 docker    run   -d    --name    v2ray    -p   8000:8000   -v   /etc:/etc/v2ray    v2ray/official   v2ray   -config=/etc/v2ray/v2rayconfig.json
