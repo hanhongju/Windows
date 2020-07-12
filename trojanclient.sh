@@ -16,7 +16,7 @@ echo   '
     "ssl": {
         "verify": true,
         "verify_hostname": true,
-        "alpn": [  "h2","http/1.1"  ]
+        "alpn": ["http/1.1"]
     }
 }
 '     >     /etc/trojan/config.json
