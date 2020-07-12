@@ -7,6 +7,7 @@ docker    rm    -f     v2ray
 docker    run   -d    --name    v2ray    -p   8000:8000   -v   /usr:/etc/v2ray    v2ray/official   v2ray   -config=/etc/v2ray/v2ray.json
 docker    logs         v2ray
 docker    container    ls
+netstat  -plunt
 #回显容器信息
 
 
