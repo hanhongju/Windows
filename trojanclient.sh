@@ -24,7 +24,7 @@ echo   '
 service  trojan  restart
 sleep 1s
 netstat  -plunt  | grep 'trojan'
-
+#回显trojan监听地址
 
 
 
