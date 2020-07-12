@@ -49,29 +49,26 @@ sysctl   -p
 #修改v2ray配置
 echo '
 {
-  "inbounds": [
-    {
+  "inbounds": [{
       "port": 8964,
       "protocol": "vmess",
       "settings": {"clients": [{"id": "15448fce-7c71-11ea-bc55-0242ac130003"}]},
       "streamSettings": {
-        "network": "ws",
-        "wsSettings": {"path": "/f63lKAx"}
+      "network": "ws",
+      "wsSettings": {"path": "/f63lKAx"}
       }
-    },
-    {
+   },{
       "port": 10086,
       "protocol": "shadowsocks",
       "settings": {
-        "method": "aes-256-gcm",
-        "password": "fengkuang",
-        "network": "tcp,udp"
-      }
-    }
-  ],
+      "method": "aes-256-gcm",
+      "password": "fengkuang",
+      "network": "tcp,udp"
+       }
+   }],
   "outbounds":[{"protocol": "freedom"}]
 }
-' > /etc/v2ray/config.json
+'     >     /etc/v2ray/config.json
 
 
 
