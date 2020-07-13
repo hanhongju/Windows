@@ -19,7 +19,6 @@ docker run hello-world
 
 #Docker安装v2ray @Debian 10
 #导入节点信息文件
-cp       /home/hj/config.json          /home/config.json
 cp       /home/config.json             /usr/v2ray.json
 #读取节点信息，启动容器
 docker    rm    -f     v2ray
