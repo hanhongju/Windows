@@ -1,5 +1,5 @@
 #定义Message内容
-/script msg="anything u want to say";
+/script msg="Hello, world!";
 
 
 #广播
