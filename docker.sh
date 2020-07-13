@@ -17,7 +17,7 @@ docker run hello-world
 
 
 
-#Docker安装v2rayclient @Debian 10
+#Docker安装v2ray @Debian 10
 #导入节点信息文件
 cp       /home/hj/config.json          /home/config.json
 cp       /home/config.json             /usr/v2ray.json
@@ -26,7 +26,6 @@ docker    rm    -f     v2ray
 docker    run   -d    --name    v2ray    -p   8000:8000   -v   /usr:/etc/v2ray    v2ray/official   v2ray   -config=/etc/v2ray/v2ray.json
 docker    logs         v2ray
 docker    container    ls
-netstat  -plunt
 #回显容器信息
 
 
