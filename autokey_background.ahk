@@ -9,7 +9,7 @@ Loop
 ControlSend,  ,  %HotKey%  ,   ahk_id %windowid1%       ;对当前窗口所有同名窗口发送热键
 ControlSend,  ,  %HotKey%  ,   ahk_id %windowid2%
 ControlSend,  ,  %HotKey%  ,   ahk_id %windowid3%
-random ,  outputvar  ,  5000  ,  10000                   ;生成随机时间，单位毫秒
+random ,  outputvar  ,  5000  ,  10000                  ;生成随机时间，单位毫秒
 sleep  , %outputvar%                                    ;等待随机时间后循环发送热键
 }
 Return
