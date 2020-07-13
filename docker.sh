@@ -1,8 +1,8 @@
 #Docker安装脚本@Debian 10
 apt  update
 apt  install  -y      apt-transport-https ca-certificates curl gnupg-agent software-properties-common
-curl  -fsSL     https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg    |  apt-key add -
-add-apt-repository    "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/debian    $(lsb_release -cs)    stable"
+curl  -fsSL     https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg    |  apt-key add -
+add-apt-repository    "deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/debian    $(lsb_release -cs)    stable"
 apt  update
 apt  install  -y      docker-ce docker-ce-cli containerd.io
 docker run hello-world
