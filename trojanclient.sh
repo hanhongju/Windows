@@ -20,7 +20,7 @@ echo   '
     }
 }
 '     >     /etc/trojan/config.json
-#定义服务器地址
+#启动客户端
 service  trojan  restart
 sleep 1s
 /usr/bin/trojan  -t  
