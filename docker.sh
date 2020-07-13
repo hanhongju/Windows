@@ -6,8 +6,8 @@ add-apt-repository    "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/li
 apt  update
 apt  install  -y      docker-ce docker-ce-cli containerd.io
 docker run hello-world
-lsb_release   -a
-#显示系统新版本信息
+#运行docker测试容器
+
 
 
 
