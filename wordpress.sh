@@ -84,6 +84,23 @@ mysqldump     -uroot     -pfengkuang     wordpress   >    /home/wordpress.sql
 mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress.sql
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #网站文件备份
 #备份wordpress.zip到/home文件夹
 cd                  /home/wordpress/
