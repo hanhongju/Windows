@@ -1,7 +1,7 @@
 #socks5代理服务器dante安装脚本@Debian 10
 #安装
 apt      update
-apt      install    -y       dante-server
+apt      install    -y       dante-server net-tools
 danted   -v
 #编写配置文件
 mv        /etc/danted.conf       /etc/danted.conf.bak
