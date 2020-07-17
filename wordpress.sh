@@ -7,11 +7,11 @@ apt   install        -y      wget curl zip unzip net-tools nginx php-fpm php-mys
 #apt  install        -y      php-zip php-dom php-mbstring php-gd php-curl
 #安装wordpress网页文件
 rm         -rf       /home/wordpress/
-wget       -c         https://cn.wordpress.org/latest-zh_CN.tar.gz      -O     /home/latest-zh_CN.tar.gz
 cd         /home/
+wget       -c         https://cn.wordpress.org/latest-zh_CN.tar.gz
 tar         zxf       latest-zh_CN.tar.gz
-chmod      -Rf         777           /home/
-chown      -Rf         www-data      /home/
+chmod      -Rf        777           /home/
+chown      -Rf        www-data      /home/
 #创建nginx配置文件
 echo '
 server {
@@ -103,16 +103,18 @@ mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress.sql
 
 
 #网站文件备份
-#备份wordpress.zip到/home文件夹
+#备份wordpress.zip到/home文件夹和网站根目录
 cd                  /home/wordpress/
-zip       -q        /home/wordpress.zip         -r      ./      
+zip       -q        /home/wordpress.zip         -r      ./
+cp         /home/wordpress.zip           /home/wordpress/wordpress.zip
+
+#远程下载wordpress.zip
+wget       http://hanhongju.com/wordpress.zip      -O     /home/wordpress.zip
+
 #上传wordpress.zip到/home文件夹，还原wordpress文件
 rm        -rf       /home/wordpress/
-mkdir     -p        /home/wordpress/
 unzip     -qo       /home/wordpress.zip         -d       /home/wordpress/
-#远程下载wordpress.zip
-cp         /home/wordpress.zip           /home/wordpress/wordpress.zip
-wget       http://hanhongju.com/wordpress.zip      -O     /home/wordpress.zip
+
 
 
 
