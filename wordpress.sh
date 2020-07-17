@@ -18,8 +18,8 @@ server {
 server_name   hanhongju.com;
 listen 80;
 listen [::]:80;
-root          /home/wordpress/;
-index         index.php index.html index.htm;
+root     /home/wordpress/;
+index     index.php index.html index.htm;
 location ~ \.php$ {
 fastcgi_pass   unix:/run/php/php7.3-fpm.sock;     #php -v 遇到502 Bad Gateway时查看php版本，确认php-fpm.sock版本
 fastcgi_index  index.php;
@@ -31,7 +31,7 @@ server {
 server_name   bak.hanhongju.com;
 listen 80;
 listen [::]:80;
-root          /home/;
+root     /home/;
 }
 '         >         /etc/nginx/sites-enabled/hanhongju.com
 #重启服务
