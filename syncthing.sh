@@ -13,7 +13,7 @@ cp        syncthing                                           /usr/bin/syncthing
 cp        etc/linux-systemd/system/syncthing@.service         /etc/systemd/system/syncthing@.service
 #生成配置文件，配置系统服务
 systemctl    enable    syncthing@root.service
-systemctl    start     syncthing@root.service
+systemctl    restart   syncthing@root.service
 sleep 5s
 systemctl    stop      syncthing@root.service
 #修改配置文件，启动服务
@@ -22,6 +22,7 @@ systemctl    restart   syncthing@root.service
 sleep 5s
 netstat     -plunt | grep 'syncthing'
 #回显syncthing监听端口
+
 
 
 
