@@ -97,9 +97,9 @@ zip       -q        wordpress.zip      -r      ./wordpress/
 
 
 #远程下载wordpress.zip
-cd        /home/
-wget      -c         http://bak.hanhongju.com/wordpress.zip
+wget      -c         http://bak.hanhongju.com/wordpress.zip   -O   /home/wordpress.zip
 #或上传wordpress.zip到/home文件夹，还原wordpress文件
+cd        /home/
 rm        -rf      ./wordpress/
 unzip     -qo        wordpress.zip
 
