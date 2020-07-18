@@ -24,10 +24,6 @@ systemctl   enable    qbittorrent-nox
 systemctl   restart   qbittorrent-nox
 #配置nginx反代qbittorrent
 <<BLOCK
-#删除nginx配置文件空白行
-sed -i    '/^[[:blank:]]*$/d'     /etc/nginx/sites-enabled/default.conf
-#删除nginx配置文件最后一行
-sed -i        '$d'                /etc/nginx/sites-enabled/default.conf
 #追加配置
 echo  '
 server {
@@ -40,7 +36,7 @@ proxy_set_header           X-Forwarded-Host        $http_host;
 http2_push_preload on;     #NGINX从1.13.9版本开始支持HTTP/2服务端推送
 }
 }
-'            >>               /etc/nginx/sites-enabled/default
+'            >               /etc/nginx/sites-enabled/default
 service  nginx              restart
 BLOCK
 #配置完成，显示监听端口
