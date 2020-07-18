@@ -36,7 +36,7 @@ http2_push_preload on;     #NGINX从1.13.9版本开始支持HTTP/2服务端推�
 }
 }
 '            >               /etc/nginx/sites-enabled/default
-service  nginx              restart
+service  nginx  restart
 BLOCK
 #配置完成，显示监听端口
 sleep 1s
