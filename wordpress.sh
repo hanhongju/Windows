@@ -93,15 +93,14 @@ mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress.sql
 
 #网站文件wordpress.zip备份到/home文件夹
 cd        /home/
-zip       -q        wordpress.zip      -r      ./wordpress/
+zip       -q        wordpress.zip           -r      ./wordpress/
 
 
 #远程下载wordpress.zip
-wget      -c         http://bak.hanhongju.com/wordpress.zip   -O   /home/wordpress.zip
+wget       http://bak.hanhongju.com/wordpress.zip      -O     /home/wordpress.zip
 #或上传wordpress.zip到/home文件夹，还原wordpress文件
-cd        /home/
-rm        -rf      ./wordpress/
-unzip     -qo        wordpress.zip
+rm        -rf      /home/wordpress/
+unzip     -qo      /home/wordpress.zip      -d       /home/
 
 
 
