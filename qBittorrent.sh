@@ -23,7 +23,6 @@ systemctl   enable    qbittorrent-nox
 systemctl   restart   qbittorrent-nox
 #配置nginx反代qbittorrent
 <<BLOCK
-#追加配置
 echo  '
 server {
 listen 80;
