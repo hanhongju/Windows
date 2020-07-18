@@ -1,6 +1,6 @@
 #qBittorrent安装脚本@Debian 10
 apt   update 
-apt   install  -y   qbittorrent-nox  net-tools
+apt   install  -y   qbittorrent-nox  net-tools nginx
 #为qbittorrent-nox创建一个systemd服务文件
 #echo可以创建文件，但不能创建路径
 adduser --system --group  bt
@@ -30,14 +30,17 @@ sed -i    '/^[[:blank:]]*$/d'     /etc/nginx/sites-enabled/default.conf
 sed -i        '$d'                /etc/nginx/sites-enabled/default.conf
 #追加配置
 echo  '
-location /bt/ {                       #反代qBittorrent网页客户端
-proxy_pass              http://127.0.0.1:8080/;
-proxy_http_version      1.1;
-proxy_set_header        X-Forwarded-Host        $http_host;
+server {
+listen 80;
+listen [::]:80;
+location   /{
+proxy_pass                 http://127.0.0.1:8080/;
+proxy_http_version         1.1;
+proxy_set_header           X-Forwarded-Host        $http_host;
 http2_push_preload on;     #NGINX从1.13.9版本开始支持HTTP/2服务端推送
 }
 }
-'            >>               /etc/nginx/sites-enabled/default.conf
+'            >>               /etc/nginx/sites-enabled/default
 service  nginx              restart
 BLOCK
 #配置完成，显示监听端口
