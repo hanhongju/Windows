@@ -4,11 +4,11 @@ apt    full-upgrade   -y
 apt    autoremove     -y
 apt    install        -y        wget unzip zip screen default-jdk nginx
 #架设下载服务器
-echo   'server {listen 80;listen [::]:80;root /home/;}'   >   /etc/nginx/sites-enabled/default
+echo     'server {listen 80;listen [::]:80;root /home/;}'   >   /etc/nginx/sites-enabled/default
 service   nginx   restart
-#下载1.15.2版本mc服务器
+#下载1.15.2版本mc服务器文件
 wget      https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar     -cP     /home/mcserver/
-#打开虚拟终端mc，后台托管mc
+#打开虚拟终端，后台运行服务器
 screen   -R      mc
 cd       /home/mcserver/
 java     -jar    server.jar    nogui
