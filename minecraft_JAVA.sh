@@ -33,7 +33,7 @@ cd      /home/
 zip     -q       mcserver.zip          -r     ./mcserver/
 
 
-#到新服务器，上传备份文件至/home/,解压
+#到新服务器，上传备份文件至/home/并解压
 rm      -rf     /home/mcserver/
 unzip   -qo     /home/mcserver.zip     -d      /home/
 #打开服务器终端，开玩
