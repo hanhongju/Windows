@@ -18,7 +18,7 @@ java     -jar    server.jar    nogui
 
 #关闭所有screen终端和服务器
 netstat  -plunt | grep 'java'
-screen   -wipe  -ls
+screen   -ls
 pkill    -9    screen
 
 
