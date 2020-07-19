@@ -9,7 +9,7 @@ apt   install        -y      wget curl zip unzip net-tools nginx php-fpm php-mys
 wget        https://cn.wordpress.org/latest-zh_CN.tar.gz     -cP      /home/
 rm         -rf       /home/wordpress/
 cd         /home/
-tar         zxf       latest-zh_CN.tar.gz
+tar        -zxf       latest-zh_CN.tar.gz
 chmod      -Rf        777           /home/
 chown      -Rf        www-data      /home/
 #创建nginx配置文件
