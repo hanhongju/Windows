@@ -4,22 +4,24 @@ apt update
 apt full-upgrade   -y
 apt autoremove     -y
 apt install        -y   wget unzip zip libcurl4-openssl-dev
-#新建文件夹
-mkdir /home/mcserver/
-chmod 777 -R   /home/
 #下载基岩版客户端
-wget   -c   https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.60.5.zip    -O  /home/mcserver.zip
-#若不能直接下载，手动上传安装文件至/home/
-mv   -f    /home/bedrock-server-1.14.60.5.zip     /home/mcserver.zip
-unzip   -o   /home/mcserver.zip    -d   /home/mcserver/
+wget     https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.60.5.zip      -cP     /home/
+unzip   -qo   /home/bedrock-server-1.14.60.5.zip    -d    /home/mcserver/
+chmod   -Rf    777    /home/
 #启动服务器
 cd /home/mcserver/
 (LD_LIBRARY_PATH=. ./bedrock_server&)
 #关闭shell，连接服务器，开玩
 
 
+
+
+
 #关闭服务器
 kill -s 9 `pgrep bedrock_server`
+pkill -9 bedrock_server
+
+
 
 
 #备份服务器，将worlds目录压缩为worlds.zip文件
