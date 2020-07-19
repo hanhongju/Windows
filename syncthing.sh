@@ -6,8 +6,8 @@ apt   install        -y    tar wget unzip zip net-tools
 
 #安装网页文件
 wget      https://github.com/syncthing/syncthing/releases/download/v1.6.1/syncthing-linux-amd64-v1.6.1.tar.gz     -cP     /home/
-cd        /home/
-tar       -zxf        syncthing-linux-amd64-v1.6.1.tar.gz           
+cd       /home/
+tar      -zxf        syncthing-linux-amd64-v1.6.1.tar.gz
 cd        syncthing-linux-amd64-v1.6.1
 cp        syncthing                                           /usr/bin/syncthing
 cp        etc/linux-systemd/system/syncthing@.service         /etc/systemd/system/syncthing@.service
