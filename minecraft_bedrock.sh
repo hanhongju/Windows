@@ -3,7 +3,10 @@
 apt update
 apt full-upgrade   -y
 apt autoremove     -y
-apt install        -y   wget unzip zip libcurl4-openssl-dev
+apt install        -y   wget unzip zip libcurl4-openssl-dev nginx
+#架设下载服务器
+echo     'server {listen 80;listen [::]:80;root /home/;}'   >   /etc/nginx/sites-enabled/default
+service   nginx   restart
 #下载基岩版客户端
 wget     https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.60.5.zip      -cP     /home/
 unzip   -qo   /home/bedrock-server-1.14.60.5.zip    -d    /home/mcserver/
