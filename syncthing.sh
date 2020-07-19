@@ -3,7 +3,6 @@ apt   update
 apt   full-upgrade   -y
 apt   autoremove     -y
 apt   install        -y    tar wget unzip zip net-tools
-
 #安装网页文件
 wget      https://github.com/syncthing/syncthing/releases/download/v1.6.1/syncthing-linux-amd64-v1.6.1.tar.gz     -cP     /home/
 cd       /home/
