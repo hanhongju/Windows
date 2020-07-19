@@ -16,12 +16,13 @@ java     -jar    server.jar    nogui
 #关闭shell，连接服务器，开玩
 
 
+
+
+
 #关闭所有screen终端和服务器
 netstat  -plunt | grep 'java'
 screen   -ls
 screen   -S   mc   -X   quit
-
-
 
 
 #备份服务器，将mcserver目录压缩为mcserver.zip文件
