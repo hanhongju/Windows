@@ -28,7 +28,7 @@ pkill -9 bedrock_server
 
 #备份服务器，将worlds目录压缩为worlds.zip文件
 cd      /home/mcserver/
-zip     -q       worlds.zip     -r     ./worlds/
+zip     -q       /home/worlds.zip     -r     ./worlds/
 
 
 
