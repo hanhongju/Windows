@@ -7,7 +7,7 @@ apt install        -y   wget unzip zip libcurl4-openssl-dev nginx
 #架设下载服务器
 echo     'server {listen 80;listen [::]:80;root /home/;}'   >   /etc/nginx/sites-enabled/default
 service   nginx   restart
-#下载基岩版客户端
+#下载基岩版mc服务器文件
 wget     https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.60.5.zip      -cP     /home/
 unzip   -qo   /home/bedrock-server-1.14.60.5.zip    -d    /home/mcserver/
 chmod   -Rf    777    /home/
