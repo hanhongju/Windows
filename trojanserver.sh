@@ -36,11 +36,10 @@ echo       "0 0 1 */2 * service trojan stop; certbot renew; service trojan start
 crontab    -l
 #申请SSL证书
 certbot     certonly    --standalone    --agree-tos     -n     -d      $site     -m    86606682@qq.com 
-rm      -rf    /home/keys/
-mkdir          /home/keys/
-ln      -s     /etc/letsencrypt/live/$site/fullchain.pem       /home/keys/fullchain.pem
-ln      -s     /etc/letsencrypt/live/$site/privkey.pem         /home/keys/privkey.pem
-chmod   -Rf     755     /etc/
+rm        -rf    /home/fullchain.pem     /home/privkey.pem
+ln        -s     /etc/letsencrypt/live/$site/fullchain.pem       /home/fullchain.pem
+ln        -s     /etc/letsencrypt/live/$site/privkey.pem         /home/privkey.pem
+chmod     -Rf     755     /etc/
 #修改trojan配置文件
 echo '
 {
@@ -51,8 +50,8 @@ echo '
     "remote_port": 80,
     "password": ["fengkuang"],
     "ssl": {
-        "cert": "/home/keys/fullchain.pem",
-        "key": "/home/keys/privkey.pem",
+        "cert": "/home/fullchain.pem",
+        "key": "/home/privkey.pem",
         "alpn": ["http/1.1"]
     }
 }
