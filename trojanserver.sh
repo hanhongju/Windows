@@ -35,7 +35,7 @@ sysctl   -p
 echo       "0 0 1 */2 * service trojan stop; certbot renew; service trojan start;"  |  crontab
 crontab    -l
 #申请SSL证书
-certbot     certonly    --standalone    --agree-tos     -n     -d      $site     -m    86606682@qq.com 
+certbot    certonly    --standalone    --agree-tos     -n     -d      $site     -m    86606682@qq.com 
 rm        -rf    /home/fullchain.pem     /home/privkey.pem
 ln        -s     /etc/letsencrypt/live/$site/fullchain.pem       /home/fullchain.pem
 ln        -s     /etc/letsencrypt/live/$site/privkey.pem         /home/privkey.pem
