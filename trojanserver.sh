@@ -40,10 +40,11 @@ chmod    -Rf     777       /home/
 #配置证书自动更新
 echo       "
 0 0 1 * * service trojan stop
-0 0 1 * * certbot renew
-0 0 1 * * cp   /etc/letsencrypt/live/$site/fullchain.pem    /home/key/fullchain.pem
-0 0 1 * * cp   /etc/letsencrypt/live/$site/privkey.pem      /home/key/privkey.pem
-0 0 1 * * service trojan start
+2 0 1 * * certbot renew
+3 0 1 * * cp   /etc/letsencrypt/live/$site/fullchain.pem    /home/key/fullchain.pem
+3 0 1 * * cp   /etc/letsencrypt/live/$site/privkey.pem      /home/key/privkey.pem
+4 0 1 * * service trojan start
+5 0 1 * * chmod   -Rf   777   /home/
 "  |  crontab
 crontab    -l
 service   cron   restart
