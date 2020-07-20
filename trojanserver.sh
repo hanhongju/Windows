@@ -43,8 +43,8 @@ echo       "
 1 0 1 * * certbot renew
 2 0 1 * * cp   /etc/letsencrypt/live/$site/fullchain.pem    /home/key/fullchain.pem
 2 0 1 * * cp   /etc/letsencrypt/live/$site/privkey.pem      /home/key/privkey.pem
-3 0 1 * * service trojan start
-4 0 1 * * chmod   -Rf   777   /home/
+3 0 1 * * chmod   -Rf   777   /home/
+4 0 1 * * service trojan start
 "  |  crontab
 crontab    -l
 service   cron   restart
