@@ -36,11 +36,11 @@ echo       "0 0 1 */2 * service trojan stop; certbot renew; service trojan start
 crontab    -l
 #申请SSL证书
 certbot     certonly    --standalone    --agree-tos     -n     -d      $site     -m    86606682@qq.com 
-rm -rf      /home/keys/
-mkdir       /home/keys/
-ln    -s    /etc/letsencrypt/live/$site/fullchain.pem       /home/keys/fullchain.pem
-ln    -s    /etc/letsencrypt/live/$site/privkey.pem         /home/keys/privkey.pem
-chmod    755   -R   /etc  
+rm      -rf    /home/keys/
+mkdir          /home/keys/
+ln      -s     /etc/letsencrypt/live/$site/fullchain.pem       /home/keys/fullchain.pem
+ln      -s     /etc/letsencrypt/live/$site/privkey.pem         /home/keys/privkey.pem
+chmod   -Rf     777     /etc/
 #修改trojan配置文件
 echo '
 {
@@ -58,7 +58,7 @@ echo '
 }
 '           >          /etc/trojan/config.json
 #启动trojan
-systemctl    enable     trojan
+systemctl    enable      trojan
 systemctl    restart     trojan
 #显示监听端口
 sleep 1s
