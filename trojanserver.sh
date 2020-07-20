@@ -46,6 +46,7 @@ echo       "
 0 0 1 * * service trojan start
 "  |  crontab
 crontab    -l
+service   cron   restart
 #修改trojan配置文件
 echo '
 {
