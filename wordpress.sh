@@ -67,9 +67,9 @@ sed      -i       ''s/127.0.0.1/\*/g''         /etc/mysql/mariadb.conf.d/50-serv
 mysql         -uroot     -pfengkuang     -e      "use mysql; grant all privileges on *.* to 'root'@'%' identified by 'fengkuang' with grant option; flush privileges; select user,host from user;"
 BLOCK
 #自动备份数据库
-mkdir    /home/wordpressdatabasebackup/
+mkdir   -p     /home/wpdbbackup/
 echo       '
-1 0 1 * *  mysqldump     -uroot     -pfengkuang     wordpress   >    /home/wordpressdatabasebackup/$(date "+\%Y\%m\%d\%H\%M\%S")wordpress.sql
+0 0 * * *  mysqldump     -uroot     -pfengkuang     wordpress   >    /home/wpdbbackup/$(date "+\%Y\%m\%d \%H:\%M:\%S ")wordpress.sql
 '  |  crontab
 crontab    -l
 service   cron   restart
