@@ -40,7 +40,7 @@ rm      -rf    /home/keys/
 mkdir          /home/keys/
 ln      -s     /etc/letsencrypt/live/$site/fullchain.pem       /home/keys/fullchain.pem
 ln      -s     /etc/letsencrypt/live/$site/privkey.pem         /home/keys/privkey.pem
-chmod   -Rf     777     /etc/
+chmod   -Rf     755     /etc/
 #修改trojan配置文件
 echo '
 {
