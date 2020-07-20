@@ -30,6 +30,13 @@ net.core.default_qdisc=fq
 net.ipv4.tcp_congestion_control=bbr
 '         >       /etc/sysctl.conf
 sysctl   -p
+#申请SSL证书
+certbot    certonly    --standalone    --agree-tos     -n     -d      $site     -m    86606682@qq.com 
+rm       -rf     /home/key/
+mkdir    -p      /home/key/
+cp       /etc/letsencrypt/live/$site/fullchain.pem       /home/key/fullchain.pem
+cp       /etc/letsencrypt/live/$site/privkey.pem         /home/key/privkey.pem
+chmod    -Rf     777       /home/
 #配置证书自动更新
 echo       "
 0 0 1 * * service trojan stop
@@ -39,13 +46,6 @@ echo       "
 0 0 1 * * service trojan start
 "  |  crontab
 crontab    -l
-#申请SSL证书
-certbot    certonly    --standalone    --agree-tos     -n     -d      $site     -m    86606682@qq.com 
-rm       -rf     /home/key/
-mkdir    -p      /home/key/
-cp       /etc/letsencrypt/live/$site/fullchain.pem       /home/key/fullchain.pem
-cp       /etc/letsencrypt/live/$site/privkey.pem         /home/key/privkey.pem
-chmod    -Rf     777       /home/
 #修改trojan配置文件
 echo '
 {
