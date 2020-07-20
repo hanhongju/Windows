@@ -36,7 +36,7 @@ pip3   install     cryptography --upgrade
 pip3   install     certbot
 bash    -c     "$(curl -L -s https://install.direct/go.sh)"
 #配置证书自动更新
-echo      "0 0 1 */2 * service nginx stop; certbot renew; service nginx start;"   |   crontab
+echo      "0 0 1 * * service nginx stop; certbot renew; service nginx start;"   |   crontab
 crontab   -l
 #关闭SELinux
 setsebool   -P   httpd_can_network_connect   1   &&   setenforce   0
