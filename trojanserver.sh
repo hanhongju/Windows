@@ -31,14 +31,21 @@ net.ipv4.tcp_congestion_control=bbr
 '         >       /etc/sysctl.conf
 sysctl   -p
 #配置证书自动更新
-echo       "0 0 1 */2 * service trojan stop; certbot renew; service trojan start;"  |  crontab
+echo       "
+0 0 1 * * service trojan stop
+0 0 1 * * certbot renew
+0 0 1 * * cp   /etc/letsencrypt/live/$site/fullchain.pem    /home/key/fullchain.pem
+0 0 1 * * cp   /etc/letsencrypt/live/$site/privkey.pem      /home/key/privkey.pem
+0 0 1 * * service trojan start
+"  |  crontab
 crontab    -l
 #申请SSL证书
 certbot    certonly    --standalone    --agree-tos     -n     -d      $site     -m    86606682@qq.com 
-rm        -rf    /usr/fullchain.pem     /usr/privkey.pem
-ln        -s     /etc/letsencrypt/live/$site/fullchain.pem       /usr/fullchain.pem
-ln        -s     /etc/letsencrypt/live/$site/privkey.pem         /usr/privkey.pem
-chmod     -Rf     755     /etc/
+rm       -rf     /home/key/
+mkdir    -p      /home/key/
+cp       /etc/letsencrypt/live/$site/fullchain.pem       /home/key/fullchain.pem
+cp       /etc/letsencrypt/live/$site/privkey.pem         /home/key/privkey.pem
+chmod    -Rf     777       /home/
 #修改trojan配置文件
 echo '
 {
@@ -49,8 +56,8 @@ echo '
     "remote_port": 80,
     "password": ["fengkuang"],
     "ssl": {
-        "cert": "/usr/fullchain.pem",
-        "key": "/usr/privkey.pem",
+        "cert": "/home/key/fullchain.pem",
+        "key": "/home/key/privkey.pem",
         "alpn": ["http/1.1"]
     }
 }
