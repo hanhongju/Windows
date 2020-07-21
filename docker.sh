@@ -8,12 +8,12 @@ add-apt-repository         "deb [arch=amd64] https://download.docker.com/linux/u
 apt   update
 apt   install       -y      docker-ce docker-ce-cli containerd.io
 docker      run      hello-world
-#运行docker测试容器
+
 
 
 #Docker官方安装脚本安装
 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
-
+docker      run      hello-world
 
 
 
