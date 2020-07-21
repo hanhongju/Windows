@@ -1,18 +1,18 @@
-#Docker安装脚本@Debian 10
-apt  update
-apt   full-upgrade    -y    --fix-missing
-apt   autoremove      -y
-apt   install  -y      apt-transport-https ca-certificates curl gnupg-agent software-properties-common
-curl  -fsSL     https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg    |  apt-key add -
-add-apt-repository    "deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/debian    $(lsb_release -cs)    stable"
-apt  update
-apt  install  -y      docker-ce docker-ce-cli containerd.io
-docker run hello-world
+#Docker官方仓库安装@Debian 10
+apt   update
+apt   full-upgrade  -y    --fix-missing
+apt   autoremove    -y
+apt   install       -y      apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+curl         -fsSL          https://download.docker.com/linux/ubuntu/gpg    |  apt-key add -
+add-apt-repository         "deb [arch=amd64] https://download.docker.com/linux/ubuntu    $(lsb_release -cs)    stable"
+apt   update
+apt   install       -y      docker-ce docker-ce-cli containerd.io
+docker      run      hello-world
 #运行docker测试容器
 
 
-
-
+#Docker官方安装脚本安装
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 
 
 
