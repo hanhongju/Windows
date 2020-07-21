@@ -12,8 +12,10 @@ docker      run      hello-world
 
 
 #Docker官方安装脚本安装
-curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
-docker      run      hello-world
+apt   update
+apt   install   -y    curl
+curl       -fsSL      https://get.docker.com | bash -s docker --mirror Aliyun
+docker      run       hello-world
 
 
 
