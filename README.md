@@ -6,10 +6,6 @@ apt update && apt install -y curl && bash -c "$(curl -sL   https://git.io/JJfzw)
 
 apt update && apt install -y curl && bash -c "$(curl -sL   https://git.io/JJOm8)"
 
-#Debian8一键升级Debian9
-
-apt update && apt install -y curl && bash -c "$(curl -sL   https://git.io/JJOVe)"
-
 #Debian9一键升级Debian10
 
 apt update && apt install -y curl && bash -c "$(curl -sL   https://git.io/JJOmU)"
