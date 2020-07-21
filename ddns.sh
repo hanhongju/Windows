@@ -13,7 +13,7 @@ ttl=120
 bash    /home/CloudFlare_DDNS/CloudFlare_DDNS_Setter.sh     --ddns
 #每5分钟修改一次DNS
 echo       "
-*/5 * *  * *   bash    /home/CloudFlare_DDNS/CloudFlare_DDNS_Setter.sh     --ddns
+*/5 * * * *   bash    /home/CloudFlare_DDNS/CloudFlare_DDNS_Setter.sh     --ddns
 "  |  crontab
 crontab    -l
 service   cron   restart
