@@ -32,17 +32,17 @@ net.ipv4.tcp_congestion_control=bbr
 sysctl   -p
 #申请SSL证书
 certbot    certonly    --standalone    --agree-tos     -n     -d      $site     -m    86606682@qq.com 
-rm       -rf     /home/key/
-mkdir    -p      /home/key/
-cp       /etc/letsencrypt/live/$site/fullchain.pem       /home/key/fullchain.pem
-cp       /etc/letsencrypt/live/$site/privkey.pem         /home/key/privkey.pem
+rm       -rf     /home/keys/
+mkdir    -p      /home/keys/
+cp       /etc/letsencrypt/live/$site/fullchain.pem       /home/keys/fullchain.pem
+cp       /etc/letsencrypt/live/$site/privkey.pem         /home/keys/privkey.pem
 chmod    -Rf     777       /home/
 #配置证书自动更新
 echo       "
 0 0 1 * * service trojan stop
 1 0 1 * * certbot renew
-2 0 1 * * cp   /etc/letsencrypt/live/$site/fullchain.pem    /home/key/fullchain.pem
-2 0 1 * * cp   /etc/letsencrypt/live/$site/privkey.pem      /home/key/privkey.pem
+2 0 1 * * cp   /etc/letsencrypt/live/$site/fullchain.pem    /home/keys/fullchain.pem
+2 0 1 * * cp   /etc/letsencrypt/live/$site/privkey.pem      /home/keys/privkey.pem
 3 0 1 * * chmod   -Rf   777   /home/
 4 0 1 * * service trojan start
 "  |  crontab
