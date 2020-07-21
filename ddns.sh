@@ -1,6 +1,5 @@
 #下载文件
-wget    https://raw.githubusercontent.com/nanqinlang-script/CloudFlare_DNS_Record/Setter/CloudFlare_DDNS_Setter.sh     -cP   /home/CloudFlare_DDNS/
-wget    https://raw.githubusercontent.com/nanqinlang-script/CloudFlare_DNS_Record/Setter/config.conf                   -cP   /home/CloudFlare_DDNS/
+wget      https://raw.githubusercontent.com/hanhongju/my_script/master/CloudFlare_DDNS_Setter.sh      -cP      /home/CloudFlare_DDNS/
 #写入配置文件，修改DNS
 echo  "
 email=86606682@qq.com
