@@ -1,6 +1,6 @@
 #下载文件
-wget    https://raw.githubusercontent.com/nanqinlang-script/CloudFlare_DNS_Record/Setter/CloudFlare_DDNS_Setter.sh     -cP   /home/CloudFlare_DDNS
-wget    https://raw.githubusercontent.com/nanqinlang-script/CloudFlare_DNS_Record/Setter/config.conf                   -cP   /home/CloudFlare_DDNS
+wget    https://raw.githubusercontent.com/nanqinlang-script/CloudFlare_DNS_Record/Setter/CloudFlare_DDNS_Setter.sh     -cP   /home/CloudFlare_DDNS/
+wget    https://raw.githubusercontent.com/nanqinlang-script/CloudFlare_DNS_Record/Setter/config.conf                   -cP   /home/CloudFlare_DDNS/
 #写入配置文件，修改DNS
 echo  "
 email=86606682@qq.com
@@ -13,8 +13,10 @@ ttl=120
 bash    /home/CloudFlare_DDNS/CloudFlare_DDNS_Setter.sh     --ddns
 #每5分钟修改一次DNS
 echo       "
-*/5 * * * *   bash    /home/CloudFlare_DDNS/CloudFlare_DDNS_Setter.sh     --ddns
+*/5 * * * *    bash    /home/CloudFlare_DDNS/CloudFlare_DDNS_Setter.sh     --ddns
 "  |  crontab
 crontab    -l
 service   cron   restart
 #完成
+
+
