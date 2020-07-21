@@ -58,8 +58,8 @@ echo '
     "remote_port": 80,
     "password": ["fengkuang"],
     "ssl": {
-        "cert": "/home/key/fullchain.pem",
-        "key": "/home/key/privkey.pem",
+        "cert": "/home/keys/fullchain.pem",
+        "key": "/home/keys/privkey.pem",
         "alpn": ["http/1.1"]
     }
 }
