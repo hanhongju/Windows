@@ -10,6 +10,8 @@ lsb_release   -a
 #显示系统新版本信息
 
 
+#Debian8一键升级Debian9
 
+#apt update && apt install -y curl && bash -c "$(curl -sL https://git.io/JJOVe)"
 
 
