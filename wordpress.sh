@@ -71,7 +71,6 @@ echo       '
 0 0 * * *     mkdir   -p     /home/wpdbbackup/
 1 0 * * *     mysqldump     -uroot     -pfengkuang     wordpress   >    /home/wpdbbackup/$(date "+\%Y\%m\%d \%H:\%M:\%S ")wordpress.sql
 '  |  crontab
-crontab    -l
 service   cron   restart
 #启动数据库
 systemctl     enable       mariadb
