@@ -1,4 +1,4 @@
-;AuotoHotkey循环发送按键到后台窗口
+;AuotoHotkey后台窗口自动按键
 Insert::
 HotKey  =   {END}
 SetTitleMatchMode, 2
