@@ -1,5 +1,5 @@
-;AutoHotkey同步器@Windows
-WinGetActiveTitle, Title                               ;读取当前窗口名字，并为所有同名窗口编号
+;AutoHotkey同步器
+WinGetActiveTitle, Title
 Winget, windowid, List, %Title%
 1::
 2::
