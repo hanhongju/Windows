@@ -21,7 +21,7 @@ WantedBy=multi-user.target
 '        >          /etc/systemd/system/qbittorrent-nox.service
 systemctl   enable    qbittorrent-nox
 systemctl   restart   qbittorrent-nox
-#配置nginx反代qbittorrent
+#配置nginx反代
 echo  '
 server {
 listen 80;
@@ -35,9 +35,9 @@ http2_push_preload on;     #NGINX从1.13.9版本开始支持HTTP/2服务端推�
 }
 '            >               /etc/nginx/sites-enabled/default
 service  nginx  restart
-#配置完成，显示监听端口
 sleep 1s
 netstat  -plunt | grep 'qbittorrent\|nginx'
+#回显监听端口
 #用户名admin，密码adminadmin，默认下载目录/home/bt/Downloads/
 
 
