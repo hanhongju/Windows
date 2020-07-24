@@ -37,7 +37,7 @@ http2_push_preload on;     #NGINX从1.13.9版本开始支持HTTP/2服务端推�
 service  nginx  restart
 #配置完成，显示监听端口
 sleep 1s
-netstat  -plunt | grep 'qbittorrent'
+netstat  -plunt | grep 'qbittorrent\|nginx'
 #用户名admin，密码adminadmin，默认下载目录/home/bt/Downloads/
 
 
