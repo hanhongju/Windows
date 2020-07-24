@@ -37,7 +37,7 @@ mkdir    -p      /home/keys/
 cp       /etc/letsencrypt/live/$site/fullchain.pem       /home/keys/fullchain.pem
 cp       /etc/letsencrypt/live/$site/privkey.pem         /home/keys/privkey.pem
 chmod    -Rf     777       /home/
-#配置证书自动更新
+#配置证书每月1日自动更新
 echo       "
 0 0 1 * * service trojan stop
 1 0 1 * * certbot renew
