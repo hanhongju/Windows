@@ -2,7 +2,7 @@
 Insert::
 Loop
 {
-click right  991, 593
+click right  968,642
 sleep 1000
 click   239,348
 sleep 1000
