@@ -18,7 +18,7 @@ systemctl    stop      syncthing@root.service
 #修改配置文件，启动服务
 sed         -i        's/127.0.0.1/0.0.0.0/g'          /root/.config/syncthing/config.xml
 systemctl    restart   syncthing@root.service
-#配置nginx反代syncthing
+#配置nginx反代
 echo  '
 server {
 listen 80;
@@ -34,7 +34,7 @@ http2_push_preload on;     #NGINX从1.13.9版本开始支持HTTP/2服务端推�
 service  nginx  restart
 sleep 1s
 netstat  -plunt | grep 'syncthing\|nginx'
-#回显syncthing监听端口
+#回显监听端口
 
 
 
