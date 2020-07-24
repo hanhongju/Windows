@@ -1,4 +1,4 @@
-;AuotoHotkey循环发送按键到后台窗口@Windows
+;AuotoHotkey循环发送按键到后台窗口
 Insert::                                                ;按下热键开启脚本
 HotKey  =   {END}                                       ;定义映射热键
 SetTitleMatchMode, 2
