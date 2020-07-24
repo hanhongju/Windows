@@ -26,7 +26,7 @@ echo  '
 server {
 listen 80;
 listen [::]:80;
-location   /{
+location /      {
 proxy_pass                 http://127.0.0.1:8080/;
 proxy_http_version         1.1;
 proxy_set_header           X-Forwarded-Host        $http_host;
