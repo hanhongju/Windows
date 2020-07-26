@@ -23,7 +23,6 @@ record=`curl -X GET "https://api.cloudflare.com/client/v4/zones/${zone_id}/dns_r
 -H "X-Auth-Key: ${api_key}" \
 -H "Content-Type: application/json" `
 record_id=`echo ${record} | grep "id" | awk      -F     '"'     '{print $6}'`
-echo   ${record_id}
 
 #更新记录
 curl -X PUT "https://api.cloudflare.com/client/v4/zones/${zone_id}/dns_records/${record_id}" \
