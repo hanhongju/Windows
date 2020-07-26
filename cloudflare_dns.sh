@@ -1,7 +1,8 @@
-#cloudflare api添加dns记录@Debian 10
+#cloudflare api dns记录维护@Debian 10
 #安装依赖
 apt  update
 apt  install   -y   curl
+
 #定义cloudflare api参数
 email=86606682@qq.com
 api_key=0e4c326d547e60c8901491fec0bbbfe6b8f84
