@@ -38,20 +38,3 @@ curl -X PUT "https://api.cloudflare.com/client/v4/zones/${zone_id}/dns_records/$
 
 
 
-#每5分钟修改一次DNS
-echo       "
-*/5 * * * *    bash    /home/cloudflare_dns.sh
-"  |  crontab
-crontab    -l
-service   cron   restart
-#完成
-
-
-
-
-
-
-
-
-
-
