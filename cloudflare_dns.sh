@@ -1,4 +1,4 @@
-#cloudflare api dns记录维护@Debian 10
+#cloudflare api dns记录手工维护@Debian 10
 
 
 #安装依赖
@@ -16,16 +16,12 @@ ttl=120
 
 
 #更改域名后要创建DNS记录
-<<EOF
-
 #创建域名对应IP记录
 curl -X POST "https://api.cloudflare.com/client/v4/zones/${zone_id}/dns_records" \
 -H "X-Auth-Email: ${email}" \
 -H "X-Auth-Key: ${api_key}" \
 -H "Content-Type: application/json" \
 --data '{"type":"A", "name":"'${domain}'", "content":"'${dynamic_ip}'", "ttl":'${ttl}', "proxied":false}'
-
-EOF
 
 
 #获取record_id参数
