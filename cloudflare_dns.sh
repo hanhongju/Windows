@@ -1,7 +1,5 @@
 #cloudflare api dns记录维护@Debian 10
 
-#安装脚本
-echo '
 
 #安装依赖
 apt  update
@@ -37,8 +35,6 @@ curl -X PUT "https://api.cloudflare.com/client/v4/zones/${zone_id}/dns_records/$
 -H "X-Auth-Key: ${api_key}" \
 -H "Content-Type: application/json" \
 --data '{"type":"A", "name":"'${domain}'", "content":"'${dynamic_ip}'", "ttl":'${ttl}', "proxied":false}'
-
-'          >           /home/cloudflare_dns.sh
 
 
 
