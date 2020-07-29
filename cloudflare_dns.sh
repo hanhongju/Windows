@@ -1,4 +1,7 @@
 #cloudflare api dns记录维护@Debian 10
+
+#安装脚本
+echo '
 #安装依赖
 apt  update
 apt  install   -y   curl openssl libssl-dev ca-certificates
@@ -45,6 +48,21 @@ curl -X PUT "https://api.cloudflare.com/client/v4/zones/${zone_id}/dns_records/$
 -H "X-Auth-Key: ${api_key}" \
 -H "Content-Type: application/json" \
 --data '{"type":"A", "name":"'${domain}'", "content":"'${dynamic_ip}'", "ttl":'${ttl}', "proxied":false}'
+
+'          >           /home/cloudflare_dns.sh
+
+
+
+#每5分钟修改一次DNS
+echo       "
+*/5 * * * *    bash    /home/cloudflare_dns.sh
+"  |  crontab
+crontab    -l
+service   cron   restart
+#完成
+
+
+
 
 
 
