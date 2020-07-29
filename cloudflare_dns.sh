@@ -1,7 +1,7 @@
 #cloudflare api dns记录维护@Debian 10
 #安装依赖
 apt  update
-apt  install   -y   curl
+apt  install   -y   curl openssl libssl-dev ca-certificates
 
 #定义cloudflare api参数
 email=86606682@qq.com
