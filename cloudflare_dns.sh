@@ -12,6 +12,9 @@ dynamic_ip=`curl ip.sb`
 ttl=120
 
 
+
+
+#更改域名后要创建DNS记录
 <<EOF
 
 #创建域名对应IP记录
