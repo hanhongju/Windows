@@ -1,4 +1,8 @@
 #NAT VPS IP地址自动更新
+#安装常用软件包：
+apt    update
+apt    full-upgrade    -y    --fix-missing
+apt    autoremove      -y
 #下载文件
 wget      https://raw.githubusercontent.com/hanhongju/my_script/master/CloudFlare_DDNS_Setter.sh      -cP      /home/CloudFlare_DDNS/
 #写入配置文件，修改DNS
