@@ -1,5 +1,5 @@
 #NAT VPS IP地址自动更新
-#安装常用软件包：
+#系统更新：
 apt    update
 apt    full-upgrade    -y    --fix-missing
 apt    autoremove      -y
