@@ -9,8 +9,8 @@ echo    "
 用户ID为           15448fce-7c71-11ea-bc55-0242ac130003
 额外ID为           0
 传输协议为         ws
-路径为             /f63lKAx
-底层传输安全为     tls
+路径为            /f63lKAx
+底层传输安全为      tls
 理解并记录下这些信息后请按回车键继续，并在下一栏输入您解析的有效域名。如果域名输入有误请按Ctrl+C终止脚本运行，然后重新运行脚本。
 "
 read    nothing
@@ -95,17 +95,10 @@ echo       "
 crontab    -l
 service   cron   restart
 #创建nginx配置文件
-mkdir      -p      /etc/nginx/sites-enabled/
-echo '
-events   {}
-http     {include /etc/nginx/sites-enabled/*;}
-'         >       /etc/nginx/nginx.conf
 echo '
 server{
 server_name www.example.com;
 set $proxy_name pubmed.ncbi.nlm.nih.gov;
-listen 80;
-listen [::]:80;
 resolver 8.8.8.8 8.8.4.4 valid=300s;
 listen 443 ssl;
 listen [::]:443 ssl;
@@ -139,10 +132,10 @@ sed      -i       ''s/www.example.com/$site/g''               /etc/nginx/sites-e
 
 
 #启动V2Ray和Nginx：
-systemctl   enable    v2ray.service
-systemctl   enable    nginx.service
-systemctl   restart   v2ray.service
-systemctl   restart   nginx.service
+systemctl   enable    v2ray
+systemctl   enable    nginx
+service     v2ray     restart
+service     nginx     restart
 #验证配置文件，显示监听端口
 netstat  -plunt | grep 'nginx'
 /usr/bin/v2ray/v2ray     -test       -config=/etc/v2ray/config.json
@@ -158,6 +151,3 @@ finish_time=$(date +%s)
 time_consume=$((   finish_time   -   begin_time ))
 echo   "脚本运行时间$time_consume秒。"
 #至此V2Ray可正常工作
-
-
-
