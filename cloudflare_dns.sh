@@ -2,8 +2,10 @@
 
 
 #安装依赖
-apt  update
-apt  install   -y   curl openssl libssl-dev ca-certificates
+apt    update
+apt    full-upgrade    -y    --fix-missing
+apt    autoremove      -y
+apt    install         -y      curl openssl libssl-dev ca-certificates
 
 
 #定义cloudflare api参数
