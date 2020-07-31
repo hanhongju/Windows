@@ -96,9 +96,6 @@ mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress.sql
 #网站文件wordpress.zip备份到/home文件夹
 cd        /home/
 zip       -q        wordpress.zip           -r      ./wordpress/
-
-
-
 #创建nginx配置文件，准备远程下载
 echo '
 server {
