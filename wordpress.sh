@@ -27,12 +27,6 @@ fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 include        fastcgi_params;
 }
 }
-server {
-server_name   bak.hanhongju.com;
-listen 80;
-listen [::]:80;
-root     /home/;
-}
 '         >         /etc/nginx/sites-enabled/hanhongju.com
 #重启服务
 systemctl     enable       nginx 
@@ -101,6 +95,20 @@ mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress.sql
 #网站文件wordpress.zip备份到/home文件夹
 cd        /home/
 zip       -q        wordpress.zip           -r      ./wordpress/
+#创建nginx配置文件，进行远程下载
+echo '
+server {
+server_name   bak.hanhongju.com;
+listen 80;
+listen [::]:80;
+root     /home/;
+}
+'         >         /etc/nginx/sites-enabled/bak.hanhongju.com
+systemctl     restart      nginx
+
+
+
+
 
 
 #远程下载wordpress.zip
