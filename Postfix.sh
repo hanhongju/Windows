@@ -95,16 +95,37 @@ echo  "myhostname = hongju.fun"    >>       /etc/postfix/main.cf
 
 
 
+echo  "
+user = root
+password = fengkuang
+hosts = 127.0.0.1
+dbname = mailserver
+query = SELECT 1 FROM virtual_domains WHERE name='%s'
+"      >      /etc/postfix/mysql-virtual-mailbox-domains.cf
+echo  "
+user = root
+password = fengkuang
+hosts = 127.0.0.1
+dbname = mailserver
+query = SELECT 1 FROM virtual_users WHERE email='%s'
+"       >     /etc/postfix/mysql-virtual-mailbox-maps.cf
+echo  "
+user = root
+password = fengkuang
+hosts = 127.0.0.1
+dbname = mailserver
+query = SELECT destination FROM virtual_aliases WHERE source='%s'
+"         >        /etc/postfix/mysql-virtual-alias-maps.cf
+echo "
+user = root
+password = fengkuang
+hosts = 127.0.0.1
+dbname = mailserver
+query = SELECT email FROM virtual_users WHERE email='%s'
+"         >       /etc/postfix/mysql-virtual-email2email.cf
 
 
-
-
-
-
-
-
-
-
+systemctl restart postfix
 
 
 
