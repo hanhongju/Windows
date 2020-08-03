@@ -3,7 +3,7 @@
 apt    update
 apt    full-upgrade    -y    --fix-missing
 apt    autoremove      -y
-apt    install         -y      gzip curl
+apt    install         -y      gzip curl net-tools
 #更改rDNS
 hostname -f
 echo  "hj"    >    /etc/hostname
@@ -20,4 +20,4 @@ cd     iRedMail-1.3.1
 bash   iRedMail.sh
 
 
-
+netstat -plunt
