@@ -6,10 +6,3 @@
 /script SendChatMessage(msg,"YELL");SendChatMessage(msg,"CHANNEL",nil,1);SendChatMessage(msg,"CHANNEL",nil,2);SendChatMessage(msg,"CHANNEL",nil,3);SendChatMessage(msg,"CHANNEL",nil,4);
 
 
-
-#Reference
-#https://wow.gamepedia.com/World_of_Warcraft_API
-
-
-
-
