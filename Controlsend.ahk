@@ -1,7 +1,7 @@
 ;AuotoHotkey后台窗口自动按键
 Insert::
 HotKey  =   {END}
-SetTitleMatchMode, 2
+SetTitleMatchMode, 3
 WinGetActiveTitle, Title
 Winget,  windowid, List , %Title%
 Loop
