@@ -3,9 +3,6 @@ apt    update
 apt    full-upgrade   -y
 apt    autoremove     -y
 apt    install        -y        wget unzip zip screen default-jdk nginx
-#架设下载服务器
-echo     'server {listen 80;listen [::]:80;root /home/;}'   >   /etc/nginx/sites-enabled/default
-service   nginx   restart
 #下载1.15.2版本mc服务器文件
 wget      https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar     -cP     /home/mcserver/
 #打开虚拟终端，后台运行服务器
@@ -24,6 +21,9 @@ screen   -S   mc   -X   quit
 #备份服务器，将mcserver目录压缩为mcserver.zip文件
 cd      /home/
 zip     -q       mcjava.zip          -r     ./mcserver/
+#架设下载服务器
+echo     'server {listen 80;listen [::]:80;root /home/;}'   >   /etc/nginx/sites-enabled/default
+service   nginx   restart
 
 #到新服务器，上传备份文件至/home/并解压
 rm      -rf     /home/mcserver/
@@ -43,9 +43,6 @@ apt update
 apt full-upgrade   -y
 apt autoremove     -y
 apt install        -y   wget unzip zip libcurl4-openssl-dev nginx
-#架设下载服务器
-echo     'server {listen 80;listen [::]:80;root /home/;}'   >   /etc/nginx/sites-enabled/default
-service   nginx   restart
 #下载基岩版mc服务器文件
 wget     https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.60.5.zip      -cP     /home/
 unzip   -qo   /home/bedrock-server-1.14.60.5.zip    -d    /home/mcserver/
@@ -61,6 +58,9 @@ pkill -9 bedrock_server
 #备份服务器，将worlds目录压缩为worlds.zip文件
 cd      /home/mcserver/
 zip     -q       /home/worlds.zip     -r     ./worlds/
+#架设下载服务器
+echo     'server {listen 80;listen [::]:80;root /home/;}'   >   /etc/nginx/sites-enabled/default
+service   nginx   restart
 
 #到新服务器，上传备份文件至/home/并解压
 rm      -rf     /home/mcserver/worlds/
