@@ -4,20 +4,22 @@ apt   full-upgrade   -y
 apt   autoremove     -y
 apt   install        -y    tar wget unzip zip net-tools nginx
 #安装网页文件
-wget      https://github.com/syncthing/syncthing/releases/download/v1.6.1/syncthing-linux-amd64-v1.6.1.tar.gz     -cP     /home/
+wget      https://github.com/syncthing/syncthing/releases/download/v1.7.1/syncthing-linux-amd64-v1.7.1.tar.gz     -cP     /home/
 cd       /home/
-tar      -zxf        syncthing-linux-amd64-v1.6.1.tar.gz
-cd        syncthing-linux-amd64-v1.6.1
+tar      -zxf        syncthing-linux-amd64-v1.7.1.tar.gz
+cd        syncthing-linux-amd64-v1.7.1
 cp        syncthing                                           /usr/bin/syncthing
 cp        etc/linux-systemd/system/syncthing@.service         /etc/systemd/system/syncthing@.service
 #生成配置文件，配置系统服务
-systemctl    enable    syncthing@root.service
-systemctl    start     syncthing@root.service
+deluser      sync
+adduser      sync    --system    --group
+systemctl    enable    syncthing@sync.service
+systemctl    start     syncthing@sync.service
 sleep 5s
-systemctl    stop      syncthing@root.service
+systemctl    stop      syncthing@sync.service
 #修改配置文件，启动服务
-sed         -i        's/127.0.0.1/0.0.0.0/g'          /root/.config/syncthing/config.xml
-systemctl    restart   syncthing@root.service
+sed         -i        's/127.0.0.1/0.0.0.0/g'          /home/sync/.config/syncthing/config.xml
+systemctl    restart   syncthing@sync.service
 #配置nginx反代
 echo  '
 server {
