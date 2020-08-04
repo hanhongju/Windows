@@ -21,6 +21,7 @@ systemctl    restart   syncthing@root.service
 #配置nginx反代
 echo  '
 server {
+server_name   sync.hanhongju.com;
 listen 80;
 listen [::]:80;
 location /      {
@@ -30,7 +31,7 @@ proxy_set_header           X-Forwarded-Host        $http_host;
 http2_push_preload on;     #NGINX从1.13.9版本开始支持HTTP/2服务端推送
 }
 }
-'            >               /etc/nginx/sites-enabled/default
+'            >               /etc/nginx/sites-enabled/sync.hanhongju.com
 service  nginx  restart
 sleep 1s
 netstat  -plunt | grep 'syncthing\|nginx'
