@@ -10,6 +10,7 @@ tar      -zxf        syncthing-linux-amd64-v1.7.1.tar.gz
 cd        syncthing-linux-amd64-v1.7.1
 cp        syncthing                                           /usr/bin/syncthing
 cp        etc/linux-systemd/system/syncthing@.service         /etc/systemd/system/syncthing@.service
+rm       -rf        /home/syncthing-linux-amd64-v1.7.1/       /home/syncthing-linux-amd64-v1.7.1.tar.gz
 #生成配置文件，配置系统服务
 deluser      sync
 adduser      sync    --system    --group
