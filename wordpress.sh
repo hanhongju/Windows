@@ -3,7 +3,7 @@
 apt   update
 apt   full-upgrade   -y
 apt   autoremove     -y
-apt   install        -y      wget curl zip unzip net-tools nginx php-fpm php-mysql mariadb-server  
+apt   install        -y      wget curl zip unzip net-tools nginx php-fpm php-mysql mariadb-server
 #安装wordpress网页文件
 wget        https://cn.wordpress.org/latest-zh_CN.tar.gz     -cP      /home/
 rm         -rf       /home/wordpress/
