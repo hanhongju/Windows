@@ -45,8 +45,3 @@ netstat  -plunt | grep 'qbittorrent\|nginx'
 
 
 
-
-
-
-
-
