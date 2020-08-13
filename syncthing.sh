@@ -42,7 +42,3 @@ netstat  -plunt | grep 'syncthing\|nginx'
 
 
 
-
-
-
-
