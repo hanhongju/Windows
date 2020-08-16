@@ -62,7 +62,7 @@ BLOCK
 #每天0时自动备份数据库
 mkdir    -p     /home/dbbackup/
 echo  '
-0 0 * * *     mysqldump     -uroot     -pfengkuang     wordpress    >    /home/dbbackup/$(date "+\%Y\%m\%d")wordpress.sql
+0 0 * * * mysqldump  -uroot    -pfengkuang     wordpress     >      /home/dbbackup/$(date "+\%Y\%m\%d")wordpress.sql
 '  |  crontab
 crontab    -l
 service   cron   restart
