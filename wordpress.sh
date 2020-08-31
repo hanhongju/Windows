@@ -32,7 +32,7 @@ systemctl     enable       nginx
 systemctl     restart      nginx
 php          -v
 nginx        -vt
-netstat      -plunt    |   grep   'nginx'
+netstat      -plnt
 #回显nginx、php版本，nginx配置检查和监听端口
 
 
@@ -70,7 +70,7 @@ service   cron   restart
 #启动数据库
 systemctl     enable       mariadb
 systemctl     restart      mariadb
-netstat      -plunt    |   grep   'mysql\|nginx'
+netstat      -plnt
 #回显mysql和nginx监听端口
 
 
