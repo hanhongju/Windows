@@ -37,7 +37,6 @@ chown      -Rf        www-data      /home/
 #创建nginx配置文件
 echo '
 server {
-server_name   hanhongju.com;
 listen 80;
 listen [::]:80;
 listen 443 ssl;
@@ -54,7 +53,7 @@ fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 include        fastcgi_params;
 }
 }
-'         >         /etc/nginx/sites-enabled/hanhongju.com
+'         >         /etc/nginx/sites-enabled/default
 #重启服务
 systemctl     enable       nginx 
 systemctl     restart      nginx
