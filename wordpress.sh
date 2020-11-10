@@ -9,15 +9,16 @@ apt   install        -y      wget curl zip unzip net-tools nginx php-fpm php-mys
 pip3  install   cryptography --upgrade
 pip3  install   certbot
 #申请SSL证书
+site=hanhongju.com
 service   nginx   stop
-certbot   certonly    --standalone    --agree-tos     -n     -d      hanhongju.com     -m    86606682@qq.com 
-cp       /etc/letsencrypt/live/hanhongju.com/*      /home/
+certbot   certonly    --standalone    --agree-tos     -n     -d      $site     -m    86606682@qq.com 
+cp       /etc/letsencrypt/live/$site/*      /home/
 chmod    -Rf     777     /home/
 #配置证书每月1日自动更新，每天备份数据库
 echo       "
 0 0 1 * *     service       nginx     stop
 1 0 1 * *     certbot       renew
-2 0 1 * *     cp           /etc/letsencrypt/live/hanhongju.com/*          /home/
+2 0 1 * *     cp           /etc/letsencrypt/live/$site/*          /home/
 3 0 1 * *     chmod        -Rf        777          /home/
 4 0 1 * *     service       nginx     start
 0 0 * * *     mkdir        -p        /home/dbbackup/
