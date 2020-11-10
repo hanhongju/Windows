@@ -66,14 +66,6 @@ netstat      -plnt
 
 
 
-
-
-
-
-
-
-
-
 #初始化数据库
 mysql_secure_installation
 #修改数据库登录方式
@@ -94,15 +86,6 @@ systemctl     restart      mariadb
 
 
 
-
-
-
-
-
-
-
-
-
 #数据库备份
 #备份数据库，存放于/home/
 mysqldump     -uroot     -pfengkuang     wordpress   >    /home/wordpress.sql
@@ -111,9 +94,18 @@ mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress.sql
 
 
 
-#网站文件wordpress.zip备份到/home文件夹
+
+#网站文件wordpress.zip备份到/home/文件夹
 cd        /home/
 zip       -q        wordpress.zip           -r      ./wordpress/
+#上传wordpress.zip到/home/文件夹，还原wordpress文件
+rm        -rf      /home/wordpress/
+unzip     -qo      /home/wordpress.zip      -d       /home/
+
+
+
+
+
 #创建nginx配置文件，准备远程下载
 echo '
 server {
@@ -124,14 +116,10 @@ root     /home/;
 }
 '         >         /etc/nginx/sites-enabled/bak.hanhongju.com
 systemctl     restart      nginx
-
-
-
 #远程下载wordpress.zip
 wget       http://bak.hanhongju.com/wordpress.zip      -O     /home/wordpress.zip
-#或上传wordpress.zip到/home文件夹，还原wordpress文件
-rm        -rf      /home/wordpress/
-unzip     -qo      /home/wordpress.zip      -d       /home/
+
+
 
 
 
