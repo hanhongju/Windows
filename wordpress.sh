@@ -57,7 +57,7 @@ fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 include        fastcgi_params;
 }
 }
-'         >         /etc/nginx/sites-enabled/default
+'         >         /etc/nginx/sites-enabled/wordpress
 #重启服务
 systemctl     enable       nginx 
 systemctl     restart      nginx
