@@ -15,7 +15,7 @@ certbot   certonly    --standalone    --agree-tos     -n     -d      $site     -
 cp       /etc/letsencrypt/live/$site/*      /home/
 chmod    -Rf     777     /home/
 #配置证书每月1日自动更新，每天备份数据库
-echo       "
+echo       '
 0 0 1 * *     service       nginx     stop
 1 0 1 * *     certbot       renew
 2 0 1 * *     cp           /etc/letsencrypt/live/$site/*          /home/
@@ -23,7 +23,7 @@ echo       "
 4 0 1 * *     service       nginx     start
 0 0 * * *     mkdir        -p        /home/dbbackup/
 0 0 * * *     mysqldump    -uroot    -pfengkuang     wordpress     >      /home/dbbackup/$(date "+\%Y\%m\%d")wordpress.sql
-"      |      crontab
+'      |      crontab
 service       cron      restart
 
 
