@@ -1,4 +1,4 @@
-
+# R语言安装包
 
 install.packages("BiocManager")
 install.packages("colorspace")
@@ -28,5 +28,10 @@ BiocManager::install("DESeq"            ,update=TRUE, ask=FALSE)
 BiocManager::install("mirna40cdf"       ,update=TRUE, ask=FALSE)
 BiocManager::install("affy"             ,update=TRUE, ask=FALSE)
 BiocManager::install("tcltk"            ,update=TRUE, ask=FALSE)
+
+
+
+
+
 
 
