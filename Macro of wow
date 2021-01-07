@@ -6,3 +6,27 @@
 /script SendChatMessage(msg,"YELL");SendChatMessage(msg,"CHANNEL",nil,1);SendChatMessage(msg,"CHANNEL",nil,2);SendChatMessage(msg,"CHANNEL",nil,3);SendChatMessage(msg,"CHANNEL",nil,4);
 
 
+
+;AuotoHotkey后台窗口自动按键
+Insert::
+HotKey  =   {END}
+SetTitleMatchMode, 3
+WinGetActiveTitle, Title
+Winget,  windowid, List , %Title%
+Loop
+{
+ControlSend,  ,  %HotKey%  ,   ahk_id %windowid1%
+ControlSend,  ,  %HotKey%  ,   ahk_id %windowid2%
+ControlSend,  ,  %HotKey%  ,   ahk_id %windowid3%
+random ,  outputvar  ,  5000  ,  10000
+sleep  , %outputvar%
+}
+Return
+
+
+Home::reload
+
+
+
+
+
