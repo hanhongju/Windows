@@ -1,4 +1,5 @@
 #wordpress安装脚本@Debian 10
+site=hanhongju.com
 #安装常用软件包、LNMP环境：
 apt   update
 apt   full-upgrade   -y
@@ -10,43 +11,26 @@ pip3  install   cryptography --upgrade
 pip3  install   certbot
 #申请SSL证书
 service   nginx   stop
-certbot   certonly    --standalone    --agree-tos     -n     -d     hanhongju.com     -m    86606682@qq.com 
-cp       /etc/letsencrypt/live/$site/*      /home/
-chmod    -Rf     777     /home/
+certbot   certonly    --standalone    --agree-tos     -n     -d     $site     -m    86606682@qq.com 
 #配置证书每月1日自动更新，每天备份数据库
-echo   "
+echo   '
 0 0 1 * *     service       nginx     stop
 1 0 1 * *     certbot       renew
-2 0 1 * *     cp           /etc/letsencrypt/live/$site/*          /home/
-3 0 1 * *     chmod        -Rf        777          /home/
-4 0 1 * *     service       nginx     start
-"      >     /home/task
-echo   '
+2 0 1 * *     service       nginx     start
 0 0 * * *     mkdir        -p        /home/dbbackup/
-0 0 * * *     mysqldump    -uroot    -pfengkuang     wordpress     >      /home/dbbackup/$(date "+\%Y\%m\%d")wordpress.sql
-'      >>    /home/task
-crontab      /home/task
+0 0 * * *     mysqldump    -uroot    -pfengkuang     wordpress     >      /home/dbbackup/$(date +\%Y\%m\%d)wordpress.sql
+'       |     crontab
 service       cron      restart
-
-
-
-#安装wordpress网页文件
-wget        https://cn.wordpress.org/latest-zh_CN.tar.gz     -cP      /home/
-rm         -rf       /home/wordpress/
-cd         /home/
-tar        -zxf       latest-zh_CN.tar.gz
-chmod      -Rf        777           /home/
-chown      -Rf        www-data      /home/
 #创建nginx配置文件
 echo '
 server {
-server_name  hanhongju.com;
+server_name  www.example.com;
 listen 80;
 listen [::]:80;
 listen 443 ssl;
 listen [::]:443 ssl;
-ssl_certificate          /home/fullchain.pem;  
-ssl_certificate_key      /home/privkey.pem;   
+ssl_certificate          /etc/letsencrypt/live/www.example.com/fullchain.pem;  
+ssl_certificate_key      /etc/letsencrypt/live/www.example.com/privkey.pem;   
 if ( $scheme = http ){return 301 https://$server_name$request_uri;}
 root     /home/wordpress/;
 index     index.php index.html index.htm;
@@ -57,7 +41,8 @@ fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 include        fastcgi_params;
 }
 }
-'         >         /etc/nginx/sites-enabled/wordpress
+'         >         /etc/nginx/sites-enabled/wordpress.conf
+sed      -i        ''s/www.example.com/$site/g''               /etc/nginx/sites-enabled/wordpress.conf
 #重启服务
 systemctl     enable       nginx 
 systemctl     restart      nginx
@@ -70,6 +55,17 @@ ss           -plnt
 
 
 
+
+
+
+
+#安装wordpress网页文件
+wget        https://cn.wordpress.org/latest-zh_CN.tar.gz     -cP      /home/
+rm         -rf       /home/wordpress/
+cd         /home/
+tar        -zxf       latest-zh_CN.tar.gz
+chmod      -Rf        777           /home/
+chown      -Rf        www-data      /home/
 #初始化数据库
 mysql_secure_installation
 #修改数据库登录方式
