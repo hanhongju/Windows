@@ -4,7 +4,7 @@ apt   update
 apt   full-upgrade   -y
 apt   autoremove     -y
 apt   purge          -y      apache2
-apt   install        -y      wget curl zip unzip net-tools nginx php-fpm php-mysql mariadb-server python3-pip
+apt   install        -y      wget curl zip unzip nginx php-fpm php-mysql mariadb-server python3-pip
 #安装Certbot
 pip3  install   cryptography --upgrade
 pip3  install   certbot
@@ -64,7 +64,7 @@ systemctl     restart      nginx
 php          -v
 nginx        -vt
 crontab      -l
-netstat      -plnt
+ss           -plnt
 #回显nginx、php版本，nginx配置检查和监听端口
 
 
