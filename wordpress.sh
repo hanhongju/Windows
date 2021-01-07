@@ -10,8 +10,8 @@ apt   install        -y      wget curl zip unzip nginx php-fpm php-mysql mariadb
 pip3  install   cryptography --upgrade
 pip3  install   certbot
 #申请SSL证书
-service   nginx   stop
-certbot   certonly    --standalone    --agree-tos     -n     -d     $site     -m    86606682@qq.com 
+service       nginx         stop
+certbot       certonly    --standalone    --agree-tos     -n     -d     $site     -m    86606682@qq.com 
 #配置证书每月1日自动更新，每天备份数据库
 echo   '
 0 0 1 * *     service       nginx     stop
@@ -24,7 +24,7 @@ service       cron      restart
 #创建nginx配置文件
 echo '
 server {
-server_name  www.example.com;
+server_name www.example.com;
 listen 80;
 listen [::]:80;
 listen 443 ssl;
@@ -32,7 +32,7 @@ listen [::]:443 ssl;
 ssl_certificate          /etc/letsencrypt/live/www.example.com/fullchain.pem;  
 ssl_certificate_key      /etc/letsencrypt/live/www.example.com/privkey.pem;   
 if ( $scheme = http ){return 301 https://$server_name$request_uri;}
-root     /home/wordpress/;
+root      /home/wordpress/;
 index     index.php index.html index.htm;
 location ~ \.php$ {
 fastcgi_pass   unix:/run/php/php7.3-fpm.sock;     #php -v 遇到502 Bad Gateway时查看php版本，确认php-fpm.sock版本
