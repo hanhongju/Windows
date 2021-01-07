@@ -17,10 +17,10 @@ echo   '
 0 0 1 * *     service   nginx   stop
 1 0 1 * *     certbot   renew
 2 0 1 * *     service   nginx   start
-0 0 * * *     mkdir        -p        /home/dbbackup/
-0 0 * * *     mysqldump    -uroot    -pfengkuang     wordpress     >      /home/dbbackup/$(date +\%Y\%m\%d)wordpress.sql
 0 1 * * *     apt   full-upgrade   -y
 0 2 * * *     apt   autoremove     -y
+0 3 * * *     mkdir        -p        /home/dbbackup/
+0 3 * * *     mysqldump    -uroot    -pfengkuang     wordpress     >      /home/dbbackup/$(date +\%Y\%m\%d)wordpress.sql
 '       |     crontab
 service       cron      restart
 #创建nginx配置文件
