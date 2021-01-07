@@ -19,6 +19,8 @@ echo   '
 2 0 1 * *     service       nginx     start
 0 0 * * *     mkdir        -p        /home/dbbackup/
 0 0 * * *     mysqldump    -uroot    -pfengkuang     wordpress     >      /home/dbbackup/$(date +\%Y\%m\%d)wordpress.sql
+1 0 * * *     apt   full-upgrade   -y
+2 0 * * *     apt   autoremove     -y
 '       |     crontab
 service       cron      restart
 #创建nginx配置文件
