@@ -75,11 +75,6 @@ mysql         -uroot     -pfengkuang     -e      "update mysql.user set plugin='
 mysql         -uroot     -pfengkuang     -e      "DROP DATABASE wordpress"
 mysql         -uroot     -pfengkuang     -e      "CREATE DATABASE wordpress"
 mysql         -uroot     -pfengkuang     -e      "SHOW DATABASEs"
-#开放数据库给外网
-<<BLOCK
-sed      -i       ''s/127.0.0.1/\*/g''         /etc/mysql/mariadb.conf.d/50-server.cnf
-mysql         -uroot     -pfengkuang     -e      "use mysql; grant all privileges on *.* to 'root'@'%' identified by 'fengkuang' with grant option; flush privileges; select user,host from user;"
-BLOCK
 #启动数据库
 systemctl     enable       mariadb
 systemctl     restart      mariadb
