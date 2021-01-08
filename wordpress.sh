@@ -44,7 +44,8 @@ include        fastcgi_params;
 }
 }
 '         >         /etc/nginx/sites-enabled/wordpress.conf
-sed      -i        ''s/www.example.com/$site/g''               /etc/nginx/sites-enabled/wordpress.conf
+sed      -i        ''s/www.example.com/$site/g''             /etc/nginx/sites-enabled/wordpress.conf
+sed      -i         's/user.*/user\ root;/g'                 /etc/nginx/nginx.conf
 #重启服务
 systemctl     enable       nginx 
 systemctl     restart      nginx
