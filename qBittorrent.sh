@@ -22,7 +22,6 @@ Restart=on-failure
 WantedBy=multi-user.target
 '        >          /etc/systemd/system/qbittorrent-nox.service
 systemctl   enable    qbittorrent-nox
-systemctl   restart   qbittorrent-nox
 #配置nginx反代
 echo  '
 server {
