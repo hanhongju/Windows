@@ -10,7 +10,6 @@ else      dd    if=/dev/zero of=/mnt/swap bs=1M count=3000
           swapon   /mnt/swap
           echo    '/mnt/swap swap swap defaults 0 0'      >>       /etc/fstab
 fi
-
 #安装EwoMail
 yum    install   git    -y 
 cd     /root/
@@ -23,7 +22,6 @@ echo     ''127.0.0.1    mail.$site smtp.$site imap.$site''     >>       /etc/hos
 sed       -i          ''s/listen.*/listen\ 80\;/g''         /ewomail/nginx/conf/vhost/rainloop.conf
 #重启服务
 systemctl  restart      postfix dovecot nginx
-ss        -plnt
 echo     ''服务器管理页面为：      http://$site:8010''
 echo     ''账户为admin，密码为ewomail123。''
 
