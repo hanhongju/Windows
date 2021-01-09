@@ -41,8 +41,8 @@ sed      -i        ''s/www.example.com/$site/g''             /etc/nginx/sites-en
 sed      -i        ''s/user.*/user\ root\;/g''               /etc/nginx/nginx.conf
 #重启服务
 systemctl   restart   qbittorrent-nox nginx
-sleep    1s
-ss      -plnt
+sleep       1s
+ss         -plnt
 #回显监听端口
 #用户名admin，密码adminadmin，默认下载目录/home/bt/Downloads/
 
