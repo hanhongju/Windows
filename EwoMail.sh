@@ -24,7 +24,8 @@ sed       -i          ''s/listen.*/listen\ 80\;/g''         /ewomail/nginx/conf/
 #重启服务
 systemctl  restart      postfix dovecot nginx
 ss        -plnt
-echo  ''服务器管理页面为：http://$site:8010，密码为ewomail123。''
+echo     ''服务器管理页面为：      http://$site:8010''
+echo     ''账户为admin，密码为ewomail123。''
 
 
 
