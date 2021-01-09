@@ -40,7 +40,7 @@ http2_push_preload on;     #NGINX从1.13.9版本开始支持HTTP/2服务端推�
 sed      -i        ''s/www.example.com/$site/g''             /etc/nginx/sites-enabled/qbittorrent.conf
 sed      -i        ''s/user.*/user\ root\;/g''               /etc/nginx/nginx.conf
 #重启服务
-service  nginx  restart
+systemctl   restart   qbittorrent-nox nginx
 sleep    1s
 ss      -plnt
 #回显监听端口
