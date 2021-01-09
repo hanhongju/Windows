@@ -16,14 +16,11 @@ yum    install   git    -y
 cd     /root/
 git    clone     https://gitee.com/laowu5/EwoMail.git
 cd     /root/EwoMail/install/
-sed    -i    ''s/yum\ install\ epel-release/yum\ install\ epel-release\ \-y/g''     start.sh
+sed    -i    ''s/yum\ install\ epel-release.*/yum\ install\ epel-release\ \-y/g''     start.sh
 bash   start.sh    $site
-
-
-
-
-
-
-
-
+#安装后的常规配置
+echo   ''127.0.0.1    mail.$site smtp.$site imap.$site''     >>       /etc/hosts
+sed     -i       ''s/user.*/user\ root\;/''            /ewomail/nginx/conf/nginx.conf
+sed     -i       ''s/listen.*/listen\ 80\;/g''         /ewomail/nginx/conf/vhost/rainloop.conf
+systemctl restart postfix dovecot nginx
 
