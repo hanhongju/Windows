@@ -23,4 +23,12 @@ echo   ''127.0.0.1    mail.$site smtp.$site imap.$site''     >>       /etc/hosts
 sed     -i       ''s/user.*/user\ root\;/''            /ewomail/nginx/conf/nginx.conf
 sed     -i       ''s/listen.*/listen\ 80\;/g''         /ewomail/nginx/conf/vhost/rainloop.conf
 systemctl restart postfix dovecot nginx
+ss      -plnt
+
+
+echo  ''服务器管理页面为：http://$site:8010，密码为ewomail123。''
+
+
+
+
 
