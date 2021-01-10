@@ -1,5 +1,5 @@
 # EwoMail 安装脚本 @ CentOS 8
-site=ali.hongju.live
+site=yun.hongju.live
 #关闭Selinux
 sed       -i       ''s/SELINUX\=.*/SELINUX\=disabled/g''        /etc/sysconfig/selinux
 #添加SWAP缓存空间
