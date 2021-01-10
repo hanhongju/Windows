@@ -67,7 +67,8 @@ wget        https://cn.wordpress.org/latest-zh_CN.tar.gz     -cP      /home/
 rm         -rf       /home/wordpress/
 cd         /home/
 tar        -zxf       latest-zh_CN.tar.gz
-chmod      -Rf     777    /home/
+chmod      -Rf        777           /home/
+chown      -Rf        www-data      /home/
 #初始化数据库
 mysql_secure_installation
 #修改数据库登录方式
