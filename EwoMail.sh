@@ -13,9 +13,9 @@ fi
 #安装EwoMail
 yum         install   -y    git
 cd          /root/
-git         clone        https://github.com/gyxuehu/EwoMail.git
+git         clone        https://gitee.com/laowu5/EwoMail.git
 sed         -i         ''s/yum\ install\ epel-release.*/yum\ install\ epel-release\ \-y/g''     /root/EwoMail/install/start.sh
-bash        /root/EwoMail/install/start.sh       $site      en
+bash        /root/EwoMail/install/start.sh       $site
 #安装后的常规配置
 echo        ''127.0.0.1 mail.$site smtp.$site imap.$site''         >>         /etc/hosts
 sed          -i          ''s/listen.*/listen\ 80\;/g''         /ewomail/nginx/conf/vhost/rainloop.conf
