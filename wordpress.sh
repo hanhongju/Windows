@@ -1,5 +1,5 @@
 #wordpress安装脚本@Debian 10
-site=hanhongju.com
+site=www.hanhongju.com
 #安装常用软件包、LNMP环境：
 apt   update
 apt   full-upgrade   -y
