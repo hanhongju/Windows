@@ -1,5 +1,5 @@
 #qBittorrent安装脚本@Debian 10
-site=bt.hongju.live
+site=bt.hanhongju.com
 #安装依赖
 apt   update
 apt   full-upgrade   -y
