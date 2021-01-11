@@ -66,6 +66,7 @@ wget        https://cn.wordpress.org/latest-zh_CN.tar.gz     -cP      /home/
 rm         -rf       /home/wordpress/
 cd         /home/
 tar        -zxf       latest-zh_CN.tar.gz
+#网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
 chmod      -Rf        777           /home/
 chown      -Rf        www-data      /home/
 #初始化数据库
