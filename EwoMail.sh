@@ -3,7 +3,7 @@ site=hongju.fun
 #关闭Selinux
 sed       -i       ''s/SELINUX\=.*/SELINUX\=disabled/g''        /etc/sysconfig/selinux
 #添加SWAP缓存空间
-if        [[   $(free  -m  |  awk   'NR==3{print $2}'   2>&1)    >   3000   ]]
+if        [[   $(free  -m  |  awk   'NR==3{print $2}'   2>&1)    >=   3000   ]]
 then      echo   ''已经有SWAP，无需重复配置''
 else      dd    if=/dev/zero of=/mnt/swap bs=1M count=3000
           mkswap   /mnt/swap
