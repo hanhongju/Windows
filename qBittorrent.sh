@@ -5,6 +5,8 @@ apt   update
 apt   full-upgrade   -y
 apt   autoremove     -y
 apt   install        -y     nginx qbittorrent-nox
+#添加用户
+adduser      bt    --system     --group
 #为qbittorrent-nox创建一个systemd服务文件
 echo   ' 
 [Unit]
@@ -13,9 +15,9 @@ After=network.target
 [Service]
 #Do not change to "simple"
 Type=forking
-User=root
-Group=root
-UMask=777
+User=bt
+Group=bt
+UMask=007
 ExecStart=/usr/bin/qbittorrent-nox -d
 Restart=on-failure
 [Install]
@@ -37,7 +39,6 @@ http2_push_preload on;     #NGINX从1.13.9版本开始支持HTTP/2服务端推�
 }
 '         >         /etc/nginx/sites-enabled/qbittorrent.conf
 sed      -i        ''s/www.example.com/$site/g''             /etc/nginx/sites-enabled/qbittorrent.conf
-sed      -i        ''s/user.*/user\ root\;/g''               /etc/nginx/nginx.conf
 #重启服务
 systemctl   restart   qbittorrent-nox nginx
 sleep       1s
