@@ -7,7 +7,8 @@ rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 
 
-
+setenforce 0
+systemctl daemon-reexec
 systemctl enable nginx php-fpm
 systemctl start nginx php-fpm
 
