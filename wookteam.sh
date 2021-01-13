@@ -12,6 +12,9 @@ systemctl start    nginx php-fpm
 
 
 
+cp  /etc/php-fpm.d/www.conf  /etc/php-fpm.d/www2.conf
 
+
+sed  -i   ''s/listen\ \=.*/listen\ \=\ \/var\/run\/php\-fpm\/php\-fpm\.sock/g''   /etc/php-fpm.d/www2.conf
 
 
