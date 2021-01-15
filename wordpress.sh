@@ -22,7 +22,6 @@ echo   '
 0 3 * * *     mkdir        -p        /home/dbbackup/
 0 3 * * *     mysqldump    -uroot    -pfengkuang     wordpress     >      /home/dbbackup/$(date +\%Y\%m\%d)wordpress.sql
 '       |     crontab
-service       cron      restart
 #创建nginx配置文件
 echo '
 server {
@@ -46,8 +45,8 @@ include        fastcgi_params;
 '         >         /etc/nginx/sites-enabled/wordpress.conf
 sed      -i        ''s/www.example.com/$site/g''             /etc/nginx/sites-enabled/wordpress.conf
 #重启服务
-systemctl     enable       nginx 
-systemctl     restart      nginx
+systemctl     enable       nginx cron
+systemctl     restart      nginx cron
 php          -v
 nginx        -vt
 crontab      -l
