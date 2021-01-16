@@ -32,7 +32,7 @@ BiocManager::install("DESeq"            ,update=TRUE, ask=FALSE)
 BiocManager::install("mirna40cdf"       ,update=TRUE, ask=FALSE)
 BiocManager::install("affy"             ,update=TRUE, ask=FALSE)
 BiocManager::install("tcltk"            ,update=TRUE, ask=FALSE)
-BiocManager::install("chipSeeker"       ,update=TRUE, ask=FALSE)
+BiocManager::install("ChIPseeker"       ,update=TRUE, ask=FALSE)
 
 
 
