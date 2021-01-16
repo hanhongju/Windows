@@ -1,4 +1,4 @@
-#qBittorrent安装脚本@Debian 10
+# qBittorrent安装脚本 @ Debian 10
 site=bt.hanhongju.com
 #安装依赖
 apt   update
