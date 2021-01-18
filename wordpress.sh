@@ -20,7 +20,8 @@ echo   '
 0 1 * * *     apt   full-upgrade   -y
 0 2 * * *     apt   autoremove     -y
 0 3 * * *     mkdir        -p        /home/dbbackup/
-0 3 * * *     mysqldump    -uroot    -pfengkuang     wordpress     >      /home/dbbackup/$(date +\%Y\%m\%d)wordpress.sql
+0 4 * * *     mysqldump    -uroot    -pfengkuang     wordpress     >      /home/dbbackup/$(date +\%Y\%m\%d)wordpress.sql
+0 5 * * *     mysqldump    -uroot    -pfengkuang     wordpress     >      /home/wordpress.sql
 '       |     crontab
 #创建nginx配置文件
 echo '
