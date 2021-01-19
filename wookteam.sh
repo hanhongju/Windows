@@ -19,11 +19,11 @@ systemctl start    nginx php-fpm
 
 
 \cp       /etc/php-fpm.d/www.conf    /etc/php-fpm.d/www2.conf
-sed  -i   's/listen \=.*//g'         /etc/php-fpm.d/www.conf
-sed  -i   's/listen.owner \=.*//g'   /etc/php-fpm.d/www.conf
-sed  -i   's/listen.group \=.*//g'   /etc/php-fpm.d/www.conf
-sed  -i   's/user \=.*//g'           /etc/php-fpm.d/www.conf
-sed  -i   's/group \=.*//g'          /etc/php-fpm.d/www.conf
+sed  -i   '/listen =/d'              /etc/php-fpm.d/www.conf
+sed  -i   '/listen.owner =/d'        /etc/php-fpm.d/www.conf
+sed  -i   '/listen.group =/d'        /etc/php-fpm.d/www.conf
+sed  -i   '/user =/d'                /etc/php-fpm.d/www.conf
+sed  -i   '/group =/d'               /etc/php-fpm.d/www.conf
 echo   '
 listen = /var/run/php-fpm/php-fpm.sock
 listen.owner = nginx
@@ -38,13 +38,13 @@ pecl install swoole     #一路回车
 
 
 
-sed  -i    's/extension=.*//g'         /etc/php.ini
+sed  -i    '/extension=/d'         /etc/php.ini
 echo    'extension=swoole.so'     >>     /etc/php.ini
 
 
 cd /home
 curl -sS https://getcomposer.org/installer | php 
-mv composer.phar  /usr/local/bin/composer
+\mv composer.phar  /usr/local/bin/composer
 
 
 
