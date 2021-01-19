@@ -54,7 +54,23 @@ systemctl enable mysqld
 systemctl start mysqld
 
 
-grep 'temporary password' /var/log/mysqld.log
+pwd=$(grep     -oP     '(?<=host: ).*'    /var/log/mysqld.log)
+echo $pwd
+
+
+
+yum install -y supervisor
+systemctl enable supervisord
+systemctl start supervisord
+
+curl -sL https://rpm.nodesource.com/setup_12.x |  bash -
+yum install -y nodejs git
+
+
+
+
+
+
 
 
 
