@@ -2,7 +2,7 @@
 apt     update
 apt     install   -y   wget
 wget    https://github.com/Wind4/vlmcsd/releases/download/svn1113/binaries.tar.gz   -cP   /home/kms/
-tar     -zxvf     /home/kms/binaries.tar.gz   -C   /home/kms/
+tar     -xf     /home/kms/binaries.tar.gz   -C   /home/kms/
 /home/kms/binaries/Linux/intel/static/vlmcsd-x64-musl-static
 ss      -plnt
 
