@@ -62,7 +62,7 @@ ss           -plnt
 #安装wordpress网页文件
 wget       https://cn.wordpress.org/latest-zh_CN.tar.gz     -cP      /home/
 rm         -rf        /home/wordpress/
-tar        -zxf       latest-zh_CN.tar.gz     -C     /home/
+tar        -xf        /home/latest-zh_CN.tar.gz       -C      /home/
 #网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
 chmod      -Rf        777           /home/
 chown      -Rf        www-data      /home/
