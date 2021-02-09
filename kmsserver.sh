@@ -11,7 +11,6 @@ ss      -plnt
 #在Windows中用管理员身份登录Powershell输入以下代码
 slmgr /skms  ali.hongju.live
 slmgr /ato
-slmgr /xpr
 
 
 
