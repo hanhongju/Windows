@@ -9,7 +9,7 @@
 
 ;AuotoHotkey后台窗口自动按键
 Home::
-HotKey  =   {NumpadSub}
+HotKey  =   {Del}
 SetTitleMatchMode, 3
 WinGetActiveTitle, Title
 Winget,  windowid, List , %Title%
