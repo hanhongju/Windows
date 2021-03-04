@@ -22,8 +22,6 @@ random ,  outputvar  ,  5000  ,  10000
 sleep  , %outputvar%
 }
 Return
-
-
 End::reload
 
 
