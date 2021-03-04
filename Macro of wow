@@ -8,8 +8,8 @@
 
 
 ;AuotoHotkey后台窗口自动按键
-Insert::
-HotKey  =   {END}
+Home::
+HotKey  =   {PgDn}
 SetTitleMatchMode, 3
 WinGetActiveTitle, Title
 Winget,  windowid, List , %Title%
@@ -24,7 +24,7 @@ sleep  , %outputvar%
 Return
 
 
-Home::reload
+End::reload
 
 
 
