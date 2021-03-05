@@ -33,7 +33,7 @@ End::reload
 
 
 
-;获取鼠标位置
+;获取鼠标位置,并点击几个特定位置
 Del::
 MouseGetPos, X,Y
 MsgBox ,%X%,%Y%
