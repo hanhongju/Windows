@@ -28,3 +28,38 @@ End::reload
 
 
 
+
+
+
+
+
+;获取鼠标位置
+Del::
+MouseGetPos, X,Y
+MsgBox ,%X%,%Y%
+return
+Home::
+Loop
+{
+Click, right, 960, 626
+sleep  1000
+Click, 79, 347
+sleep  1000
+Click, 104, 666
+}
+reture
+End::reload
+
+
+
+
+
+
+
+
+
+
+
+
+
+
