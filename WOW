@@ -37,7 +37,7 @@ End::reload
 Del::
 MouseGetPos, X,Y
 MsgBox ,%X%,%Y%
-return
+Return
 Home::
 Loop
 {
@@ -46,8 +46,9 @@ sleep  1000
 Click, 79, 347
 sleep  1000
 Click, 104, 666
+sleep  1000
 }
-reture
+Return
 End::reload
 
 
