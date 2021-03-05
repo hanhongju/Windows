@@ -47,6 +47,8 @@ Click, 79, 347
 sleep  1000
 Click, 104, 666
 sleep  1000
+Click
+sleep  1000
 }
 Return
 End::reload
