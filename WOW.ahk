@@ -2,8 +2,18 @@
 /script msg="Hello, world!";
 
 
+
+
+
+
 #广播
 /script SendChatMessage(msg,"YELL");SendChatMessage(msg,"CHANNEL",nil,1);SendChatMessage(msg,"CHANNEL",nil,2);SendChatMessage(msg,"CHANNEL",nil,3);SendChatMessage(msg,"CHANNEL",nil,4);
+
+
+
+
+
+
 
 
 
