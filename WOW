@@ -39,19 +39,38 @@ MouseGetPos, X,Y
 MsgBox ,%X%,%Y%
 Return
 Home::
+sleeptime  =    500
 Loop
 {
 Click, right, 960, 626
-sleep  1000
+sleep  %sleeptime%
 Click, 79, 347
-sleep  1000
+sleep  %sleeptime%
 Click, 104, 666
-sleep  1000
+sleep  %sleeptime%
 Click
-sleep  1000
+sleep  %sleeptime%
 }
 Return
 End::reload
+
+
+
+
+
+
+;连续右键点击
+Home::
+sleeptime  =    100
+Loop
+{
+Click, right
+sleep  %sleeptime%
+}
+Return
+End::reload
+
+
 
 
 
