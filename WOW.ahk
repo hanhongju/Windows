@@ -68,11 +68,10 @@ End::reload
 
 ;连续右键点击
 Home::
-sleeptime  =    100
 Loop
 {
 Click, right
-sleep  %sleeptime%
+sleep  100
 }
 Return
 End::reload
