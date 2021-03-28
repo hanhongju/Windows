@@ -5,7 +5,7 @@ apt    update
 apt    full-upgrade   -y
 apt    autoremove     -y
 apt    purge          -y      apache2
-apt    install        -y      wget curl zip unzip nginx php-fpm php-mysql mariadb-server python3-pip
+apt    install        -y      wget curl zip unzip nginx php-fpm php-mysql mariadb-server python3-pip php-xml php-xml-rpc2
 pip3   install    --upgrade   cryptography certbot
 #申请SSL证书
 systemctl     stop        nginx apache2
