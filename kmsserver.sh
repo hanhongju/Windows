@@ -1,4 +1,4 @@
-#创建KMS服务器用以激活 Windows 10 系统 @ Debian 10
+#创建KMS服务器用以激活 Windows 10 系统
 apt     update
 apt     install   -y   wget
 yum     install   -y   wget
