@@ -14,13 +14,13 @@ certbot       certonly    --standalone   --agree-tos  -n  -d  $site  -m  8660668
 echo   '
 0 0 1 * *     systemctl   stop      nginx
 1 0 1 * *     certbot     renew
-2 0 1 * *     chmod         -R   777    /etc/letsencrypt/
+2 0 1 * *     chmod       -R   777    /etc/letsencrypt/
 3 0 * * *     systemctl   restart   nginx
-0 1 * * *     apt   full-upgrade   -y
-0 2 * * *     apt   autoremove     -y
-0 3 * * *     mkdir        -p        /home/dbbackup/
-0 4 * * *     mysqldump    -uroot    -pfengkuang     wordpress     >      /home/dbbackup/$(date +\%Y\%m\%d)wordpress.sql
-0 5 * * *     mysqldump    -uroot    -pfengkuang     wordpress     >      /home/wordpress.sql
+0 1 * * *     mkdir       -p        /home/dbbackup/
+0 2 * * *     mysqldump   -uroot    -pfengkuang     wordpress     >      /home/dbbackup/$(date +\%Y\%m\%d)wordpress.sql
+0 3 * * *     mysqldump   -uroot    -pfengkuang     wordpress     >      /home/wordpress.sql
+0 4 * * *     apt   full-upgrade   -y
+0 5 * * *     apt   autoremove     -y
 '       |     crontab
 #创建nginx配置文件
 echo '
