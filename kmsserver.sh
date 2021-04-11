@@ -1,6 +1,7 @@
 #创建KMS服务器用以激活 Windows 10 系统 @ Debian 10
 apt     update
 apt     install   -y   wget
+yum     install   -y   wget
 wget    https://github.com/Wind4/vlmcsd/releases/download/svn1113/binaries.tar.gz   -cP   /home/kms/
 tar     -xf     /home/kms/binaries.tar.gz   -C   /home/kms/
 cp      /home/kms/binaries/Linux/intel/static/vlmcsd-x64-musl-static      /usr/bin/vlmcsd
