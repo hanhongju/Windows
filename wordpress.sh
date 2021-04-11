@@ -12,13 +12,13 @@ systemctl     stop        nginx apache2
 certbot       certonly    --standalone   --agree-tos  -n  -d  $site  -m  86606682@qq.com 
 #配置证书每月1日自动更新，每天备份数据库
 echo   '
-0 0 1 * *     systemctl   stop      nginx
-1 0 1 * *     certbot     renew
-2 0 1 * *     chmod       -R   777    /etc/letsencrypt/
-3 0 * * *     systemctl   restart   nginx
-0 1 * * *     mkdir       -p        /home/dbbackup/
-0 2 * * *     mysqldump   -uroot    -pfengkuang     wordpress     >      /home/dbbackup/$(date +\%Y\%m\%d)wordpress.sql
-0 3 * * *     mysqldump   -uroot    -pfengkuang     wordpress     >      /home/wordpress.sql
+0 0 1 * *     systemctl     stop        nginx
+1 0 1 * *     certbot       renew
+2 0 1 * *     chmod         -R   777    /etc/letsencrypt/
+3 0 * * *     systemctl     restart     nginx
+0 1 * * *     mkdir         -p          /home/dbbackup/
+0 2 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >      /home/dbbackup/$(date +\%Y\%m\%d)wordpress.sql
+0 3 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >      /home/wordpress.sql
 0 4 * * *     apt   full-upgrade   -y
 0 5 * * *     apt   autoremove     -y
 '       |     crontab
