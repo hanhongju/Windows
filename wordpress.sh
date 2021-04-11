@@ -14,7 +14,8 @@ certbot       certonly    --standalone   --agree-tos  -n  -d  $site  -m  8660668
 echo   '
 0 0 1 * *     systemctl   stop      nginx
 1 0 1 * *     certbot     renew
-2 0 * * *     systemctl   restart   nginx
+2 0 1 * *     chmod         -R   777    /etc/letsencrypt/
+3 0 * * *     systemctl   restart   nginx
 0 1 * * *     apt   full-upgrade   -y
 0 2 * * *     apt   autoremove     -y
 0 3 * * *     mkdir        -p        /home/dbbackup/
