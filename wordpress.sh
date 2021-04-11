@@ -1,18 +1,17 @@
-# Wordpress安装脚本 @ Debian 10
+# Wordpress安装脚本 @ Debian 10 or Ubuntu 20.04
 site=www.hanhongju.com
-#安装常用软件包、LNMP环境：
+#安装软件申请证书
 apt    update
 apt    full-upgrade   -y
 apt    autoremove     -y
 apt    purge          -y      apache2
-apt    install        -y      wget curl zip unzip nginx mariadb-server python3-pip php-fpm php-mysql php-xml
-pip3   install    --upgrade   cryptography certbot
-#申请SSL证书
+apt    install        -y      wget curl zip unzip nginx certbot mariadb-server python3-pip php-fpm php-mysql php-xml
 systemctl     stop        nginx apache2
-certbot       certonly    --standalone   --agree-tos  -n  -d  $site  -m  86606682@qq.com 
+certbot       certonly    --standalone -n --agree-tos -m 86606682@qq.com -d $site
+chmod         -R   777    /etc/letsencrypt/
 #配置证书每月1日自动更新，每天备份数据库
 echo    '
-0 0 1 * *     systemctl     stop        nginx
+0 0 1 * *     systemctl     stop        nginx apache2
 1 0 1 * *     certbot       renew
 2 0 1 * *     chmod         -R   777    /etc/letsencrypt/
 3 0 * * *     systemctl     restart     nginx
