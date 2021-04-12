@@ -11,7 +11,6 @@ ss      -plnt
 
 
 #在Windows中用管理员身份登录Powershell输入以下代码
-slmgr -ipk   W269N-WFGWX-YVC9B-4J6C9-T83GX
 slmgr -skms  ali.hongju.live
 slmgr -ato
 
