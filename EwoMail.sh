@@ -21,11 +21,14 @@ cd          /root/EwoMail/install/
 bash        start.sh    $site   en
 #安装后的常规配置
 echo        ''127.0.0.1 mail.$site smtp.$site imap.$site''         >>         /etc/hosts
-sed          -i          ''s/listen.*/listen\ 80\;/g''         /ewomail/nginx/conf/vhost/rainloop.conf
+sed          -i          ''s/listen.*/listen\ 8000\;/g''         /ewomail/nginx/conf/vhost/rainloop.conf
 #重启服务
 systemctl     restart      postfix dovecot nginx
-echo        ''服务器管理页面为：      http://$site:8010''
-echo        ''账户为admin，密码为ewomail123。''
+echo        "
+邮件登录页面为：        http://$site:8000
+服务器管理页面为：      http://$site:8010。账户为admin，密码为ewomail123。
+"
+
 
 
 
