@@ -29,8 +29,6 @@ tar    -Pxf     /home/mc.tar
 
 
 
-
-
 #Minecraft基岩版服务器架设@Debian 10
 #安装常用软件包
 apt update
@@ -45,7 +43,7 @@ cd /home/mcserver/
 #关闭shell，连接服务器，开玩
 
 #关闭服务器
-pkill -9 bedrock_server
+pkill   -9    bedrock_server
 
 #备份服务器
 tar    -Pcf     /home/mc.tar      /home/mcserver/worlds/
