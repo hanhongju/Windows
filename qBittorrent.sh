@@ -42,7 +42,8 @@ systemctl   restart   qbittorrent-nox nginx
 sleep       1s
 ss         -plnt
 #回显监听端口
-#用户名admin，密码adminadmin
+#用户名admin
+#密码adminadmin
 
 
 
