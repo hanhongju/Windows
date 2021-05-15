@@ -1,10 +1,8 @@
-#MineCraft JAVA版服务器搭建脚本@Debian 9
-apt    update
-apt    full-upgrade   -y
-apt    autoremove     -y
-apt    install        -y        wget unzip zip screen default-jdk nginx
+# MineCraft JAVA版服务器搭建脚本 @ Debian
+apt      update
+apt      install     -y     wget screen default-jdk
 #下载1.15.2版本mc服务器文件
-wget      https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar     -cP     /home/mcserver/
+wget     https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar     -cP     /home/mcserver/
 #打开虚拟终端，后台运行服务器
 screen   -R      mc
 cd       /home/mcserver/
@@ -18,17 +16,13 @@ netstat  -plunt | grep 'java'
 screen   -ls
 screen   -S   mc   -X   quit
 
-#备份服务器，将mcserver目录压缩为mcserver.zip文件
-cd      /home/
-zip     -q       mcjava.zip          -r     ./mcserver/
-#架设下载服务器
-echo     'server {listen 80;listen [::]:80;root /home/;}'   >   /etc/nginx/sites-enabled/default
-service   nginx   restart
+#备份服务器
+tar    -Pcf     /home/mc.tar      /home/mcserver/
+#还原服务器
+tar    -Pxf     /home/mc.tar
 
-#到新服务器，上传备份文件至/home/并解压
-rm      -rf     /home/mcserver/
-unzip   -qo     /home/mcjava.zip     -d      /home/
-#打开服务器终端，开玩
+
+
 
 
 
