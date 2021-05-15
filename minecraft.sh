@@ -38,7 +38,7 @@ wget    https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.60.5.zip  
 unzip   -qo   /home/bedrock-server-1.14.60.5.zip    -d    /home/mcserverbedrock/
 chmod   -Rf    777    /home/
 #启动服务器
-cd /home/mcserver/
+cd /home/mcserverbedrock/
 (LD_LIBRARY_PATH=. ./bedrock_server&)
 #关闭shell，连接服务器，开玩
 
