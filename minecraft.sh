@@ -29,7 +29,7 @@ tar    -Pxf     /home/mc.tar
 
 
 
-#Minecraft基岩版服务器架设@Debian 10
+# Minecraft基岩版服务器架设 @ Debian
 #安装常用软件包
 apt    update
 apt    install        -y   wget unzip zip libcurl4-openssl-dev
