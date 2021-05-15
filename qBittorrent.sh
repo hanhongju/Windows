@@ -42,7 +42,7 @@ systemctl   restart   qbittorrent-nox nginx
 sleep       1s
 ss         -plnt
 #回显监听端口
-#用户名admin，密码adminadmin，默认下载目录/home/bt/Downloads/
+#用户名admin，密码adminadmin
 
 
 
