@@ -21,6 +21,7 @@ echo    '
 0 4 * * *     apt   full-upgrade   -y
 0 5 * * *     apt   autoremove     -y
 '       |     crontab
+systemctl     restart   cron
 #创建nginx配置文件
 echo '
 server {
