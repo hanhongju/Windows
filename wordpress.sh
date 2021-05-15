@@ -87,9 +87,9 @@ mysqldump     -uroot     -pfengkuang     wordpress   >    /home/wordpress/wordpr
 #导入数据库
 mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress/wordpress.sql
 #打包wp文件
-tar           -Pcf       /home/wordpress.tar       /home/wordpress/wordpress.sql
+tar           -Pcf       /home/wordpress.tar       /home/wordpress/
 #还原wp文件
-tar           -Pxf       /home/wordpress.tar       /home/wordpress/wordpress.sql
+tar           -Pxf       /home/wordpress.tar
 
 
 
