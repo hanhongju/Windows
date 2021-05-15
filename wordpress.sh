@@ -61,6 +61,29 @@ ss           -plnt
 
 
 
+
+#新安装wordpress网页文件
+wget       https://cn.wordpress.org/latest-zh_CN.tar.gz     -cP      /home/
+rm         -rf        /home/wordpress/
+tar        -xf        /home/latest-zh_CN.tar.gz             -C      /home/
+#网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
+chmod      -Rf        777           /home/
+chown      -Rf        www-data      /home/
+#打包wordpress文件
+tar        -Pcf       /home/wordpress.tar       /home/wordpress/
+#还原wordpress文件
+tar        -Pxf       /home/wordpress.tar
+
+
+
+
+
+
+
+
+
+
+
 #初始化数据库
 mysql_secure_installation
 #修改数据库登录方式
@@ -81,21 +104,6 @@ mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress/wordpr
 
 
 
-
-
-
-
-#新安装wordpress网页文件
-wget       https://cn.wordpress.org/latest-zh_CN.tar.gz     -cP      /home/
-rm         -rf        /home/wordpress/
-tar        -xf        /home/latest-zh_CN.tar.gz             -C      /home/
-#网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
-chmod      -Rf        777           /home/
-chown      -Rf        www-data      /home/
-#打包wordpress文件
-tar        -Pcf       /home/wordpress.tar       /home/wordpress/
-#还原wordpress文件
-tar        -Pxf       /home/wordpress.tar
 
 
 
