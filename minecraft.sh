@@ -46,9 +46,9 @@ cd /home/mcserver/
 pkill   -9    bedrock_server
 
 #备份服务器
-tar    -Pcf     /home/mc.tar      /home/mcserver/
+tar    -Pcf     /home/mcworlds.tar      /home/mcserver/worlds/
 #还原服务器
-tar    -Pxf     /home/mc.tar
+tar    -Pxf     /home/mcworlds.tar
 
 
 #win10版MC本地数据库文件在：
