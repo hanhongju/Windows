@@ -14,7 +14,8 @@ fi
 #安装EwoMail
 yum         install    -y    git
 cd          /root/
-git         clone       https://github.com/gyxuehu/EwoMail.git
+git         clone      https://github.com/gyxuehu/EwoMail.git
+tar         -cvf       /root/EwoMail.tar     /root/EwoMail/
 sed         -i         ''s/yum\ install\ epel-release.*/yum\ install\ epel-release\ \-y/g''     /root/EwoMail/install/start.sh
 #设定脚本工作目录，不要更改否则会出现安装失败
 cd          /root/EwoMail/install/
