@@ -2,8 +2,6 @@
 site=bt.hanhongju.com
 #安装依赖
 apt   update
-apt   full-upgrade   -y
-apt   autoremove     -y
 apt   install        -y     nginx qbittorrent-nox
 #添加用户
 adduser      bt    --system     --group
