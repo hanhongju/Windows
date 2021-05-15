@@ -31,10 +31,10 @@ tar    -Pxf     /home/mc.tar
 
 #Minecraft基岩版服务器架设@Debian 10
 #安装常用软件包
-apt update
-apt install        -y   wget unzip zip libcurl4-openssl-dev
+apt    update
+apt    install        -y   wget unzip zip libcurl4-openssl-dev
 #下载基岩版mc服务器文件
-wget     https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.60.5.zip      -cP     /home/
+wget    https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.60.5.zip      -cP     /home/
 unzip   -qo   /home/bedrock-server-1.14.60.5.zip    -d    /home/mcserver/
 chmod   -Rf    777    /home/
 #启动服务器
