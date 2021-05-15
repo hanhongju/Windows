@@ -1,7 +1,13 @@
+
 # qBittorrent安装脚本 @ Debian 10
 site=bt.hanhongju.com
+#安装依赖
 apt   update
-apt   install   -y   qbittorrent-nox
+apt   full-upgrade   -y
+apt   autoremove     -y
+apt   install        -y     nginx qbittorrent-nox
+#添加用户
+adduser      bt    --system     --group
 #为qbittorrent-nox创建一个systemd服务文件
 echo   ' 
 [Unit]
@@ -10,8 +16,8 @@ After=network.target
 [Service]
 #Do not change to "simple"
 Type=forking
-User=root
-Group=root
+User=bt
+Group=bt
 UMask=007
 ExecStart=/usr/bin/qbittorrent-nox -d
 Restart=on-failure
@@ -19,10 +25,25 @@ Restart=on-failure
 WantedBy=multi-user.target
 '        >          /etc/systemd/system/qbittorrent-nox.service
 systemctl   enable    qbittorrent-nox
-systemctl   restart   qbittorrent-nox
+#配置nginx反代
+echo  '
+server {
+server_name   www.example.com;
+listen 80;
+listen [::]:80;
+location /      {
+proxy_pass                 http://127.0.0.1:8080/;
+proxy_http_version         1.1;
+proxy_set_header           X-Forwarded-Host        $http_host;
+http2_push_preload on;     #NGINX从1.13.9版本开始支持HTTP/2服务端推送
+}
+}
+'         >         /etc/nginx/sites-enabled/qbittorrent.conf
+sed      -i        ''s/www.example.com/$site/g''             /etc/nginx/sites-enabled/qbittorrent.conf
+#重启服务
+systemctl   restart   qbittorrent-nox nginx
 sleep       1s
 ss         -plnt
 #回显监听端口
-#用户名admin密码adminadmin监听端口8080
-
+#用户名admin，密码adminadmin，默认下载目录/home/bt/Downloads/
 
