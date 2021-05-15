@@ -50,9 +50,10 @@ tar    -Pcf     /home/mcbedrockworlds.tar      /home/mcserverbedrock/worlds/
 #还原服务器
 tar    -Pxf     /home/mcbedrockworlds.tar
 
-
-#win10版MC本地数据库文件在：
-#C:\Users\hongju\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\minecraftWorlds
+# 官网下载地址
+# https://www.minecraft.net/zh-hans/download
+# Win10版MC本地数据库文件在：
+# C:\Users\hongju\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\minecraftWorlds
 
 
 
