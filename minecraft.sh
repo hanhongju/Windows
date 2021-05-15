@@ -2,10 +2,10 @@
 apt      update
 apt      install     -y     wget screen default-jdk
 #下载1.15.2版本mc服务器文件
-wget     https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar     -cP     /home/mcserver/
+wget     https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar     -cP     /home/mcserverjava/
 #打开虚拟终端，后台运行服务器
 screen   -R      mc
-cd       /home/mcserver/
+cd       /home/mcserverjava/
 java     -jar    server.jar    nogui
 sed      -i     's/eula=false/eula=true/g'       eula.txt
 java     -jar    server.jar    nogui
@@ -17,9 +17,9 @@ screen   -ls
 screen   -S   mc   -X   quit
 
 #备份服务器
-tar    -Pcf     /home/mc.tar      /home/mcserver/
+tar    -Pcf     /home/mcjava.tar      /home/mcserverjava/
 #还原服务器
-tar    -Pxf     /home/mc.tar
+tar    -Pxf     /home/mcjava.tar
 
 
 
@@ -35,7 +35,7 @@ apt    update
 apt    install        -y   wget unzip zip libcurl4-openssl-dev
 #下载基岩版mc服务器文件
 wget    https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.60.5.zip      -cP     /home/
-unzip   -qo   /home/bedrock-server-1.14.60.5.zip    -d    /home/mcserver/
+unzip   -qo   /home/bedrock-server-1.14.60.5.zip    -d    /home/mcserverbedrock/
 chmod   -Rf    777    /home/
 #启动服务器
 cd /home/mcserver/
@@ -46,9 +46,9 @@ cd /home/mcserver/
 pkill   -9    bedrock_server
 
 #备份服务器
-tar    -Pcf     /home/mcworlds.tar      /home/mcserver/worlds/
+tar    -Pcf     /home/mcbedrockworlds.tar      /home/mcserverbedrock/worlds/
 #还原服务器
-tar    -Pxf     /home/mcworlds.tar
+tar    -Pxf     /home/mcbedrockworlds.tar
 
 
 #win10版MC本地数据库文件在：
