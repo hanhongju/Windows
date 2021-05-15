@@ -17,7 +17,7 @@ echo    '
 3 0 * * *     systemctl     restart     nginx
 0 1 * * *     mkdir         -p          /home/dbbackup/
 0 2 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >      /home/dbbackup/$(date +\%Y\%m\%d)wordpress.sql
-0 3 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >      /home/wordpress.sql
+0 3 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >      /home/wordpress/wordpress.sql
 0 4 * * *     apt   full-upgrade   -y
 0 5 * * *     apt   autoremove     -y
 '       |     crontab
@@ -83,9 +83,15 @@ systemctl     restart      mariadb
 
 #数据库备份
 #备份数据库，存放于/home/
-mysqldump     -uroot     -pfengkuang     wordpress   >    /home/wordpress.sql
+mysqldump     -uroot     -pfengkuang     wordpress   >    /home/wordpress/wordpress.sql
 #导入数据库
-mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress.sql
+mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress/wordpress.sql
+#打包wp文件
+tar           -Pcf       /home/wordpress.tar       /home/wordpress/wordpress.sql
+#还原wp文件
+tar           -Pxf       /home/wordpress.tar       /home/wordpress/wordpress.sql
+
+
 
 
 
