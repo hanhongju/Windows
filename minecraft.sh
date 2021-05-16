@@ -9,7 +9,7 @@ cd       /home/mcserverjava/
 java     -jar    server.jar    nogui
 sed      -i     's/eula=false/eula=true/g'       eula.txt
 java     -jar    server.jar    nogui
-#关闭shell服务器端口19132
+#关闭shell开玩
 
 #关闭所有screen终端和服务器
 ss       -plnt | grep 'java'
