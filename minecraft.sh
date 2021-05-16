@@ -34,8 +34,8 @@ tar    -Pxf     /home/mcjava.tar
 apt    update
 apt    install        -y   wget unzip zip libcurl4-openssl-dev
 #下载基岩版mc服务器文件
-wget    https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.60.5.zip      -cP     /home/
-unzip   -qo   /home/bedrock-server-1.14.60.5.zip    -d    /home/mcserverbedrock/
+wget    https://img.zeruns.tech/down/bedrock-server-1.16.20.03.zip      -cP     /home/
+unzip   -qo   /home/bedrock-server-1.16.20.03.zip    -d    /home/mcserverbedrock/
 chmod   -Rf    777    /home/
 #启动服务器
 cd /home/mcserverbedrock/
