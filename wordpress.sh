@@ -18,8 +18,9 @@ echo    '
 0 1 * * *     mkdir         -p          /home/dbbackup/
 0 2 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >      /home/dbbackup/$(date +\%Y\%m\%d)wordpress.sql
 0 3 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >      /home/wordpress/wordpress.sql
-0 4 * * *     apt   full-upgrade   -y
-0 5 * * *     apt   autoremove     -y
+0 4 * * *     tar           -Pcf        /home/wordpress.tar       /home/wordpress/
+0 5 * * *     apt   full-upgrade   -y
+0 6 * * *     apt   autoremove     -y
 '       |     crontab
 systemctl     restart   cron
 #创建nginx配置文件
@@ -69,8 +70,6 @@ tar        -xf        /home/latest-zh_CN.tar.gz             -C      /home/
 #网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
 chmod      -Rf        777           /home/
 chown      -Rf        www-data      /home/
-#打包wordpress文件
-tar        -Pcf       /home/wordpress.tar       /home/wordpress/
 #还原wordpress文件
 tar        -Pxf       /home/wordpress.tar
 
@@ -95,9 +94,6 @@ mysql         -uroot     -pfengkuang     -e      "SHOW DATABASEs"
 #启动数据库
 systemctl     enable       mariadb
 systemctl     restart      mariadb
-#数据库备份
-#备份数据库，存放于/home/
-mysqldump     -uroot     -pfengkuang     wordpress   >    /home/wordpress/wordpress.sql
 #导入数据库
 mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress/wordpress.sql
 
