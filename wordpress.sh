@@ -16,11 +16,10 @@ echo    '
 2 0 1 * *     chmod         -R   777    /etc/letsencrypt/
 3 0 * * *     systemctl     restart     nginx
 0 1 * * *     mkdir         -p          /home/dbbackup/
-0 2 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >      /home/dbbackup/$(date +\%Y\%m\%d)wordpress.sql
-0 3 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >      /home/wordpress/wordpress.sql
-0 4 * * *     tar           -Pcf        /home/wordpress.tar       /home/wordpress/
-0 5 * * *     apt   full-upgrade   -y
-0 6 * * *     apt   autoremove     -y
+0 2 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >      /home/wordpress/wordpress.sql
+0 3 * * *     tar           -Pcf        /home/dbbackup/$(date +\%Y\%m\%d)wordpress.tar           /home/wordpress/
+0 4 * * *     apt   full-upgrade   -y
+0 5 * * *     apt   autoremove     -y
 '       |     crontab
 systemctl     restart   cron
 #创建nginx配置文件
