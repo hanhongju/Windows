@@ -15,9 +15,9 @@ echo    '
 1 0 1 * *     certbot       renew
 2 0 1 * *     chmod         -R   777    /etc/letsencrypt/
 3 0 * * *     systemctl     restart     nginx
-0 1 * * *     mkdir         -p          /home/dbbackup/
+0 1 * * *     mkdir         -p          /home/wordpressbackup/
 0 2 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >      /home/wordpress/wordpress.sql
-0 3 * * *     tar           -Pcf        /home/dbbackup/$(date +\%Y\%m\%d)wordpress.tar           /home/wordpress/
+0 3 * * *     tar           -Pcf        /home/wordpressbackup/$(date +\%Y\%m\%d)wordpress.tar           /home/wordpress/
 0 4 * * *     apt   full-upgrade   -y
 0 5 * * *     apt   autoremove     -y
 '       |     crontab
