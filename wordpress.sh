@@ -4,17 +4,9 @@ site=www.hanhongju.com
 apt    update
 apt    full-upgrade   -y
 apt    autoremove     -y
-apt    purge          -y      apache2
-apt    install        -y      wget curl zip unzip nginx certbot mariadb-server python3-pip php-fpm php-mysql php-xml
-systemctl     stop        nginx apache2
-certbot       certonly    --standalone -n --agree-tos -m 86606682@qq.com -d $site
-chmod         -R   777    /etc/letsencrypt/
-#配置证书每月1日自动更新，每天备份数据库
+apt    install        -y      wget curl zip unzip nginx mariadb-server python3-pip php-fpm php-mysql php-xml
+#每天备份数据库
 echo    '
-0 0 1 * *     systemctl     stop        nginx apache2
-1 0 1 * *     certbot       renew
-2 0 1 * *     chmod         -R   777    /etc/letsencrypt/
-3 0 * * *     systemctl     restart     nginx
 0 1 * * *     mkdir         -p          /home/wordpressbackup/
 0 2 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >      /home/wordpress/wordpress.sql
 0 3 * * *     tar           -Pcf        /home/wordpressbackup/$(date +\%Y\%m\%d)wordpress.tar           /home/wordpress/
@@ -28,11 +20,6 @@ server {
 server_name www.example.com;
 listen 80;
 listen [::]:80;
-listen 443 ssl;
-listen [::]:443 ssl;
-ssl_certificate          /etc/letsencrypt/live/www.example.com/fullchain.pem;  
-ssl_certificate_key      /etc/letsencrypt/live/www.example.com/privkey.pem;   
-if ( $scheme = http ){return 301 https://$server_name$request_uri;}
 root      /home/wordpress/;
 index     index.php index.html index.htm;
 location ~ \.php$ {
