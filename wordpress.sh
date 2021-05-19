@@ -1,6 +1,4 @@
 # Wordpress安装脚本 @ Debian 10 or Ubuntu 20.04
-site=www.hanhongju.com
-#安装软件申请证书
 apt    update
 apt    full-upgrade   -y
 apt    autoremove     -y
@@ -17,7 +15,7 @@ systemctl     restart   cron
 #创建nginx配置文件
 echo '
 server {
-server_name www.example.com;
+server_name www.hanhongju.com;
 listen 80;
 listen [::]:80;
 root      /home/wordpress/;
@@ -30,7 +28,6 @@ include        fastcgi_params;
 }
 }
 '         >         /etc/nginx/sites-enabled/wordpress.conf
-sed      -i        ''s/www.example.com/$site/g''             /etc/nginx/sites-enabled/wordpress.conf
 #重启服务
 systemctl     enable       nginx cron
 systemctl     restart      nginx cron
