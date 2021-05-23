@@ -15,7 +15,6 @@ Restart=always
 WantedBy=multi-user.target
 '        >          /etc/systemd/system/qbittorrent-nox.service
 #启用服务
-systemctl   daemon-reload
 systemctl   enable    qbittorrent-nox
 systemctl   restart   qbittorrent-nox
 sleep       1s
