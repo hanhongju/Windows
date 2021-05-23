@@ -36,6 +36,8 @@ nginx        -vt
 crontab      -l
 ss           -plnt
 #回显nginx、php版本，nginx配置检查和监听端口
+#初始化数据库
+mysql_secure_installation
 
 
 
@@ -53,21 +55,14 @@ tar        -xf        /home/latest-zh_CN.tar.gz             -C      /home/
 #网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
 chmod      -Rf        777           /home/
 chown      -Rf        www-data      /home/
+
+
+
+
+
+
 #还原wordpress文件
 tar        -Pxf       /home/wordpress.tar
-
-
-
-
-
-
-
-
-
-
-
-#初始化数据库
-mysql_secure_installation
 #修改数据库登录方式
 mysql         -uroot     -pfengkuang     -e      "update mysql.user set plugin='mysql_native_password' where User='root'"
 #创建新数据库
