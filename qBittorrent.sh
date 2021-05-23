@@ -1,6 +1,6 @@
 # qBittorrent安装脚本 @ Debian 10
 apt    update
-apt    install   -y    qbittorrent-nox
+apt    install   -y  nginx qbittorrent-nox
 adduser      bt    --system     --group
 #为qbittorrent-nox创建一个systemd服务文件
 echo   ' 
