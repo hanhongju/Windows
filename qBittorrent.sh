@@ -13,7 +13,7 @@ Type=forking
 User=bt
 Group=bt
 UMask=007
-ExecStart=/usr/bin/qbittorrent-nox -d
+ExecStart=/usr/bin/qbittorrent-nox -d --webui-port=8088
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target
@@ -23,7 +23,7 @@ systemctl   enable    qbittorrent-nox
 systemctl   restart   qbittorrent-nox nginx
 sleep       1s
 ss         -plnt
-#网页端口8080，用户名admin，密码adminadmin，默认下载目录/home/bt/Downloads/
+#网页端口8088，用户名admin，密码adminadmin，默认下载目录/home/bt/Downloads/
 
 
 
