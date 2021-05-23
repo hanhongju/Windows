@@ -20,7 +20,7 @@ WantedBy=multi-user.target
 '        >          /etc/systemd/system/qbittorrent-nox.service
 systemctl   enable    qbittorrent-nox
 #重启服务
-systemctl   restart   qbittorrent-nox nginx
+systemctl   restart   qbittorrent-nox
 sleep       1s
 ss         -plnt
 #网页端口8088，用户名admin，密码adminadmin，默认下载目录/home/bt/Downloads/
