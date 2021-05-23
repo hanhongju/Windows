@@ -18,8 +18,8 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 '        >          /etc/systemd/system/qbittorrent-nox.service
+#启用服务
 systemctl   enable    qbittorrent-nox
-#重启服务
 systemctl   restart   qbittorrent-nox
 sleep       1s
 ss         -plnt
