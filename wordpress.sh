@@ -45,7 +45,7 @@ mysql_secure_installation
 
 
 #还原wordpress文件
-tar        -Pxf       /home/wordpress.tar
+tar           -Pxf       /home/wordpress.tar
 #修改数据库登录方式
 mysql         -uroot     -pfengkuang     -e      "update mysql.user set plugin='mysql_native_password' where User='root'"
 #创建新数据库
