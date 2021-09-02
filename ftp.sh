@@ -1,4 +1,4 @@
-
+# Ftp服务器安装脚本 @ Debian 10 or Ubuntu 20.04
 apt update  -y
 apt install -y vsftpd
 echo '
