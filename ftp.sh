@@ -7,9 +7,11 @@ write_enable=YES
 chroot_local_user=YES
 allow_writeable_chroot=YES
 local_root=/home/ftp/
+utf8_filesystem=YES
 pasv_address=$ipv4
 "  >>  /etc/vsftpd.conf
 sed       -i       ''s/listen\=.*/listen\=YES/g''        /etc/vsftpd.conf
+sed       -i       ''s/listen\_ipv6\=.*/listen\_ipv6\=NO/g''        /etc/vsftpd.conf
 sed       -i       ''s/listen\_ipv6\=.*/listen\_ipv6\=NO/g''        /etc/vsftpd.conf
 systemctl restart vsftpd
 mkdir -p  /home/ftp/
