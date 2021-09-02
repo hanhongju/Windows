@@ -1,7 +1,7 @@
 # Ftp服务器安装脚本 @ Debian 10 or Ubuntu 20.04
 apt update  -y
 apt install -y vsftpd
-ipv4=121.37.203.125
+ipv4=81.70.43.231
 echo "
 write_enable=YES
 chroot_local_user=YES
