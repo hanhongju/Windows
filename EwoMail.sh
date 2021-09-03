@@ -23,8 +23,8 @@ cd          /root/EwoMail/install/
 bash        start.sh    $site
 #安装后的常规配置
 echo        ''127.0.0.1 mail.$site smtp.$site imap.$site''         >>         /etc/hosts
-sed          -i          ''s/listen.*/listen\ 8000\;/g''         /ewomail/nginx/conf/vhost/rainloop.conf
-sed          -i          ''s/listen.*/listen\ 8010\;/g''         /ewomail/nginx/conf/vhost/ewomail-admin.conf
+sed          -i          ''s/listen.*/listen\ 80\;/g''         /ewomail/nginx/conf/vhost/rainloop.conf
+sed          -i          ''s/listen.*/listen\ 8000\;/g''         /ewomail/nginx/conf/vhost/ewomail-admin.conf
 #重启服务
 systemctl     restart      postfix dovecot nginx
 echo        "
