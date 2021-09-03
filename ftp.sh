@@ -1,7 +1,11 @@
 # Ftp服务器安装脚本 @ Debian 10 or Ubuntu 20.04
+# 定义服务器地址
+server=tx.thenote.site
+# 安装
 apt update  -y
 apt install -y vsftpd
-ipv4=81.70.43.231
+ipv4=$(ping -c 2 $server | head -2 | tail -1 | awk '{print $5}' | sed 's/[(:)]//g')
+echo $ipv4
 echo "
 write_enable=YES
 chroot_local_user=YES
@@ -16,9 +20,6 @@ systemctl restart vsftpd
 mkdir -p  /home/ftp/
 chmod 777 /home/ftp/
 useradd  -m  hongju   -d   /home/hongju/
-echo -e "fengkuang\nfengkuang" |passwd  hongju
-
-
-
+echo -e "fengkuang\nfengkuang" | passwd  hongju
 
 
