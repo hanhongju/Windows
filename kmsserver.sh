@@ -6,7 +6,7 @@ wget    https://github.com/Wind4/vlmcsd/releases/download/svn1113/binaries.tar.g
 tar     -xf     /home/kms/binaries.tar.gz   -C   /home/kms/
 \cp     -f      /home/kms/binaries/Linux/intel/static/vlmcsd-x86-musl-static     /usr/bin/vlmcsd
 vlmcsd
-ss      -plnt
+ss      -plnt    |    awk   'NR>1 {print $4,$6}'
 
 
 
