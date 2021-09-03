@@ -19,7 +19,7 @@ sed       -i       ''s/listen\_ipv6\=.*/listen\_ipv6\=NO/g''        /etc/vsftpd.
 systemctl restart vsftpd
 mkdir -p  /home/ftp/
 chmod 777 /home/ftp/
-useradd  -m  hongju   -d   /home/hongju/
+useradd  -m  hongju   -d   /usr/hongju/
 echo -e "fengkuang\nfengkuang" | passwd  hongju
 
 
