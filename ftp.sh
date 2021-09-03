@@ -12,13 +12,11 @@ pasv_address=$ipv4
 "  >>  /etc/vsftpd.conf
 sed       -i       ''s/listen\=.*/listen\=YES/g''        /etc/vsftpd.conf
 sed       -i       ''s/listen\_ipv6\=.*/listen\_ipv6\=NO/g''        /etc/vsftpd.conf
-sed       -i       ''s/listen\_ipv6\=.*/listen\_ipv6\=NO/g''        /etc/vsftpd.conf
 systemctl restart vsftpd
 mkdir -p  /home/ftp/
 chmod 777 /home/ftp/
 useradd  -m  hongju   -d   /home/hongju/
-passwd   hongju
-
+echo -e "fengkuang\nfengkuang" |passwd  hongju
 
 
 
