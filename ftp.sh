@@ -23,3 +23,7 @@ useradd  -m  hongju   -d   /usr/hongju/
 echo -e "fengkuang\nfengkuang" | passwd  hongju
 
 
+
+
+
+
