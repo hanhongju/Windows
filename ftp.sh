@@ -21,7 +21,7 @@ mkdir    -p   /home/ftp/
 chmod    777  /home/ftp/
 useradd  -m   hongju  -d  /usr/hongju/
 echo     -e   "fengkuang\nfengkuang" |  passwd  hongju
-ss  -plnt | awk 'NR>1 {print $4,$6}' | column -t
+ss       -plnt   |   awk 'NR>1 {print $4,$6}'   |   column   -t
 
 
 
