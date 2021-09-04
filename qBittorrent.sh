@@ -18,7 +18,6 @@ WantedBy=multi-user.target
 systemctl   enable    qbittorrent-nox
 systemctl   restart   qbittorrent-nox
 sleep       1s
-ss         -plnt
 #网页端口8088，用户名admin，密码adminadmin，默认下载目录/Downloads/
 
 
