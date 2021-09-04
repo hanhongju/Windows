@@ -34,7 +34,7 @@ systemctl     restart      nginx cron
 php          -v
 nginx        -vt
 crontab      -l
-ss           -plnt
+ss           -plnt   |   awk 'NR>1 {print $4,$6}'   |   column   -t
 #回显nginx、php版本，nginx配置检查和监听端口
 #初始化数据库
 mysql_secure_installation
