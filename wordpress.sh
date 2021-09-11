@@ -28,13 +28,18 @@ include        fastcgi_params;
 }
 }
 '         >         /etc/nginx/sites-enabled/wordpress.conf
+#修改上传文件大小限制
+sed           -i           ''s/post\_max\_size\=.*/post\_max\_size\=200M/g''                    /etc/php/7.4/fpm/php.ini
+sed           -i           ''s/upload\_max\_filesize\=.*/upload\_max\_filesize\=200M/g''        /etc/php/7.4/fpm/php.ini
+sed           -i           ''s/max\_execution\_time\=.*/max\_execution\_time\=300/g''           /etc/php/7.4/fpm/php.ini
+systemctl     restart      php7.4-fpm
 #重启服务
 systemctl     enable       nginx cron
 systemctl     restart      nginx cron
-php          -v
-nginx        -vt
-crontab      -l
-ss           -plnt   |   awk 'NR>1 {print $4,$6}'   |   column   -t
+php           -v
+nginx         -vt
+crontab       -l
+ss            -plnt   |   awk 'NR>1 {print $4,$6}'   |   column   -t
 #回显nginx、php版本，nginx配置检查和监听端口
 #初始化数据库
 mysql_secure_installation
