@@ -1,4 +1,4 @@
-# Wordpress安装脚本 @ Debian 10 or Ubuntu 20.04
+# Wordpress安装脚本 @ Debian 11
 apt    update
 apt    full-upgrade   -y
 apt    autoremove     -y
