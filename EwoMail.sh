@@ -12,7 +12,7 @@ else      echo   ''添加SWAP空间，大小4000M''
           echo    '/mnt/swap swap swap defaults 0 0'      >>       /etc/fstab
 fi
 #安装EwoMail
-yum         install    -y    git
+yum         -y    install   git
 cd          /root/
 git         clone      https://github.com/gyxuehu/EwoMail.git
 tar         -Pcf       /root/EwoMail.tar     /root/EwoMail
@@ -22,11 +22,11 @@ sed         -i         ''s/yum\ install\ epel-release.*/yum\ install\ epel-relea
 cd          /root/EwoMail/install/
 bash        start.sh    $site
 #安装后的常规配置
-echo        ''127.0.0.1 mail.$site smtp.$site imap.$site''         >>         /etc/hosts
-sed          -i          ''s/listen.*/listen\ 8000\;/g''         /ewomail/nginx/conf/vhost/rainloop.conf
-sed          -i          ''s/listen.*/listen\ 8010\;/g''         /ewomail/nginx/conf/vhost/ewomail-admin.conf
+echo        ''127.0.0.1 mail.$site smtp.$site imap.$site''      >>         /etc/hosts
+sed         -i          ''s/listen.*/listen\ 8000\;/g''         /ewomail/nginx/conf/vhost/rainloop.conf
+sed         -i          ''s/listen.*/listen\ 8010\;/g''         /ewomail/nginx/conf/vhost/ewomail-admin.conf
 #重启服务
-systemctl     restart      postfix dovecot nginx
+systemctl   restart     postfix dovecot nginx
 echo        "
 服务器管理账户为admin，密码为ewomail123。
 "
