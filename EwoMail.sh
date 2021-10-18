@@ -6,13 +6,13 @@ sed       -i       ''s/SELINUX\=.*/SELINUX\=disabled/g''        /etc/sysconfig/s
 if        [[   $(free  -m  |  awk   'NR==3{print $2}'   2>&1)    >   3000   ]]
 then      echo   ''已经有SWAP，无需重复配置''
 else      echo   ''添加SWAP空间，大小4000M''
-          dd    if=/dev/zero of=/mnt/swap bs=1M count=4000
+          dd       if=/dev/zero of=/mnt/swap bs=1M count=4000
           mkswap   /mnt/swap
           swapon   /mnt/swap
           echo    '/mnt/swap swap swap defaults 0 0'      >>       /etc/fstab
 fi
 #安装EwoMail
-yum         -y    install   git
+yum         -y         install   git
 cd          /root/
 git         clone      https://github.com/gyxuehu/EwoMail.git
 tar         -Pcf       /root/EwoMail.tar     /root/EwoMail
@@ -27,9 +27,7 @@ sed         -i          ''s/listen.*/listen\ 8000\;/g''         /ewomail/nginx/c
 sed         -i          ''s/listen.*/listen\ 8010\;/g''         /ewomail/nginx/conf/vhost/ewomail-admin.conf
 #重启服务
 systemctl   restart     postfix dovecot nginx
-echo        "
-服务器管理账户为admin，密码为ewomail123。
-"
+echo        "服务器管理账户为admin，密码为ewomail123。"
 
 
 
