@@ -1,8 +1,8 @@
 # MineCraft JAVA版服务器搭建脚本 @ Debian
-apt      update
-apt      install     -y     wget screen default-jdk
+apt      -y      update    
+apt      -y      install      wget screen default-jdk
 #下载mc服务器1.16.5
-wget     https://launcher.mojang.com/v1/objects/1b557e7b033b583cd9f66746b7a9ab1ec1673ced/server.jar     -cP     /home/mcserverjava/
+wget     -c      https://launcher.mojang.com/v1/objects/1b557e7b033b583cd9f66746b7a9ab1ec1673ced/server.jar     -P     /home/mcserverjava/
 #打开虚拟终端，后台运行服务器
 screen   -R      mc
 cd       /home/mcserverjava/
