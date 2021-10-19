@@ -4,18 +4,18 @@ apt      -y      install      wget default-jdk screen
 #下载mc服务器1.16.5
 wget     -c      https://launcher.mojang.com/v1/objects/1b557e7b033b583cd9f66746b7a9ab1ec1673ced/server.jar     -P     /home/mcserverjava/
 #配置服务，启动服务器
-echo   "eula=true"     >    /home/mcserverjava/eula.txt
+echo   "eula=true"        >       /home/mcserverjava/eula.txt
 echo   ' 
 [Unit]
-Description=Minecraft server
+Description               =       Minecraft server
 [Service]
-Type=forking
-WorkingDirectory=    /home/mcserverjava/
-ExecStart=           java     -jar    /home/mcserverjava/server.jar     nogui
-Restart=on-failure
+Type                      =       forking
+WorkingDirectory          =       /home/mcserverjava/
+ExecStart                 =       java     -jar    /home/mcserverjava/server.jar     nogui
+Restart                   =       on-failure
 [Install]
-WantedBy=multi-user.target
-'               >       /etc/systemd/system/mcserver.service
+WantedBy                  =       multi-user.target
+'                         >       /etc/systemd/system/mcserver.service
 systemctl       enable       mcserver
 systemctl       restart      mcserver
 
