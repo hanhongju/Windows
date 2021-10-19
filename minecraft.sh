@@ -13,6 +13,7 @@ Type                      =       forking
 WorkingDirectory          =       /home/mcserverjava/
 ExecStart                 =       java     -jar    /home/mcserverjava/server.jar     nogui
 Restart                   =       on-failure
+TimeoutStartUSec          =       infinity
 [Install]
 WantedBy                  =       multi-user.target
 '                         >       /etc/systemd/system/mcserver.service
