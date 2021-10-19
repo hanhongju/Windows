@@ -16,8 +16,8 @@ Restart                   =       on-failure
 [Install]
 WantedBy                  =       multi-user.target
 '                         >       /etc/systemd/system/mcserver.service
-systemctl       enable       mcserver
-systemctl       restart      mcserver
+systemctl            enable       mcserver
+systemctl            restart      mcserver
 
 
 #备份服务器
