@@ -16,9 +16,9 @@ Restart                   =       on-failure
 TimeoutStartSec           =       infinity
 [Install]
 WantedBy                  =       multi-user.target
-'                         >       /etc/systemd/system/mcserver.service
+'                         >       /etc/systemd/system/mc.service.d
 systemctl     daemon-reload
-systemctl     restart      mcserver
+systemctl     restart      mc
 
 
 
