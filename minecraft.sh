@@ -11,7 +11,7 @@ Description               =       Minecraft server
 [Service]
 Type                      =       forking
 WorkingDirectory          =       /home/mcserverjava/
-ExecStart                 =       java     -jar    /home/mcserverjava/server.jar     nogui
+ExecStart                 =       nohup    java     -jar    /home/mcserverjava/server.jar     nogui   &
 Restart                   =       on-failure
 TimeoutStartSec           =       infinity
 [Install]
