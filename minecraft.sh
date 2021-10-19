@@ -13,13 +13,13 @@ Type                      =       forking
 WorkingDirectory          =       /home/mcserverjava/
 ExecStart                 =       java     -jar    /home/mcserverjava/server.jar     nogui
 Restart                   =       on-failure
-TimeoutStartUSec          =       infinity
+TimeoutStartSec           =       infinity
 [Install]
 WantedBy                  =       multi-user.target
 '                         >       /etc/systemd/system/mcserver.service
-systemctl            daemon-reload
-systemctl            enable       mcserver
-systemctl            restart      mcserver
+systemctl     daemon-reload
+systemctl     restart      mcserver
+
 
 
 #备份服务器
