@@ -10,7 +10,7 @@ After=network.target
 #Do not change to "simple"
 Type=forking
 ExecStart=/usr/bin/qbittorrent-nox -d --webui-port=8088
-Restart=always
+Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 '        >          /etc/systemd/system/qbittorrent-nox.service
