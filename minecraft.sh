@@ -19,7 +19,7 @@ WantedBy                  =       multi-user.target
 '                         >       /etc/systemd/system/mc.service
 systemctl     daemon-reload
 systemctl     restart      mc
-
+systemctl     show         mc | grep ^Timeout
 
 
 #备份服务器
