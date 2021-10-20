@@ -19,12 +19,15 @@ WantedBy                  =       multi-user.target
 '                         >       /etc/systemd/system/mcserver.service
 systemctl     daemon-reload
 systemctl     restart      mcserver
+ss            -plnt    |   awk 'NR>1 {print $4,$6}'   |   column   -t
+
 
 
 #备份服务器
 tar    -Pcf     /home/mcjava.tar      /home/mcserverjava/
 #还原服务器
 tar    -Pxf     /home/mcjava.tar
+
 
 
 # 官网下载地址
