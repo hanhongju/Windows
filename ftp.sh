@@ -20,9 +20,9 @@ rm          -rf       /home/ftp/
 mkdir       -p        /home/ftp/
 chmod       777       /home/ftp/
 useradd     -m        hongju      -d      /usr/hongju/
-echo        -e        "fengkuang\nfengkuang" |  passwd  hongju
+echo        -e        "fengkuang\nfengkuang"     |   passwd  hongju
 systemctl   restart   vsftpd
-ss          -plnt |   awk 'NR>1 {print $4,$6}'   |   column   -t
+ss          -plnt  |  awk 'NR>1 {print $4,$6}'   |   column   -t
 
 
 
