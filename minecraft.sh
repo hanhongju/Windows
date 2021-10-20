@@ -18,7 +18,8 @@ Restart                   =       on-failure
 WantedBy                  =       multi-user.target
 '                         >       /etc/systemd/system/mcserver.service
 systemctl     daemon-reload
-systemctl     restart      mcserver
+systemctl     enable     mcserver
+systemctl     start      mcserver
 
 
 
