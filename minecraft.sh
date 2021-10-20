@@ -19,7 +19,6 @@ WantedBy                  =       multi-user.target
 '                         >       /etc/systemd/system/mcserver.service
 systemctl     daemon-reload
 systemctl     restart      mcserver
-ss            -plnt    |   awk 'NR>1 {print $4,$6}'   |   column   -t
 
 
 
