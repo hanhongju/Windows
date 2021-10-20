@@ -16,9 +16,9 @@ ExecStart                 =       java     -jar    /home/mcserverjava/server.jar
 Restart                   =       on-failure
 [Install]
 WantedBy                  =       multi-user.target
-'                         >       /etc/systemd/system/mc.service
+'                         >       /etc/systemd/system/mcserver.service
 systemctl     daemon-reload
-systemctl     restart      mc
+systemctl     restart      mcserver
 
 
 #备份服务器
@@ -29,8 +29,6 @@ tar    -Pxf     /home/mcjava.tar
 
 # 官网下载地址
 # https://www.minecraft.net/zh-hans/download
-# Win10版MC本地数据库文件在
-# C:\Users\hongju\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\minecraftWorlds
 
 
 
