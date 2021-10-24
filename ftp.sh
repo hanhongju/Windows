@@ -1,6 +1,6 @@
 # Ftp服务器安装脚本 @ Debian 10 or Ubuntu 20.04
 # 定义服务器地址
-server=hw.thenote.site
+server=tx.thenote.site
 # 安装
 apt     -y     update    
 apt     -y     install      vsftpd
