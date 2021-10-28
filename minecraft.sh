@@ -9,7 +9,6 @@ echo   '
 [Unit]
 Description               =       Minecraft server
 [Service]
-#Do not change to "forking"
 Type                      =       simple
 WorkingDirectory          =       /home/mcserverjava/
 ExecStart                 =       java     -jar    /home/mcserverjava/server.jar     nogui
