@@ -15,7 +15,7 @@ ExecStart=java     -jar    /home/mcserverjava/server.jar     nogui
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target
-'             >      /etc/systemd/system/mcserver.service
+'             >            /etc/systemd/system/mcserver.service
 systemctl     daemon-reload
 systemctl     restart      mcserver
 
