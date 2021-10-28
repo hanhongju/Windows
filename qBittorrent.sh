@@ -5,6 +5,7 @@ apt     -y    install     qbittorrent-nox
 echo   ' 
 [Unit]
 Description=qBittorrent Command Line Client
+After=network.target
 [Service]
 Type=forking
 ExecStart=/usr/bin/qbittorrent-nox -d --webui-port=8088
