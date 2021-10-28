@@ -7,15 +7,15 @@ wget     -c      https://launcher.mojang.com/v1/objects/1b557e7b033b583cd9f66746
 echo     "eula=true"      >       /home/mcserverjava/eula.txt
 echo   ' 
 [Unit]
-Description               =       Minecraft server
+Description=Minecraft server
 [Service]
-Type                      =       simple
-WorkingDirectory          =       /home/mcserverjava/
-ExecStart                 =       java     -jar    /home/mcserverjava/server.jar     nogui
-Restart                   =       on-failure
+Type=simple
+WorkingDirectory=/home/mcserverjava/
+ExecStart=java     -jar    /home/mcserverjava/server.jar     nogui
+Restart=on-failure
 [Install]
-WantedBy                  =       multi-user.target
-'                         >       /etc/systemd/system/mcserver.service
+WantedBy=multi-user.target
+'             >      /etc/systemd/system/mcserver.service
 systemctl     daemon-reload
 systemctl     restart      mcserver
 
