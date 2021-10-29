@@ -13,17 +13,17 @@ ExecStart=vlmcsd
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target
-'             >            /etc/systemd/system/kmsserver.service
+'             >            /etc/systemd/system/vlmcsd.service
 systemctl     daemon-reload
-systemctl     enable       kmsserver
-systemctl     restart      kmsserver
+systemctl     enable       vlmcsd
+systemctl     restart      vlmcsd
 
 
 
 
 
 #在Windows中用管理员身份登录Powershell输入以下代码
-slmgr -skms  ali.thenote.site
+slmgr -skms  tx.thenote.site
 slmgr -ato
 
 
