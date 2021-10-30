@@ -23,7 +23,6 @@ useradd     -m        hongju      -d      /usr/hongju/
 echo        -e        "fengkuang\nfengkuang"     |   passwd  hongju
 systemctl   enable    vsftpd
 systemctl   restart   vsftpd
-ss          -plnt  |  awk 'NR>1 {print $4,$6}'   |   column   -t
 
 
 
