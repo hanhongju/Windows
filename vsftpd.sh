@@ -2,8 +2,8 @@
 # 定义服务器地址
 server=tx.thenote.site
 # 安装
-apt     -y     update    
-apt     -y     install      vsftpd
+apt         -y        update    
+apt         -y        install      vsftpd
 ipv4=$(ping -c 2 $server | head -2 | tail -1 | awk '{print $5}' | sed 's/[(:)]//g')
 echo        $ipv4
 echo                  "pasv_address=$ipv4"             >>            /etc/vsftpd.conf
