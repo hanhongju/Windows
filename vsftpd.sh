@@ -11,7 +11,7 @@ sed         -i        's/.*\(write_enable=\).*/\1YES/g'              /etc/vsftpd
 sed         -i        's/.*\(listen=\).*/\1YES/g'                    /etc/vsftpd.conf
 sed         -i        's/.*\(listen_ipv6=\).*/\1NO/g'                /etc/vsftpd.conf
 useradd     -m        hongju      -d      /usr/hongju/
-echo        -e        "fengkuang\nfengkuang"     |   passwd  hongju
+echo        -e        "fengkuang\nfengkuang"           |             passwd  hongju
 systemctl   enable    vsftpd
 systemctl   restart   vsftpd
 
