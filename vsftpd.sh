@@ -10,15 +10,12 @@ echo "
 write_enable=YES
 chroot_local_user=YES
 allow_writeable_chroot=YES
-local_root=/home/ftp/
+local_root=/usr/hongju/
 utf8_filesystem=YES
 pasv_address=$ipv4
 "           >>        /etc/vsftpd.conf
 sed         -i        ''s/listen\=.*/listen\=YES/g''                   /etc/vsftpd.conf
 sed         -i        ''s/listen\_ipv6\=.*/listen\_ipv6\=NO/g''        /etc/vsftpd.conf
-rm          -rf       /home/ftp/
-mkdir       -p        /home/ftp/
-chmod       777       /home/ftp/
 useradd     -m        hongju      -d      /usr/hongju/
 echo        -e        "fengkuang\nfengkuang"     |   passwd  hongju
 systemctl   enable    vsftpd
