@@ -9,7 +9,9 @@ echo '
 ,"remote_addr": "www.example.com"
 ,"remote_port": 443
 ,"password": ["feichengwurao"]
-,"ssl": {"sni": "www.example.com"}
+,"ssl": {"sni": "www.example.com"
+        ,"alpn": ["http/1.1"]
+        }
 }
 '                     >                                   /etc/trojan/config.json
 sed         -i        ''s/www.example.com/$site/g''       /etc/trojan/config.json
