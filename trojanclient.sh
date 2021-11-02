@@ -3,6 +3,13 @@ site=cloud2.thenote.site
 apt   -y   update
 apt   -y   install     trojan tsocks wget
 echo '
+server       =  127.0.0.1
+server_type  =  5
+server_port  =  1080
+default_user =  none
+default_pass =  none
+'           >           /etc/tsocks.conf
+echo '
 {"run_type": "client"
 ,"local_addr": "127.0.0.1"
 ,"local_port": 1080
@@ -13,17 +20,8 @@ echo '
         ,"alpn": ["http/1.1"]
         }
 }
-'              >                                   /etc/trojan/config.json
-sed     -i     ''s/www.example.com/$site/g''       /etc/trojan/config.json
-#设置tsocks透明代理
-echo '
-server       =  127.0.0.1
-server_type  =  5
-server_port  =  1080
-default_user =  none
-default_pass =  none
-'          >              /etc/tsocks.conf
-#测试代理可用性
+'           >                                             /etc/trojan/config.json
+sed         -i        ''s/www.example.com/$site/g''       /etc/trojan/config.json
 systemctl   enable    trojan
 systemctl   restart   trojan
 trojan      -t
