@@ -1,7 +1,7 @@
 # trojan客户端安装脚本 @ Debian 10 or Ubuntu 20
 site=cloud2.thenote.site
 apt   -y   update
-apt   -y   install     trojan tsocks wget
+apt   -y   install     wget tsocks trojan
 echo '
 server       =  127.0.0.1
 server_type  =  5
