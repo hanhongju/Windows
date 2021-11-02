@@ -1,7 +1,7 @@
 # trojan客户端安装脚本 @ Debian 10 or Ubuntu 20
 site=cloud2.thenote.site
 apt           -y   update    
-apt           -y   trojan
+apt           -y   install  trojan
 echo '
 {"run_type": "client"
 ,"local_addr": "127.0.0.1"
