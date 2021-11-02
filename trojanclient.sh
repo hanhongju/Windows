@@ -13,10 +13,8 @@ echo '
         ,"alpn": ["http/1.1"]
         }
 }
-'                     >                                   /etc/trojan/config.json
-sed         -i        ''s/www.example.com/$site/g''       /etc/trojan/config.json
-systemctl   enable    trojan
-systemctl   restart   trojan
+'              >                                   /etc/trojan/config.json
+sed     -i     ''s/www.example.com/$site/g''       /etc/trojan/config.json
 #设置tsocks透明代理
 echo '
 server       =  127.0.0.1
@@ -26,8 +24,10 @@ default_user =  none
 default_pass =  none
 '          >              /etc/tsocks.conf
 #测试代理可用性
-tsocks      wget    -c   https://cn.wordpress.org/latest-zh_CN.tar.gz   -P   /home/wordpress/
-ss          -plnt   |   awk 'NR>1 {print $4,$6}'   |   column   -t
+systemctl   enable    trojan
+systemctl   restart   trojan
+tsocks      wget      -c   https://cn.wordpress.org/latest-zh_CN.tar.gz   -P   /home/wordpress/
+ss          -plnt     |    awk 'NR>1 {print $4,$6}'   |   column   -t
 
 
 
