@@ -26,9 +26,8 @@ default_pass =  none
 #测试代理可用性
 systemctl   enable    trojan
 systemctl   restart   trojan
-tsocks      wget      -c   https://cn.wordpress.org/latest-zh_CN.tar.gz   -P   /home/wordpress/
 ss          -plnt     |    awk 'NR>1 {print $4,$6}'   |   column   -t
-
+tsocks      wget      -c   https://cn.wordpress.org/latest-zh_CN.tar.gz   -P   /home/wordpress/
 
 
 
