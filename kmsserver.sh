@@ -9,7 +9,8 @@ echo   '
 Description=KMS server
 [Service]
 Type=forking
-ExecStart=vlmcsd
+PIDFile=/var/run/vlmcsd.pid
+ExecStart=/usr/bin/vlmcsd -p /var/run/vlmcsd.pid
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target
@@ -17,7 +18,6 @@ WantedBy=multi-user.target
 systemctl     daemon-reload
 systemctl     enable       vlmcsd
 systemctl     restart      vlmcsd
-
 
 
 
