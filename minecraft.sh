@@ -23,7 +23,7 @@ systemctl     restart      mcserver
 
 
 #备份服务器
-tar    -Pcf     /home/mcjava.tar      /home/mcserverjava/
+tar    -cf      /home/mcjava.tar     -P    /home/mcserverjava/
 #还原服务器
 tar    -Pxf     /home/mcjava.tar
 
