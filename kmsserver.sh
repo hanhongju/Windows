@@ -23,6 +23,7 @@ systemctl     restart      vlmcsd
 
 
 #在Windows中用管理员身份登录Powershell输入以下代码
+#激活Windows 10
 slmgr -skms  tx.thenote.site
 slmgr -ato
 
