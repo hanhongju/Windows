@@ -30,7 +30,7 @@ slmgr -ato
 
 
 #激活64位Office 2016
-cd C:\Program Files\Microsoft Office\Office16
+cd "C:\Program Files\Microsoft Office\Office16"
 cscript ospp.vbs /sethst:tx.thenote.site
 cscript ospp.vbs /act
 cscript ospp.vbs /dstatus
