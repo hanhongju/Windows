@@ -1,4 +1,4 @@
-#创建KMS服务器用以激活 Windows 10 系统和 Office 2016
+#创建KMS服务器用以激活 Windows 10 系统
 apt     -y     update    
 apt     -y     install    wget
 wget    -c     https://github.com/Wind4/vlmcsd/releases/download/svn1113/binaries.tar.gz   -P   /home/kms/
@@ -27,14 +27,6 @@ systemctl     restart      vlmcsd
 slmgr -skms  tx.thenote.site
 slmgr -ato
 
-
-
-
-#激活64位Office 2016
-cd "C:\Program Files\Microsoft Office\Office16"
-cscript ospp.vbs /sethst:tx.thenote.site
-cscript ospp.vbs /act
-cscript ospp.vbs /dstatus
 
 
 
