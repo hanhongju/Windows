@@ -1,4 +1,4 @@
-#socat代理f2pool矿池 @ Debian 10
+#socat端口转发代理f2pool矿池 @ Debian 10
 apt     -y    update
 apt     -y    install     socat
 #配置服务，启动服务器
