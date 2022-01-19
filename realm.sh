@@ -1,11 +1,11 @@
-#realm端口转发代理f2pool矿池 @ Debian 10
+# realm端口转发代理f2pool矿池 @ Debian 10
 apt      -y      update    
 apt      -y      install      wget
 wget     -c      https://github.com/zhboner/realm/releases/download/v1.4/realm    -P    /usr/bin/
 echo '
 {
     "listening_addresses": ["0.0.0.0"],
-    "listening_ports": ["8000-8100"],
+    "listening_ports": ["8000-8020"],
     "remote_addresses": ["eth.f2pool.com"],
     "remote_ports": ["6688"]
 }
