@@ -5,18 +5,18 @@ wget     -c      https://github.com/zhboner/realm/releases/download/v1.4/realm  
 echo '
 {
     "listening_addresses": ["0.0.0.0"],
-    "listening_ports": ["8000-9000"],
+    "listening_ports": ["8000-8100"],
     "remote_addresses": ["eth.f2pool.com"],
     "remote_ports": ["6688"]
 }
-'        >           /ect/realm.conf
+'        >           /home/realm.conf
 #配置服务，启动服务器
 echo   ' 
 [Unit]
 Description=relay to f2pool
 [Service]
 Type=simple
-ExecStart=/usr/bin/realm   -c    /ect/realm.conf
+ExecStart=/usr/bin/realm   -c    /home/realm.conf
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target
