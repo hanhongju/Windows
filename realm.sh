@@ -9,13 +9,13 @@ echo '
     "remote_addresses": ["eth.f2pool.com"],
     "remote_ports": ["6688"]
 }
-'            >            /home/realm.conf
+'            >            /var/realm.conf
 echo   ' 
 [Unit]
 Description=relay to f2pool
 [Service]
 Type=simple
-ExecStart=/usr/bin/realm    -c    /home/realm.conf
+ExecStart=/usr/bin/realm    -c    /var/realm.conf
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target
