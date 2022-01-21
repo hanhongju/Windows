@@ -6,8 +6,8 @@ echo '
 {
     "listening_addresses": ["0.0.0.0"],
     "listening_ports": ["8000-8020"],
-    "remote_addresses": ["bm.huobipool.com"],
-    "remote_ports": ["1800"]
+    "remote_addresses": ["eth.f2pool.com"],
+    "remote_ports": ["6688"]
 }
 '            >            /var/realm.conf
 echo   ' 
