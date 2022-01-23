@@ -5,7 +5,7 @@ apt          -y     install      python3 python3-pip wget nginx
 pip3         install             bs4 requests tqdm lxml
 wget         -c     https://raw.githubusercontent.com/hanhongju/my_script/master/t66y_spider.py
 python3      t66y_spider.py -h
-python3      t66y_spider.py -c 2
+python3      t66y_spider.py -c 0
 
 
 
