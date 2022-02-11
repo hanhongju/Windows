@@ -12,7 +12,6 @@ echo    '
 0 5 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >      /home/wordpress/wordpress.sql
 0 6 * * *     tar           -cf         /home/wordpressbackup/$(date +\%Y\%m\%d)wordpress.tar        -P       /home/wordpress/
 '      >>     /etc/crontab
-systemctl     restart       cron
 #创建nginx配置文件
 echo '
 server {
