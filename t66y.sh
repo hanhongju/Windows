@@ -12,7 +12,7 @@ python3      t66y_spider.py -c 0
 #打包下载的文件
 echo '
 server {
-server_name cloud2.thenote.site;
+server_name cloud3.thenote.site;
 listen 80;
 listen [::]:80;
 root      /home/;
