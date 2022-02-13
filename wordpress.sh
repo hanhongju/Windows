@@ -9,8 +9,8 @@ echo    '
 0 2 * * *     apt           -y          full-upgrade
 0 3 * * *     apt           -y          autoremove
 0 4 * * *     mkdir         -p          /home/wordpressbackup/
-0 5 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >      /home/wordpress/wordpress.sql
-0 6 * * *     tar           -cf         /home/wordpressbackup/$(date +\%Y\%m\%d)wordpress.tar        -P       /home/wordpress/
+0 5 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >    /home/wordpress/wordpress.sql
+0 6 * * *     tar           -cf         /home/wordpressbackup/wordpress$(date +\%Y\%m\%d\-\%H\%M\%S).tar        -P       /home/wordpress/
 '      >>     /var/spool/cron/crontabs/root
 #创建nginx配置文件
 echo '
