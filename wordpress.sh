@@ -11,7 +11,7 @@ echo    '
 0 4 * * *     root       mkdir         -p          /home/wordpressbackup/
 0 5 * * *     root       mysqldump     -uroot      -pfengkuang     wordpress     >    /home/wordpress/wordpress.sql
 0 6 * * *     root       tar           -cf         /home/wordpressbackup/wordpress$(date +\%Y\%m\%d\-\%H\%M\%S).tar        -P       /home/wordpress/
-'      >>     /etc/crontab
+'         >>      /etc/crontab
 #创建nginx配置文件
 echo '
 server {
