@@ -2,6 +2,7 @@
 apt      -y      update
 apt      -y      install      wget
 wget     -c      https://github.com/zhboner/realm/releases/download/v1.4/realm    -P    /usr/bin/
+chmod    777     /usr/bin/realm
 echo '
 {
     "listening_addresses": ["0.0.0.0"],
