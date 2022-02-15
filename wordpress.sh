@@ -11,7 +11,7 @@ echo    '
 0 4 * * *     root       mkdir         -p          /home/wordpressbackup/
 0 5 * * *     root       mysqldump     -uroot      -pfengkuang     wordpress     >    /home/wordpress/wordpress.sql
 0 6 * * *     root       tar           -cf         /home/wordpressbackup/wordpress$(date +\%Y\%m\%d\-\%H\%M\%S).tar        -P       /home/wordpress/
-'         >>      /etc/crontab
+'             >>         /etc/crontab
 #创建nginx配置文件
 echo '
 server {
@@ -36,9 +36,9 @@ echo          "client_header_buffer_size 2048k;   large_client_header_buffers 10
 systemctl     restart      php7.4-fpm
 systemctl     enable       nginx cron
 systemctl     restart      nginx cron
+cat           /etc/crontab
 php           -v
 nginx         -vt
-crontab       -l
 ss            -plnt   |    awk 'NR>1 {print $4,$6}'   |   column   -t
 #回显nginx、php版本，nginx配置检查和监听端口
 #初始化数据库
