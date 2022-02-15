@@ -1,5 +1,5 @@
 # realm端口转发代理 @ Debian 10
-apt      -y      update    
+apt      -y      update
 apt      -y      install      wget
 wget     -c      https://github.com/zhboner/realm/releases/download/v1.4/realm    -P    /usr/bin/
 echo '
