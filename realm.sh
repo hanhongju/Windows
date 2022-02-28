@@ -13,7 +13,7 @@ echo '
 '            >            /var/realm.conf
 echo   ' 
 [Unit]
-Description=port relay
+Description=realm relay server
 [Service]
 Type=simple
 ExecStart=/usr/bin/realm    -c    /var/realm.conf
