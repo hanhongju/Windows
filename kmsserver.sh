@@ -23,6 +23,9 @@ systemctl     restart      vlmcsd
 
 
 #在Windows中用管理员身份登录Powershell输入以下代码
+#开启微软高级保护服务 MAPS
+Set-MpPreference -MAPSReporting 2
+Get-MpPreference
 #激活Windows 10
 slmgr -skms  tx.thenote.site
 slmgr -ato
