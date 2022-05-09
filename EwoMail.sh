@@ -30,13 +30,6 @@ systemctl   restart     postfix dovecot nginx
 echo        "服务器管理账户为admin，密码为ewomail123。"
 
 
-directsetup () {
-apt  -y install wget
-wget -c https://raw.githubusercontent.com/hanhongju/my_script/master/EwoMail.sh
-bash    EwoMail.sh
-}
-
-
 
 
 
