@@ -19,6 +19,13 @@ systemctl   restart    qbittorrent-nox
 #网页端口8088，用户名admin，密码adminadmin，默认下载目录/Downloads/
 
 
+directsetup () {
+apt  -y install wget
+wget -c https://raw.githubusercontent.com/hanhongju/proxy/master/trojanserver.sh
+bash    trojanserver.sh
+}
+
+
 
 
 
