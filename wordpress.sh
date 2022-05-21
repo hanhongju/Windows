@@ -47,8 +47,16 @@ mysql_secure_installation
 
 
 
+directsetup () {
+apt  -y install wget
+wget -c https://raw.githubusercontent.com/hanhongju/proxy/master/trojanserver.sh
+bash    trojanserver.sh
+}
 
 
+
+
+importbackup () {
 #还原wordpress文件
 tar           -Pxf       /home/wordpress.tar
 #修改数据库登录方式
@@ -62,12 +70,12 @@ systemctl     enable     mariadb
 systemctl     restart    mariadb
 #导入数据库
 mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress/wordpress.sql
+}
 
 
 
 
-
-
+installanewsite () {
 #新安装wordpress网页文件
 wget       -c      https://cn.wordpress.org/latest-zh_CN.tar.gz     -P      /home/
 rm         -rf     /home/wordpress/
@@ -75,6 +83,7 @@ tar        -xf     /home/latest-zh_CN.tar.gz             -C          /home/
 #网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
 chmod      -Rf     777           /home/
 chown      -Rf     www-data      /home/
+}
 
 
 
