@@ -21,13 +21,4 @@ systemctl   restart    qbittorrent-nox
 
 
 
-directsetup () {
-apt  -y install wget
-wget -c https://raw.githubusercontent.com/hanhongju/my_script/master/qBittorrent.sh
-bash    qBittorrent.sh
-}
-
-
-
-
 
