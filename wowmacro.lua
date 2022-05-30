@@ -14,3 +14,7 @@ BoardcastMessage () {
 /script SendChatMessage(msg,"YELL");SendChatMessage(msg,"CHANNEL",nil,1);
 }
 
+
+
+
+
