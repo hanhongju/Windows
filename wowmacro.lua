@@ -6,7 +6,7 @@ HandoutMaterials ()  {
 
 
 DefineMessage () {
-/script msg="what i want to say"
+/script msg="              what i want to say              "
 }
 
 
