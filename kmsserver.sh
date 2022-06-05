@@ -18,7 +18,7 @@ WantedBy=multi-user.target
 systemctl     daemon-reload
 systemctl     enable       vlmcsd
 systemctl     restart      vlmcsd
-
+ss            -plnt    |   awk 'NR>1 {print $4,$6}'   |   column   -t
 
 
 
