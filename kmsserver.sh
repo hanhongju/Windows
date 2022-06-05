@@ -27,7 +27,7 @@ systemctl     restart      vlmcsd
 Set-MpPreference -MAPSReporting 2
 Get-MpPreference
 #激活Windows 10
-slmgr -skms  cloud4.thenote.live
+slmgr -skms  hw.thenote.live
 slmgr -ato
 
 
