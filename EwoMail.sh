@@ -27,6 +27,7 @@ sed         -i          ''s/listen.*/listen\ 80\;/g''           /ewomail/nginx/c
 sed         -i          ''s/listen.*/listen\ 8010\;/g''         /ewomail/nginx/conf/vhost/ewomail-admin.conf
 #重启服务
 systemctl   restart     postfix dovecot nginx
+ss          -plnt   |   awk 'NR>1 {print $4,$6}'   |   column   -t
 echo        "服务器管理账户为admin，密码为ewomail123。"
 
 
