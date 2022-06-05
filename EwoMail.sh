@@ -36,7 +36,7 @@ echo        "服务器管理账户为admin，密码为ewomail123。"
 directsetup () {
 yum  -y install wget
 wget -c https://raw.githubusercontent.com/hanhongju/my_script/master/EwoMail.sh
-bash    trojanserver.sh
+bash    EwoMail.sh
 }
 
 
