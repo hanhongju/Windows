@@ -13,6 +13,7 @@ else      echo   ''添加SWAP空间，大小4000M''
 fi
 #安装EwoMail
 yum         -y         install   git
+apt         -y         install   git
 cd          /root/
 git         clone      https://github.com/gyxuehu/EwoMail.git
 tar         -Pcf       /root/EwoMail.tar     /root/EwoMail
