@@ -29,7 +29,7 @@ sed         -i          ''s/listen.*/listen\ 8010\;/g''         /ewomail/nginx/c
 #重启服务
 systemctl   restart     postfix dovecot nginx
 ss          -plnt   |   awk 'NR>1 {print $4,$6}'   |   column   -t
-echo        "服务器管理账户为admin，密码为ewomail123。"
+echo        "后台管理端口为8010，账户为admin，密码为ewomail123。"
 
 
 
