@@ -23,6 +23,9 @@ SomeSetUp () {
 /console WorldTextScale 3
 /console floatingCombatTextCombatDamageDirectionalScale 5
 /console weatherDensity 0
+/console ffxGlow 0
+/script MainMenuBarLeftEndCap:Hide()
+/script MainMenuBarRightEndCap:Hide()
 }
 
 
