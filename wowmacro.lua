@@ -20,8 +20,8 @@ BoardcastMessage () {
 
 SomeSetUp () {
 /console cameraDistanceMaxZoomFactor 4
-/console WorldTextScale 3
-/console floatingCombatTextCombatDamageDirectionalScale 5
+/console WorldTextScale 2
+/console floatingCombatTextCombatDamageDirectionalScale 1
 /console weatherDensity 0
 /console ffxGlow 0
 /script  MainMenuBarLeftEndCap:Hide()
