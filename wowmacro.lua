@@ -24,8 +24,8 @@ SomeSetUp () {
 /console floatingCombatTextCombatDamageDirectionalScale 5
 /console weatherDensity 0
 /console ffxGlow 0
-/script MainMenuBarLeftEndCap:Hide()
-/script MainMenuBarRightEndCap:Hide()
+/script  MainMenuBarLeftEndCap:Hide()
+/script  MainMenuBarRightEndCap:Hide()
 }
 
 
