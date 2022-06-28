@@ -23,7 +23,7 @@ BoardcastMessage () {
 
 SomeSetUp () {
 /console cameraDistanceMaxZoomFactor 4
-/console WorldTextScale 2
+/console WorldTextScale 1
 /console floatingCombatTextCombatDamageDirectionalScale 1
 /console weatherDensity 0
 /console ffxGlow 0
