@@ -29,7 +29,7 @@ sed         -i          ''s/listen.*/listen\ 8010\;/g''         /ewomail/nginx/c
 echo        '
 @bypass_virus_checks_maps = (1);
 @bypass_spam_checks_maps  = (1);
-'          >>          /etc/amavisd/amavisd.conf
+'           >>          /etc/amavisd/amavisd.conf
 #重启服务
 systemctl   restart     postfix dovecot nginx amavisd
 ss          -plnt   |   awk 'NR>1 {print $4,$6}'   |   column   -t
