@@ -26,6 +26,10 @@ bash        start.sh    $site
 echo        ''127.0.0.1 mail.$site smtp.$site imap.$site''      >>         /etc/hosts
 sed         -i          ''s/listen.*/listen\ 80\;/g''           /ewomail/nginx/conf/vhost/rainloop.conf
 sed         -i          ''s/listen.*/listen\ 8010\;/g''         /ewomail/nginx/conf/vhost/ewomail-admin.conf
+echo        ''
+@bypass_virus_checks_maps = (1);
+@bypass_spam_checks_maps  = (1);
+''          >>          /etc/amavisd/amavisd.conf
 #重启服务
 systemctl   restart     postfix dovecot nginx
 ss          -plnt   |   awk 'NR>1 {print $4,$6}'   |   column   -t
