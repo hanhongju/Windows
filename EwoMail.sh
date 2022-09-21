@@ -29,8 +29,8 @@ sed         -i          ''s/listen.*/listen\ 8010\;/g''         /ewomail/nginx/c
 sed         -i          ''/clamd/d''                            /usr/lib/systemd/system/amavisd.service
 sed         -i          ''/bypass_virus/d''                     /etc/amavisd/amavisd.conf
 sed         -i          ''/bypass_spam/d''                      /etc/amavisd/amavisd.conf
-sed         -i          ''/$site/d''                            /etc/hosts
 echo        '@bypass_virus_checks_maps = (1);@bypass_spam_checks_maps  = (1);'           >>          /etc/amavisd/amavisd.conf
+sed         -i          ''/$site/d''                            /etc/hosts
 echo        ''127.0.0.1 mail.$site smtp.$site imap.$site''                               >>          /etc/hosts
 #重启服务
 systemctl   daemon-reload
