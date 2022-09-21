@@ -26,7 +26,7 @@ bash        start.sh    $site
 echo        ''127.0.0.1 mail.$site smtp.$site imap.$site''      >>         /etc/hosts
 sed         -i          ''s/listen.*/listen\ 80\;/g''           /ewomail/nginx/conf/vhost/rainloop.conf
 sed         -i          ''s/listen.*/listen\ 8010\;/g''         /ewomail/nginx/conf/vhost/ewomail-admin.conf
-sed         -i          ''/.*clamd.*/d''                        /usr/lib/systemd/system/amavisd.service
+sed         -i          ''/clamd/d''                            /usr/lib/systemd/system/amavisd.service
 echo        '
 @bypass_virus_checks_maps = (1);
 @bypass_spam_checks_maps  = (1);
