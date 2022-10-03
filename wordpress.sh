@@ -51,6 +51,17 @@ directsetup () {
 apt  -y install wget
 wget -c https://github.com/hanhongju/my_script/raw/master/wordpress.sh
 bash    wordpress.sh
+
+}
+
+
+
+
+
+directbackup () {
+mysqldump     -uroot      -pfengkuang     wordpress     >    /home/wordpress/wordpress.sql
+tar           -cf         /home/wordpressbackup/wordpress$(date +\%Y\%m\%d\-\%H\%M\%S).tar        -P       /home/wordpress/
+
 }
 
 
@@ -70,6 +81,7 @@ systemctl     enable     mariadb
 systemctl     restart    mariadb
 #导入数据库
 mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress/wordpress.sql
+
 }
 
 
@@ -83,6 +95,7 @@ tar        -xf     /home/latest-zh_CN.tar.gz             -C          /home/
 #网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
 chmod      -Rf     777           /home/
 chown      -Rf     www-data      /home/
+
 }
 
 
