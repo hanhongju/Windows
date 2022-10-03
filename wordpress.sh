@@ -59,7 +59,7 @@ bash    wordpress.sh
 
 directbackup () {
 mysqldump     -uroot      -pfengkuang     wordpress     >    /home/wordpress/wordpress.sql
-tar           -cf         /home/wordpressbackup/wordpress$(date +\%Y\%m\%d\-\%H\%M\%S).tar        -P       /home/wordpress/
+tar           -cf         /home/wordpress.tar        -P       /home/wordpress/
 
 }
 
