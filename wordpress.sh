@@ -58,8 +58,8 @@ bash    wordpress.sh
 
 
 directbackup () {
-mysqldump     -uroot      -pfengkuang     wordpress     >    /home/wordpress/wordpress.sql
-tar           -cf         /home/wordpress.tar        -P       /home/wordpress/
+mysqldump     -uroot      -pfengkuang     wordpress     >        /home/wordpress/wordpress.sql
+tar           -cf         /home/wordpress.tar           -P       /home/wordpress/
 
 }
 
