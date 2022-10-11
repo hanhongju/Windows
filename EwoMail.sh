@@ -27,8 +27,6 @@ sed         -i          ''s/listen.*/listen\ 80\;/g''           /ewomail/nginx/c
 sed         -i          ''s/listen.*/listen\ 8010\;/g''         /ewomail/nginx/conf/vhost/ewomail-admin.conf
 #重启服务
 systemctl   daemon-reload
-systemctl   stop        clamd@amavisd
-systemctl   disable     clamd@amavisd
 systemctl   restart     postfix dovecot nginx
 netstat     -plnt
 echo        "后台管理端口为8010，账户为admin，密码为ewomail123。"
