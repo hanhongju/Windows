@@ -1,5 +1,4 @@
 # WinMail 安装脚本 @ CentOS 7.5-7.9
-
 #添加SWAP缓存空间
 if        [[   $(free  -m  |  awk   'NR==3{print $2}'   2>&1)    >   3000   ]]
 then      echo   ''已经有SWAP，无需重复配置''
