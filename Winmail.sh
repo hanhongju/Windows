@@ -20,6 +20,7 @@ bash          /home/winmail/install.sh
 
 #重启服务
 systemctl     restart  winmail
+netstat       -pnltu
 #访问   http://mail.hanhongju.com:6080/admin/
 #进行邮箱域名配置
 
