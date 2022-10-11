@@ -21,7 +21,7 @@ bash          /home/winmail/install.sh
 #重启服务
 systemctl     restart  winmail
 netstat       -plnt
-#访问   http://mail.hanhongju.com:6080/admin/
+#访问   http://mail.hanhongju.com:6080/
 #进行邮箱域名配置
 
 
