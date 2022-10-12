@@ -28,8 +28,8 @@ wget -c https://github.com/hanhongju/my_script/raw/master/iRedMail.sh
 bash    iRedMail.sh
 
 }
-
-#访问   http://mail.hanhongju.com/mail/
+#访问邮箱      http://mail.hanhongju.com/mail/
+#访问管理      http://mail.hanhongju.com/iredadmin/
 
 
 
