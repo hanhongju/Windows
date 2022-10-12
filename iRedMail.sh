@@ -9,8 +9,7 @@ else      echo   ''添加SWAP空间，大小4000M''
           echo    '/mnt/swap swap swap defaults 0 0'      >>       /etc/fstab
 fi
 #配置hostname
-echo      "mail"         >    /etc/hostname
-echo      "127.0.0.1   mail.hanhongju.com   mail   localhost   localhost.localdomain"    >    /etc/hosts
+echo      "127.0.0.1   mail.hanhongju.com   mail   localhost"    >    /etc/hosts
 hostname  -f
 #安装iRedMail
 apt       -y    update
