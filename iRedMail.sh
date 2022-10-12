@@ -29,6 +29,8 @@ bash    iRedMail.sh
 
 }
 
+#访问   http://mail.hanhongju.com/mail/
+
 
 
 
