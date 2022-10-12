@@ -18,8 +18,9 @@ bash      /home/iRedMail-1.6.2/iRedMail.sh
 
 
 
-#配置hostname
+
 hostname () {
+#安装前须先配置hostname
 echo      "mail"      >      /etc/hostname
 echo      "127.0.0.1   mail.hanhongju.com   mail   localhost"    >    /etc/hosts
 reboot
@@ -29,7 +30,7 @@ reboot
 
 
 
-directsetup () {
+setup () {
 apt  -y install wget
 wget -c https://github.com/hanhongju/my_script/raw/master/iRedMail.sh
 bash    iRedMail.sh
