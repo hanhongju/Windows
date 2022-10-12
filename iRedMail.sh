@@ -10,7 +10,7 @@ else      echo   ''添加SWAP空间，大小4000M''
 fi
 #配置hostname
 echo      "127.0.0.1   mail.hanhongju.com   mail   localhost"    >    /etc/hosts
-hostname  -f
+reboot
 #安装iRedMail
 apt       -y    update
 apt       -y    install tar gzip wget
