@@ -1,7 +1,7 @@
 # EwoMail 安装脚本 @ CentOS 7
 site=hanhongju.com
 #关闭Selinux
-sed       -i       ''s/SELINUX\=.*/SELINUX\=disabled/g''        /etc/sysconfig/selinux
+sed       -i       ''s/SELINUX=.*/SELINUX=disabled/g''        /etc/sysconfig/selinux
 #添加SWAP缓存空间
 if        [[   $(free  -m  |  awk   'NR==3{print $2}'   2>&1)    >   3000   ]]
 then      echo   ''已经有SWAP，无需重复配置''
@@ -17,7 +17,7 @@ cd          /root/
 git         clone      https://github.com/gyxuehu/EwoMail.git
 tar         -Pcf       /root/EwoMail.tar     /root/EwoMail
 #tar        -Pxf       /root/EwoMail.tar
-sed         -i         ''s/yum\ install\ epel-release.*/yum\ install\ epel-release\ \-y/g''     /root/EwoMail/install/start.sh
+sed         -i         ''s/yum install epel-release.*/yum install epel-release -y/g''     /root/EwoMail/install/start.sh
 #设定脚本工作目录，不要更改否则会出现安装失败
 cd          /root/EwoMail/install/
 bash        start.sh    $site
