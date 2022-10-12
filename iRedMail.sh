@@ -29,7 +29,7 @@ bash    iRedMail.sh
 
 }
 #访问邮箱      http://mail.hanhongju.com/mail/
-#访问管理      http://mail.hanhongju.com/iredadmin/
+
 
 
 
