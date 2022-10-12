@@ -23,7 +23,7 @@ echo        ''网页端口8088，用户名admin，密码adminadmin，默认下�
 
 directsetup () {
 apt  -y install wget
-wget -c https://raw.githubusercontent.com/hanhongju/my_script/master/qBittorrent.sh
+wget -c https://github.com/hanhongju/my_script/raw/master/qBittorrent.sh
 bash    qBittorrent.sh
 
 }
