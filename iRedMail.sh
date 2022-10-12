@@ -23,7 +23,7 @@ bash      /home/iRedMail-1.6.2/iRedMail.sh
 
 
 directsetup () {
-yum  -y install wget
+apt  -y install wget
 wget -c https://github.com/hanhongju/my_script/raw/master/iRedMail.sh
 bash    iRedMail.sh
 
