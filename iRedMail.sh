@@ -18,7 +18,7 @@ apt       -y    install tar gzip wget
 wget      -c    https://github.com/iredmail/iRedMail/archive/1.6.2.tar.gz -P /home/
 tar       -xf   /home//1.6.2.tar.gz -C /home/
 bash      /home/iRedMail-1.6.2/iRedMail.sh
-#访问邮箱  http://mail.hanhongju.com/mail/
+#访问      http://mail.hanhongju.com/mail/
 
 
 
