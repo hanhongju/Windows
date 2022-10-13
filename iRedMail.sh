@@ -11,7 +11,7 @@ fi
 #安装前须先配置hostname
 echo      "mail"      >      /etc/hostname
 echo      "127.0.0.1   mail.hanhongju.com   mail   localhost"    >    /etc/hosts
-sysctl    kernel.hostname=mail.hanhongju.com
+sysctl    kernel.hostname = mail.hanhongju.com
 #安装iRedMail
 apt       -y    update
 apt       -y    install tar gzip wget
