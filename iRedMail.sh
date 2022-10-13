@@ -31,9 +31,9 @@ reboot
 
 
 setup () {
-apt  -y install wget
-wget -c https://github.com/hanhongju/my_script/raw/master/iRedMail.sh
-bash    iRedMail.sh
+apt     -y    install    wget
+wget    https://github.com/hanhongju/my_script/raw/master/iRedMail.sh    -O    setup.sh
+bash    setup.sh
 
 }
 #访问邮箱      http://mail.hanhongju.com/mail/
