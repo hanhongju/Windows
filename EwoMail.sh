@@ -12,6 +12,7 @@ else      echo     "添加SWAP空间，大小4000M"
           echo     '/mnt/swap swap swap defaults 0 0'      >>       /etc/fstab
 fi
 #安装EwoMail
+yum         -y         update
 yum         -y         install   git
 cd          /root/
 git         clone      https://github.com/gyxuehu/EwoMail.git
