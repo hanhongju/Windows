@@ -1,4 +1,4 @@
-# EwoMail 安装脚本 @ CentOS 7 8
+# EwoMail 安装脚本 @ CentOS 7
 site=hanhongju.com
 #关闭Selinux
 sed       -i       "s/SELINUX=.*/SELINUX=disabled/g"        /etc/sysconfig/selinux
