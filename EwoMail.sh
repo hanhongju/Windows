@@ -12,7 +12,6 @@ else      echo     "添加SWAP空间，大小4000M"
           echo     '/mnt/swap swap swap defaults 0 0'      >>       /etc/fstab
 fi
 #安装EwoMail
-yum         -y         update
 yum         -y         install   git
 cd          /root/
 git         clone      https://github.com/gyxuehu/EwoMail.git
@@ -36,6 +35,7 @@ echo        "后台管理端口为8010，账户为admin，密码为ewomail123。
 
 
 directsetup () {
+yum     -y    update
 yum     -y    install    wget
 wget    https://github.com/hanhongju/my_script/raw/master/EwoMail.sh    -O    setup.sh
 bash    setup.sh
