@@ -2,7 +2,7 @@
 apt     -y    update
 apt     -y    install     qbittorrent-nox
 #配置服务，启动服务器
-echo   ' 
+echo   '
 [Unit]
 Description=qBittorrent Command Line Client
 After=network.target
