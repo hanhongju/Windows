@@ -5,13 +5,15 @@ apt     -y    autoremove
 apt     -y    install       wget curl zip unzip nginx mariadb-server python3-pip php-fpm php-mysql php-xml
 #每天备份数据库
 echo    '
-0 1 * * *     root       apt           -y          update
-0 2 * * *     root       apt           -y          full-upgrade
-0 3 * * *     root       apt           -y          autoremove
-0 4 * * *     root       mkdir         -p          /home/wordpressbackup/
-0 5 * * *     root       mysqldump     -uroot      -pfengkuang     wordpress     >    /home/wordpress/wordpress.sql
-0 6 * * *     root       tar           -cf         /home/wordpressbackup/wordpress$(date +\%Y\%m\%d\-\%H\%M\%S).tar        -P       /home/wordpress/
-'             >>         /etc/crontab
+* * * * *     date          >>         /home/crontest
+0 1 * * *     apt           -y          update
+0 2 * * *     apt           -y          full-upgrade
+0 3 * * *     apt           -y          autoremove
+0 4 * * *     mkdir         -p          /home/wordpressbackup/
+0 5 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >    /home/wordpress/wordpress.sql
+0 6 * * *     tar           -cf         /home/wordpressbackup/wordpress$(date +\%Y\%m\%d\-\%H\%M\%S).tar        -P       /home/wordpress/
+'       >     /home/crontmp
+crontab       -u            root        /home/crontmp
 #创建nginx配置文件
 echo '
 server {
