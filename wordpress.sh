@@ -2,7 +2,7 @@
 apt     -y    update
 apt     -y    full-upgrade
 apt     -y    autoremove
-apt     -y    install       wget curl zip unzip nginx mariadb-server python3-pip php-fpm php-mysql php-xml
+apt     -y    install       wget curl zip unzip nginx mariadb-server python3-pip php-fpm php-mysql php-xml net-tools
 #每天备份数据库
 echo    '
 * * * * *     date          >>         /home/crontest
@@ -42,7 +42,7 @@ systemctl     restart      nginx cron
 crontab       -l
 php           -v
 nginx         -vt
-ss            -plnt   |    awk 'NR>1 {print $4,$6}'   |   column   -t
+netstat       -plnt
 #回显nginx、php版本，nginx配置检查和监听端口
 #初始化数据库
 mysql_secure_installation
