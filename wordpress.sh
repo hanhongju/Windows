@@ -39,7 +39,7 @@ echo          "client_header_buffer_size 2048k;   large_client_header_buffers 10
 systemctl     restart      php7.4-fpm
 systemctl     enable       nginx cron
 systemctl     restart      nginx cron
-cat           /etc/crontab
+crontab       -l
 php           -v
 nginx         -vt
 ss            -plnt   |    awk 'NR>1 {print $4,$6}'   |   column   -t
