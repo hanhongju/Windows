@@ -50,7 +50,7 @@ mysql_secure_installation
 
 
 
-directsetup () {
+setupLNMP () {
 apt     -y    install    wget
 wget    https://github.com/hanhongju/my_script/raw/master/wordpress.sh    -O    setup.sh
 bash    setup.sh
