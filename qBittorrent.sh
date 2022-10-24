@@ -16,7 +16,7 @@ WantedBy=multi-user.target
 systemctl   daemon-reload
 systemctl   enable     qbittorrent-nox
 systemctl   restart    qbittorrent-nox
-echo        "网页端口8088，用户名admin，密码adminadmin，默认下载目录/Downloads/"
+echo        "网页端口80，用户名admin，密码adminadmin，默认下载目录/Downloads/"
 
 
 
