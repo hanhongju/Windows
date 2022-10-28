@@ -44,7 +44,7 @@ fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 include        fastcgi_params;
 }
 }
-'             >            /etc/nginx/sites-enabled/wordpress
+'             >            /etc/nginx/sites-enabled/wordpress.conf
 #修改上传文件大小限制
 sed           -i           "s/post_max_size =.*/post_max_size =200M/g"                      /etc/php/7.4/fpm/php.ini
 sed           -i           "s/upload_max_filesize =.*/upload_max_filesize =200M/g"          /etc/php/7.4/fpm/php.ini
