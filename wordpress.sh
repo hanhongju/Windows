@@ -16,6 +16,22 @@ echo    '
 #创建nginx配置文件
 echo '
 server {
+listen 80;
+listen [::]:80;
+set $proxy_name pubmed.ncbi.nlm.nih.gov;
+resolver 8.8.8.8 8.8.4.4 valid=300s;
+location /          {
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header Referer https://$proxy_name;
+proxy_set_header Host $proxy_name;
+proxy_pass https://$proxy_name;
+proxy_set_header Accept-Encoding "";
+}
+}
+'             >            /etc/nginx/sites-enabled/default
+echo '
+server {
 server_name www.hanhongju.com;
 listen 80;
 listen [::]:80;
@@ -28,7 +44,7 @@ fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 include        fastcgi_params;
 }
 }
-'             >            /etc/nginx/sites-enabled/wordpress.conf
+'             >            /etc/nginx/sites-enabled/wordpress
 #修改上传文件大小限制
 sed           -i           "s/post_max_size =.*/post_max_size =200M/g"                      /etc/php/7.4/fpm/php.ini
 sed           -i           "s/upload_max_filesize =.*/upload_max_filesize =200M/g"          /etc/php/7.4/fpm/php.ini
