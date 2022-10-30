@@ -25,9 +25,6 @@ systemctl     enable       nginx
 systemctl     restart      nginx
 nginx         -vt
 netstat       -plnt
-#回显nginx、php版本，nginx配置检查和监听端口
-#初始化数据库
-mysql_secure_installation
 
 
 
