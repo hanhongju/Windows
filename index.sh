@@ -2,7 +2,7 @@
 apt     -y    update
 apt     -y    full-upgrade
 apt     -y    autoremove
-apt     -y    install       wget nginx net-tools
+apt     -y    install       nginx net-tools
 #创建nginx配置文件
 echo '
 server{
