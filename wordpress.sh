@@ -5,7 +5,7 @@ apt     -y    autoremove
 apt     -y    install       wget curl zip unzip nginx mariadb-server python3-pip php-fpm php-mysql php-xml net-tools
 #每天备份数据库
 echo    '
-* * * * *     date          >>         /home/crontest
+* * * * *     date          >>          /home/crontest
 0 1 * * *     apt           -y          update
 0 2 * * *     apt           -y          full-upgrade
 0 3 * * *     apt           -y          autoremove
