@@ -17,7 +17,7 @@ proxy_pass https://$proxy_name;
 proxy_set_header Accept-Encoding "";
 }
 }
-'             >            /etc/nginx/sites-enabled/wordpress.conf
+'             >            /etc/nginx/sites-enabled/default
 #修改上传文件大小限制
 systemctl     enable       nginx
 systemctl     restart      nginx
