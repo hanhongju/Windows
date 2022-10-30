@@ -23,13 +23,10 @@ ss            -plnt    |   awk 'NR>1 {print $4,$6}'   |   column   -t
 
 
 activeinwindows () {
-#在Windows中用管理员身份登录Powershell输入以下代码
-#开启微软高级保护服务 MAPS
-Set-MpPreference -MAPSReporting 2
-Get-MpPreference
-#激活Windows 10
+#在Windows中用管理员身份登录Powershell输入以下代码激活Windows 10
 slmgr -skms  hw.thenote.live
 slmgr -ato
+
 }
 
 
