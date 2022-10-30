@@ -22,19 +22,31 @@ ss            -plnt    |   awk 'NR>1 {print $4,$6}'   |   column   -t
 
 
 
+
+directsetup () {
+sudo    su
+apt     -y    install    wget
+wget    https://github.com/hanhongju/my_script/raw/master/kmsserver.sh    -O    setup.sh
+bash    setup.sh
+
+}
+
+
+
+
 activeinwindows () {
 #在Windows中用管理员身份登录Powershell输入以下代码激活Windows 10
-slmgr -skms  hw.thenote.live
+slmgr -skms  hwd.thenote.live
 slmgr -ato
 
 }
 
 
 
+
 #参考文献
 #https://www.wenzika.com/357.html
 #http://www.kaixinit.com/info/maintenance/3031.html
-
 
 
 
