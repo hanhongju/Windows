@@ -1,4 +1,4 @@
-# Wordpress安装脚本 @ Debian 11
+# 网站反代主页安装脚本 @ Debian 10
 apt     -y    update
 apt     -y    full-upgrade
 apt     -y    autoremove
