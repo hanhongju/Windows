@@ -22,9 +22,15 @@ sed         -i         "s/yum install epel-release.*/yum install epel-release -y
 cd          /root/EwoMail/install/
 bash        start.sh    $site
 #安装后的常规配置
-echo        "127.0.0.1 mail.$site smtp.$site imap.$site"                         >>          /etc/hosts
-sed         -i          "s/listen.*/listen 80;/g"           /ewomail/nginx/conf/vhost/rainloop.conf
-sed         -i          "s/listen.*/listen 8010;/g"         /ewomail/nginx/conf/vhost/ewomail-admin.conf
+echo        "127.0.0.1 mail.$site smtp.$site imap.$site"       >>       /etc/hosts
+sed         -i          "s/listen.*/listen 80;/g"              /ewomail/nginx/conf/vhost/rainloop.conf
+sed         -i          "s/listen.*/listen 8010;/g"            /ewomail/nginx/conf/vhost/ewomail-admin.conf
+sed         -i          "/bypass_virus/d"                      /etc/amavisd/amavisd.conf
+sed         -i          "/bypass_spam/d"                       /etc/amavisd/amavisd.conf
+echo        "
+@bypass_virus_checks_maps = (1);
+@bypass_spam_checks_maps  = (1);
+"           >>       /etc/amavisd/amavisd.conf
 #重启服务
 systemctl   restart     postfix dovecot nginx
 netstat     -plnt
