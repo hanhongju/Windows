@@ -25,6 +25,7 @@ bash        start.sh    $site
 echo        "127.0.0.1 mail.$site smtp.$site imap.$site"       >>       /etc/hosts
 sed         -i          "s/listen.*/listen 80;/g"              /ewomail/nginx/conf/vhost/rainloop.conf
 sed         -i          "s/listen.*/listen 8010;/g"            /ewomail/nginx/conf/vhost/ewomail-admin.conf
+sed         -i          "/clamd/d"                             /usr/lib/systemd/system/amavisd.service
 sed         -i          "/bypass_virus/d"                      /etc/amavisd/amavisd.conf
 sed         -i          "/bypass_spam/d"                       /etc/amavisd/amavisd.conf
 echo        "
@@ -32,7 +33,10 @@ echo        "
 @bypass_spam_checks_maps  = (1);
 "           >>       /etc/amavisd/amavisd.conf
 #重启服务
-systemctl   restart     postfix dovecot nginx
+systemctl   daemon-reload
+systemctl   stop        clamd@amavisd
+systemctl   disable     clamd@amavisd
+systemctl   restart     postfix dovecot nginx amavisd
 netstat     -plnt
 echo        "后台管理端口为8010，账户为admin，密码为ewomail123。"
 
