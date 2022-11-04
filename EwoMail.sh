@@ -30,8 +30,7 @@ sed         -i          "/bypass_virus/d"                      /etc/amavisd/amav
 sed         -i          "/bypass_spam/d"                       /etc/amavisd/amavisd.conf
 echo        "
 @bypass_virus_checks_maps = (1);
-@bypass_spam_checks_maps  = (1);
-"           >>       /etc/amavisd/amavisd.conf
+@bypass_spam_checks_maps  = (1);"                              >>       /etc/amavisd/amavisd.conf
 #重启服务
 systemctl   daemon-reload
 systemctl   stop        clamd@amavisd
