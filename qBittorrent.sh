@@ -1,6 +1,6 @@
 # qBittorrent安装脚本 @ Debian 10
 apt     -y    update
-apt     -y    install     qbittorrent-nox
+apt     -y    install     qbittorrent-nox net-tools
 #配置服务，启动服务器
 echo   '
 [Unit]
@@ -29,6 +29,17 @@ bash    setup.sh
 
 }
 
+
+
+
+uninstall () {
+sudo          su
+apt           -y        remove     qbittorrent-nox
+systemctl     stop      qbittorrent-nox
+systemctl     disable   qbittorrent-nox
+netstat       -plnt
+
+}
 
 
 
