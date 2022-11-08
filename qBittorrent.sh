@@ -34,7 +34,7 @@ bash    setup.sh
 
 uninstall () {
 sudo          su
-apt           -y        remove     qbittorrent-nox
+apt    -y     remove    qbittorrent-nox
 systemctl     stop      qbittorrent-nox
 systemctl     disable   qbittorrent-nox
 netstat       -plnt
