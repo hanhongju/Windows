@@ -38,10 +38,11 @@ echo          "client_header_buffer_size 2048k;   large_client_header_buffers 10
 systemctl     restart      php7.4-fpm
 systemctl     enable       nginx cron
 systemctl     restart      nginx cron
-crontab       -l
 php           -v
 nginx         -vt
+crontab       -l
 netstat       -plnt
+ss            -plnt     |    awk 'NR>1 {print $4,$6}'   |   column   -t
 #回显nginx、php版本，nginx配置检查和监听端口
 #初始化数据库
 mysql_secure_installation
