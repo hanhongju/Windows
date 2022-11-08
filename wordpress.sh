@@ -1,5 +1,7 @@
 # Wordpress安装脚本 @ Debian 11
 apt     -y    update
+apt     -y    full-upgrade
+apt     -y    autoremove
 apt     -y    install       wget curl zip unzip nginx mariadb-server python3-pip php-fpm php-mysql php-xml net-tools
 #每天备份数据库
 echo    '
