@@ -7,6 +7,6 @@ apt install -y nvidia-driver-515 libvulkan1 libvulkan1:i386
 
 
 
-apt install -y install im-switch fcitx
-
+apt install -y  im-config fcitx
+im-config -s fcitx
 
