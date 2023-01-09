@@ -7,9 +7,9 @@ dpkg       -i      resilio-sync.deb
 echo       '
 {"storage_path" : "/home/resilio-sync/"
 ,"pid_file"     : "/var/run/resilio-sync/sync.pid"
-,"webui" :{"force_https" : false
-          ,"listen"      : "0.0.0.0:8888"
-          }
+,"webui" : {"force_https" : false
+           ,"listen"      : "0.0.0.0:8888"
+           }
 }
 '          >         /etc/resilio-sync/config.json
 systemctl  enable    resilio-sync
