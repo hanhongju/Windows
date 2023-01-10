@@ -1,4 +1,4 @@
-#resilio-sync服务器搭建 @ Debian 10
+#私有云盘resilio-sync服务器搭建 @ Debian 10
 sudo       su
 apt        -y      update    
 apt        -y      install    wget
