@@ -43,7 +43,7 @@ echo        "后台管理端口为8010，账户为admin，密码为ewomail123。
 directsetup () {
 sudo    su
 yum     -y    install    wget
-wget    -c    https://github.com/hanhongju/my_script/raw/master/EwoMail.sh
+wget    https://github.com/hanhongju/my_script/raw/master/EwoMail.sh    -O     EwoMail.sh
 bash    EwoMail.sh
 
 }
