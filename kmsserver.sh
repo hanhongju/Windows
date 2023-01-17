@@ -2,8 +2,8 @@
 apt     -y     update    
 apt     -y     install    wget
 wget    https://github.com/Wind4/vlmcsd/releases/download/svn1113/binaries.tar.gz     -cP    .
-tar     -xf    binaries.tar.gz   -C   /home/
-\cp     -f     /home/binaries/Linux/intel/static/vlmcsd-x86-musl-static     /usr/bin/vlmcsd
+tar     -xf    binaries.tar.gz   -C   .
+cp      -f     ./binaries/Linux/intel/static/vlmcsd-x86-musl-static     /usr/bin/vlmcsd
 echo    ' 
 [Unit]
 Description=KMS server
