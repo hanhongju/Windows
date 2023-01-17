@@ -100,9 +100,9 @@ mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress/wordpr
 
 installanewsite () {
 #新安装wordpress网页文件；wget的-O参数和-P参数只能二选一
-wget       -c      https://cn.wordpress.org/latest-zh_CN.tar.gz    -O     wordpressnew.tar.gz
+wget       -c      https://cn.wordpress.org/latest-zh_CN.tar.gz
 rm         -rf     /home/wordpress/
-tar        -xf     wordpressnew.tar.gz     -C     /home/
+tar        -xf     latest-zh_CN.tar.gz     -C     /home/
 #网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
 chmod      -Rf     777           /home/wordpress/
 chown      -Rf     www-data      /home/wordpress/
