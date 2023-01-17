@@ -2,7 +2,7 @@
 apt      -y      update
 apt      -y      install      wget default-jdk
 #下载mc服务器1.18.2
-wget     -c      https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar     -P     /home/mcserverjava/
+wget     https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar     -cP     /home/mcserverjava/
 #配置服务，启动服务器
 echo   'eula=true'      >       /home/mcserverjava/eula.txt
 echo   ' 
