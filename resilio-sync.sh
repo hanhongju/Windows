@@ -2,8 +2,8 @@
 sudo       su
 apt        -y      update
 apt        -y      install    wget
-wget       https://download-cdn.resilio.com/2.7.3.1381/Debian/resilio-sync_2.7.3.1381-1_amd64.deb       -O       rslsync.deb
-dpkg       -i      rslsync.deb
+wget       https://download-cdn.resilio.com/2.7.3.1381/Debian/resilio-sync_2.7.3.1381-1_amd64.deb       -cP       /home/
+dpkg       -i      /home/rslsync.deb
 echo       '
 {"storage_path" : "/var/lib/resilio-sync/"
 ,"pid_file"     : "/var/run/resilio-sync/sync.pid"
