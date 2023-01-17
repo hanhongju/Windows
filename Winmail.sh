@@ -14,11 +14,6 @@ wget          https://cdn.winmail.cn/download/winmail-pro-5.0-0728-x86_64.tar.gz
 tar           -xf      /home/winmail-pro-5.0-0728-x86_64.tar.gz                          -C        /home/
 systemctl     stop     winmail
 bash          /home/winmail/install.sh
-
-
-
-
-#重启服务
 systemctl     restart  winmail
 netstat       -plnt
 #访问         http://mail.hanhongju.com:6080/
