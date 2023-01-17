@@ -9,9 +9,9 @@ else      echo     "添加SWAP空间，大小4000M"
           echo     '/mnt/swap swap swap defaults 0 0'      >>       /etc/fstab
 fi
 #安装WinMail
-yum           -y       install     wget tar telnet net-tools mlocate bind-utils
-wget          https://cdn.winmail.cn/download/winmail-pro-5.0-0728-x86_64.tar.gz         -P          /home/
-tar           -xf      /home/winmail-pro-5.0-0728-x86_64.tar.gz                          -C          /home/
+yum           -y       install       wget tar telnet net-tools mlocate bind-utils
+wget          https://cdn.winmail.cn/download/winmail-pro-5.0-0728-x86_64.tar.gz         -cP       /home/
+tar           -xf      /home/winmail-pro-5.0-0728-x86_64.tar.gz                          -C        /home/
 systemctl     stop     winmail
 bash          /home/winmail/install.sh
 
