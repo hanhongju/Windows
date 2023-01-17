@@ -15,9 +15,7 @@ fi
 yum         -y         install        git net-tools
 cd          /root/
 git         clone      https://github.com/gyxuehu/EwoMail.git
-tar         -Pcf       /root/EwoMail.tar     /root/EwoMail
-#tar        -Pxf       /root/EwoMail.tar
-sed         -i         "s/yum install epel-release.*/yum install epel-release -y/g"     /root/EwoMail/install/start.sh
+sed         -i         "s/yum install epel-release.*/yum install epel-release -y/g"         /root/EwoMail/install/start.sh
 #设定脚本工作目录，不要更改否则会出现安装失败
 cd          /root/EwoMail/install/
 bash        start.sh    $site
