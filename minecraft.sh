@@ -1,8 +1,8 @@
 # MineCraft JAVA版服务器搭建脚本 @ Debian
 apt      -y      update
 apt      -y      install      wget default-jdk
-#下载mc服务器1.18.2
-wget     https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar     -cP     /home/mcserverjava/
+#下载mc服务器1.19.3
+wget     https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar     -cP     /home/mcserverjava/
 #配置服务，启动服务器
 echo   'eula=true'      >       /home/mcserverjava/eula.txt
 echo   ' 
@@ -30,7 +30,7 @@ tar    -Pxf     /home/mcjava.tar
 
 
 # 官网下载地址
-# https://www.minecraft.net/zh-hans/download
+# https://www.minecraft.net/zh-hans/download/server
 
 
 
