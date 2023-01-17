@@ -10,10 +10,10 @@ else      echo     "添加SWAP空间，大小4000M"
 fi
 #安装WinMail
 yum           -y       install       wget tar telnet net-tools mlocate bind-utils
-wget          https://cdn.winmail.cn/download/winmail-pro-5.0-0728-x86_64.tar.gz         -cP       /home/
-tar           -xf      /home/winmail-pro-5.0-0728-x86_64.tar.gz                          -C        /home/
+wget          https://cdn.winmail.cn/download/winmail-pro-5.0-0728-x86_64.tar.gz         -cP       .
+tar           -xf      winmail-pro-5.0-0728-x86_64.tar.gz                                -C        .
 systemctl     stop     winmail
-bash          /home/winmail/install.sh
+bash          ./winmail/install.sh
 systemctl     restart  winmail
 netstat       -plnt
 #访问         http://mail.hanhongju.com:6080/
