@@ -99,7 +99,7 @@ mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress/wordpr
 
 
 installanewsite () {
-#新安装wordpress网页文件
+#新安装wordpress网页文件；wget的-O参数和-P参数只能二选一
 wget       -c      https://cn.wordpress.org/latest-zh_CN.tar.gz    -O     wordpressnew.tar.gz
 rm         -rf     /home/wordpress/
 tar        -xf     wordpressnew.tar.gz     -C     /home/
