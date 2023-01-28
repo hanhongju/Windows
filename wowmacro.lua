@@ -2,22 +2,26 @@ HandoutMaterials () {
 /script SelectGossipAvailableQuest(1)
 /script CompleteQuest()
 /script GetQuestReward()
+
 }
 
 
 OneclickBuyout () {
 /click BrowseBuyoutButton
 /click StaticPopup1Button1
+
 }
 
 
 DefineMessage () {
 /script msg="              what i want to say              "
+
 }
 
 
 BoardcastMessage () {
 /script SendChatMessage(msg,"YELL");SendChatMessage(msg,"CHANNEL",nil,1);
+
 }
 
 
@@ -29,6 +33,7 @@ SomeSetUp () {
 /console ffxGlow 0
 /script  MainMenuBarLeftEndCap:Hide()
 /script  MainMenuBarRightEndCap:Hide()
+
 }
 
 
