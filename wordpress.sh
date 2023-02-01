@@ -17,7 +17,7 @@ echo    '
 0 0 1 * *     systemctl     stop        nginx apache2
 1 0 1 * *     certbot       renew
 2 0 1 * *     chmod         -R   777    /etc/letsencrypt/
-3 0 * * *     systemctl     restart     nginx
+3 0 * * *     systemctl     restart     nginx v2ray trojan
 '       |     crontab
 #创建nginx配置文件
 echo '
