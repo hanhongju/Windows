@@ -6,7 +6,7 @@ apt     -y    full-upgrade
 apt     -y    autoremove
 apt     -y    install       wget curl zip unzip nginx mariadb-server python3-pip php-fpm php-mysql php-xml certbot net-tools
 systemctl     stop          nginx apache2
-certbot       certonly      --standalone -n --agree-tos -m 86606682@qq.com -d $site
+certbot       certonly      --standalone -n --agree-tos -m 86606682@qq.com -d www.hanhongju.com
 chmod         -R   777      /etc/letsencrypt/
 #每天备份数据库
 echo    '
