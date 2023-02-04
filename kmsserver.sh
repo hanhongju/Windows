@@ -24,7 +24,6 @@ netstat       -plnt
 
 
 directsetup () {
-sudo    su
 apt     -y    install    wget
 wget    https://github.com/hanhongju/my_script/raw/master/kmsserver.sh    -O    setup.sh
 bash    setup.sh
