@@ -13,10 +13,10 @@ echo      "mail"       >      /etc/hostname
 echo      "127.0.0.1   mail.hanhongju.com   mail   localhost"    >    /etc/hosts
 sysctl    kernel.hostname=mail.hanhongju.com
 #安装iRedMail
-apt       -y    update
-apt       -y    install tar gzip wget
-wget      https://github.com/iredmail/iRedMail/archive/1.6.2.tar.gz    -cP    .
-tar       -xf   1.6.2.tar.gz    -C    .
+apt       -y     update
+apt       -y     install tar gzip wget
+wget      -cP.   https://github.com/iredmail/iRedMail/archive/1.6.2.tar.gz
+tar       -xf    1.6.2.tar.gz     -C.
 bash      ./iRedMail-1.6.2/iRedMail.sh
 #访问      http://mail.hanhongju.com/mail/
 
