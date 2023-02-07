@@ -73,6 +73,16 @@ bash    setup.sh
 
 
 
+uninstall () {
+rm            /etc/nginx/sites-enabled/wordpress.conf
+systemctl     restart   nginx
+netstat       -plnt
+
+}
+
+
+
+
 directbackup () {
 mysqldump     -uroot      -pfengkuang     wordpress     >        /home/wordpress/wordpress.sql
 tar           -cf         /home/wordpress.tar           -P       /home/wordpress/
