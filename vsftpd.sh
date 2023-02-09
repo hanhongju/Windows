@@ -2,7 +2,6 @@
 # 定义服务器地址
 site=cloud1.thenote.live
 # 安装
-sudo        su
 apt         -y        update    
 apt         -y        install      vsftpd net-tools
 ipv4=$(ping -c 2 $site | head -2 | tail -1 | awk '{print $5}' | sed 's/[(:)]//g')
