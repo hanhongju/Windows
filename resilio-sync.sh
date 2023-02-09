@@ -11,7 +11,7 @@ echo   '
            ,"listen"      : "0.0.0.0:8888"
            }
 }
-'       >            /etc/resilio-sync/config.json
+'          >         /etc/resilio-sync/config.json
 systemctl  enable    resilio-sync
 systemctl  restart   resilio-sync
 netstat    -plnt
