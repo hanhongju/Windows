@@ -5,7 +5,7 @@ apt     -y    update
 apt     -y    full-upgrade
 apt     -y    autoremove
 apt     -y    install       wget curl zip unzip nginx mariadb-server python3-pip php-fpm php-mysql php-xml certbot net-tools
-#每天备份数据库
+#每天备份数据库，cron任务须由crontab安装，直接修改配置文件无效
 echo    '
 * * * * *     date          >>          /home/crontest
 0 1 * * *     apt           -y          update
