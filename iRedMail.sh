@@ -15,7 +15,7 @@ sysctl    kernel.hostname=mail.hanhongju.com
 #安装iRedMail
 apt       -y     update
 apt       -y     install tar gzip wget
-wget      -cP.   https://github.com/iredmail/iRedMail/archive/1.6.2.tar.gz
+wget      -c     https://github.com/iredmail/iRedMail/archive/1.6.2.tar.gz
 tar       -xf    1.6.2.tar.gz     -C.
 bash      ./iRedMail-1.6.2/iRedMail.sh
 #访问      http://mail.hanhongju.com/mail/
