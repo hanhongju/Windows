@@ -1,6 +1,4 @@
 # Wordpress安装脚本 @ Debian 11
-#计时
-begin=$(date +%s)
 apt     -y    update
 apt     -y    full-upgrade
 apt     -y    autoremove
@@ -49,14 +47,6 @@ nginx         -vt
 crontab       -l
 netstat       -plnt
 ss            -plnt     |    awk 'NR>1 {print $4,$6}'   |   column   -t
-if            [[  $(nginx    -t     2>&1 )   =~   successful   ]]
-then          echo   "至此，服务器可正常工作。"
-else          echo   "nginx不能正常工作。"
-fi
-#回显nginx、php版本，nginx配置检查和监听端口
-finish=$(date +%s)
-timeconsume=$(( finish - begin ))
-echo   "脚本运行时间$timeconsume秒。"
 #初始化数据库
 mysql_secure_installation
 
@@ -77,7 +67,8 @@ bash    setup.sh
 uninstall () {
 sudo         su
 rm           /etc/nginx/sites-enabled/wordpress.conf
-systemctl    restart   nginx
+systemctl    stop      nginx
+systemctl    disable   nginx
 netstat      -plnt
 
 }
