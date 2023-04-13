@@ -65,7 +65,6 @@ bash    setup.sh
 
 uninstall () {
 sudo         su
-rm           /etc/nginx/sites-enabled/wordpress.conf
 systemctl    stop      nginx
 systemctl    disable   nginx
 netstat      -plnt
