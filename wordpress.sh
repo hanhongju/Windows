@@ -1,4 +1,5 @@
 # Wordpress安装脚本 @ Debian 11
+sudo    su
 apt     -y    update
 apt     -y    full-upgrade
 apt     -y    autoremove
