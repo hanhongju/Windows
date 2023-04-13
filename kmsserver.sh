@@ -1,7 +1,7 @@
 #创建KMS服务器用以激活 Windows 10 系统
 apt     -y     update
 apt     -y     install    wget
-wget    -cP.   https://github.com/Wind4/vlmcsd/releases/download/svn1113/binaries.tar.gz
+wget    -c     https://github.com/Wind4/vlmcsd/releases/download/svn1113/binaries.tar.gz
 tar     -xf    binaries.tar.gz   -C.
 cp      -f     ./binaries/Linux/intel/static/vlmcsd-x86-musl-static     /usr/bin/vlmcsd
 echo    '
