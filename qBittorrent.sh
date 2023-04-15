@@ -26,6 +26,7 @@ sudo    su
 apt     -y    install    wget
 wget    https://github.com/hanhongju/my_script/raw/master/qBittorrent.sh    -O    setup.sh
 bash    setup.sh
+netstat       -plnt
 
 }
 
