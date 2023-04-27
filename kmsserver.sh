@@ -36,7 +36,7 @@ bash    setup.sh
 
 activeinwindows () {
 #在Windows中用管理员身份登录Powershell输入以下代码激活Windows 10
-slmgr -skms  gcphk.aboutnote.live
+slmgr -skms  hk.wenjie.bio
 slmgr -ato
 
 }
