@@ -37,7 +37,7 @@ include        fastcgi_params;
 sed           -i           "s/post_max_size =.*/post_max_size =200M/g"                      /etc/php/7.4/fpm/php.ini
 sed           -i           "s/upload_max_filesize =.*/upload_max_filesize =200M/g"          /etc/php/7.4/fpm/php.ini
 sed           -i           "/max_execution_time/d"              /etc/php/7.4/fpm/php.ini
-echo          "max_execution_time = 400"              >>        /etc/php/7.4/fpm/php.ini
+echo          "max_execution_time = 0"                >>        /etc/php/7.4/fpm/php.ini
 echo          "client_header_buffer_size 2048k;   large_client_header_buffers 10 2048k;"     >      /etc/nginx/conf.d/414.conf
 systemctl     enable       nginx
 systemctl     restart      nginx php7.4-fpm
