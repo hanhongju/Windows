@@ -53,7 +53,6 @@ mysql_secure_installation
 
 
 setupLNMP () {
-sudo    su
 apt     -y    install    wget
 wget    https://github.com/hanhongju/my_script/raw/master/wordpress.sh    -O    setup.sh
 bash    setup.sh
@@ -64,7 +63,6 @@ bash    setup.sh
 
 
 uninstall () {
-sudo         su
 systemctl    stop      nginx
 systemctl    disable   nginx
 netstat      -plnt
@@ -75,7 +73,6 @@ netstat      -plnt
 
 
 directbackup () {
-sudo          su
 mysqldump     -uroot      -pfengkuang     wordpress     >        /home/wordpress/wordpress.sql
 tar           -cf         /home/wordpress.tar           -P       /home/wordpress/
 
