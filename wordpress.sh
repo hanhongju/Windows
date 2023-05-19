@@ -53,7 +53,6 @@ php           -v
 nginx         -t
 crontab       -l
 netstat       -plnt
-ss            -plnt     |    awk 'NR>1 {print $4,$6}'   |   column   -t
 #初始化数据库
 mysql_secure_installation
 
