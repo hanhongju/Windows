@@ -26,6 +26,8 @@ server {
 server_name www.hanhongju.com;
 listen 80;
 listen [::]:80;
+listen 443 ssl;
+listen [::]:443 ssl;
 ssl_certificate           /home/fullchain.pem;
 ssl_certificate_key       /home/privkey.pem;
 if  ( $scheme = http )   {return 301 https://$server_name$request_uri;}
