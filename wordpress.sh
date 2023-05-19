@@ -1,8 +1,14 @@
 # Wordpress安装脚本 @ Debian 11
-apt     -y    update
-apt     -y    full-upgrade
-apt     -y    autoremove
-apt     -y    install       wget curl zip unzip nginx mariadb-server python3-pip php-fpm php-mysql php-xml certbot net-tools
+site=hanhongju.com
+apt   -y    update
+apt   -y    full-upgrade
+apt   -y    autoremove
+apt   -y    install    wget curl zip unzip nginx mariadb-server python3-pip php-fpm php-mysql php-xml certbot net-tools certbot
+pip         install    certbot-dns-cloudflare
+echo        "dns_cloudflare_api_token = jPOSoygxMtPyzr7I47YO3WWA4WrnmFFRgc0xYZ3l"       >       /home/cloudflare_credentials.ini
+certbot     certonly  --agree-tos  --eff-email  -m  86606682@qq.com  --dns-cloudflare  --dns-cloudflare-credentials  /home/cloudflare_credentials.ini  -d  *.$site  --deploy-hook  "chmod -R 777 /etc/letsencrypt/" 
+cp          /etc/letsencrypt/live/$site/fullchain.pem     /home/fullchain.pem
+cp          /etc/letsencrypt/live/$site/privkey.pem       /home/privkey.pem
 #每天备份数据库，cron任务须由crontab安装，直接修改配置文件无效
 echo    '
 * * * * *     date          >>          /home/crontest
@@ -12,10 +18,7 @@ echo    '
 0 4 * * *     mkdir         -p          /home/wordpressbackup/
 0 5 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >    /home/wordpress/wordpress.sql
 0 6 * * *     tar           -cf         /home/wordpressbackup/wordpress$(date +\%Y\%m\%d\-\%H\%M\%S).tar        -P       /home/wordpress/
-0 0 1 * *     systemctl     stop        nginx apache2
-1 0 1 * *     certbot       renew
-2 0 1 * *     chmod         -R   777    /etc/letsencrypt/
-3 0 * * *     systemctl     restart     nginx v2ray trojan
+0 0 1 * *     certbot       renew       --pre-hook "systemctl stop nginx"      --post-hook "systemctl restart nginx v2ray trojan"       --deploy-hook "chmod -R 777 /etc/letsencrypt/" 
 '       |     crontab
 #创建nginx配置文件
 echo '
@@ -23,6 +26,9 @@ server {
 server_name www.hanhongju.com;
 listen 80;
 listen [::]:80;
+ssl_certificate           /home/fullchain.pem;
+ssl_certificate_key       /home/privkey.pem;
+if  ( $scheme = http )   {return 301 https://$server_name$request_uri;}
 root      /home/wordpress/;
 index     index.php index.html index.htm;
 location ~ \.php$ {
