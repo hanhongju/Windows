@@ -1,4 +1,4 @@
-#通过cloudflare API申请证书
+#通过Cloudflare API申请证书
 sudo  su
 site=hanhongju.com
 apt   -y    update
