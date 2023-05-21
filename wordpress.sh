@@ -1,16 +1,12 @@
 # Wordpress安装脚本 @ Debian 11
-site=hanhongju.com
+site=www.hanhongju.com
 apt   -y    update
 apt   -y    full-upgrade
 apt   -y    autoremove
-apt   -y    install    wget curl zip unzip nginx mariadb-server python3-pip php-fpm php-mysql php-xml certbot net-tools certbot
-pip         install    certbot-dns-cloudflare
-echo        "dns_cloudflare_api_token = jPOSoygxMtPyzr7I47YO3WWA4WrnmFFRgc0xYZ3l"       >       /home/cloudflare_credentials.ini
-certbot     certonly  --agree-tos  --eff-email  -m  86606682@qq.com  --dns-cloudflare\
-            --dns-cloudflare-credentials  /home/cloudflare_credentials.ini  -d  *.$site\
-            --deploy-hook  "chmod -R 777 /etc/letsencrypt/" 
-cp          /etc/letsencrypt/live/$site/fullchain.pem     /home/fullchain.pem
-cp          /etc/letsencrypt/live/$site/privkey.pem       /home/privkey.pem
+apt   -y    install   wget curl zip unzip nginx mariadb-server python3-pip php-fpm php-mysql php-xml certbot net-tools certbot
+certbot     certonly  --standalone  -n  --agree-tos  -m  86606682@qq.com  -d  $site\
+            --pre-hook  "systemctl stop nginx"  --post-hook  "systemctl restart nginx"\
+            --deploy-hook "chmod -R 777 /etc/letsencrypt/"
 #每天备份数据库，cron任务须由crontab安装，直接修改配置文件无效
 echo    '
 * * * * *     date          >>          /home/crontest
@@ -30,8 +26,8 @@ listen 80;
 listen [::]:80;
 listen 443 ssl;
 listen [::]:443 ssl;
-ssl_certificate           /home/fullchain.pem;
-ssl_certificate_key       /home/privkey.pem;
+ssl_certificate           /etc/letsencrypt/live/www.hanhongju.com/fullchain.pem;
+ssl_certificate_key       /etc/letsencrypt/live/www.hanhongju.com/privkey.pem;
 if  ( $scheme = http )   {return 301 https://$host$request_uri;}
 root      /home/wordpress/;
 index     index.php index.html index.htm;
