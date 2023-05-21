@@ -5,8 +5,7 @@ apt   -y    full-upgrade
 apt   -y    autoremove
 apt   -y    install   wget curl zip unzip nginx mariadb-server python3-pip php-fpm php-mysql php-xml certbot net-tools certbot
 certbot     certonly  --standalone  -n  --agree-tos  -m  86606682@qq.com  -d  $site\
-            --pre-hook  "systemctl stop nginx"  --post-hook  "systemctl restart nginx"\
-            --deploy-hook "chmod -R 777 /etc/letsencrypt/"
+            --pre-hook  "systemctl stop nginx"  --post-hook  "systemctl restart nginx"
 #每天备份数据库，cron任务须由crontab安装，直接修改配置文件无效
 echo    '
 * * * * *     date          >>          /home/crontest
@@ -16,7 +15,7 @@ echo    '
 0 4 * * *     mkdir         -p          /home/wordpressbackup/
 0 5 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >    /home/wordpress/wordpress.sql
 0 6 * * *     tar           -cf         /home/wordpressbackup/wordpress$(date +\%Y\%m\%d\-\%H\%M\%S).tar        -P       /home/wordpress/
-0 0 1 * *     certbot       renew       --pre-hook "systemctl stop nginx"      --post-hook "systemctl restart nginx v2ray trojan"       --deploy-hook "chmod -R 777 /etc/letsencrypt/" 
+0 0 1 * *     certbot       renew       --pre-hook "systemctl stop nginx"      --post-hook "systemctl restart nginx v2ray trojan"
 '       |     crontab
 #创建nginx配置文件
 echo '
