@@ -15,7 +15,7 @@ echo    '
 0 4 * * *     mkdir         -p          /home/wordpressbackup/
 0 5 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >    /home/wordpress/wordpress.sql
 0 6 * * *     tar           -cf         /home/wordpressbackup/wordpress$(date +\%Y\%m\%d\-\%H\%M\%S).tar        -P       /home/wordpress/
-0 0 1 * *     certbot       renew       --pre-hook "systemctl stop nginx"      --post-hook "systemctl restart nginx v2ray trojan"
+0 0 1 * *     certbot       renew       --pre-hook "systemctl stop nginx"      --post-hook "systemctl restart nginx trojan"
 '       |     crontab
 #创建nginx配置文件
 echo '
