@@ -5,7 +5,7 @@ apt   -y    full-upgrade
 apt   -y    autoremove
 apt   -y    install   wget curl zip unzip nginx mariadb-server python3-pip php-fpm php-mysql php-xml certbot net-tools certbot
 certbot     certonly  --standalone  -n  --agree-tos  -m  86606682@qq.com  -d  $site\
-            --pre-hook  "systemctl stop nginx"  --post-hook "chmod 777 -R /etc/letsencrypt/; systemctl restart nginx trojan"
+            --pre-hook  "systemctl stop nginx"  --post-hook "chmod 777 -R /etc/letsencrypt/; systemctl restart nginx"
 #每天备份数据库，cron任务须由crontab安装，直接修改配置文件无效
 echo    '
 * * * * *     date          >>          /home/crontest
