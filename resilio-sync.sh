@@ -1,4 +1,5 @@
 #私有云盘resilio-sync服务器搭建 @ Debian
+sudo   su
 apt    -y    update
 apt    -y    install    wget
 wget   -c    https://download-cdn.resilio.com/2.7.3.1381/Debian/resilio-sync_2.7.3.1381-1_amd64.deb
@@ -14,28 +15,6 @@ echo   '
 systemctl  enable    resilio-sync
 systemctl  restart   resilio-sync
 netstat    -plnt
-
-
-
-
-directsetup () {
-sudo   su
-apt    -y    install    wget
-wget   https://github.com/hanhongju/my_script/raw/master/resilio-sync.sh    -O    setup.sh
-bash   setup.sh
-
-}
-
-
-
-
-uninstall () {
-sudo   su
-systemctl     stop      resilio-sync
-systemctl     disable   resilio-sync
-netstat       -plnt
-
-}
 
 
 
