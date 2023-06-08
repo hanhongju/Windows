@@ -23,17 +23,6 @@ netstat       -plnt
 
 
 
-directsetup () {
-sudo    su
-apt     -y    install    wget
-wget    https://github.com/hanhongju/my_script/raw/master/kmsserver.sh    -O    setup.sh
-bash    setup.sh
-
-}
-
-
-
-
 activeinwindows () {
 #在Windows中用管理员身份登录Powershell输入以下代码激活Windows 10
 slmgr -skms  hk.wenjie.bio
