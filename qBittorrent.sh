@@ -1,7 +1,5 @@
-# qBittorrent安装脚本 @ Debian 10
 apt     -y    update
 apt     -y    install     qbittorrent-nox net-tools
-#配置服务，启动服务器
 echo   '
 [Unit]
 Description=qBittorrent Command Line Client
@@ -22,17 +20,6 @@ echo        "用户名admin，密码adminadmin，默认下载目录/Downloads/"
 
 
 
-directsetup () {
-sudo   su
-apt    -y    install    wget
-wget   https://github.com/hanhongju/my_script/raw/master/qBittorrent.sh    -O    setup.sh
-bash   setup.sh
-
-}
-
-
-
-
 uninstall () {
 sudo   su
 systemctl     stop      qbittorrent-nox
@@ -40,7 +27,7 @@ systemctl     disable   qbittorrent-nox
 netstat       -plnt
 
 }
-
+# qBittorrent安装脚本 @ Debian 10
 
 
 
