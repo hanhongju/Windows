@@ -1,11 +1,9 @@
-# Wordpress安装脚本 @ Debian 11
 apt   -y    update
 apt   -y    full-upgrade
 apt   -y    autoremove
 apt   -y    install   wget curl zip unzip nginx mariadb-server python3-pip php-fpm php-mysql php-xml certbot net-tools certbot
 certbot     certonly  --standalone  -n  --agree-tos  -m  86606682@qq.com  -d  www.hanhongju.com\
             --pre-hook  "systemctl stop nginx"  --post-hook "chmod 777 -R /etc/letsencrypt/; systemctl restart nginx"
-#每天备份数据库，cron任务须由crontab安装，直接修改配置文件无效
 echo    '
 * * * * *     date          >>          /home/crontest
 0 1 * * *     apt           -y          update
@@ -16,7 +14,6 @@ echo    '
 0 6 * * *     tar           -cf         /home/wordpressbackup/wordpress$(date +\%Y\%m\%d).tar        -P       /home/wordpress/
 0 0 1 * *     certbot       renew
 '       |     crontab
-#创建nginx配置文件
 echo '
 server {
 server_name www.hanhongju.com;
@@ -37,7 +34,6 @@ include        fastcgi_params;
 }
 }
 '             >            /etc/nginx/sites-enabled/wordpress.conf
-#修改上传文件大小限制
 sed           -i           "s/post_max_size =.*/post_max_size =200M/g"                      /etc/php/7.4/fpm/php.ini
 sed           -i           "s/upload_max_filesize =.*/upload_max_filesize =200M/g"          /etc/php/7.4/fpm/php.ini
 sed           -i           "/max_execution_time/d"              /etc/php/7.4/fpm/php.ini
@@ -49,7 +45,6 @@ php           -v
 nginx         -t
 crontab       -l
 netstat       -plnt
-#初始化数据库
 mysql_secure_installation
 
 
@@ -85,18 +80,13 @@ tar           -cf         /home/wordpress.tar           -P       /home/wordpress
 
 
 importbackup () {
-#还原wordpress文件
 tar           -Pxf       /home/wordpress.tar
-#修改数据库登录方式
 mysql         -uroot     -pfengkuang     -e      "update mysql.user set plugin='mysql_native_password' where User='root'"
-#创建新数据库
 mysql         -uroot     -pfengkuang     -e      "DROP DATABASE wordpress"
 mysql         -uroot     -pfengkuang     -e      "CREATE DATABASE wordpress"
 mysql         -uroot     -pfengkuang     -e      "SHOW DATABASEs"
-#启动数据库
 systemctl     enable     mariadb
 systemctl     restart    mariadb
-#导入数据库
 mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress/wordpress.sql
 
 }
@@ -105,7 +95,6 @@ mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress/wordpr
 
 
 installanewsite () {
-#新安装wordpress网页文件；wget的-O参数和-cP参数只能二选一
 wget       -c      https://cn.wordpress.org/latest-zh_CN.tar.gz
 rm         -rf     /home/wordpress/
 tar        -xf     latest-zh_CN.tar.gz     -C     /home/
@@ -118,4 +107,6 @@ chown      -Rf     www-data      /home/wordpress/
 
 
 
-
+# Wordpress安装脚本 @ Debian 11
+#cron任务须由crontab安装，直接修改配置文件无效
+#wget的-O参数和-cP参数只能二选一
