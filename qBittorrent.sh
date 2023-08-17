@@ -18,8 +18,7 @@ netstat     -plnt
 echo        "用户名admin，密码adminadmin，默认下载目录/Downloads/"
 
 
-
-
+directsetup () {
 apt    -y    install    wget
 wget   https://github.com/hanhongju/my_script/raw/master/qBittorrent.sh    -O    setup.sh
 bash   setup.sh
@@ -30,7 +29,6 @@ bash   setup.sh
 
 
 uninstall () {
-sudo   su
 systemctl     stop      qbittorrent-nox
 systemctl     disable   qbittorrent-nox
 netstat       -plnt
