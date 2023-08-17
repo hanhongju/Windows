@@ -1,7 +1,4 @@
-# Ftp服务器安装脚本 @ Debian 10 or Ubuntu 20.04
-# 定义服务器地址
 site=cloud1.thenote.live
-# 安装
 apt         -y        update    
 apt         -y        install      vsftpd net-tools
 ipv4=$(ping -c 2 $site | head -2 | tail -1 | awk '{print $5}' | sed 's/[(:)]//g')
@@ -19,3 +16,4 @@ netstat     -plnt
 
 
 
+# Ftp服务器安装脚本 @ Debian 10 or Ubuntu 20.04
