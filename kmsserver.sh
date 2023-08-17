@@ -1,4 +1,3 @@
-#创建KMS服务器用以激活 Windows 10 系统
 apt     -y     update
 apt     -y     install    wget
 wget    -c     https://github.com/Wind4/vlmcsd/releases/download/svn1113/binaries.tar.gz
@@ -33,6 +32,7 @@ slmgr -ato
 
 
 
+#创建KMS服务器用以激活 Windows 10 系统
 #参考文献
 #https://www.wenzika.com/357.html
 #http://www.kaixinit.com/info/maintenance/3031.html
