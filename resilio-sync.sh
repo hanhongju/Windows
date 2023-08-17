@@ -1,5 +1,4 @@
 #私有云盘resilio-sync服务器搭建 @ Debian
-sudo   su
 apt    -y    update
 apt    -y    install    wget
 wget   -c    https://download-cdn.resilio.com/2.7.3.1381/Debian/resilio-sync_2.7.3.1381-1_amd64.deb
