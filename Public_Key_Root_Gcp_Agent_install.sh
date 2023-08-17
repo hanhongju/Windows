@@ -1,4 +1,4 @@
-#安装公钥，开启ROOT密码登录
+#Public_Key_Install_And_Allow_Root
 sudo          su
 mkdir         /root/.ssh/
 echo    '
@@ -8,6 +8,13 @@ sed           -i          "s/PermitRootLogin .*/PermitRootLogin yes/g"          
 sed           -i          "s/PasswordAuthentication .*/PasswordAuthentication yes/g"          /etc/ssh/sshd_config
 systemctl     restart     sshd
 
+#Gcp_Agent_install.sh
+
+sudo su
+curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh
+bash add-google-cloud-ops-agent-repo.sh --also-install
 
 
 
+
+#安装公钥，开启ROOT密码登录，安装GPC agent
