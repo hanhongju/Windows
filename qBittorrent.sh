@@ -22,7 +22,7 @@ echo        "用户名admin，密码adminadmin，默认下载目录/Downloads/"
 
 directsetup () {
 apt    -y    install    wget
-wget   https://github.com/hanhongju/my_script/raw/master/qBittorrent.sh    -O    setup.sh
+wget   https://raw.githubusercontent.com/hanhongju/my_script/master/qBittorrent.sh    -O    setup.sh
 bash   setup.sh
 
 }
