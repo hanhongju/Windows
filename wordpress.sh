@@ -12,7 +12,7 @@ echo    '
 0 4 * * *     mkdir         -p          /home/wordpressbackup/
 0 5 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >    /home/wordpress/wordpress.sql
 0 6 * * *     tar           -cf         /home/wordpressbackup/wordpress$(date +\%Y\%m\%d).tar        -P       /home/wordpress/
-0 0 1 * *     certbot       renew
+0 7 * * *     certbot       renew
 '       |     crontab
 echo '
 server {
