@@ -33,7 +33,7 @@ slmgr -ato
 
 
 directsetup () {
-yum     -y    install    wget
+apt     -y    install    wget
 wget    https://raw.githubusercontent.com/hanhongju/my_script/master/kmsserver.sh    -O    setup.sh
 bash    setup.sh
 
