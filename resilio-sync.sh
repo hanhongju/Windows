@@ -19,7 +19,7 @@ netstat    -plnt
 
 directsetup () {
 apt     -y    install    wget
-wget    https://github.com/hanhongju/my_script/edit/master/resilio-sync.sh    -O    setup.sh
+wget    https://raw.githubusercontent.com/hanhongju/my_script/master/resilio-sync.sh    -O    setup.sh
 bash    setup.sh
 
 }
