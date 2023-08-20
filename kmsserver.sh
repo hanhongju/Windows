@@ -32,6 +32,16 @@ slmgr -ato
 
 
 
+directsetup () {
+yum     -y    install    wget
+wget    https://raw.githubusercontent.com/hanhongju/my_script/master/kmsserver.sh    -O    setup.sh
+bash    setup.sh
+
+}
+
+
+
+
 #创建KMS服务器用以激活 Windows 10 系统
 #参考文献
 #https://www.wenzika.com/357.html
