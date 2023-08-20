@@ -17,4 +17,14 @@ netstat    -plnt
 
 
 
+directsetup () {
+apt     -y    install    wget
+wget    https://github.com/hanhongju/my_script/edit/master/resilio-sync.sh    -O    setup.sh
+bash    setup.sh
+
+}
+
+
+
+
 #私有云盘resilio-sync服务器搭建 @ Debian
