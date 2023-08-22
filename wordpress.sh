@@ -31,6 +31,7 @@ fastcgi_pass   unix:/run/php/php7.4-fpm.sock;     #php -v 遇到502 Bad Gateway�
 fastcgi_index  index.php;
 fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 include        fastcgi_params;
+client_max_body_size     500M;
 }
 }
 '             >            /etc/nginx/sites-enabled/wordpress.conf
