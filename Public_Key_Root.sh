@@ -7,11 +7,8 @@ sed           -i          "s/PermitRootLogin .*/PermitRootLogin yes/g"          
 sed           -i          "s/PasswordAuthentication .*/PasswordAuthentication yes/g"          /etc/ssh/sshd_config
 systemctl     restart     sshd
 
-#Gcp_Agent_Install
-curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh
-bash add-google-cloud-ops-agent-repo.sh --also-install
 
 
 
 
-#安装公钥，开启ROOT密码登录，安装GPC agent
+#安装公钥，开启ROOT密码登录
