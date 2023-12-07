@@ -1,7 +1,7 @@
 apt   -y    update
 apt   -y    full-upgrade
 apt   -y    autoremove
-apt   -y    install   wget curl zip unzip nginx mariadb-server python3-pip php-fpm php-mysql php-xml certbot net-tools certbot
+apt   -y    install   wget curl zip unzip nginx certbot net-tools mariadb-server python3-pip php8.2-fpm php8.2-mysql php8.2-xml
 certbot     certonly  --standalone  -n  --agree-tos  -m  86606682@qq.com  -d  www.hanhongju.com\
             --pre-hook  "systemctl stop nginx"  --post-hook "chmod 777 -R /etc/letsencrypt/; systemctl restart nginx"
 echo    '
