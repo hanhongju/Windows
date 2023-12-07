@@ -27,7 +27,7 @@ if  ( $scheme = http )    {return 301 https://$server_name$request_uri;}
 root      /home/wordpress/;
 index     index.php index.html index.htm;
 location ~ \.php$ {
-fastcgi_pass   unix:/run/php/php7.4-fpm.sock;     #php -v 遇到502 Bad Gateway时查看php版本，确认php-fpm.sock版本
+fastcgi_pass   unix:/run/php/php8.2-fpm.sock;     #php -v 遇到502 Bad Gateway时查看php版本，确认php-fpm.sock版本为8.2
 fastcgi_index  index.php;
 fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 include        fastcgi_params;
@@ -35,10 +35,10 @@ client_max_body_size     500M;
 }
 }
 '             >            /etc/nginx/sites-enabled/wordpress.conf
-sed           -i           "s/post_max_size =.*/post_max_size =200M/g"                      /etc/php/7.4/fpm/php.ini
-sed           -i           "s/upload_max_filesize =.*/upload_max_filesize =200M/g"          /etc/php/7.4/fpm/php.ini
-sed           -i           "/max_execution_time/d"              /etc/php/7.4/fpm/php.ini
-echo          "max_execution_time = 0"                >>        /etc/php/7.4/fpm/php.ini
+sed           -i           "s/post_max_size =.*/post_max_size =200M/g"                      /etc/php/8.2/fpm/php.ini
+sed           -i           "s/upload_max_filesize =.*/upload_max_filesize =200M/g"          /etc/php/8.2/fpm/php.ini
+sed           -i           "/max_execution_time/d"              /etc/php/8.2/fpm/php.ini
+echo          "max_execution_time = 0"                >>        /etc/php/8.2/fpm/php.ini
 echo          "client_header_buffer_size 2048k;   large_client_header_buffers 10 2048k;"     >      /etc/nginx/conf.d/414.conf
 systemctl     enable       nginx
 systemctl     restart      nginx
