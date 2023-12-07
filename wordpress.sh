@@ -27,7 +27,7 @@ if  ( $scheme = http )    {return 301 https://$server_name$request_uri;}
 root      /home/wordpress/;
 index     index.php index.html index.htm;
 location ~ \.php$ {
-fastcgi_pass   unix:/run/php/php8.2-fpm.sock;     #php -v 遇到502 Bad Gateway时查看php版本，确认php-fpm.sock版本为8.2
+fastcgi_pass   unix:/run/php/php8.2-fpm.sock;     #遇到502 Bad Gateway时使用php -v查看版本，确认php-fpm.sock版本为8.2
 fastcgi_index  index.php;
 fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 include        fastcgi_params;
@@ -42,7 +42,6 @@ echo          "max_execution_time = 0"                >>        /etc/php/8.2/fpm
 echo          "client_header_buffer_size 2048k;   large_client_header_buffers 10 2048k;"     >      /etc/nginx/conf.d/414.conf
 systemctl     enable       nginx
 systemctl     restart      nginx
-php           -v
 nginx         -t
 crontab       -l
 netstat       -plnt
