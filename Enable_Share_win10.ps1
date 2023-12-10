@@ -1,4 +1,3 @@
-
 #将当前网络改为专有网络
 Set-NetConnectionProfile   -Name    (Get-NetConnectionProfile).Name     -NetworkCategory    Private
 #启用Guest用户
@@ -15,3 +14,4 @@ gpupdate /force
 
 
 
+#使用管理员权限的powershell启用文件夹共享 @ Windows 10
