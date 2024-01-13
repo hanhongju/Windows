@@ -10,7 +10,7 @@ reg add HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Lsa /v LimitBlankPasswor
 #计算机配置--windows设置--安全设置--本地策略--用户权限分配	     拒绝从网络访问这台计算机	                      删除“Guest”账号
 secedit       /export            /cfg           security.inf
 (Get-Content security.inf)       -replace      "SeDenyNetworkLogonRight.*" , "SeDenyNetworkLogonRight =" | Set-Content "security.inf"
-secedit       /configure         /cfg           security_new.inf         /db        security.sdb
+secedit       /configure         /cfg           security.inf         /db        security.sdb
 
 
 
