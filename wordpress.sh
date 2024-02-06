@@ -34,6 +34,12 @@ fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 include        fastcgi_params;
 client_max_body_size     500M;
 }
+location / {
+if (-f  $request_filename/index.html) {rewrite (.*) $1/index.html break;}
+if (-f  $request_filename/index.php)  {rewrite (.*) $1/index.php;}
+if (!-f $request_filename)            {rewrite (.*)   /index.php;}
+}
+rewrite /wp-admin$ $scheme://$host$uri/ permanent;
 }
 '             >            /etc/nginx/sites-enabled/wordpress.conf
 sed           -i           "s/post_max_size =.*/post_max_size =200M/g"                      /etc/php/8.2/fpm/php.ini
