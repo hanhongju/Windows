@@ -13,7 +13,7 @@ cd          /root/
 git         clone      https://github.com/gyxuehu/EwoMail.git
 sed         -i         "s/yum install epel-release.*/yum install epel-release -y/g"         /root/EwoMail/install/start.sh
 cd          /root/EwoMail/install/
-bash        start.sh    $site
+bash        start.sh    $site     en
 echo        "127.0.0.1 mail.$site smtp.$site imap.$site"       >>       /etc/hosts
 sed         -i          "s/listen.*/listen 80;/g"              /ewomail/nginx/conf/vhost/rainloop.conf
 sed         -i          "s/listen.*/listen 8010;/g"            /ewomail/nginx/conf/vhost/ewomail-admin.conf
