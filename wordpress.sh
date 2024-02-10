@@ -3,7 +3,7 @@ apt   -y    full-upgrade
 apt   -y    autoremove
 apt   -y    install   wget curl zip unzip nginx certbot net-tools mariadb-server python3-pip redis
 apt   -y    install   php-fpm php-mysql php-xml php-curl php-imagick php-mbstring php-zip php-gd php-intl php-redis
-certbot     certonly  --standalone  -n  --agree-tos  -m  86606682@qq.com  -d  www.hanhongju.com\
+certbot     certonly  --standalone  -n  --agree-tos  -m  admin@hanhongju.com  -d  www.hanhongju.com\
             --pre-hook  "systemctl stop nginx"  --post-hook "chmod 777 -R /etc/letsencrypt/; systemctl restart nginx"
 echo    '
 * * * * *     date          >>          /home/crontest
