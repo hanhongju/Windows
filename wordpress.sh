@@ -57,6 +57,10 @@ mysql_secure_installation
 
 
 
+
+
+
+
 setupLNMP () {
 apt     -y    install    wget
 wget    https://raw.githubusercontent.com/hanhongju/my_script/master/wordpress.sh    -O    setup.sh
@@ -104,7 +108,12 @@ mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress/wordpr
 installanewsite () {
 wget       -c      https://cn.wordpress.org/latest-zh_CN.tar.gz
 rm         -rf     /home/wordpress/
-tar        -xf     latest-zh_CN.tar.gz     -C     /home/
+tar        -xf     latest-zh_CN.tar.gz       -C     /home/
+#phpMyAdmin
+wget       -c      https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip
+unzip      phpMyAdmin-5.2.1-all-languages.zip
+rm         -rf     /home/wordpress/phpmyadmin/
+mv         phpMyAdmin-5.2.1-all-languages           /home/wordpress/phpmyadmin/
 #网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
 chmod      -Rf     777           /home/wordpress/
 chown      -Rf     www-data      /home/wordpress/
