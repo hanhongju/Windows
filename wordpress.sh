@@ -6,13 +6,13 @@ apt   -y    install   php-fpm php-mysql php-xml php-curl php-imagick php-mbstrin
 certbot     certonly  --standalone  -n  --agree-tos  -m  admin@hanhongju.com  -d  www.hanhongju.com\
             --pre-hook  "systemctl stop nginx"  --post-hook "chmod 777 -R /etc/letsencrypt/; systemctl restart nginx"
 echo    '
-* * * * *     date          >>          /home/crontest
+* * * * *     date          >>          /root/crontest
 0 1 * * *     apt           -y          update
 0 2 * * *     apt           -y          full-upgrade
 0 3 * * *     apt           -y          autoremove
-0 4 * * *     mkdir         -p          /home/wordpressbackup/
-0 5 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >    /home/wordpress/wordpress.sql
-0 6 * * *     tar           -cf         /home/wordpressbackup/wordpress$(date +\%Y\%m\%d).tar        -P       /home/wordpress/
+0 4 * * *     mkdir         -p          /root/wordpressbackup/
+0 5 * * *     mysqldump     -uroot      -pfengkuang     wordpress     >    /srv/wordpress/wordpress.sql
+0 6 * * *     tar           -cf         /root/wordpressbackup/wordpress$(date +\%Y\%m\%d).tar        -P       /srv/wordpress/
 0 7 * * *     certbot       renew
 '       |     crontab
 echo '
@@ -25,7 +25,7 @@ listen [::]:443 ssl;
 ssl_certificate           /etc/letsencrypt/live/www.hanhongju.com/fullchain.pem;
 ssl_certificate_key       /etc/letsencrypt/live/www.hanhongju.com/privkey.pem;
 if  ( $scheme = http )    {return 301 https://$server_name$request_uri;}
-root      /home/wordpress/;
+root      /srv/wordpress/;
 index     index.php index.html index.htm;
 location ~ \.php$ {
 fastcgi_pass   unix:/run/php/php8.2-fpm.sock;     #遇到502 Bad Gateway时使用php -v查看版本，确认php-fpm.sock版本为8.2
@@ -82,8 +82,8 @@ netstat      -plnt
 
 
 directbackup () {
-mysqldump     -uroot      -pfengkuang     wordpress     >        /home/wordpress/wordpress.sql
-tar           -cf         /home/wordpress$(date +\%Y\%m\%d).tar       -P      /home/wordpress/
+mysqldump     -uroot      -pfengkuang     wordpress     >        /srv/wordpress/wordpress.sql
+tar           -cf         /root/wordpress$(date +\%Y\%m\%d).tar       -P      /srv/wordpress/
 
 }
 
@@ -91,14 +91,14 @@ tar           -cf         /home/wordpress$(date +\%Y\%m\%d).tar       -P      /h
 
 
 importbackup () {
-tar           -Pxf       /home/wordpress.tar
+tar           -Pxf       /srv/wordpress.tar
 mysql         -uroot     -pfengkuang     -e      "update mysql.user set plugin='mysql_native_password' where User='root'"
 mysql         -uroot     -pfengkuang     -e      "DROP DATABASE wordpress"
 mysql         -uroot     -pfengkuang     -e      "CREATE DATABASE wordpress"
 mysql         -uroot     -pfengkuang     -e      "SHOW DATABASEs"
 systemctl     enable     mariadb
 systemctl     restart    mariadb
-mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress/wordpress.sql
+mysql         -uroot     -pfengkuang     wordpress   <    /srv/wordpress/wordpress.sql
 
 }
 
@@ -107,16 +107,16 @@ mysql         -uroot     -pfengkuang     wordpress   <    /home/wordpress/wordpr
 
 installanewsite () {
 wget       -c      https://cn.wordpress.org/latest-zh_CN.tar.gz
-rm         -rf     /home/wordpress/
-tar        -xf     latest-zh_CN.tar.gz       -C     /home/
+rm         -rf     /srv/wordpress/
+tar        -xf     latest-zh_CN.tar.gz       -C     /srv/
 #phpMyAdmin
 wget       -c      https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip
 unzip      phpMyAdmin-5.2.1-all-languages.zip
-rm         -rf     /home/wordpress/phpmyadmin/
-mv         phpMyAdmin-5.2.1-all-languages           /home/wordpress/phpmyadmin/
+rm         -rf     /srv/wordpress/phpmyadmin/
+mv         phpMyAdmin-5.2.1-all-languages           /srv/wordpress/phpmyadmin/
 #网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
-chmod      -Rf     777           /home/wordpress/
-chown      -Rf     www-data      /home/wordpress/
+chmod      -Rf     777           /srv/wordpress/
+chown      -Rf     www-data      /srv/wordpress/
 
 }
 
