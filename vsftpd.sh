@@ -7,7 +7,7 @@ echo                  "pasv_address=$ipv4"             >>            /etc/vsftpd
 sed         -i        's/^#\(write_enable=\)/\1/g'                   /etc/vsftpd.conf
 sed         -i        's/\(listen=\).*/\1YES/g'                      /etc/vsftpd.conf
 sed         -i        's/listen_ipv6=.*/listen_ipv6=NO/g'            /etc/vsftpd.conf
-useradd     -m        hhj      -d      /usr/hhj/
+useradd     -m        hhj      -d      /home/hhj/
 echo        -e        "hhj\nhhj"           |             passwd  hhj
 systemctl   enable    vsftpd
 systemctl   restart   vsftpd
