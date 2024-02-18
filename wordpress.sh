@@ -117,6 +117,7 @@ mv         phpMyAdmin-5.2.1-all-languages           /srv/wordpress/phpmyadmin/
 #网页文件授权，否则会出现无法创建wp配置文件或无法安装主题的问题
 chmod      -Rf     777           /srv/wordpress/
 chown      -Rf     www-data      /srv/wordpress/
+chmod      -Rf     755           /srv/wordpress/wp-content/
 
 }
 
