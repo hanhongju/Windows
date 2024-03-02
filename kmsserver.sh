@@ -24,7 +24,7 @@ netstat       -plnt
 
 activeinwindows () {
 #在Windows中用管理员身份登录Powershell输入以下代码激活Windows 10
-slmgr -skms  8.219.154.228
+slmgr -skms  kms.03k.org
 slmgr -ato
 
 }
