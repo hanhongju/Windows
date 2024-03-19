@@ -24,8 +24,8 @@ netstat       -plnt
 
 activate_windows () {
 #在Windows中用管理员身份登录Powershell输入以下代码激活Windows 10
-slmgr    /ipk   TFP9Y-VCY3P-VVH3T-8XXCC-MF4YK
-slmgr    /skms  kms.03k.org
+slmgr    /ipk    TFP9Y-VCY3P-VVH3T-8XXCC-MF4YK
+slmgr    /skms   kms.03k.org
 slmgr    /ato
 
 #在Windows中用管理员身份登录Powershell输入以下代码激活Windows 11
@@ -34,6 +34,7 @@ slmgr    /skms   kms.03k.org
 slmgr    /ato
 
 }
+
 
 
 
@@ -50,6 +51,7 @@ cscript   ospp.vbs    /dstatus
 
 
 
+
 directsetup () {
 apt     -y    install    wget
 wget    https://raw.githubusercontent.com/hanhongju/my_script/master/kmsserver.sh    -O    setup.sh
@@ -60,7 +62,6 @@ bash    setup.sh
 
 
 
-#创建KMS服务器用以激活 Windows 10 系统
 #参考文献
 #https://www.wenzika.com/357.html
 #http://www.kaixinit.com/info/maintenance/3031.html
