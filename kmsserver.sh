@@ -22,13 +22,31 @@ netstat       -plnt
 
 
 
-activeinwindows () {
+activate_windows () {
 #在Windows中用管理员身份登录Powershell输入以下代码激活Windows 10
-slmgr -skms  kms.03k.org
-slmgr -ato
+slmgr    /ipk   TFP9Y-VCY3P-VVH3T-8XXCC-MF4YK
+slmgr    /skms  kms.03k.org
+slmgr    /ato
+
+#在Windows中用管理员身份登录Powershell输入以下代码激活Windows 11
+slmgr    /ipk    NPPR9-FWDCX-D2C8J-H872K-2YT43
+slmgr    /skms   kms.03k.org
+slmgr    /ato
 
 }
 
+
+
+activate_office () {
+cd       "C:\Program Files\Microsoft Office\Office16"
+cd       "C:\Program Files (x86)\Microsoft Office\Office16"
+cscript   ospp.vbs    /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
+cscript   ospp.vbs    /sethst:kms.03k.org
+cscript   ospp.vbs    /act
+cscript   ospp.vbs    /dstatus
+#cscript  ospp.vbs    /unpkey:all
+
+}
 
 
 
