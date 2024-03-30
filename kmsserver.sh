@@ -24,7 +24,7 @@ netstat       -plnt
 
 activate_windows () {
 #在Windows中用管理员身份登录Powershell输入以下代码激活Windows 10
-slmgr    /ipk    TFP9Y-VCY3P-VVH3T-8XXCC-MF4YK
+slmgr    /ipk    J2WWN-Q4338-3GFW9-BWQVK-MG9TT
 slmgr    /skms   kms.03k.org
 slmgr    /ato
 
