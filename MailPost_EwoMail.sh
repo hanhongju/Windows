@@ -8,11 +8,11 @@ else      echo     "添加SWAP空间，大小4000M"
           swapon   /mnt/swap
           echo     '/mnt/swap swap swap defaults 0 0'      >>       /etc/fstab
 fi
-yum         -y         install        wget net-tools
-wget        -c         https://github.com/hanhongju/my_script/raw/master/ewomail-1.15.1b.tar.gz
-tar         -zxvf      ewomail-1.15.1b.tar.gz
+yum         -y          install        wget net-tools
+wget        -c          https://github.com/hanhongju/my_script/raw/master/ewomail-1.15.1b.tar.gz
+tar         -zxvf       ewomail-1.15.1b.tar.gz
 cd          /root/ewomail/install/
-sed         -i         "s/yum install epel-release.*/yum install epel-release -y/g"         start.sh
+sed         -i          "s/yum install epel-release.*/yum install epel-release -y/g"         start.sh
 bash        start.sh    $site
 echo        "127.0.0.1 mail.$site smtp.$site imap.$site"       >>       /etc/hosts
 sed         -i          "s/listen.*/listen 80;/g"              /ewomail/nginx/conf/vhost/rainloop.conf
