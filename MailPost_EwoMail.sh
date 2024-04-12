@@ -10,7 +10,7 @@ else      echo     "添加SWAP空间，大小4000M"
 fi
 yum         -y         install        git net-tools
 cd          /root/
-git         clone      https://github.com/hanhongju/EwoMail.git
+git         clone      https://github.com/gyxuehu/EwoMail.git
 sed         -i         "s/yum install epel-release.*/yum install epel-release -y/g"         /root/EwoMail/install/start.sh
 cd          /root/EwoMail/install/
 bash        start.sh    $site     en
