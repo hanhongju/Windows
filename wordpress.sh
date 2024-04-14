@@ -4,7 +4,7 @@ apt     -y    install   wget curl zip unzip nginx certbot net-tools mariadb-serv
 apt     -y    install   php-fpm php-mysql php-xml php-curl php-imagick php-mbstring php-zip php-gd php-intl php-redis
 certbot       delete       --noninteractive    --cert-name    www.hanhongju.com
 certbot       certonly     --noninteractive    --domain       www.hanhongju.com    --standalone    --agree-tos    --email     admin@hanhongju.com\
-              --pre-hook  "systemctl stop nginx"  --post-hook "chmod 777 -R /etc/letsencrypt/; systemctl restart nginx"
+              --pre-hook   "systemctl stop nginx"  --post-hook "chmod 777 -R /etc/letsencrypt/; systemctl restart nginx"
 echo    '
 * * * * *     date          >>          /root/crontest
 0 1 * * *     apt           -y          update
