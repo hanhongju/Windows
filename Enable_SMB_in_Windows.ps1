@@ -2,6 +2,9 @@
 #使用管理员权限的powershell运行以下代码
 #将当前网络改为专有网络
 Set-NetConnectionProfile        -Name  (Get-NetConnectionProfile).Name        -NetworkCategory  Private
+#在SMB服务器上启用SMBv2和SMBv3
+Get-SmbServerConfiguration | Select EnableSMB1Protocol, EnableSMB2Protocol
+Set-SmbServerConfiguration      -EnableSMB2Protocol  $true       -Force
 #客户端主机开启SMB大型MTU支持提升文件传输效率，并禁用带宽限制
 Set-SmbClientConfiguration      -EnableBandwidthThrottling  0       -EnableLargeMtu  1      -Force
 #计算机配置--windows设置--安全设置--本地策略--安全选项	       帐户：来宾帐户状态	                            设置为：已启用
