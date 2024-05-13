@@ -3,6 +3,7 @@
 #将当前网络改为专有网络
 Set-NetConnectionProfile        -Name  (Get-NetConnectionProfile).Name        -NetworkCategory  Private
 #在SMB服务器上启用SMBv2和SMBv3
+#SMBv1存在重大安全漏洞，强烈建议不要使用它
 Get-SmbServerConfiguration | Select EnableSMB1Protocol, EnableSMB2Protocol
 Set-SmbServerConfiguration      -EnableSMB2Protocol  $true       -Force
 #客户端主机开启SMB大型MTU支持提升文件传输效率，并禁用带宽限制
