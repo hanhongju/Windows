@@ -5,5 +5,4 @@ pause
 
 
 
-::NB50TL
-::N960KR
+::P775TM
