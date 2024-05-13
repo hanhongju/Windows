@@ -5,4 +5,4 @@ pause
 
 
 
-::修改win11下电脑型号 Change_OEM_type
+::修改windows系统信息里的电脑型号
