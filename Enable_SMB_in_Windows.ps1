@@ -1,4 +1,3 @@
-#开启文件共享（SMB）和打印机共享
 #打开网络连接；查看网络属性；勾选“Microsoft 网络的文件和打印机共享”
 #使用管理员权限的powershell运行以下代码
 #将当前网络改为专有网络
@@ -17,4 +16,4 @@ secedit       /configure         /cfg           security.inf         /db        
 
 
 
-#开启启用文件夹共享 @ Windows 10
+#开启文件共享（SMB）和打印机共享
