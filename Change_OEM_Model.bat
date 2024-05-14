@@ -1,6 +1,7 @@
-reg   add   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation       /v  Model      /t  REG_SZ      /d  N960KR      /f
+reg   add   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation      /f      /v  Model     /t  REG_SZ     /d  N960KR
 pause
 ::P775TM
+::Z370PD3
 
 
 
