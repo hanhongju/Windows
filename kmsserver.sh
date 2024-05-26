@@ -35,9 +35,9 @@ slmgr    /ato
 activate_office () {
 cd       "C:\Program Files\Microsoft Office\Office16"
 cd       "C:\Program Files (x86)\Microsoft Office\Office16"
+cscript   ospp.vbs    /dstatus
 cscript   ospp.vbs    /sethst:kms.03k.org
 cscript   ospp.vbs    /act
-cscript   ospp.vbs    /dstatus
 #cscript  ospp.vbs    /unpkey:XXXXX
 
 }
