@@ -32,7 +32,7 @@ slmgr    /ato
 
 
 
-activate_office () {
+activate_LTSC_office () {
 cd       "C:\Program Files\Microsoft Office\Office16"
 cd       "C:\Program Files (x86)\Microsoft Office\Office16"
 cscript   ospp.vbs    /dstatus
