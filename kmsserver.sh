@@ -23,6 +23,7 @@ netstat       -plnt
 
 
 activate_windows () {
+cd             "C:\Windows\System32"
 cscript.exe    slmgr.vbs    /ipk    W269N-WFGWX-YVC9B-4J6C9-T83GX
 cscript.exe    slmgr.vbs    /skms          kms.03k.org
 cscript.exe    slmgr.vbs    /ato
