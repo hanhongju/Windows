@@ -23,9 +23,9 @@ netstat       -plnt
 
 
 activate_windows () {
-slmgr    /ipk    W269N-WFGWX-YVC9B-4J6C9-T83GX
-slmgr    /skms   kms.03k.org
-slmgr    /ato
+cscript.exe    slmgr.vbs    /ipk    W269N-WFGWX-YVC9B-4J6C9-T83GX
+cscript.exe    slmgr.vbs    /skms          kms.03k.org
+cscript.exe    slmgr.vbs    /ato
 
 }
 
