@@ -83,7 +83,7 @@ netstat      -plnt
 
 directbackup () {
 mysqldump     -uroot      -pfengkuang     wordpress     >        /srv/wordpress/wordpress.sql
-tar           -cf         /root/wordpress$(date +\%Y\%m\%d).tar       -P      /srv/wordpress/
+tar           -cf         /root/wordpressbackup/wordpress$(date +\%Y\%m\%d).tar       -P      /srv/wordpress/
 
 }
 
