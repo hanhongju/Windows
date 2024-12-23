@@ -51,6 +51,7 @@ systemctl     enable       nginx
 systemctl     restart      nginx
 nginx         -t
 crontab       -l
+sysctl        -p
 netstat       -plnt
 mysql_secure_installation
 
