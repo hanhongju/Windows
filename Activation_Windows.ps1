@@ -4,4 +4,6 @@ Start-Process C:\Users\hj\Downloads\MAS_AIO.cmd
 
 
 
-# Windows系统激活脚本，需使用
+
+
+# Windows系统激活脚本，需使用http:8081代理，否则连不上github
