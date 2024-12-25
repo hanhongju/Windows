@@ -5,4 +5,4 @@ reg   add   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInfo
 
 
 
-#修改windows11系统信息里的电脑型号
+# 修改系统设置-关于-设备规格下面的一行字，这是系统OEM信息
