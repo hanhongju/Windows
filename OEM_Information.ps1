@@ -1,7 +1,7 @@
 New-Item          -Path REGISTRY::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation `
                   -Force
 New-ItemProperty  -Path REGISTRY::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation `
-                  -Force  -PropertyType String  -Name Model  -Value "A Property of Hanhongju"
+                  -Force  -Type String  -Name Model  -Value "A Property of Hanhongju"
 Remove-Item       -Path REGISTRY::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation `
                   -Recurse  -ErrorAction SilentlyContinue
 
