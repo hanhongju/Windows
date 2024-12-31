@@ -10,11 +10,11 @@ Set-SmbServerConfiguration       -EnableSMB2Protocol  $true          -Force
 Set-SmbClientConfiguration       -EnableBandwidthThrottling  0       -EnableLargeMtu  1      -Force
 # 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-用户权限分配：将Guest添加到“从网络访问此计算机”列表，并从“拒绝从网络访问这台计算机”和“拒绝本地登录”列表中删除
 [byte[]]$Value = @("42","00","00","00")
-Set-ItemProperty -Path  "HKLM:\SECURITY\Policy\Accounts\S-1-5-*-501\ActSysAc"  -Name "(Default)"        -Type None -Value  $Value
+Set-ItemProperty  -Path "HKLM:\SECURITY\Policy\Accounts\S-1-5-*-501\ActSysAc"    -Name "(Default)"     -Type None    -Value $Value
 # 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-安全选项：
 # "restrictanonymous"= 0 表示启用来宾账户。"LimitBlankPasswordUse"= 0 表示禁用"账户：使用空密码的本地帐户只允许进行控制台登录"
-Set-ItemProperty  -Path "HKLM:\SYSTEM\ControlSet001\Control\Lsa"  -Name restrictanonymous         -Type DWord  -Value 0
-Set-ItemProperty  -Path "HKLM:\SYSTEM\ControlSet001\Control\Lsa"  -Name LimitBlankPasswordUse     -Type DWord  -Value 0
+Set-ItemProperty  -Path "HKLM:\SYSTEM\ControlSet001\Control\Lsa"    -Name restrictanonymous         -Type DWord    -Value 0
+Set-ItemProperty  -Path "HKLM:\SYSTEM\ControlSet001\Control\Lsa"    -Name LimitBlankPasswordUse     -Type DWord    -Value 0
 # 计算机配置--windows设置--安全设置--本地策略--安全选项	       帐户：来宾帐户状态	                            设置为：已启用
 net    user    guest             /active:yes
 
