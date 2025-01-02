@@ -1,5 +1,5 @@
 # 打开网络连接；查看网络属性；勾选“Microsoft 网络的文件和打印机共享”
-# 使用管理员权限的powershell运行以下代码
+# 使用管理员权限的powershell运行以下代码，重启后生效
 # 将当前网络改为专有网络
 Set-NetConnectionProfile         -Name  (Get-NetConnectionProfile).Name        -NetworkCategory  Private
 # SMBv1存在重大安全漏洞，强烈建议不要使用它。
