@@ -23,3 +23,9 @@ foreach ($disk in $disks) {
     Write-Host "正在更新磁盘 $($disk.Name):"
     icacls $drivePath /grant "Everyone:(OI)(CI)(F)"
 }
+
+
+
+
+
+#开启文件共享（SMB）和打印机共享
