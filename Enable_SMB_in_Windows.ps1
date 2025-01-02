@@ -14,6 +14,7 @@ Set-ItemProperty  -Path "HKLM:\SECURITY\Policy\Accounts\S-1-5-*-501\ActSysAc"   
 # 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-安全选项："LimitBlankPasswordUse"= 0 表示禁用“账户：使用空密码的本地帐户只允许进行控制台登录”
 Set-ItemProperty  -Path "HKLM:\SYSTEM\ControlSet001\Control\Lsa"       -Name LimitBlankPasswordUse     -Type DWord   -Value 0
 Set-ItemProperty  -Path "HKLM:\SYSTEM\ControlSet001\Control\Lsa"       -Name restrictanonymous         -Type DWord   -Value 0
+Set-ItemProperty  -Path "HKLM:\SYSTEM\ControlSet001\Control\Lsa"       -Name restrictanonymoussam         -Type DWord   -Value 0
 # 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-安全选项：启用“帐户：来宾帐户状态”
 net    user    guest    /active:yes
 # 获取所有磁盘的根路径
