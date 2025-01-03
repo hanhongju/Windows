@@ -23,7 +23,8 @@ Set-ItemProperty  -Path REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Contro
                   -Name restrictanonymous          -Type DWord   -Value 0
 # 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-安全选项：启用“帐户：来宾帐户状态”
 net    user   guest     /active:yes
-Get-WmiObject Win32_UserAccount   -filter  "LocalAccount=True AND Name='Guest' "   |   Select-Object Domain,Name,Disabled
+Get-WmiObject Win32_UserAccount `
+-filter "LocalAccount=True AND Name='Guest' " | Select-Object Domain,Name,Disabled
 secedit       /export   /cfg      C:\security.inf
 # 获取所有磁盘的根路径
 $disks = Get-PSDrive -PSProvider FileSystem
