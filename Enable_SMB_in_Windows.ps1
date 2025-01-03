@@ -33,4 +33,4 @@ foreach ($disk in $disks) {
 
 
 
-#开启文件共享（SMB）和打印机共享
+# 参考文献：https://www.tenforums.com/tutorials/49753-turn-off-file-printer-sharing-windows-10-a.html
