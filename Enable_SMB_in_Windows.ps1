@@ -20,6 +20,7 @@ Set-ItemProperty  -Path "HKLM:\SYSTEM\ControlSet001\Control\Lsa"       -Name Lim
 Set-ItemProperty  -Path "HKLM:\SYSTEM\ControlSet001\Control\Lsa"       -Name restrictanonymous         -Type DWord   -Value 0
 # 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-安全选项：启用“帐户：来宾帐户状态”
 net    user    guest    /active:yes
+Get-WmiObject Win32_UserAccount   -filter  "LocalAccount=True AND Name='Guest' "   |   Select-Object Domain,Name,Disabled
 # 获取所有磁盘的根路径
 $disks = Get-PSDrive -PSProvider FileSystem
 # 遍历所有磁盘，授予Everyone访问所有磁盘权限
