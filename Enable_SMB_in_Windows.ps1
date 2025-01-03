@@ -17,10 +17,13 @@ Set-ItemProperty  -Path REGISTRY::HKEY_LOCAL_MACHINE\SECURITY\Policy\Accounts\S-
                   -Name "(Default)"                             -Value $Value
 # 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-安全选项：禁用“账户：使用空密码的本地帐户只允许进行控制台登录”
 Set-ItemProperty  -Path REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Lsa `
-                  -Name LimitBlankPasswordUse     -Type DWord   -Value 0
+                  -Name LimitBlankPasswordUse      -Type DWord   -Value 0
 # 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-安全选项：禁用“网络访问: 不允许 SAM 帐户和共享的匿名枚举”
 Set-ItemProperty  -Path REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Lsa `
-                  -Name restrictanonymous         -Type DWord   -Value 0
+                  -Name restrictanonymous          -Type DWord   -Value 0
+# 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-安全选项：启用“网络访问: 将 Everyone 权限应用于匿名用户”
+Set-ItemProperty  -Path REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa `
+                  -Name everyoneIncludesAnonymous  -Type DWord   -Value 1
 # 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-安全选项：启用“帐户：来宾帐户状态”
 net    user   guest     /active:yes
 Get-WmiObject Win32_UserAccount   -filter  "LocalAccount=True AND Name='Guest' "   |   Select-Object Domain,Name,Disabled
