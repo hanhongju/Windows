@@ -6,4 +6,4 @@ Set-ItemProperty  -Path REGISTRY::HKEY_LOCAL_MACHINE\Software\Policies\Microsoft
 
 
 
-# 解除设备安装限制
+# Win10系统提示“系统策略禁止安装此设备，请与系统管理员联系”
