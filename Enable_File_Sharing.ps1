@@ -1,10 +1,10 @@
 # 使用管理员权限的powershell运行以下代码，重启后生效
 # 设置-网络和Internet-状态-属性-网络配置文件：选择“专用”
 Set-NetConnectionProfile   -Name  (Get-NetConnectionProfile).Name                 -NetworkCategory  Private
+# 设置-网络和Internet-状态-更改适配器选项-当前网络连接属性：勾选“Microsoft 网络的文件和打印机共享”
+Enable-NetAdapterBinding   -Name  (Get-NetConnectionProfile).InterfaceAlias       -ComponentID  ms_server
 # 设置-网络和Internet-状态-网络和共享中心-更改高级共享设置-专用-启用文件和打印机共享，英文版系统"File And Printer Sharing"
 Set-NetFirewallRule        -DisplayGroup  "文件和打印机共享"    -Enabled  True     -Profile  Private
-# 设置-网络和Internet-状态-更改适配器选项-WLAN2属性：启用“Microsoft 网络的文件和打印机共享”
-Enable-NetAdapterBinding   -Name  (Get-NetConnectionProfile).InterfaceAlias       -ComponentID  ms_server
 # SMBv1存在重大安全漏洞，强烈建议不要使用它。
 Get-SmbServerConfiguration   |   Select  EnableSMB1Protocol, EnableSMB2Protocol
 # 在SMB服务器上启用SMBv2和SMBv3，因为SMBv2和SMBv3共用一个栈，所以在启用或禁用 SMBv2时，也会启用或禁用SMBv3。
