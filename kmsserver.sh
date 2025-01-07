@@ -46,15 +46,6 @@ cscript.exe    ospp.vbs    /act
 
 
 
-directsetup () {
-apt     -y    install    wget
-wget    https://raw.githubusercontent.com/hanhongju/my_script/master/kmsserver.sh    -O    setup.sh
-bash    setup.sh
-
-}
-
-
-
 
 #参考文献
 #https://www.wenzika.com/357.html
