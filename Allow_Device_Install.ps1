@@ -8,7 +8,7 @@ Set-ExecutionPolicy       Unrestricted    -Force
 Import-Module             -Name PolicyFileEditor
 Set-PolicyFileEntry       -Path C:/Windows/system32/GroupPolicy/Machine/Registry.pol `
                           -Key Software\Policies\Microsoft\Windows\DeviceInstall\Restrictions `
-                          -ValueName AllowAdminInstall        -Type DWord      -Data 1 
+                          -ValueName AllowAdminInstall        -Type DWord      -Data 1
 
 
 
