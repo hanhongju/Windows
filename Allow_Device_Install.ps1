@@ -9,9 +9,9 @@ Import-Module             -Name PolicyFileEditor
 Set-PolicyFileEntry       -Path C:/Windows/system32/GroupPolicy/Machine/Registry.pol `
                           -Key  Software\Policies\Microsoft\Windows\DeviceInstall\Restrictions `
                           -ValueName AllowAdminInstall        -Type DWord      -Data 1
-# 以上代码更改组策略历史文件，使组策略正确显示，以下代码更改注册表，使更改生效
-Set-ItemProperty          -Path REGISTRY::HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\DeviceInstall\Restrictions `
-                          -Name AllowAdminInstall             -Type DWord      -Value 1
+gpupdate
+
+
 
 
 
@@ -20,3 +20,4 @@ Set-ItemProperty          -Path REGISTRY::HKEY_LOCAL_MACHINE\Software\Policies\M
 # https://stackoverflow.com/questions/69295465/windows-10-local-group-policy-edit-via-powershell
 # https://gerane.github.io/powershell/Local-gpo-powershell/
 # https://bbs.csdn.net/topics/320018136
+# https://superuser.com/questions/1192405/why-gpedit-and-the-corresponding-registry-entries-are-not-synchronized
