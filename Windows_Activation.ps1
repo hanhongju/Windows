@@ -7,14 +7,6 @@ Start-Process     "C:\Users\Public\Downloads\MAS_AIO.cmd"
 
 
 
-#无需使用代理
-Invoke-WebRequest -Uri "https://ghgo.xyz/https://raw.githubusercontent.com/massgravel/Microsoft-Activation-Scripts/refs/heads/master/MAS/All-In-One-Version-KL/MAS_AIO.cmd" `
-                  -OutFile "C:\Users\Public\Downloads\MAS_AIO.cmd"
-
-Start-Process     "C:\Users\Public\Downloads\MAS_AIO.cmd"
-
-
-
 
 
 # Windows和Office激活脚本
