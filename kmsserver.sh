@@ -24,8 +24,8 @@ netstat       -plnt
 
 activate_windows () {
 cd             "C:\Windows\System32"
-cscript.exe    slmgr.vbs    /ipk    W269N-WFGWX-YVC9B-4J6C9-T83GX
 cscript.exe    slmgr.vbs    /skms   kms.03k.org
+cscript.exe    slmgr.vbs    /ipk    W269N-WFGWX-YVC9B-4J6C9-T83GX
 cscript.exe    slmgr.vbs    /ato
 
 }
@@ -37,13 +37,13 @@ activate_LTSC_office () {
 cd             "C:\Program Files\Microsoft Office\Office16"
 cd             "C:\Program Files (x86)\Microsoft Office\Office16"
 cscript.exe    ospp.vbs    /dstatus
-# Office LTSC 专业增强版 2024
-cscript.exe    ospp.vbs    /inpkey:XJ2XN-FW8RK-P4HMP-DKDBV-GCVGB
-# Project Professional 2024
-cscript.exe    ospp.vbs    /inpkey:FQQ23-N4YCY-73HQ3-FM9WC-76HF4
-# Visio LTSC Professional 2024
-cscript.exe    ospp.vbs    /inpkey:B7TN8-FJ8V3-7QYCP-HQPMV-YY89G
 cscript.exe    ospp.vbs    /sethst:kms.03k.org
+# Office LTSC Professional Plus 2021
+cscript.exe    ospp.vbs    /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
+# Project Professional 2021
+cscript.exe    ospp.vbs    /inpkey:FTNWT-C6WBT-8HMGF-K9PRX-QV9H8
+# Visio LTSC Professional 2021
+cscript.exe    ospp.vbs    /inpkey:KNH8D-FGHT4-T8RK3-CTDYJ-K2HT4
 cscript.exe    ospp.vbs    /act
 #cscript.exe   ospp.vbs    /unpkey:XXXXX
 
