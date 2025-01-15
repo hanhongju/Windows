@@ -46,7 +46,7 @@ cscript.exe    ospp.vbs    /inpkey:FTNWT-C6WBT-8HMGF-K9PRX-QV9H8
 # Visio LTSC Professional 2021
 cscript.exe    ospp.vbs    /inpkey:KNH8D-FGHT4-T8RK3-CTDYJ-K2HT4
 cscript.exe    ospp.vbs    /act
-#cscript.exe   ospp.vbs    /unpkey:XXXXX
+# cscript.exe   ospp.vbs   /unpkey:
 
 }
 
