@@ -37,7 +37,12 @@ activate_LTSC_office () {
 cd             "C:\Program Files\Microsoft Office\Office16"
 cd             "C:\Program Files (x86)\Microsoft Office\Office16"
 cscript.exe    ospp.vbs    /dstatus
+# Office LTSC 专业增强版 2024
 cscript.exe    ospp.vbs    /inpkey:XJ2XN-FW8RK-P4HMP-DKDBV-GCVGB
+# Project Professional 2024
+cscript.exe    ospp.vbs    /inpkey:FQQ23-N4YCY-73HQ3-FM9WC-76HF4
+# Visio LTSC Professional 2024
+cscript.exe    ospp.vbs    /inpkey:B7TN8-FJ8V3-7QYCP-HQPMV-YY89G
 cscript.exe    ospp.vbs    /sethst:kms.03k.org
 cscript.exe    ospp.vbs    /act
 #cscript.exe   ospp.vbs    /unpkey:XXXXX
