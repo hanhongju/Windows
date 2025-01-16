@@ -1,22 +1,24 @@
-
-
 # 定义要添加的新路径
-$newPath = "C:\Users\hj\Downloads\ffmpeg-master-latest-win64-gpl-shared\bin"
+$NewPath = "C:\Users\hj\Downloads\ffmpeg-master-latest-win64-gpl-shared\bin"
 
 # 获取当前用户环境变量PATH的值
-$currentPath = [System.Environment]::GetEnvironmentVariable("PATH", "Machine")
-# 将新路径添加到当前PATH中，注意分号作为分隔符
-$updatedPath = "$currentPath;$newPath"
+$CurrentPath = [Environment]::GetEnvironmentVariable("PATH", "Machine")
+# 检查新路径是否已存在于Path中
+if ($CurrentPath -like "*$newPath*") {
+    Write-Host "新路径已存在于系统Path变量中，无需添加。"
+} else {
+        # 如果不存在，将新路径添加到Path
+    $UpdatedPath = "$CurrentPath;$NewPath"
+    [Environment]::SetEnvironmentVariable("PATH", $UpdatedPath, "Machine")
+    # 重新加载环境变量，使更改生效
+    $Env:Path = [Environment]::GetEnvironmentVariable("Path","Machine")
+    Write-Host "新路径已添加到系统Path变量。"
+}
+# 验证PATH环境变量是否已成功更新
+$Env:Path  -split ";" | Format-List
 
-# 将更新后的PATH值设置回环境变量中
-[System.Environment]::SetEnvironmentVariable("PATH", $updatedPath, "Machine")
-
-$updatedPath = "C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\"
 
 
 
-Get-ChildItem Env:Path| Format-List
-$Env:Path  -split ";"
 
-
-
+# 添加环境变量PATH
