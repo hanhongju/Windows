@@ -1,5 +1,5 @@
 # 定义要添加的新路径
-$NewPath = "C:\Users\hj\Downloads\ffmpeg-master-latest-win64-gpl-shared\bin"
+$NewPath = "C:\Program Files\ffmpeg-master-latest-win64-gpl-shared\bin"
 # 获取当前用户环境变量PATH的值
 $CurrentPath = [Environment]::GetEnvironmentVariable("PATH", "Machine")
 # 检查新路径是否已存在于Path中
