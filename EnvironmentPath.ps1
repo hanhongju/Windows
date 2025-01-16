@@ -1,13 +1,12 @@
 # 定义要添加的新路径
 $NewPath = "C:\Users\hj\Downloads\ffmpeg-master-latest-win64-gpl-shared\bin"
-
 # 获取当前用户环境变量PATH的值
 $CurrentPath = [Environment]::GetEnvironmentVariable("PATH", "Machine")
 # 检查新路径是否已存在于Path中
-if ($CurrentPath -like "*$newPath*") {
+if  ($CurrentPath -like "*$newPath*")   {
     Write-Host "新路径已存在于系统Path变量中，无需添加。"
-} else {
-        # 如果不存在，将新路径添加到Path
+}   else   {
+    # 如果不存在，将新路径添加到Path
     $UpdatedPath = "$CurrentPath;$NewPath"
     [Environment]::SetEnvironmentVariable("PATH", $UpdatedPath, "Machine")
     # 重新加载环境变量，使更改生效
