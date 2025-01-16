@@ -25,6 +25,3 @@ $Env:Path    -split ";"  |  Format-List
 # MACHINE的环境变量PATH存储于REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager\Environment\PATH中。
 # 参考文献https://superuser.com/questions/867728/user-vs-system-environment-variables-do-system-variables-override-user-variabl
 # The User path is appended to the system path once you restart Powershell.
-# 参考文献https://learn.microsoft.com/en-us/answers/questions/1159843/machine-and-user-path-variables-are-not-combined-i
-# Make sure that all paths in the env file are working and not linking to a removed folder.
-# Otherwise, Machine and User Path variables will not combine in $Env:Path on restart.
