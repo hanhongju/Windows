@@ -11,7 +11,7 @@ if  ($CurrentPath -like "*$newPath*")   {
     [Environment]::SetEnvironmentVariable("PATH", $UpdatedPath, "USER")
     Write-Host "新路径已添加到用户Path变量。"
 }
-# 更新$Env:Path
+# 更新$Env:Path，系统可正确运行程序
 $MachinePath =  [Environment]::GetEnvironmentVariable("PATH", "MACHINE")
 $UserPath    =  [Environment]::GetEnvironmentVariable("PATH", "USER")
 $Env:Path    =  "$MachinePath;$UserPath"
