@@ -20,6 +20,7 @@ $Env:Path    -split ";"  |  Format-List
 
 
 
+# 修改系统设置-关于-高级系统设置-环境变量-用户变量-PATH
 # 参考文献https://blog.csdn.net/weixin_42250302/article/details/117901436
 # USER的环境变量PATH存储于REGISTRY::HKEY_CURRENT_USER\Environment\PATH中。
 # MACHINE的环境变量PATH存储于REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager\Environment\PATH中。
