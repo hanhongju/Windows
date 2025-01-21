@@ -36,5 +36,4 @@ foreach ($disk in $disks) {
 
 
 
-
 # 参考文献：https://www.tenforums.com/tutorials/49753-turn-off-file-printer-sharing-windows-10-a.html
