@@ -8,5 +8,35 @@ Start-Process     "C:\Users\Public\Downloads\MAS_AIO.cmd"
 
 
 
+activate_windows () {
+cd             "C:\Windows\System32"
+cscript.exe    slmgr.vbs    /skms   kms.03k.org
+cscript.exe    slmgr.vbs    /ipk    W269N-WFGWX-YVC9B-4J6C9-T83GX
+cscript.exe    slmgr.vbs    /ato
 
+}
+
+
+
+
+activate_office () {
+cd             "C:\Program Files\Microsoft Office\Office16"
+cd             "C:\Program Files (x86)\Microsoft Office\Office16"
+cscript.exe    ospp.vbs    /dstatus
+cscript.exe    ospp.vbs    /sethst:kms.03k.org
+cscript.exe    ospp.vbs    /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
+cscript.exe    ospp.vbs    /act
+# cscript.exe  ospp.vbs    /unpkey:
+
+}
+
+
+
+
+
+# 参考文献
 # Windows和Office激活脚本
+# WINDOWS密钥https://learn.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys
+# OFFICE密钥https://learn.microsoft.com/zh-cn/office/volume-license-activation/gvlks
+# https://learn.microsoft.com/zh-cn/office/ltsc/2024/deploy
+# configuration.xml can be created from https://config.office.com/deploymentsettings
