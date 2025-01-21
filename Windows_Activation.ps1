@@ -1,3 +1,4 @@
+download_MAS_and_activate () {
 #需使用http:8081代理，否则连不上github
 Invoke-WebRequest -Proxy "http://127.0.0.1:8081" `
                   -Uri "https://raw.githubusercontent.com/massgravel/Microsoft-Activation-Scripts/refs/heads/master/MAS/All-In-One-Version-KL/MAS_AIO.cmd" `
@@ -5,10 +6,11 @@ Invoke-WebRequest -Proxy "http://127.0.0.1:8081" `
 
 Start-Process     "C:\Users\Public\Downloads\MAS_AIO.cmd"
 
+}
 
 
 
-activate_windows () {
+manage_windows_key () {
 cd             "C:\Windows\System32"
 cscript.exe    slmgr.vbs    /skms   kms.03k.org
 cscript.exe    slmgr.vbs    /ipk    W269N-WFGWX-YVC9B-4J6C9-T83GX
@@ -19,7 +21,7 @@ cscript.exe    slmgr.vbs    /ato
 
 
 
-activate_office () {
+manage_office_key () {
 cd             "C:\Program Files\Microsoft Office\Office16"
 cd             "C:\Program Files (x86)\Microsoft Office\Office16"
 cscript.exe    ospp.vbs    /dstatus
