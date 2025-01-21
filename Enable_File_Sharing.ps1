@@ -11,7 +11,8 @@ Get-SmbServerConfiguration   |   Select  EnableSMB1Protocol, EnableSMB2Protocol
 Set-SmbServerConfiguration       -EnableSMB2Protocol  $true          -Force
 # 客户端主机开启SMB大型MTU支持提升文件传输效率，并禁用带宽限制。
 Set-SmbClientConfiguration       -EnableBandwidthThrottling  0       -EnableLargeMtu  1      -Force
-# 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-用户权限分配：将Guest添加到“从网络访问此计算机”和“拒绝本地登录”列表，并从“拒绝从网络访问这台计算机”列表中删除
+# 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-用户权限分配：
+# 将Guest添加到“从网络访问此计算机”和“拒绝本地登录”列表，并从“拒绝从网络访问这台计算机”列表中删除
 [byte[]]$Value = @("66","00","00","00")
 Set-ItemProperty  -Path REGISTRY::HKEY_LOCAL_MACHINE\SECURITY\Policy\Accounts\S-1-5-*-501\ActSysAc `
                   -Name "(Default)"                              -Value $Value
