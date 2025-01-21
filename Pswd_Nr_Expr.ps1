@@ -1,5 +1,5 @@
-LocalUser   |    Set-LocalUser   -PasswordNeverExpires $true
-net user hj
+LocalUser   |  Set-LocalUser   -PasswordNeverExpires $true
+net  user   Administrator
 
 
 
