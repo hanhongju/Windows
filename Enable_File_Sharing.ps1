@@ -22,6 +22,10 @@ Set-ItemProperty  -Path REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Contro
 # 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-安全选项：禁用“网络访问: 不允许 SAM 帐户和共享的匿名枚举”
 Set-ItemProperty  -Path REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Lsa `
                   -Name restrictanonymous          -Type DWord   -Value 0
+# 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-安全选项：“网络访问: 本地帐户的共享和安全模型”更改为“仅来宾”
+# 这将确保所有访问共享文件夹的用户都将以Guest身份进行验证，无需输入Guest用户名
+Set-ItemProperty  -Path REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa `
+                  -Name forceguest                 -Type DWord   -Value 1
 # 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-安全选项：启用“帐户：来宾帐户状态”
 Enable-LocalUser  -Name Guest
 LocalUser
