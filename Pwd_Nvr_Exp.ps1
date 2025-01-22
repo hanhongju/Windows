@@ -1,4 +1,4 @@
-LocalUser   |  Set-LocalUser   -PasswordNeverExpires $true
+LocalUser   |  Set-LocalUser   -PasswordNeverExpires   $true
 net  user   Administrator
 
 
