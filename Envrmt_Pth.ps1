@@ -2,7 +2,6 @@
 $NewPaths = @(
 "C:\Program Files\ffmpeg-7.1-full_build\bin"
 "C:\Program Files\ebook2audiobook-2.0"
-"C:\"
 )
 # 获取当前用户环境变量PATH的值
 $CurrentPath = [Environment]::GetEnvironmentVariable("PATH", "USER")
