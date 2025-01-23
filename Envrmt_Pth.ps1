@@ -24,7 +24,7 @@ foreach ($NewPath in $NewPathArray) {
 $MachinePath =  [Environment]::GetEnvironmentVariable("PATH", "MACHINE")
 $UserPath    =  [Environment]::GetEnvironmentVariable("PATH", "USER")
 $Env:Path    =  "$MachinePath;$UserPath"
-$Env:Path    -split ";"  |  Format-List
+$Env:Path    -split ";"
 
 
 
