@@ -14,9 +14,10 @@ foreach ($NewPath in $NewPathArray) {
 # 如果不存在，将新路径添加到Path
          $UpdatedPath = "$CurrentPath;$NewPath"
          [Environment]::SetEnvironmentVariable("PATH", $UpdatedPath, "USER")
+         Write-Host "新路径已添加到用户Path变量。"
+# 循环中要用到的变量，都要及时更新
          $CurrentPath = [Environment]::GetEnvironmentVariable("PATH", "USER")
          $CurrentPathArray = $CurrentPath  -split ";"
-         Write-Host "新路径已添加到用户Path变量。"
      }
 }
 # 更新$Env:Path，系统可正确运行程序
