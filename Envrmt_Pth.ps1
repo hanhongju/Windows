@@ -1,18 +1,21 @@
 # 定义要添加的新路径
-$NewPaths = @(
+$NewPathArray = @(
 "C:\Program Files\ffmpeg-7.1-full_build\bin"
 "C:\Program Files\ebook2audiobook-2.0"
 )
 # 获取当前用户环境变量PATH的值
 $CurrentPath = [Environment]::GetEnvironmentVariable("PATH", "USER")
-foreach ($NewPath in $NewPaths) {
+$CurrentPathArray = $CurrentPath  -split ";"
+foreach ($NewPath in $NewPathArray) {
 # 检查新路径是否已存在于Path中
-     if  ($CurrentPath -like "*$NewPath*") {
+     if  ($CurrentPathArray -contains $NewPath) {
          Write-Host "新路径已存在于用户Path变量中，无需添加。"
      }   else   {
-    # 如果不存在，将新路径添加到Path
+# 如果不存在，将新路径添加到Path
          $UpdatedPath = "$CurrentPath;$NewPath"
          [Environment]::SetEnvironmentVariable("PATH", $UpdatedPath, "USER")
+         $CurrentPath = [Environment]::GetEnvironmentVariable("PATH", "USER")
+         $CurrentPathArray = $CurrentPath  -split ";"
          Write-Host "新路径已添加到用户Path变量。"
      }
 }
@@ -21,7 +24,6 @@ $MachinePath =  [Environment]::GetEnvironmentVariable("PATH", "MACHINE")
 $UserPath    =  [Environment]::GetEnvironmentVariable("PATH", "USER")
 $Env:Path    =  "$MachinePath;$UserPath"
 $Env:Path    -split ";"  |  Format-List
-
 
 
 
