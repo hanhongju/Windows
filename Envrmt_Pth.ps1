@@ -3,6 +3,7 @@ $NewPathArray = @(
 "C:\Users\hj\AppData\Local\Programs\Python\Python38"
 "C:\Users\hj\AppData\Local\Programs\Python\Python38\Scripts"
 "C:\Program Files\docker-27.5.1\docker"
+"C:\Program Files\ebook2audiobook-2.0"
 )
 $CurrentPath = [Environment]::GetEnvironmentVariable("PATH", "USER")
 $CurrentPathArray = $CurrentPath  -split ";"
