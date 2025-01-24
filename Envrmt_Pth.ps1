@@ -2,6 +2,7 @@ $NewPathArray = @(
 "C:\Program Files\ffmpeg-7.1-full_build\bin"
 "C:\Users\hj\AppData\Local\Programs\Python\Python38"
 "C:\Users\hj\AppData\Local\Programs\Python\Python38\Scripts"
+"C:\Program Files\docker-27.5.1\docker"
 )
 $CurrentPath = [Environment]::GetEnvironmentVariable("PATH", "USER")
 $CurrentPathArray = $CurrentPath  -split ";"
