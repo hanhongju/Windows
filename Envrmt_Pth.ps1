@@ -5,6 +5,7 @@ $NewPathArray = @(
 "C:\Program Files\docker-27.5.1\docker"
 "C:\Program Files\ebook2audiobook-2.0"
 )
+$NewPathArray.GetType()
 $CurrentPath = [Environment]::GetEnvironmentVariable("PATH", "USER")
 $CurrentPathArray = $CurrentPath  -split ";"
 foreach ($NewPath in $NewPathArray) {
