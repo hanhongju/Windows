@@ -3,7 +3,7 @@ $Files = Get-ChildItem  -Filter  "*.mp3"  -File
 foreach ($File in $Files) {
     $inputFile   =   $File.FullName
     $outputFile  =   $File.BaseName  +  ".wav"
-    ffmpeg  -i $inputFile  $outputFile
+    ffmpeg  -i  $inputFile  $outputFile
 }
 
 
