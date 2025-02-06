@@ -1,7 +1,18 @@
+# Powershell设置临时代理
+# 使.NET命令使用代理
+$Proxy = New-Object System.Net.WebProxy
+$Proxy.GetType()
+$Proxy.Address = "http://127.0.0.1:8081"
+[System.Net.WebRequest]::DefaultWebProxy = $Proxy
+# 使外部命令如pip和curl等使用代理
+$env:https_proxy = "http://127.0.0.1:8081"
+
+
+
+
 # 下载MAS激活windows和office
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/massgravel/Microsoft-Activation-Scripts/refs/heads/master/MAS/All-In-One-Version-KL/MAS_AIO.cmd" `
                   -OutFile "C:\Users\Public\Downloads\MAS_AIO.cmd"
-
 Start-Process     "C:\Users\Public\Downloads\MAS_AIO.cmd"
 
 
