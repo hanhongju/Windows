@@ -5,7 +5,7 @@ foreach ($File in $Files) {
     $outputFile  =   $File.BaseName  +  ".wav"
     ffmpeg  -i  $inputFile  $outputFile
 }
-Pause
+
 
 
 
