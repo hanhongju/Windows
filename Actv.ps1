@@ -1,7 +1,7 @@
 # Powershell设置临时代理
 $Proxy = New-Object System.Net.WebProxy
 $Proxy.GetType()
-$Proxy.Address = "http://127.0.0.1:801"
+$Proxy.Address = "http://127.0.0.1:8001"
 [System.Net.WebRequest]::DefaultWebProxy = $Proxy
 
 
