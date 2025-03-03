@@ -39,4 +39,4 @@ SomeSetUp () {
 
 
 
-# Macro script @ WOW
+-- Macro script @ WOW
