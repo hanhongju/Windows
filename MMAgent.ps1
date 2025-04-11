@@ -1,4 +1,4 @@
-# 禁用 Windows 内存压缩
+# 禁用 Windows 内存压缩，重启后生效
 Disable-MMAgent -MemoryCompression
 Get-MMAgent
 
