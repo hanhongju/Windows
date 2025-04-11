@@ -1,5 +1,5 @@
 # 禁用 Windows 内存压缩
-Disable-MMAgent -mc
+Disable-MMAgent -MemoryCompression
 Get-MMAgent
 
 
