@@ -29,7 +29,9 @@ cd             "C:\Program Files\Microsoft Office\Office16"
 cd             "C:\Program Files (x86)\Microsoft Office\Office16"
 cscript.exe    ospp.vbs    /dstatus
 cscript.exe    ospp.vbs    /sethst:kms.03k.org
-cscript.exe    ospp.vbs    /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
+cscript.exe    ospp.vbs    /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH  # ProPlus2021Volume
+cscript.exe    ospp.vbs    /inpkey:KNH8D-FGHT4-T8RK3-CTDYJ-K2HT4  # VisioPro2021Volume
+cscript.exe    ospp.vbs    /inpkey:FTNWT-C6WBT-8HMGF-K9PRX-QV9H8  # ProjectPro2021Volume
 cscript.exe    ospp.vbs    /act
 # cscript.exe  ospp.vbs    /unpkey:
 
