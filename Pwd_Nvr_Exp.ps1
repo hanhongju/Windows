@@ -1,5 +1,6 @@
 LocalUser   |  Set-LocalUser   -PasswordNeverExpires   $true
 net  user   Guest
+net  user   hj
 
 
 
