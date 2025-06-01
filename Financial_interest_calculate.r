@@ -1,24 +1,20 @@
-pvalue = function(x){
-  n = 26
-  c = 55
-  m = 1000
-  p = c*((1-1/(1+x)^n)/x)+(m+c)/(1+x)^n
-  p
+# coupon payment per period
+pmt = 55
+# future value paid at maturity
+fv = 1000
+# Number of Periods Required
+nper = 26
+# Present Value
+pv = 1169
+# y <- yield to first par call 
+library(nleqslv)
+equations <- function(x) {
+  f1 <- pmt*((1-1/(1+x[1])^nper)/x[1])+fv/(1+x[1])^nper-pv
+  return(c(f1))
 }
-
-
-y = 1
-price = 1169
-while   (pvalue(y) - price > 0.01)
-y = y + 0.000001
-end
-while   (pvalue(y) - price < -0.01)
-y = y - 0.000001
-end
-y
-pvalue(y)
+slove <- nleqslv(1, equations)
+slove$x
 
 
 
-
-# 迭代法计算利息
+# nleqslv包求解非线性方程（组）
