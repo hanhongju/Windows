@@ -1,3 +1,4 @@
+rm(list = ls())
 # coupon payment per period
 pmt = 55
 # future value paid at maturity
