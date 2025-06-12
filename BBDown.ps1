@@ -7,6 +7,9 @@ Write-Host "Using Repair-WinGetPackageManager cmdlet to bootstrap WinGet..."
 Repair-WinGetPackageManager -AllUsers
 Write-Host "Done."
 # 安装 SDK
-winget install Microsoft.DotNet.SDK.9
-winget install Microsoft.DotNet.DesktopRuntime.9
-winget install Microsoft.DotNet.AspNetCore.9
+winget install --accept-source-agreements Microsoft.DotNet.SDK.9
+winget install --accept-source-agreements Microsoft.DotNet.DesktopRuntime.9
+winget install --accept-source-agreements Microsoft.DotNet.AspNetCore.9
+# BBDown已经以 Dotnet Tool 形式发布
+dotnet nuget enable source nuget.org
+dotnet tool install --global BBDown
