@@ -1,9 +1,9 @@
 # 优先显示OEMInformation
-New-Item                -Path REGISTRY::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation `
+New-Item                -Path REGISTRY::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation\ `
                         -Force
-Set-ItemProperty        -Path REGISTRY::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation `
+Set-ItemProperty        -Path REGISTRY::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation\ `
                         -Name Model  -Type String  -Value "A Property of Hanhongju"
-Remove-Item             -Path REGISTRY::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation `
+Remove-Item             -Path REGISTRY::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation\ `
                         -Recurse  -ErrorAction SilentlyContinue
 # OEMInformation没有则显示下面的SystemInformation
 Set-ItemProperty        -Path REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\SystemInformation\ `
