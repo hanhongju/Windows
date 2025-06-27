@@ -1,6 +1,6 @@
 # Win10系统提示“系统策略禁止安装此设备，请与系统管理员联系”
 # 安装PolicyFileEditor模块
-Install-PackageProvider   -Name NuGet            -Confirm
+Install-PackageProvider   -Name NuGet
 Set-PSRepository          -Name PSGallery        -InstallationPolicy Trusted
 Install-Module            -Name PolicyFileEditor
 Set-ExecutionPolicy       Unrestricted    -Force
