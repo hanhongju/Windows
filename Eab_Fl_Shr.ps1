@@ -13,12 +13,12 @@ Set-SmbServerConfiguration       -EnableSMB2Protocol  $true          -Force
 Set-SmbClientConfiguration       -EnableBandwidthThrottling  0       -EnableLargeMtu  1      -Force
 # 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-用户权限分配：将Guest从“拒绝从网络访问这台计算机”列表中删除
 # 导出组策略
-secedit    /export     /cfg     C:\Users\hj\Documents\gp.inf     /quiet
+secedit.exe    /export     /cfg     C:\Users\hj\Documents\gp.inf     /quiet
 # 修改组策略
-$content   =    Get-Content     C:\Users\hj\Documents\gp.inf
+$content   =   Get-Content     C:\Users\hj\Documents\gp.inf
 $content   -replace     "SeDenyNetworkLogonRight = Guest", "SeDenyNetworkLogonRight ="    |    Set-Content     C:\Users\hj\Documents\gp.inf
 # 导入组策略，强制刷新组策略，立即生效(否则，重启后生效)：
-secedit    /configure   /db   gp.sdb   /cfg    C:\Users\hj\Documents\gp.inf    /quiet
+secedit.exe    /configure   /db   gp.sdb   /cfg    C:\Users\hj\Documents\gp.inf    /quiet
 gpupdate
 # 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-安全选项：禁用“账户：使用空密码的本地帐户只允许进行控制台登录”
 Set-ItemProperty  -Path REGISTRY::HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Lsa `
