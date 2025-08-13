@@ -32,8 +32,8 @@ Enable-LocalUser  -Name Guest
 LocalUser
 # 获取所有磁盘的根路径
 $disks = Get-PSDrive -PSProvider FileSystem
-# 共享选项卡作用于远程共享，安全选项卡作用于本地访问，但两者最小交集影响实际远程共享的权限
-# 遍历所有磁盘，授予Everyone本地访问所有磁盘权限，即影响属性-安全选项卡的内容
+# 属性-共享选项卡作用于远程共享，安全选项卡作用于本地访问，但两者最小交集影响实际远程共享的权限
+# 遍历所有磁盘，授予Everyone本地访问所有磁盘权限，即影响安全选项卡的内容
 foreach ($disk in $disks) {
     $drivePath = $disk.Root
     Write-Host "正在更新磁盘 $($disk.Name):"
