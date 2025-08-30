@@ -1,5 +1,5 @@
 Set-Location   -Path   $PSScriptRoot
-$Files = Get-ChildItem  -Filter  "*.flac"  -File
+$Files = Get-ChildItem  -Filter  "*.aac"  -File
 foreach ($File in $Files) {
     $inputFile   =   $File.FullName
     $outputFile  =   $File.BaseName  +  ".wav"
