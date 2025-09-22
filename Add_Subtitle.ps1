@@ -6,7 +6,7 @@ ffmpeg   -i input.mp4   -i eng.srt   -c copy   -metadata:s:s:0 language=eng   ou
 
 
 # 提取字幕文件
-ffmpeg   -i input.mkv   -c:s copy   output.srt
+ffmpeg   -i output.mkv   -c:s copy   output.srt
 
 
 # srt字幕用mp4封装
