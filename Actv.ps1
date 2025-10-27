@@ -38,6 +38,7 @@ cscript.exe    ospp.vbs    /act
 
 
 
+# 激活程序@ Windows 10/11
 # 参考文献
 # WINDOWS密钥https://learn.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys
 # OFFICE密钥https://learn.microsoft.com/zh-cn/office/volume-license-activation/gvlks
