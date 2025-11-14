@@ -1,4 +1,5 @@
 # 关闭hyper-v
+netsh int ipv4 show dynamicportrange tcp
 Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor
 
 
