@@ -17,9 +17,9 @@ ffmpeg   -i output.mkv   -c:s copy   output.srt
 ffmpeg   -i input.mp4   -c:v libx264   output.mp4
 
 
-# 使用ffmpeg将当前目录中的MP3转换为WAV，需先将ffmpeg设置在系统环境变量PATH中
+# 使用ffmpeg将当前目录中的FLAC转换为WAV，需先将ffmpeg设置在系统环境变量PATH中
 Set-Location   -Path   $PSScriptRoot
-$Files = Get-ChildItem  -Filter  "*.aac"  -File
+$Files = Get-ChildItem  -Filter  "*.flac"  -File
 foreach ($File in $Files) {
     $inputFile   =   $File.FullName
     $outputFile  =   $File.BaseName  +  ".wav"
