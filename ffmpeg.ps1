@@ -1,16 +1,16 @@
 # 任意格式字幕用mkv封装
 ffmpeg   -i input.mp4   -i eng.srt   -i chs.srt   -c copy   -map 0:v   -map 0:a   -map 1   -map 2   -metadata:s:s:0 language=eng   -metadata:s:s:1 language=chs   output.mkv
 
-
 ffmpeg   -i input.mp4   -i chs.srt   -c copy   -metadata:s:s:0 language=chs   output.mkv
-
 
 # srt字幕用mp4封装
 ffmpeg   -i input.mp4   -i eng.srt   -i chs.srt   -c:v copy   -c:a copy   -c:s mov_text   -map 0:v   -map 0:a   -map 1:s   -map 2:s   -metadata:s:s:0 language=eng   -metadata:s:s:1 language=chs   output.mp4
 
+# 烧录srt字幕进mp4
+ffmpeg   -i input.mp4   -vf "subtitles=chs.srt"   output.mp4
 
 # 提取字幕文件
-ffmpeg   -i output.mkv   -c:s copy   output.srt
+ffmpeg   -i output.mkv  -c:s copy      output.srt
 
 
 # 将mp4容器中的视频转为AVC编码
