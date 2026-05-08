@@ -14,6 +14,10 @@ ffmpeg   -i input.mp4    -c:a copy      -vf  subtitles=chs.srt:force_style='Font
 ffmpeg   -i input.mkv    -map 0:s:0     output0.srt
 ffmpeg   -i input.mkv    -map 0:s:1     output1.srt
 
+# 提取input.mp4的字幕文件，输出到output.srt
+ffmpeg   -i input.mp4    -map 0:s:0     output0.srt
+ffmpeg   -i input.mp4    -map 0:s:1     output1.srt
+
 # 将input.mp4中的视频转为AVC编码，输出到output.mp4
 ffmpeg   -i input.mp4    -c:v libx264   output.mp4
 
