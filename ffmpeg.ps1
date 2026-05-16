@@ -8,7 +8,7 @@ ffmpeg   -i input.mp4    -i eng.srt     -i chs.srt   -c:v copy   -c:a copy   -c:
 ffmpeg   -i input.mp4    -i chs.srt     -metadata:s:s language=chi           -c copy        output.mkv
 
 # 烧录chs.srt字幕进input.mp4，输出output.mp4
-ffmpeg   -i input.mp4    -vf subtitles=chs.srt:force_style='FontSize=9'      -c:a copy      output.mp4
+ffmpeg   -i input.mp4    -vf subtitles=chs.srt:force_style='FontSize=12'      -c:a copy      output.mp4
 
 # 提取input.mkv的字幕文件，输出到output.srt
 ffmpeg   -i input.mkv    -map 0:s:0     output0.srt
@@ -17,6 +17,9 @@ ffmpeg   -i input.mkv    -map 0:s:1     output1.srt
 # 提取input.mp4的字幕文件，输出到output.srt
 ffmpeg   -i input.mp4    -map 0:s:0     output0.srt
 ffmpeg   -i input.mp4    -map 0:s:1     output1.srt
+
+# 去除input.mp4的字幕文件，输出到output.mp4
+ffmpeg   -i input.mp4    -c copy        -map 0:v     -map 0:a      output.mp4
 
 # 将input.mp4中的视频转为AVC编码，输出到output.mp4
 ffmpeg   -i input.mp4    -c:v libx264   output.mp4
