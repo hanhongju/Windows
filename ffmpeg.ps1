@@ -17,6 +17,9 @@ ffmpeg   -i input.mp4    -c copy        -map 0:v     -map 0:a      output.mp4
 # 将input.mp4中的视频转为AVC编码，输出到output.mp4
 ffmpeg   -i input.mp4    -c:v libx264   output.mp4
 
+# 显示视频流信息
+ffprobe  -hide_banner    input.mp4
+
 # 使用ffmpeg将当前目录中的FLAC转换为WAV，需先将ffmpeg设置在系统环境变量PATH中
 Set-Location   -Path   $PSScriptRoot
 $Files = Get-ChildItem  -Filter  "*.flac"  -File
