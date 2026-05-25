@@ -1,8 +1,8 @@
 # 内挂eng.srt和chi.srt字幕进input.mp4，输出output.mp4
 ffmpeg   -i input.mp4    -i eng.srt     -i chi.srt   -c copy   -c:s mov_text   -map 0   -map 1:s   -map 2:s   -metadata:s:s:0 language=eng   -metadata:s:s:1 language=chi   output.mp4
 
-# 烧录chi.srt字幕进input.mp4，输出output.mp4
-ffmpeg   -i input.mp4    -vf subtitles=chi.srt:force_style='FontSize=12'      -c:a copy      output.mp4
+# 烧录chi.srt字幕进input.mp4，输出output-burn.mp4
+ffmpeg   -i input.mp4    -vf subtitles=chi.srt:force_style='FontSize=12'      -c:a copy      output-burn.mp4
 
 # 内挂chi.srt字幕进input.mp4，输出output.mp4
 ffmpeg   -i input.mp4    -i chi.srt     -c copy      -c:s mov_text     -metadata:s:s language=chi     output.mp4
