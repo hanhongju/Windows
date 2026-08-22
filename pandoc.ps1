@@ -1,4 +1,4 @@
-# Powershell 临时切换至桌面目录：
+# Powershell 临时切换至桌面目录
 Set-Location "$env:USERPROFILE\Desktop"
 
 # 将 file.docx 转换为 file.epub
