@@ -1,3 +1,6 @@
+# Powershell 临时切换至桌面目录：
+Set-Location "$env:USERPROFILE\Desktop"
+
 # 内挂eng.srt和chi.srt字幕进input.mp4，输出output.mp4
 ffmpeg   -i input.mp4    -i eng.srt     -i chi.srt   -c copy   -c:s mov_text   -map 0   -map 1:s   -map 2:s   -metadata:s:s:0 language=eng   -metadata:s:s:1 language=chi   output.mp4
 
