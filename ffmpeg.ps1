@@ -1,4 +1,4 @@
-# Powershell 临时切换至桌面目录：
+# Powershell 临时切换至桌面目录
 Set-Location "$env:USERPROFILE\Desktop"
 
 # 内挂eng.srt和chi.srt字幕进input.mp4，输出output.mp4
