@@ -8,7 +8,7 @@ New-Item       -Path "C:\Program Files\Mozilla Firefox\distribution\"     -ItemT
                            }
              }
 }
-'@   |   Out-File   -FilePath   "C:\Program Files\Mozilla Firefox\distribution\policies.json"
+'@   |   Out-File   -FilePath   "C:\Program Files\Mozilla Firefox\distribution\policies.json"   #该命令需Powershell 7版本才能将格式定为UTF-8，否则为UTF-8-BOM会报错
 
 
 
