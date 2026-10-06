@@ -2,10 +2,9 @@ Remove-Item    -Path "C:\Program Files\Mozilla Firefox\distribution\"     -Recur
 New-Item       -Path "C:\Program Files\Mozilla Firefox\"                  -ItemType Directory     -Name "distribution" 
 New-Item       -Path "C:\Program Files\Mozilla Firefox\distribution\"     -ItemType File          -Name "policies.json"
 @'
-{"policies": {"Preferences": 
-                           {"browser.tabs.groups.enabled": {"Value": false}
-                           ,"browser.tabs.loadBookmarksInTabs": {"Value": true}
-                           ,"browser.tabs.insertAfterCurrent": {"Value": true}
+{"policies": {"Preferences": {"browser.tabs.groups.enabled": false
+                             ,"browser.tabs.loadBookmarksInTabs": true
+                             ,"browser.tabs.insertAfterCurrent": true
                            }
              }
 }
