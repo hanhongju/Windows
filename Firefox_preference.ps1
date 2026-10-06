@@ -1,5 +1,6 @@
-New-Item    -ItemType Directory     -Path "C:\Program Files\Mozilla Firefox\"                    -Name "distribution" 
-New-Item    -ItemType File          -Path "C:\Program Files\Mozilla Firefox\distribution\"       -Name "policies.json"
+Remove-Item    -Path "C:\Program Files\Mozilla Firefox\distribution\"     -Recurse                  -Force
+New-Item       -Path "C:\Program Files\Mozilla Firefox\"                  -ItemType Directory       -Name "distribution" 
+New-Item       -Path "C:\Program Files\Mozilla Firefox\distribution\"     -ItemType File            -Name "policies.json"
 @'
 {"policies": {"Preferences": 
                            {"browser.tabs.groups.enabled": {"Value": false}
