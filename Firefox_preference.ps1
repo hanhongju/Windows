@@ -13,3 +13,4 @@ New-Item    -ItemType File          -Path "C:\Program Files\Mozilla Firefox\dist
 
 
 
+# 创建Firefox配置文件
