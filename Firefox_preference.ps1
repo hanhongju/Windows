@@ -14,4 +14,5 @@ New-Item       -Path "C:\Program Files\Mozilla Firefox\distribution\"     -ItemT
 
 
 
-# 创建Firefox配置文件
+# 创建Firefox配置文件  about:config
+
