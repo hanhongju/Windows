@@ -1,3 +1,4 @@
+$PSVersionTable
 Remove-Item    -Path "C:\Program Files\Mozilla Firefox\distribution\"     -Recurse                -Force
 New-Item       -Path "C:\Program Files\Mozilla Firefox\"                  -ItemType Directory     -Name "distribution" 
 New-Item       -Path "C:\Program Files\Mozilla Firefox\distribution\"     -ItemType File          -Name "policies.json"
@@ -14,4 +15,4 @@ New-Item       -Path "C:\Program Files\Mozilla Firefox\distribution\"     -ItemT
 
 
 # 创建Firefox配置文件  about:config
-
+# 验证是否设置成功     about:policies
