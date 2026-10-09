@@ -18,8 +18,8 @@ f.write('''
 }
 ''')
 f.close()
-print("✅ 策略写入完成，重启Firefox访问 about:policies 查看")
-input("\n按回车退出...")
+print("策略写入完成，重启Firefox访问 about:policies 查看")
+input("按回车退出...")
 '@   |   Out-File   -FilePath   "firefox_policy_need_admin.py" -Encoding utf8
 
 pyinstaller -F -c firefox_policy_need_admin.py
