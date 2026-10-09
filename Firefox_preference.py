@@ -1,5 +1,4 @@
-import os
-import shutil
+import os, shutil
 if os.path.exists(os.path.join(r"C:\Program Files\Mozilla Firefox", "distribution")):
     shutil.rmtree(os.path.join(r"C:\Program Files\Mozilla Firefox", "distribution"))
 
