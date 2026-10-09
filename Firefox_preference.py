@@ -21,4 +21,6 @@ f.close()
 
 
 
-#
+
+# 创建Firefox配置文件  about:config
+# 验证是否设置成功     about:policies
