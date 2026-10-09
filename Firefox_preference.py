@@ -4,7 +4,6 @@ if os.path.exists(os.path.join(r"C:\Program Files\Mozilla Firefox", "distributio
     shutil.rmtree(os.path.join(r"C:\Program Files\Mozilla Firefox", "distribution"))
 
 os.makedirs(r"C:\Program Files\Mozilla Firefox\distribution", exist_ok=True)
-
 f = open(r"C:\Program Files\Mozilla Firefox\distribution\policies.json", "w", encoding="utf-8")
 f.write('''
 {"policies":{"Preferences": {"browser.tabs.groups.enabled": false,
