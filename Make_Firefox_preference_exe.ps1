@@ -24,3 +24,7 @@ input("\n按回车退出...")
 
 pyinstaller -F -c firefox_policy.py
 
+
+
+
+# 使用python在桌面上创建一个exe文件，用来修改Firefox的配置文件
