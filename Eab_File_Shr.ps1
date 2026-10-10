@@ -14,7 +14,7 @@ Set-SmbClientConfiguration       -EnableBandwidthThrottling  0       -EnableLarg
 # 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-用户权限分配：将Guest从“拒绝从网络访问这台计算机”列表中删除
 secedit.exe    /export     /cfg     C:\Users\Admin\Desktop\gp.inf      /quiet
 $content       =    Get-Content     C:\Users\Admin\Desktop\gp.inf
-$content       -replace     "SeDenyNetworkLogonRight = Guest", "SeDenyNetworkLogonRight ="    |    Set-Content     C:\Users\hj\Documents\gp.inf
+$content       -replace     "SeDenyNetworkLogonRight = Guest", "SeDenyNetworkLogonRight ="    |    Set-Content     C:\Users\Admin\Desktop\gp.inf
 secedit.exe    /configure   /db   gp.sdb   /cfg    C:\Users\Admin\Desktop\gp.inf    /quiet
 gpupdate
 # 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-安全选项：禁用“账户：使用空密码的本地帐户只允许进行控制台登录”
