@@ -12,8 +12,8 @@ Set-SmbServerConfiguration       -EnableSMB2Protocol  $true          -Force
 # 客户端主机开启SMB大型MTU支持提升文件传输效率，并禁用带宽限制。
 Set-SmbClientConfiguration       -EnableBandwidthThrottling  0       -EnableLargeMtu  1      -Force
 # 本地组策略编辑器-计算机配置-Windows设置-安全设置-本地策略-用户权限分配：将Guest从“拒绝从网络访问这台计算机”列表中删除
-secedit.exe    /export     /cfg     C:\Users\hj\Documents\gp.inf     /quiet
-$content       =    Get-Content     C:\Users\hj\Documents\gp.inf
+secedit.exe    /export     /cfg     C:\Users\Admin\Desktop     /quiet
+$content       =    Get-Content     C:\Users\Admin\Desktop
 $content       -replace     "SeDenyNetworkLogonRight = Guest", "SeDenyNetworkLogonRight ="    |    Set-Content     C:\Users\hj\Documents\gp.inf
 secedit.exe    /configure   /db   gp.sdb   /cfg    C:\Users\hj\Documents\gp.inf    /quiet
 gpupdate
