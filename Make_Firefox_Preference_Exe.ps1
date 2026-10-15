@@ -1,5 +1,5 @@
 pip install pyinstaller
-cd  C:\Users\Admin\Desktop
+cd  C:\Users\Public\Documents
 @'
 # -*- coding: utf-8 -*-
 import os, shutil
