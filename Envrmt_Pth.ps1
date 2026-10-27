@@ -1,6 +1,5 @@
 $NewPathArray = @(
-"C:\Users\hj\AppData\Local\Programs\Python\Python38"
-"C:\Users\hj\AppData\Local\Programs\Python\Python38\Scripts"
+"C:\Program Files\python-3.14.10-embed-amd64"
 "C:\Program Files\ffmpeg-7.1-full_build\bin"
 "C:\Program Files\docker-27.5.1\docker"
 "C:\Program Files\ebook2audiobook-2.0"
